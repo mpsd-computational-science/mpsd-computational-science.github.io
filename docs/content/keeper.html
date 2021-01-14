@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. KEEPER - “archive the way you work” &mdash; Computational science  documentation</title>
+  <title>5. Keeper (archiving tool and more) &mdash; Computational science  documentation</title>
   
 
   
@@ -29,7 +29,6 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6. Reproducibility" href="reproducibility.html" />
     <link rel="prev" title="4. Archiving research data" href="archive.html" /> 
 
   
@@ -219,9 +218,7 @@
 <li class="toctree-l1"><a class="reference internal" href="version-control.html">2. Version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="research-data-management.html">3. Research Data Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="archive.html">4. Archiving research data</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. KEEPER - “archive the way you work”</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reproducibility.html">6. Reproducibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fill.html">7. Section 1</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Keeper (archiving tool and more)</a></li>
 </ul>
 
             
@@ -262,7 +259,7 @@
       </li>
 
         
-      <li><span class="section-number">5. </span>KEEPER - “archive the way you work”</li>
+      <li><span class="section-number">5. </span>Keeper (archiving tool and more)</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -292,8 +289,8 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <div class="section" id="keeper-archive-the-way-you-work">
-<h1><span class="section-number">5. </span>KEEPER - “archive the way you work”<a class="headerlink" href="#keeper-archive-the-way-you-work" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="keeper-archiving-tool-and-more">
+<h1><span class="section-number">5. </span>Keeper (archiving tool and more)<a class="headerlink" href="#keeper-archiving-tool-and-more" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The section below assumes you are an employee of the <a class="reference external" href="https://mpg.de">Max Planck Society</a>.</p>
@@ -301,13 +298,18 @@
 <div class="section" id="features">
 <h2><span class="section-number">5.1. </span>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Keeper allows cloud synchronisation of data with local machine (similar to Dropbox
-if the ‘drive client’ is used)</p></li>
-<li><p>Data is organised into ‘libraries’</p></li>
+<li><p>Keeper provides disk space (in the cloud and provided by the Max Planck Digital Library), that can be archived.</p></li>
+<li><p>Data is organised into ‘libraries’ (i.e. top level folders represent libraries)</p></li>
+<li><p>An overview of all the libraries is available through a web browser at the keeper home page (<a class="reference external" href="https://keeper.mpdl.mpg.de">https://keeper.mpdl.mpg.de</a>)</p></li>
 <li><p>Libraries can be shared with others</p></li>
+<li><p>Keeper allows upload of large files or directories (using the ‘SeeLife’ client)</p></li>
+<li><p>Keeper allows cloud synchronisation of data with local machine (similar to Dropbox
+if the ‘SeaDrive’ client is used)</p></li>
 <li><p>Files can be made available publicly through a link</p></li>
-<li><p>Data will be archived (<a class="reference external" href="https://keeper.mpdl.mpg.de/f/1b0bfceac2/">for at least 10 years</a>)</p></li>
-<li><p>turn libraries into archives</p></li>
+<li><p>Libraries can be turned into archives</p></li>
+<li><p>DOIs can be created if desired</p></li>
+<li><p>Data will be archived for at least 10 years (<a class="reference external" href="https://keeper.mpdl.mpg.de/f/1b0bfceac2/">see “Cared Data Committment”</a>)</p></li>
+<li><p>provides a <a class="reference external" href="https://keeper.mpdl.mpg.de/lib/70815673-26f2-4d36-873b-76b8262a6cf9/file/Cared-Data-Certificate-HowTo.pdf">“Cared Data Certificate”</a></p></li>
 </ul>
 </div>
 <div class="section" id="getting-started">
@@ -315,31 +317,41 @@ if the ‘drive client’ is used)</p></li>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <ul class="simple">
-<li><p>home page URL: <a class="reference external" href="https://keeper.mpdl.mpg.de">https://keeper.mpdl.mpg.de</a></p>
+<li><p>Keeper home page URL: <a class="reference external" href="https://keeper.mpdl.mpg.de">https://keeper.mpdl.mpg.de</a></p>
 <ul>
 <li><p>shows some documentation links while logged out</p></li>
 <li><p>shows overview of libraries and files in browser when logged in</p></li>
 </ul>
 </li>
 <li><p>Additional documentation at <a class="reference external" href="https://mpdl.zendesk.com/hc/en-us/categories/360001234340-Keeper">https://mpdl.zendesk.com/hc/en-us/categories/360001234340-Keeper</a></p></li>
+<li><p>One needs to subscribe to use the service and define a new password that is
+required to connect the SeaLife or SeaDrive clients to Keeper, or when logging
+in to the Keeper home page (<a class="reference external" href="https://keeper.mpdl.mpg.de">https://keeper.mpdl.mpg.de</a>)</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="libraries">
 <h2><span class="section-number">5.3. </span>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h2>
-<p>KEEPER organizes files into libraries. Each library can be synced and shared
-separately. One personal library is created on on sign-up. You can create more
+<p>KEEPER organises files into ‘libraries’. Each library can be synced and shared
+separately. One personal library is created on sign-up. You can create more
 libraries later.</p>
 </div>
 <div class="section" id="getting-data-into-keeper-seadrive">
 <h2><span class="section-number">5.4. </span>Getting data into KEEPER (SeaDrive)<a class="headerlink" href="#getting-data-into-keeper-seadrive" title="Permalink to this headline">¶</a></h2>
 <p>The web interface (keeper.mpld.mpg.de) allows to see data and upload files and folders.</p>
 <p>More convenient access is realised through <a class="reference external" href="https://mpdl.zendesk.com/hc/en-us/articles/360007791160-Keeper-Drive-Client">keeper clients</a>.</p>
-<p>It appears that Seafile/seadrive is used for keeper. If you have a choice
-between ‘desktop client (seafile)’ and ‘drive client (seadrive)’ when
-installing, then the latter seems to be the more recent development (which is
-described here), which provides the Dropbox-like behaviour of automatically
-syncing selected files with the local machine.</p>
+<ul class="simple">
+<li><p>SeaFile: For upload of large files or directories, SeaFile appears to be the
+right choice.</p></li>
+<li><p>SeaDrive: can be used to synchronise local files with files in Keeper. It
+appears this could be used while working on a project (for example to have a
+backup in the Keeper cloud), and to be able to turn the whose library into
+archive when the work is completed.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Experience reports are welcome regarding practical data upload and synchronisation.</p>
+</div>
 </div>
 <div class="section" id="sharing-access-to-libraries">
 <h2><span class="section-number">5.5. </span>Sharing access to Libraries<a class="headerlink" href="#sharing-access-to-libraries" title="Permalink to this headline">¶</a></h2>
@@ -374,8 +386,6 @@ through the web interface.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="reproducibility.html" class="btn btn-neutral float-right" title="6. Reproducibility" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
-      
       
         <a href="archive.html" class="btn btn-neutral" title="4. Archiving research data" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
@@ -403,7 +413,7 @@ through the web interface.</p>
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">5. KEEPER - “archive the way you work”</a><ul>
+<li><a class="reference internal" href="#">5. Keeper (archiving tool and more)</a><ul>
 <li><a class="reference internal" href="#features">5.1. Features</a></li>
 <li><a class="reference internal" href="#getting-started">5.2. Getting started</a></li>
 <li><a class="reference internal" href="#libraries">5.3. Libraries</a></li>

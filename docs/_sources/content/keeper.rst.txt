@@ -1,33 +1,43 @@
 
 
 
-KEEPER - "archive the way you work"
------------------------------------
+Keeper (archiving tool and more)
+--------------------------------
 
 .. note:: The section below assumes you are an employee of the `Max Planck Society <https://mpg.de>`__. 
 
 Features
 ~~~~~~~~
 
-- Keeper allows cloud synchronisation of data with local machine (similar to Dropbox
-  if the 'drive client' is used)
+- Keeper provides disk space (in the cloud and provided by the Max Planck Digital Library), that can be archived.
 
-- Data is organised into 'libraries'
+- Data is organised into 'libraries' (i.e. top level folders represent libraries)
+
+- An overview of all the libraries is available through a web browser at the keeper home page (`https://keeper.mpdl.mpg.de <https://keeper.mpdl.mpg.de>`_)
 
 - Libraries can be shared with others
 
+- Keeper allows upload of large files or directories (using the 'SeeLife' client)
+
+- Keeper allows cloud synchronisation of data with local machine (similar to Dropbox
+  if the 'SeaDrive' client is used)
+
 - Files can be made available publicly through a link
 
-- Data will be archived (`for at least 10 years <https://keeper.mpdl.mpg.de/f/1b0bfceac2/>`_)
+- Libraries can be turned into archives
 
-- turn libraries into archives
+- DOIs can be created if desired
+
+- Data will be archived for at least 10 years (`see "Cared Data Committment" <https://keeper.mpdl.mpg.de/f/1b0bfceac2/>`_)
+
+- provides a `"Cared Data Certificate" <https://keeper.mpdl.mpg.de/lib/70815673-26f2-4d36-873b-76b8262a6cf9/file/Cared-Data-Certificate-HowTo.pdf>`_
 
 Getting started
 ~~~~~~~~~~~~~~~
 
 .. Important::
 
-    - home page URL: `https://keeper.mpdl.mpg.de <https://keeper.mpdl.mpg.de>`_
+    - Keeper home page URL: `https://keeper.mpdl.mpg.de <https://keeper.mpdl.mpg.de>`_
 
       - shows some documentation links while logged out
 
@@ -35,11 +45,15 @@ Getting started
 
     - Additional documentation at `https://mpdl.zendesk.com/hc/en-us/categories/360001234340-Keeper <https://mpdl.zendesk.com/hc/en-us/categories/360001234340-Keeper>`_
 
+    - One needs to subscribe to use the service and define a new password that is
+      required to connect the SeaLife or SeaDrive clients to Keeper, or when logging
+      in to the Keeper home page (`https://keeper.mpdl.mpg.de <https://keeper.mpdl.mpg.de>`_)
+
 Libraries
 ~~~~~~~~~
 
-KEEPER organizes files into libraries. Each library can be synced and shared
-separately. One personal library is created on on sign-up. You can create more
+KEEPER organises files into 'libraries'. Each library can be synced and shared
+separately. One personal library is created on sign-up. You can create more
 libraries later.
 
 Getting data into KEEPER (SeaDrive)
@@ -49,11 +63,15 @@ The web interface (keeper.mpld.mpg.de) allows to see data and upload files and f
 
 More convenient access is realised through `keeper clients <https://mpdl.zendesk.com/hc/en-us/articles/360007791160-Keeper-Drive-Client>`_.
 
-It appears that Seafile/seadrive is used for keeper. If you have a choice
-between 'desktop client (seafile)' and 'drive client (seadrive)' when
-installing, then the latter seems to be the more recent development (which is
-described here), which provides the Dropbox-like behaviour of automatically
-syncing selected files with the local machine.
+- SeaFile: For upload of large files or directories, SeaFile appears to be the
+  right choice.
+
+- SeaDrive: can be used to synchronise local files with files in Keeper. It
+  appears this could be used while working on a project (for example to have a
+  backup in the Keeper cloud), and to be able to turn the whose library into
+  archive when the work is completed.
+
+.. note:: Experience reports are welcome regarding practical data upload and synchronisation.
 
 Sharing access to Libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
