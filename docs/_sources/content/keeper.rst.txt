@@ -1,8 +1,10 @@
 
 
 
-Keeper (archiving tool and more)
---------------------------------
+Keeper
+------
+
+Archiving and more
 
 .. note:: The section below assumes you are an employee of the `Max Planck Society <https://mpg.de>`__. 
 

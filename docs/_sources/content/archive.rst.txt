@@ -32,10 +32,47 @@ data sets can truly be useful in the future (either to us, or others):
 
 - Would somebody not familiar with the project be able to benefit from the data? (In particular: have we explained what the data represents in sufficient details?)
 
-What should I do before archiving the data?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Third, consider if data sets can be given up on
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. important:: [write this section]
+Important and potentially useful data should be kept, but where it is very
+unlikely that (further) scientific advances can be made, deleting the data might
+be a reasonable way forward: this will free resources that can be used for other
+data sets that may have a higher chance of creating impact.
+
+Long-term storage of data sets - be it for analysis or archival - requires staff
+time, electricity, hardware, hardware maintenance, refreshing of old tapes, etc.
+This creates cost, the amount of which is not always visible or known to the
+researcher.
+
+It is not unusual for an experience to acquire significant amounts of data; out
+of which, for example, 20% are used in publications. The question raised in this
+section is: should we archive the other 80% just in case they contain useful
+data. There is no generic answer to this, but it might be useful to raise the
+question openly, and discuss it between scientists and infrastructure (storage)
+experts.
+
+What should I do before archiving the data (meta data)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A significant challenge is *to document* the data.
+
+This includes a description of the format, the meaning of the data, any
+assumptions made in the capturing or processing of the data. If software was
+used to create the data, or if software is required to read the data, the
+software should be included or the very least a reference to the software
+repository.
+
+Any information that would be required to (re-)use the data in the future should
+be included: it should be possible for others to extract, inspect and use the
+data in the future, without having to consult you or your co-workers to request
+such information.
+
+This type of information is often called *meta data*. It is required to explain the data.
+
+The use of some :ref:`domain-specific-file-formats` can much simplify
+the documentation of data, as the metadata is embedded in the data file
+automatically.
 
 Archival options for Max Planck researchers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

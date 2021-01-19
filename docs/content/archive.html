@@ -29,7 +29,7 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Keeper (archiving tool and more)" href="keeper.html" />
+    <link rel="next" title="5. Keeper" href="keeper.html" />
     <link rel="prev" title="3. Research Data Management" href="research-data-management.html" /> 
 
   
@@ -219,7 +219,7 @@
 <li class="toctree-l1"><a class="reference internal" href="version-control.html">2. Version control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="research-data-management.html">3. Research Data Management</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. Archiving research data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="keeper.html">5. Keeper (archiving tool and more)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keeper.html">5. Keeper</a></li>
 </ul>
 
             
@@ -313,13 +313,40 @@ data sets can truly be useful in the future (either to us, or others):</p>
 <li><p>Would somebody not familiar with the project be able to benefit from the data? (In particular: have we explained what the data represents in sufficient details?)</p></li>
 </ul>
 </div>
+<div class="section" id="third-consider-if-data-sets-can-be-given-up-on">
+<h3><span class="section-number">4.1.3. </span>Third, consider if data sets can be given up on<a class="headerlink" href="#third-consider-if-data-sets-can-be-given-up-on" title="Permalink to this headline">¶</a></h3>
+<p>Important and potentially useful data should be kept, but where it is very
+unlikely that (further) scientific advances can be made, deleting the data might
+be a reasonable way forward: this will free resources that can be used for other
+data sets that may have a higher chance of creating impact.</p>
+<p>Long-term storage of data sets - be it for analysis or archival - requires staff
+time, electricity, hardware, hardware maintenance, refreshing of old tapes, etc.
+This creates cost, the amount of which is not always visible or known to the
+researcher.</p>
+<p>It is not unusual for an experience to acquire significant amounts of data; out
+of which, for example, 20% are used in publications. The question raised in this
+section is: should we archive the other 80% just in case they contain useful
+data. There is no generic answer to this, but it might be useful to raise the
+question openly, and discuss it between scientists and infrastructure (storage)
+experts.</p>
 </div>
-<div class="section" id="what-should-i-do-before-archiving-the-data">
-<h2><span class="section-number">4.2. </span>What should I do before archiving the data?<a class="headerlink" href="#what-should-i-do-before-archiving-the-data" title="Permalink to this headline">¶</a></h2>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>[write this section]</p>
 </div>
+<div class="section" id="what-should-i-do-before-archiving-the-data-meta-data">
+<h2><span class="section-number">4.2. </span>What should I do before archiving the data (meta data)?<a class="headerlink" href="#what-should-i-do-before-archiving-the-data-meta-data" title="Permalink to this headline">¶</a></h2>
+<p>A significant challenge is <em>to document</em> the data.</p>
+<p>This includes a description of the format, the meaning of the data, any
+assumptions made in the capturing or processing of the data. If software was
+used to create the data, or if software is required to read the data, the
+software should be included or the very least a reference to the software
+repository.</p>
+<p>Any information that would be required to (re-)use the data in the future should
+be included: it should be possible for others to extract, inspect and use the
+data in the future, without having to consult you or your co-workers to request
+such information.</p>
+<p>This type of information is often called <em>meta data</em>. It is required to explain the data.</p>
+<p>The use of some <a class="reference internal" href="research-data-management.html#domain-specific-file-formats"><span class="std std-ref">Domain specific file formats</span></a> can much simplify
+the documentation of data, as the metadata is embedded in the data file
+automatically.</p>
 </div>
 <div class="section" id="archival-options-for-max-planck-researchers">
 <h2><span class="section-number">4.3. </span>Archival options for Max Planck researchers<a class="headerlink" href="#archival-options-for-max-planck-researchers" title="Permalink to this headline">¶</a></h2>
@@ -351,7 +378,7 @@ of <a class="reference external" href="https://keeper.mpdl.mpg.de/">Keeper</a> f
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="keeper.html" class="btn btn-neutral float-right" title="5. Keeper (archiving tool and more)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="keeper.html" class="btn btn-neutral float-right" title="5. Keeper" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="research-data-management.html" class="btn btn-neutral" title="3. Research Data Management" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -384,9 +411,10 @@ of <a class="reference external" href="https://keeper.mpdl.mpg.de/">Keeper</a> f
 <li><a class="reference internal" href="#what-data-to-archive">4.1. What data to archive?</a><ul>
 <li><a class="reference internal" href="#first-archive-data-that-needs-to-be-archived">4.1.1. First, archive data that needs to be archived</a></li>
 <li><a class="reference internal" href="#second-consider-additional-research-data-sets-for-archival">4.1.2. Second, consider additional research data sets for archival</a></li>
+<li><a class="reference internal" href="#third-consider-if-data-sets-can-be-given-up-on">4.1.3. Third, consider if data sets can be given up on</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#what-should-i-do-before-archiving-the-data">4.2. What should I do before archiving the data?</a></li>
+<li><a class="reference internal" href="#what-should-i-do-before-archiving-the-data-meta-data">4.2. What should I do before archiving the data (meta data)?</a></li>
 <li><a class="reference internal" href="#archival-options-for-max-planck-researchers">4.3. Archival options for Max Planck researchers</a></li>
 <li><a class="reference internal" href="#other-archival-options">4.4. Other archival options</a></li>
 <li><a class="reference internal" href="#related-information">4.5. Related information</a></li>

@@ -219,7 +219,7 @@
 <li class="toctree-l1"><a class="reference internal" href="version-control.html">2. Version control</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3. Research Data Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="archive.html">4. Archiving research data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="keeper.html">5. Keeper (archiving tool and more)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keeper.html">5. Keeper</a></li>
 </ul>
 
             
@@ -355,13 +355,57 @@ create a data repository for this publication which puts together (somehow) and
 archives (somehow) the important information that is required to <em>reproduce</em> the
 findings from the publication manuscript.</p>
 </div>
+<div class="section" id="dealing-with-data-files">
+<h2><span class="section-number">3.6. </span>Dealing with data files<a class="headerlink" href="#dealing-with-data-files" title="Permalink to this headline">¶</a></h2>
+<p>The MPLD summarises some guidance on <a class="reference external" href="https://rdm.mpdl.mpg.de/file-handling/">naming and handling files</a>.</p>
+<p>Small and important files should be kept under <a class="reference internal" href="version-control.html"><span class="doc">Version control</span></a>.</p>
+<p>During data capture and data analysis, it is desirable to have backups of the
+data files to be ready to respond to unexpected hardware failure or user error
+(such as accidentally deleting important data files). Depending on the file
+size, this may or may not be possible.</p>
+<p>For medium sized projects (below 500GB), the <a class="reference internal" href="keeper.html"><span class="doc">Keeper</span></a> project from
+the MPDL can be used here (using the SeaDrive client). Keeper can also turn such
+a collection of files into an archive when the project is completed.</p>
+<p>[To have a backup of local data in the cloud, MPG researchers can also use the
+<a class="reference external" href="https://www.gwdg.de/storage-services/gwdg-owncloud">GWDG OwnCloud</a> solution for small data sets. By default, this provides 50GB
+of storage. In contrast to Keeper, there is no associated archival foreseen.]</p>
+<p>For very large data sets, such as those captured at X-ray Free Electron Lasers
+or synchrotrons, the relevant research facility is normally equipped to host the
+data on the research facility site, and provides computational storage to carry
+out (at least the initial) analysis on site.</p>
+</div>
+<div class="section" id="file-formats">
+<h2><span class="section-number">3.7. </span>File formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="general-guidance">
+<h3><span class="section-number">3.7.1. </span>General guidance<a class="headerlink" href="#general-guidance" title="Permalink to this headline">¶</a></h3>
+<p>The MPLD summarises some guidance on <a class="reference external" href="https://rdm.mpdl.mpg.de/file-formats">file formats</a>.</p>
+<p>There are a number metrics that can be optimised in choosing a suitable file
+format. These include: simplicity, human-readability, compression, write speed,
+read speed, number of files and open source. Please seek advice if desired.</p>
+<p>In addition to storing data in the files, we also need to document the meaning
+of the stored data (i.e. provide metadata to make the data interpretable).</p>
+</div>
+<div class="section" id="domain-specific-file-formats">
+<span id="id5"></span><h3><span class="section-number">3.7.2. </span>Domain specific file formats<a class="headerlink" href="#domain-specific-file-formats" title="Permalink to this headline">¶</a></h3>
+<p>Some communities have created domain specific data file formats that are <em>self describing</em> and - through this design - <em>embed the metadata</em> automatically.</p>
+<p>For example:</p>
+<ul class="simple">
+<li><p>NeXuS - Common data format for neutron, x-ray and muon science (<a class="reference external" href="https://www.nexusformat.org">https://www.nexusformat.org</a>)</p></li>
+<li><p>openPMD - OPEN stand for Particle-Mesh Data files (<a class="reference external" href="https://www.hzdr.de/publications/Publ-27962">https://www.hzdr.de/publications/Publ-27962</a>, <a class="reference external" href="https://www.openpmd.org">https://www.openpmd.org</a>)</p></li>
+</ul>
+<p>If you can use such a self-describing file format (or develop your own), this
+simplifies creating meaningful archival of the data.</p>
+<p>It provides other benefits: all data sets using the same file format can be
+processed by data analysis tools that support the file format.</p>
+</div>
+</div>
 <div class="section" id="useful-links">
-<h2><span class="section-number">3.6. </span>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.8. </span>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <ul class="simple">
-<li><p>Research Data Management from Max Planck Digital Library (<a class="reference external" href="https://rdm.mpdl.mpg.de">html</a>)</p></li>
-<li><p>Research Data Management from The Turing Way (<a class="reference external" href="https://the-turing-way.netlify.app/reproducible-research/rdm.html">html</a>)</p></li>
+<li><p><a class="reference external" href="https://rdm.mpdl.mpg.de">Research Data Management from Max Planck Digital Library</a></p></li>
+<li><p><a class="reference external" href="https://the-turing-way.netlify.app/reproducible-research/rdm.html">Research Data Management from The Turing Way</a></p></li>
 </ul>
 </div>
 </div>
@@ -415,7 +459,13 @@ findings from the publication manuscript.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#research-data-associated-with-a-publication">3.5. Research data associated with a publication</a></li>
-<li><a class="reference internal" href="#useful-links">3.6. Useful links</a></li>
+<li><a class="reference internal" href="#dealing-with-data-files">3.6. Dealing with data files</a></li>
+<li><a class="reference internal" href="#file-formats">3.7. File formats</a><ul>
+<li><a class="reference internal" href="#general-guidance">3.7.1. General guidance</a></li>
+<li><a class="reference internal" href="#domain-specific-file-formats">3.7.2. Domain specific file formats</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#useful-links">3.8. Useful links</a></li>
 </ul>
 </li>
 </ul>
