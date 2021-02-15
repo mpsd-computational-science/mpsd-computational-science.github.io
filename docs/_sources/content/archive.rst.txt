@@ -13,6 +13,9 @@ because the data needs to be read back from tape before we can access it again).
 Archiving data is cheaper than keeping it on spinning disks or SSD memory
 storage, and thus preferred when possible.
 
+A common strategy (see :doc:`research-data-management`) is to create an
+archive for each publication (for example at the time of publication).
+
 What data to archive?
 ~~~~~~~~~~~~~~~~~~~~~
 
