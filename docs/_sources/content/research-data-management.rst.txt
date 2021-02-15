@@ -132,12 +132,22 @@ General guidance
 
 The MPLD summarises some guidance on `file formats <https://rdm.mpdl.mpg.de/file-formats>`_. 
 
-There are a number metrics that can be optimised in choosing a suitable file
+A lot of thought and planning can go into choosing a suitable file format to
+keep the data of a research project. In the rare case of starting a research
+project where there are existing standard or legacy file formats or conventions,
+one should choose file formats that are feasible and convenient to assess in the
+future. 
+
+There are a number metrics that can be optimised in choosing such suitable file
 format. These include: simplicity, human-readability, compression, write speed,
-read speed, number of files and open source. Please seek advice if desired.
+read speed, accessibility on different platforms, open documentation, widespread
+adoption in the community, number of files and open source. Please seek advice
+if desired.
 
 In addition to storing data in the files, we also need to document the meaning
 of the stored data (i.e. provide metadata to make the data interpretable).
+
+.. todo:: Add links to documents that discuss this
 
 .. _domain-specific-file-formats:
 
