@@ -16,6 +16,7 @@ Computational science resources
    content/research-data-management
    content/archive
    content/keeper
+   content/zulip
    content/changes
 
 .. comment:
