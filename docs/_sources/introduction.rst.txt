@@ -1,7 +1,7 @@
 
 
 
-.. image:: ../_static/mpsd-cs-logo-with-axis.png
+.. image:: _static/mpsd-cs-logo-with-axis.png
    :align: center
    :width: 5cm
    :class: center

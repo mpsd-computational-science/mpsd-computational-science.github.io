@@ -11,13 +11,13 @@ Computational science resources
    :caption: Contents:
    :numbered: 
 
-   content/introduction
-   content/version-control
-   content/research-data-management
-   content/archive
-   content/keeper
-   content/zulip
-   content/changes
+   introduction
+   version-control
+   research-data-management
+   archive
+   keeper
+   zulip
+   changes
 
 .. comment:
    content/reproducibility
