@@ -102,11 +102,14 @@ place such documentation, for example in files such as ``readme.txt``, or
 Archival options for Max Planck researchers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`GWDG Archival service <https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start>`_: no space limit. (See :ref:`gwdg-archival-services`)
+`Max Planck Digital Library <https://mpdl.zendesk.com/hc/en-us/articles/360011432700-Archiving>`_: data sets up to 500GB, use of Keeper for Archival
+(see :doc:`keeper`). Recommendation for data sets below 500GB.
 
-`Max Planck Digital Library <https://mpdl.zendesk.com/hc/en-us/articles/360011432700-Archiving>`_: data sets up to 500GB, use of `Keeper <https://keeper.mpdl.mpg.de/>`_ for Archival.
+`GWDG Archival service <https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start>`_: no space limit. (See
+:ref:`gwdg-archival-services`) Recommendation for larger data sets.
 
-`Max Planck Compute & Data Facility (MPCDF) <https://www.mpcdf.mpg.de/services/data/backup-archive/archives>`_: recommend to use file sizes between 1GB and 1TB
+`Max Planck Compute & Data Facility (MPCDF) <https://www.mpcdf.mpg.de/services/data/backup-archive/archives>`_: Expected file sizes between 1GB and
+1TB. Recommended for data that is already stored at the MPCDF.
 
 Other archival options
 ~~~~~~~~~~~~~~~~~~~~~~

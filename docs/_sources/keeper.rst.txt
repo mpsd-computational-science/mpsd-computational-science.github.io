@@ -6,6 +6,9 @@ Keeper
 
 Archiving and more
 
+Home page: `https://keeper.mpdl.mpg.de <https://keeper.mpdl.mpg.de>`_
+
+
 .. note:: The section below assumes you are an employee of the `Max Planck Society <https://mpg.de>`__. 
 
 Features
