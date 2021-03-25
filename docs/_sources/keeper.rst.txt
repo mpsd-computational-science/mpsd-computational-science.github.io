@@ -81,7 +81,7 @@ libraries later.
 Getting data into KEEPER (SeaFile)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The web interface at `https://keeper.mpld.mpg.de <https://keeper.mpld.mpg.de>`_ allows to see all the data in
+The web interface at `https://keeper.mpdl.mpg.de <https://keeper.mpdl.mpg.de>`_ allows to see all the data in
 keeper, including libraries, shared libraries, all the directory structures and
 files.
 

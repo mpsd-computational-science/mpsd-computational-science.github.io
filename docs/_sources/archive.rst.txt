@@ -69,16 +69,37 @@ data. There is no generic answer to this, but it might be useful to raise the
 question, and discuss it between scientists and infrastructure (storage)
 experts.
 
+Archival services
+~~~~~~~~~~~~~~~~~
+
+Archival services Max Planck researchers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`Max Planck Digital Library <https://mpdl.zendesk.com/hc/en-us/articles/360011432700-Archiving>`_: data sets up to 500GB, use of Keeper for Archival
+(see :doc:`keeper`). Recommendation for data sets below 500GB.
+
+`GWDG Archival service <https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start>`_: no space limit. Recommendation for larger data sets. See
+Section :ref:`gwdg-archival-services` for further details. 
+
+`Max Planck Compute & Data Facility (MPCDF) <https://www.mpcdf.mpg.de/services/data/backup-archive/archives>`_: Expected file sizes between 1GB and
+1TB. Recommended for data that is already stored at the MPCDF.
+
+Other archival services
+^^^^^^^^^^^^^^^^^^^^^^^
+
+`Zenodo <https://zenodo.org>`_ offers archival of small data sets (up to `50GB without special requests <https://help.zenodo.org>`_), and provides a DOI for such submissions.
+
 What should I do before archiving the data (meta data)?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A significant challenge is *to document* the data.
 
 This includes a description of the format, the meaning of the data, any
-assumptions made in the capturing or processing of the data. If software was
-used to create the data, or if software is required to read the data, the
-software should be included or the very least a reference to the software
-repository.
+assumptions made in the capturing or processing of the data.
+
+If software was used to create the data, or if software is required to read the
+data, then *the software should be included* in the archive, or the very least a
+reference to the software repository and version used must be included.
 
 Any information that would be required to (re-)use the data in the future should
 be included: it should be possible for others to extract, inspect and use the
@@ -98,23 +119,6 @@ The metadata should be stored together with the actual data in the archive.
 The top level directory of the data set is a place where one would typically
 place such documentation, for example in files such as ``readme.txt``, or
 ``documentation.pdf``.
-
-Archival options for Max Planck researchers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Max Planck Digital Library <https://mpdl.zendesk.com/hc/en-us/articles/360011432700-Archiving>`_: data sets up to 500GB, use of Keeper for Archival
-(see :doc:`keeper`). Recommendation for data sets below 500GB.
-
-`GWDG Archival service <https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start>`_: no space limit. (See
-:ref:`gwdg-archival-services`) Recommendation for larger data sets.
-
-`Max Planck Compute & Data Facility (MPCDF) <https://www.mpcdf.mpg.de/services/data/backup-archive/archives>`_: Expected file sizes between 1GB and
-1TB. Recommended for data that is already stored at the MPCDF.
-
-Other archival options
-~~~~~~~~~~~~~~~~~~~~~~
-
-`Zenodo <https://zenodo.org>`_ offers archival of small data sets (up to `50GB without special requests <https://help.zenodo.org>`_), and provides a DOI for such submissions.
 
 Practical aspects storing data for long-term archival
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -154,8 +158,71 @@ file. Archival systems prefer few and large files over many small files. And
 archival systems will by default compress any data they receive - in that case,
 we do not necessarily need the compression here.)
 
+Archive metadata
+^^^^^^^^^^^^^^^^
+
+Once the data is on tape, it may take a long time (could be up to days) before
+it can be played back from tape onto a (disk-based) system where it can be
+used and explored. It may not be possible to (effectively) extract/view or
+download just one small file: it may still be required to restore the whole
+archive first. There is thus potentially *high latency* in the data access.
+
+For this reason, it is useful to keep a short *table-of-contents file* per
+archived data set in a separate location (and on disk) which can be easily
+accessed, and which has a link to the location of the archived data set. This
+table of contents file can then be easily (and in particular with
+non-noticeable latency) opened and examined; for example to search all
+table-of-contents file for a particular file or data set.
+
+Such a table-of-contents file should be easily readable in a format that is
+future proof. Suggestions here are plain text files (i.e. not binary and not
+proprietary formats such as MS Word). See :ref:`create-list-of-files-in-archive`.
+
+A number of *mark up* formats have emerged which can (but don't have to) be used
+to provide additional structure in such files. Example are `Markdown <https://en.wikipedia.org/wiki/Markdown>`_,
+`ReStructuredtext <https://en.wikipedia.org/wiki/ReStructuredText>`_, and `orgmode <https://en.wikipedia.org/wiki/Org-mode>`_ (in increasing order of complexity and power).
+
+As a recommendation for the table-of-contents file, one can include
+
+- title of the data set
+
+- list of authors (including affiliations)
+
+- a preferred contact
+
+- description of the data (this may include pointers to more detailed
+  documents in the archive, or a copy of key information stored in the
+  archive)
+
+- link to experiment (if appropriate)
+
+- publication(s) originating from the data set (a DOI per publication is useful)
+
+- link to further data sets related to the this data (if appropriate)
+
+- list of funding bodies who should be acknowledged if the data is re-used (if appropriate)
+
+- if the data will be made public:
+
+  - a publication reference that users of the data are asked to cite
+
+  - a license for the use of the data by others
+
+- a list of files (together with their file size) in the archive.
+
+Catalogue of archived data
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Archives should be uniquely labelled and catalogued.
+
+The catalogue should include an entry for every archived data set.
+
+For each archived data set, the :ref:`archive-metadata` should be stored in the catalogue.
+
+.. todo:: add pointer to library here 
+
 Using zip to archive data
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To convert files in a subdirectory ``SOURCE`` into a zipped archive, we can use the command 
 
@@ -246,75 +313,12 @@ make sure the transmitted data arrives correctly.
 
 .. _archive-metadata:
 
-Archive metadata
-^^^^^^^^^^^^^^^^
-
-Once the data is on tape, it may take a long time (could be up to days) before
-it can be played back from tape onto a (disk-based) system where it can be
-used and explored. It may not be possible to (effectively) extract/view or
-download just one small file: it may still be required to restore the whole
-archive first. There is thus potentially *high latency* in the data access.
-
-For this reason, it is useful to keep a short *table-of-contents file* per
-archived data set in a separate location (and on disk) which can be easily
-accessed, and which has a link to the location of the archived data set. This
-table of contents file can then be easily (and in particular with
-non-noticeable latency) opened and examined; for example to search all
-table-of-contents file for a particular file or data set.
-
-Such a table-of-contents file should be easily readable in a format that is
-future proof. Suggestions here are plain text files (i.e. not binary and not
-proprietary formats such as MS Word). See :ref:`create-list-of-files-in-archive`.
-
-A number of *mark up* formats have emerged which can (but don't have to) be used
-to provide additional structure in such files. Example are `Markdown <https://en.wikipedia.org/wiki/Markdown>`_,
-`ReStructuredtext <https://en.wikipedia.org/wiki/ReStructuredText>`_, and `orgmode <https://en.wikipedia.org/wiki/Org-mode>`_ (in increasing order of complexity and power).
-
-As a recommendation for the table-of-contents file, one can include
-
-- title of the data set
-
-- list of authors (including affiliations)
-
-- a preferred contact
-
-- description of the data (this may include pointers to more detailed
-  documents in the archive, or a copy of key information stored in the
-  archive)
-
-- link to experiment (if appropriate)
-
-- publication(s) originating from the data set (a DOI per publication is useful)
-
-- link to further data sets related to the this data (if appropriate)
-
-- list of funding bodies who should be acknowledged if the data is re-used (if appropriate)
-
-- if the data will be made public:
-
-  - a publication reference that users of the data are asked to cite
-
-  - a license for the use of the data by others
-
-- a list of files (together with their file size) in the archive.
-
-Catalogue of archived data
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Archives should be uniquely labelled and catalogued.
-
-The catalogue should include an entry for every archived data set.
-
-For each archived data set, the :ref:`archive-metadata` should be stored in the catalogue.
-
-.. todo:: add pointer to library here 
-
 .. _gwdg-archival-services:
 
 The GWDG Archival service
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Please study up-to-date instructnios on home page: `GWDG Archival service <https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start>`_
+Please study up-to-date instructions on home page: `GWDG Archival service <https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start>`_
 
 Additional information:
 
