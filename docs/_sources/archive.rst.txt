@@ -89,8 +89,11 @@ Other archival services
 
 `Zenodo <https://zenodo.org>`_ offers archival of small data sets (up to `50GB without special requests <https://help.zenodo.org>`_), and provides a DOI for such submissions.
 
-What should I do before archiving the data (meta data)?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _archive-metadata:
+
+Documenting the data (meta data)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A significant challenge is *to document* the data.
 
@@ -123,8 +126,8 @@ place such documentation, for example in files such as ``readme.txt``, or
 Practical aspects storing data for long-term archival
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Storage hardware data deposition
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Data storage hardware
+^^^^^^^^^^^^^^^^^^^^^
 
 A common model for archiving data is that the users can transfer their files
 into their home directory or a special archive directory on a (linux) archive
@@ -139,8 +142,8 @@ that point, a request will be queued for the data to be read back from the tape,
 and to be made available on the disk. It can take hours or longer for that
 request to be fulfilled.
 
-Converting my data set into an archive file for archival
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Converting the data set into an archive file for archival
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We assume that the data set is gathered within a directory (we assume it is
 called ``dataset)``, which may contain files and subdirectories, which in turn may
@@ -150,7 +153,7 @@ We assume the data is documented, and that the documentation is part of the
 ``dataset`` sub directory. 
 
 Before we can archive this data set, we need to convert the set of files into an
-archive file, such as \`dataset.zip\` or \`dataset.tar.gz\`.
+archive file, such as ``dataset.zip`` or ``dataset.tar.gz``.
 
 This has two technical advantages: (i) the whole data set then appears as one
 file. Archival systems prefer few and large files over many small files. And
@@ -158,8 +161,13 @@ file. Archival systems prefer few and large files over many small files. And
 archival systems will by default compress any data they receive - in that case,
 we do not necessarily need the compression here.)
 
-Archive metadata
-^^^^^^^^^^^^^^^^
+Suitable programs that can create such archive files include ``zip`` and ``tar`` (see
+:ref:`using-zip` and below).
+
+.. _archive-table-of-contents:
+
+Table of contents for archive file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once the data is on tape, it may take a long time (could be up to days) before
 it can be played back from tape onto a (disk-based) system where it can be
@@ -182,7 +190,11 @@ A number of *mark up* formats have emerged which can (but don't have to) be used
 to provide additional structure in such files. Example are `Markdown <https://en.wikipedia.org/wiki/Markdown>`_,
 `ReStructuredtext <https://en.wikipedia.org/wiki/ReStructuredText>`_, and `orgmode <https://en.wikipedia.org/wiki/Org-mode>`_ (in increasing order of complexity and power).
 
-As a recommendation for the table-of-contents file, one can include
+The very minimum that the ``table-of-contents.txt`` file should contain is:
+
+- the list of files in the archive file (together with their file size)
+
+As a recommendation for the table-of-contents file, one should also include
 
 - title of the data set
 
@@ -190,9 +202,8 @@ As a recommendation for the table-of-contents file, one can include
 
 - a preferred contact
 
-- description of the data (this may include pointers to more detailed
-  documents in the archive, or a copy of key information stored in the
-  archive)
+- description of the data (this may include pointers to more detailed documents
+  in the archive, see @@rst::ref:\`archive-metadata\`)
 
 - link to experiment (if appropriate)
 
@@ -208,44 +219,8 @@ As a recommendation for the table-of-contents file, one can include
 
   - a license for the use of the data by others
 
-- a list of files (together with their file size) in the archive.
-
-Catalogue of archived data
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Archives should be uniquely labelled and catalogued.
-
-The catalogue should include an entry for every archived data set.
-
-For each archived data set, the :ref:`archive-metadata` should be stored in the catalogue.
-
-.. todo:: add pointer to library here 
-
-Using zip to archive data
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To convert files in a subdirectory ``SOURCE`` into a zipped archive, we can use the command 
-
-.. code:: bash
-
-    zip archive.zip SOURCE
-
-If we do not need or want compression to be used, we can use the ``-0`` switch: 
-
-.. code:: bash
-
-    zip -0 archive.zip SOURCE
-
-To unpack files from a given zip file, we can use
-
-.. code:: bash
-
-    unzip archive.zip
-
-.. _create-list-of-files-in-archive:
-
-Create a list of files in the archive
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Practical creation of the table-of-contents file list
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To list all files with their size in a given zip file, we can use
 
@@ -283,8 +258,24 @@ To convert the output from running these commands into a file, we can redirect i
 
 .. todo:: [write more detailed tutorial on use of zip/tar -> Jupyter Notebook?]
 
-Checksums
-^^^^^^^^^
+Catalogue of archived data
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Archives should be uniquely labelled and catalogued.
+
+The catalogue should include an entry for every archived data set.
+
+For each archived data set, the :ref:`archive-table-of-contents` should be stored in the catalogue.
+
+The catalogue is something each researcher could maintain in a backed up place on their personal computer.
+
+.. todo:: add pointer to library here 
+
+
+.. _create-list-of-files-in-archive:
+
+Checksums to check data consistency (after upload to archive)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Checksums <https://en.wikipedia.org/wiki/Checksum>`_ are small blocks of data that are computed from a large set of data.
 Checksum calculation algorithms are designed so that a change in the large set
@@ -311,7 +302,51 @@ make sure the transmitted data arrives correctly.
 
 .. todo:: add example 
 
-.. _archive-metadata:
+
+.. _using-zip:
+
+Using zip to create archive files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This section describes most essential steps of creating (large) archive files
+using the `zip <http://infozip.sourceforge.net>`_ tool.
+
+To convert files in a subdirectory ``SUBDIRNAME`` into a zipped archive, we can use the command 
+
+.. code:: bash
+
+    zip -r archive.zip SUBDIRNAME
+
+If we do not need or want compression to be used, we can use the ``-0`` switch: 
+
+.. code:: bash
+
+    zip -r -0 archive.zip SUBDIRNAME
+
+To unpack files from a given zip file, we can use
+
+.. code:: bash
+
+    unzip archive.zip
+
+To unpack one file (such as README.txt) from a given zip file, we can use
+
+.. code:: bash
+
+    unzip archive.zip SUBDIRNAME/README.txt
+
+To compute checksums (to detect corruption of the archive  file):
+
+.. code:: bash
+
+    unzip -t archive.zip 
+
+To create a list of files in the archive:
+
+.. code:: bash
+
+    zipinfo archive.zip
+
 
 .. _gwdg-archival-services:
 
