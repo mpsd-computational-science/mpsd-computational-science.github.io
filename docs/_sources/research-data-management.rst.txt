@@ -85,7 +85,7 @@ findings from the publication manuscript.
 
 .. todo::
 
-    (see :doc:`reproducibility`).
+    Write section on reproducibility.
 
 .. todo::
 

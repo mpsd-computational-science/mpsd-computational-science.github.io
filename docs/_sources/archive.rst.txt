@@ -81,7 +81,7 @@ Archival services Max Planck researchers
 `GWDG Archival service <https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start>`_: no space limit. Recommendation for larger data sets. See
 Section :ref:`gwdg-archival-services` for further details. 
 
-`Max Planck Compute & Data Facility (MPCDF) <https://www.mpcdf.mpg.de/services/data/backup-archive/archives>`_: Expected file sizes between 1GB and
+`Max Planck Compute & Data Facility (MPCDF) <https://docs.mpcdf.mpg.de/doc/data/backup-archive/BA_archive.html>`_: Expected file sizes between 1GB and
 1TB. Recommended for data that is already stored at the MPCDF.
 
 Other archival services
@@ -145,15 +145,15 @@ request to be fulfilled.
 Converting the data set into an archive file for archival
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We assume that the data set is gathered within a directory (we assume it is
-called ``dataset)``, which may contain files and subdirectories, which in turn may
-contain more subdirectories and files.
+We assume that the data set is gathered within a directory, which could be
+called ``dataset``, for example. This subdirectory ``dataset`` may contain files and
+subdirectories, which in turn may contain more subdirectories and files.
 
 We assume the data is documented, and that the documentation is part of the
 ``dataset`` sub directory. 
 
 Before we can archive this data set, we need to convert the set of files into an
-archive file, such as ``dataset.zip`` or ``dataset.tar.gz``.
+archive file, such as ``archive.zip`` or ``archive.tar.gz``.
 
 This has two technical advantages: (i) the whole data set then appears as one
 file. Archival systems prefer few and large files over many small files. And
@@ -305,8 +305,8 @@ make sure the transmitted data arrives correctly.
 
 .. _using-zip:
 
-Using zip to create archive files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using ``zip`` to create archive files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section describes most essential steps of creating (large) archive files
 using the `zip <http://infozip.sourceforge.net>`_ tool.
@@ -347,11 +347,61 @@ To create a list of files in the archive:
 
     zipinfo archive.zip
 
+Using ``tar`` to create archive files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``tar`` is a popular tool on Linux/Unix. It has no in-built mechanism to detect data
+corruption, and extraction of one file is not possible without reading the whole
+archive. You may wish to consider using ``zip`` instead (See
+:ref:`using-zip`).
+
+This section describes most essential steps of creating (large) archive files
+using the `zip <http://infozip.sourceforge.net>`_ tool.
+
+To convert files in a subdirectory ``SUBDIRNAME`` into a tarred archive, we can use the command 
+
+.. code:: bash
+
+    tar cf archive.tar SUBDIRNAME
+
+This does not compress the files. To apply compression, we can either ``gzip`` the tar file:
+
+.. code:: bash
+
+    gzip archive.tar 
+
+which will convert the file into ``archive.tar.gz`` . (Other compression tools could
+be used, such as ``bzip2``.)
+
+Or we create the archive and compress at the same time:
+
+.. code:: bash
+
+    tar cfz archive.tar.gz SUBDIRNAME
+
+To unpack files from a given ``tar.gz`` file, we can use
+
+.. code:: bash
+
+    tar xfz archive.tar.gz
+
+To create a list of files in the ``tar.gz`` archive:
+
+.. code:: bash
+
+    tar tfvz archive.tar.gz
+
+To check against file corruption, we can compute a hash manually (before we
+transfer the file, and afterwards), and compare that the two hashes agree. If
+you don't know how to do this, best use ``zip`` (see :ref:`using-zip`).
 
 .. _gwdg-archival-services:
 
 The GWDG Archival service
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+General information
+^^^^^^^^^^^^^^^^^^^
 
 Please study up-to-date instructions on home page: `GWDG Archival service <https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start>`_
 
@@ -363,7 +413,7 @@ Additional information:
   approximately 30MByte/sec, corresponding to 2.5TB per day. If the observed
   rate is well below this, it should be investigated.
 
-- The archive files will be moved to tape but the diretory structure and
+- The archive files will be moved to tape but the directory structure and
   filenames are online and can be browsed. (But no stub files are available,
   i.e. one cannot peek into a file.)
 
@@ -373,6 +423,82 @@ Additional information:
 - 2 copies on tape are stored in separate locations.
 
 .. todo:: request adding of functional account / library 
+
+Transfer of files to GWDG Archive from Linux/OSX
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Prerequisites*: You need to have `deposited your public ssh key at the GWDG <https://info.gwdg.de/dokuwiki/doku.php?id=de:services:application_services:high_performance_computing:connect_with_ssh>`_. 
+
+
+We assume we have a file ``archive.zip`` on our local Linux or OSX machine, and want
+to transfer this to the archive service of the GWDG.
+
+Step 1: find the archive location.
+::::::::::::::::::::::::::::::::::
+
+SSH to the machine recommended by the GWDG:
+
+.. code:: bash
+
+    ssh USERNAME@transfer.gwdg.de
+
+Once logged in, use ``echo $AHOME$`` to display the location of your personal archive. Here is an example where ``USERNAME`` is replaced by ``hfangoh``:
+
+.. code:: bash
+
+    hfangoh@gwdu20:~> echo $AHOME
+    /usr/users/a/hfangoh
+
+This means we need to copy our ``archive.zip`` file to the machine ``transfer.gwdg.de``
+in the location ``/usr/users/a/USERNAME``.
+
+Step 2: copy our archive file to the GWDG archive
+:::::::::::::::::::::::::::::::::::::::::::::::::
+
+A good command to do this from the
+command line is ``rsync``:
+
+.. code:: bash
+
+    rsync --progress -e ssh --partial archive.zip  USERNAME@transfer.gwdg.de:/usr/users/a/USERNAME
+
+This will:
+
+- ``--progress`` display a progress bar (optional)
+
+- ``-e ssh`` use ssh (compulsary)
+
+- ``--partial`` allow to continue the transfer if it is interrupted for some reason.
+  Recommended for larger files.
+
+Step 3: check that the transfer has been successful
+:::::::::::::::::::::::::::::::::::::::::::::::::::
+
+.. code:: bash
+
+    ssh USERNAME@transfer.gwdg.de
+    cd $AHOME
+    unzip -t archive.zip
+
+For a practical problem, one should choose a more descriptive name instead of
+``archive.zip``. For example ``2021-physrevletters-90-12222.zip``, to refer to a data
+set associated with a publication in Physical Review Letters, volume 90, pages
+12222, published in 2021. Over the years, many such archive files may accumulate
+in the same directory, and with the suggested naming convention (or a similar
+one), it will be easy to associate them with the publication.
+
+It is possible to create subdirectories in the archive home ``$AHOME`` if you wish
+to do so to structure your collection of archive files differently. However, the
+general guideline is to deposit few and large files (see above).
+
+Transfer of files to GWDG Archive from Windows
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you have ``rsync`` installed on your Windows machine, you should be able to use
+it as described in the section for Linux/OSX. (It can probably be installed via
+Windows Subsystem for Linux, Cygwin, `Chocolatey <http://chocolatey.org>`_, ...)
+
+GUI based sftp clients include PuTTY and Cyberduck.
 
 Related information
 ~~~~~~~~~~~~~~~~~~~

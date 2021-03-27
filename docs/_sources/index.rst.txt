@@ -12,6 +12,7 @@ Computational science resources
    :numbered: 
 
    introduction
+   overview-it
    version-control
    research-data-management
    archive
