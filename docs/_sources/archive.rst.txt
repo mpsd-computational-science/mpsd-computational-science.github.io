@@ -501,7 +501,7 @@ it as described in the section for Linux/OSX. (It can probably be installed via
 Windows Subsystem for Linux, Cygwin, `Chocolatey <http://chocolatey.org>`_, ...)
 
 An alternative is to use secure FTP (sftp), for example with GUI based ``sftp``
-clients include PuTTY and Cyberduck. However, for large files, the ``rsync`` method
+clients include PuTTY, WinSCP and Cyberduck. However, for large files, the ``rsync`` method
 is better: it can continue an interrupted transfer (because the network dropped,
 say), whereas ``sftp`` would have to restart the transfer.
 
