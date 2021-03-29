@@ -419,7 +419,9 @@ using the <a class="reference external" href="http://infozip.sourceforge.net">zi
 </div>
 <p>which will convert the file into <code class="docutils literal notranslate"><span class="pre">archive.tar.gz</span></code> . (Other compression tools could
 be used, such as <code class="docutils literal notranslate"><span class="pre">bzip2</span></code>.)</p>
-<p>Or we create the archive and compress at the same time:</p>
+<p>If the data set is large, it is better to combine the tarring and compression to
+be carried out at the same time (to avoid having two uncompressed copies of the
+data on disk at the same time):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar cfz archive.tar.gz SUBDIRNAME
 </pre></div>
 </div>
@@ -511,7 +513,10 @@ general guideline is to deposit few and large files (see above).</p>
 <p>If you have <code class="docutils literal notranslate"><span class="pre">rsync</span></code> installed on your Windows machine, you should be able to use
 it as described in the section for Linux/OSX. (It can probably be installed via
 Windows Subsystem for Linux, Cygwin, <a class="reference external" href="http://chocolatey.org">Chocolatey</a>, …)</p>
-<p>GUI based sftp clients include PuTTY and Cyberduck.</p>
+<p>An alternative is to use secure FTP (sftp), for example with GUI based <code class="docutils literal notranslate"><span class="pre">sftp</span></code>
+clients include PuTTY and Cyberduck. However, for large files, the <code class="docutils literal notranslate"><span class="pre">rsync</span></code> method
+is better: it can continue an interrupted transfer (because the network dropped,
+say), whereas <code class="docutils literal notranslate"><span class="pre">sftp</span></code> would have to restart the transfer.</p>
 </div>
 </div>
 <div class="section" id="related-information">

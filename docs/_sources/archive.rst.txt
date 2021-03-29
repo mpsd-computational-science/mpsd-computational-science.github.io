@@ -373,7 +373,9 @@ This does not compress the files. To apply compression, we can either ``gzip`` t
 which will convert the file into ``archive.tar.gz`` . (Other compression tools could
 be used, such as ``bzip2``.)
 
-Or we create the archive and compress at the same time:
+If the data set is large, it is better to combine the tarring and compression to
+be carried out at the same time (to avoid having two uncompressed copies of the
+data on disk at the same time):
 
 .. code:: bash
 
@@ -498,7 +500,10 @@ If you have ``rsync`` installed on your Windows machine, you should be able to u
 it as described in the section for Linux/OSX. (It can probably be installed via
 Windows Subsystem for Linux, Cygwin, `Chocolatey <http://chocolatey.org>`_, ...)
 
-GUI based sftp clients include PuTTY and Cyberduck.
+An alternative is to use secure FTP (sftp), for example with GUI based ``sftp``
+clients include PuTTY and Cyberduck. However, for large files, the ``rsync`` method
+is better: it can continue an interrupted transfer (because the network dropped,
+say), whereas ``sftp`` would have to restart the transfer.
 
 Related information
 ~~~~~~~~~~~~~~~~~~~
