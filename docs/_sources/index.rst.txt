@@ -12,12 +12,13 @@ Computational science resources
    :class: center
    :alt: MPSD logo, discretised
 
-You are looking at the resources pages of the `Computational Science scientific support unit <https://www.mpsd.mpg.de/research/ssus/comput-science>`__
-at the
-`Max Planck Institute for Structure and Dynamics of Matter <https://mpsd.mpg.de>`__ in
-Hamburg, Germany.
+You are looking at the resources pages of the `Computational Science scientific
+support unit <https://www.mpsd.mpg.de/research/ssus/comput-science>`__ at the
+`Max Planck Institute for Structure and Dynamics of Matter
+<https://mpsd.mpg.de>`__ in Hamburg, Germany.
 
-The material here is meant to provide some guidance for research involving computation. See `Introduction <introductions.html>`__ for more details.
+The material here is meant to provide some guidance for research involving
+computation. See :doc:`introduction`.
 
 ----------------------------------------------------------------
 
