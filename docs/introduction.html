@@ -5,31 +5,40 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Introduction &#8212; Computational science  documentation</title>
+    <title>1. Introduction &#8212; MPSD SSU Computational Science</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
+    <script src="_static/language_data.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. Overview IT services" href="overview-it.html" />
-    <link rel="prev" title="Computational science resources" href="index.html" /> 
+    <link rel="prev" title="Computational Science documentation" href="index.html" />
+ 
+    <!-- Get MPG fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
           <a href="overview-it.html" title="2. Overview IT services"
-             accesskey="N">next</a> |</li>
+             accesskey="N">next</a></li>
         <li class="right" >
-          <a href="index.html" title="Computational science resources"
+          <a href="index.html" title="Computational Science documentation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Computational science  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MPSD SSU Computational Science</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><span class="section-number">1. </span>Introduction</a></li> 
       </ul>
     </div>  
@@ -47,13 +56,15 @@
 at the
 <a class="reference external" href="https://mpsd.mpg.de">Max Planck Institute for Structure and Dynamics of Matter</a> in
 Hamburg, Germany.</p>
-<p>The material here is meant to provide some guidance for research involving computation.</p>
-<p>However, the field of computational science, underpinning experimental and
-theoretical research, is relatively new and developing quickly. So whatever
-(opinionated?) views are expressed here, may not be applicable to your research
-challenge, outdated or simply wrong:</p>
+<p>The material here is meant to provide some guidance for research involving
+computation. However, the field of computational science, underpinning
+experimental and theoretical research, is relatively new and developing quickly.
+So whatever (opinionated?) views are expressed here, may not be applicable to
+your research challenge, outdated or simply wrong:</p>
 <p>Please do get in touch with any corrections, ideas, need for clarifications and
 support requests.</p>
+<p>Researchers outside the <a class="reference external" href="https://mpsd.mpg.de">MPSD</a> are welcome to use these
+resources, and are invited to provide feedback for improvements.</p>
 <div class="section" id="contact">
 <h2><span class="section-number">1.1. </span>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
 <p>To contact the group, please get in touch with
@@ -61,8 +72,12 @@ support requests.</p>
 </div>
 <div class="section" id="about-these-pages">
 <h2><span class="section-number">1.2. </span>About these pages<a class="headerlink" href="#about-these-pages" title="Permalink to this headline">¶</a></h2>
-<p>These pages are put together using the <a class="reference external" href="http://sphinx-doc.org">sphinx documentation system</a>, using a slightly modified version of the
-<a class="reference external" href="https://github.com/pytorch/pytorch_sphinx_theme">pytorch_sphinx_theme</a>, and hosted using <a class="reference external" href="https://pages.github.com">GitHub page</a>.</p>
+<p>These pages are put together using the <a class="reference external" href="http://sphinx-doc.org">sphinx documentation system</a>, and are hosted using <a class="reference external" href="https://pages.github.com">GitHub page</a>.</p>
+<p>You can navigate the pages using the cursor keys: cursor to the left and right
+will jump from section to section. Cursors keys up and down scroll the current
+page.</p>
+<p>The side-bar on the left can be collapsed by clicking on the bar separating it
+from the main panel.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -81,18 +96,35 @@ support requests.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">1. Introduction</a><ul>
-<li><a class="reference internal" href="#contact">1.1. Contact</a></li>
-<li><a class="reference internal" href="#about-these-pages">1.2. About these pages</a></li>
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo-mpsd-english-blue-sans.png" alt="Logo"/>
+            </a></p><hr>
+<ul>
+    <li> <a href="https://mpsd.mpg.de/en">Max Planck Institute for Structure and Dynamics of Matter</a> </li>
+    <li> <a href="https://www.mpsd.mpg.de/research/ssus/comput-science">SSU Computational Science</a> </li>
+</ul>
+<hr>
+<br>
+<h3><a href="index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#contact">1.1. Contact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#about-these-pages">1.2. About these pages</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="overview-it.html">2. Overview IT services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version-control.html">3. Version control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research-data-management.html">4. Research Data Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archive.html">5. Archiving research data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keeper.html">6. Keeper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zulip.html">7. Zulip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">8. Changelog</a></li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
-                        title="previous chapter">Computational science resources</a></p>
+                        title="previous chapter">Computational Science documentation</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="overview-it.html"
                         title="next chapter"><span class="section-number">2. </span>Overview IT services</a></p>
@@ -114,15 +146,12 @@ support requests.</p>
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
           <a href="overview-it.html" title="2. Overview IT services"
-             >next</a> |</li>
+             >next</a></li>
         <li class="right" >
-          <a href="index.html" title="Computational science resources"
+          <a href="index.html" title="Computational Science documentation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Computational science  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MPSD SSU Computational Science</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><span class="section-number">1. </span>Introduction</a></li> 
       </ul>
     </div>

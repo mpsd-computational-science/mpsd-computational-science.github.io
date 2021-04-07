@@ -5,31 +5,40 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. Archiving research data &#8212; Computational science  documentation</title>
+    <title>5. Archiving research data &#8212; MPSD SSU Computational Science</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
+    <script src="_static/language_data.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="6. Keeper" href="keeper.html" />
-    <link rel="prev" title="4. Research Data Management" href="research-data-management.html" /> 
+    <link rel="prev" title="4. Research Data Management" href="research-data-management.html" />
+ 
+    <!-- Get MPG fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
           <a href="keeper.html" title="6. Keeper"
-             accesskey="N">next</a> |</li>
+             accesskey="N">next</a></li>
         <li class="right" >
           <a href="research-data-management.html" title="4. Research Data Management"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Computational science  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MPSD SSU Computational Science</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><span class="section-number">5. </span>Archiving research data</a></li> 
       </ul>
     </div>  
@@ -41,212 +50,234 @@
             
   <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#archiving-research-data" id="id7">Archiving research data</a></p>
+<li><p><a class="reference internal" href="#archiving-research-data" id="id5">Archiving research data</a></p>
 <ul>
-<li><p><a class="reference internal" href="#what-data-to-archive" id="id8">What data to archive?</a></p>
+<li><p><a class="reference internal" href="#what-data-to-archive" id="id6">What data to archive?</a></p>
 <ul>
-<li><p><a class="reference internal" href="#first-archive-data-that-needs-to-be-archived" id="id9">First, archive data that needs to be archived</a></p></li>
-<li><p><a class="reference internal" href="#second-consider-additional-research-data-sets-for-archival" id="id10">Second, consider additional research data sets for archival</a></p></li>
+<li><p><a class="reference internal" href="#first-archive-data-that-needs-to-be-archived" id="id7">First, archive data that needs to be archived</a></p></li>
+<li><p><a class="reference internal" href="#second-consider-additional-research-data-sets-for-archival" id="id8">Second, consider additional research data sets for archival</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#archival-services" id="id11">Archival services</a></p>
+<li><p><a class="reference internal" href="#archival-services" id="id9">Archival services</a></p>
 <ul>
-<li><p><a class="reference internal" href="#archival-services-max-planck-researchers" id="id12">Archival services Max Planck researchers</a></p></li>
-<li><p><a class="reference internal" href="#other-archival-services" id="id13">Other archival services</a></p></li>
+<li><p><a class="reference internal" href="#archival-services-max-planck-researchers" id="id10">Archival services Max Planck researchers</a></p></li>
+<li><p><a class="reference internal" href="#other-archival-services" id="id11">Other archival services</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#documenting-the-data-meta-data" id="id14">Documenting the data (meta data)?</a></p></li>
-<li><p><a class="reference internal" href="#practical-aspects-storing-data-for-long-term-archival" id="id15">Practical aspects storing data for long-term archival</a></p>
+<li><p><a class="reference internal" href="#documenting-the-data-meta-data" id="id12">Documenting the data (meta data)?</a></p></li>
+<li><p><a class="reference internal" href="#practical-aspects-storing-data-for-long-term-archival" id="id13">Practical aspects storing data for long-term archival</a></p>
 <ul>
-<li><p><a class="reference internal" href="#data-storage-hardware" id="id16">Data storage hardware</a></p></li>
-<li><p><a class="reference internal" href="#converting-the-data-set-into-an-archive-file-for-archival" id="id17">Converting the data set into an archive file for archival</a></p></li>
-<li><p><a class="reference internal" href="#table-of-contents-for-archive-file" id="id18">Table of contents for archive file</a></p></li>
-<li><p><a class="reference internal" href="#practical-creation-of-the-table-of-contents-file-list" id="id19">Practical creation of the table-of-contents file list</a></p></li>
-<li><p><a class="reference internal" href="#catalogue-of-archived-data" id="id20">Catalogue of archived data</a></p></li>
-<li><p><a class="reference internal" href="#checksums-to-check-data-consistency-after-upload-to-archive" id="id21">Checksums to check data consistency (after upload to archive)</a></p></li>
+<li><p><a class="reference internal" href="#data-storage-hardware" id="id14">Data storage hardware</a></p></li>
+<li><p><a class="reference internal" href="#converting-the-data-set-into-an-archive-file-for-archival" id="id15">Converting the data set into an archive file for archival</a></p></li>
+<li><p><a class="reference internal" href="#table-of-contents-for-archive-file" id="id16">Table of contents for archive file</a></p></li>
+<li><p><a class="reference internal" href="#practical-creation-of-the-table-of-contents-file-list" id="id17">Practical creation of the table-of-contents file list</a></p></li>
+<li><p><a class="reference internal" href="#catalogue-of-archived-data" id="id18">Catalogue of archived data</a></p></li>
+<li><p><a class="reference internal" href="#checksums-to-check-data-consistency-after-upload-to-archive" id="id19">Checksums to check data consistency (after upload to archive)</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#using-zip-to-create-archive-files" id="id22">Using <code class="docutils literal notranslate"><span class="pre">zip</span></code> to create archive files</a></p></li>
-<li><p><a class="reference internal" href="#using-tar-to-create-archive-files" id="id23">Using <code class="docutils literal notranslate"><span class="pre">tar</span></code> to create archive files</a></p></li>
-<li><p><a class="reference internal" href="#the-gwdg-archival-service" id="id24">The GWDG Archival service</a></p>
+<li><p><a class="reference internal" href="#using-zip-to-create-archive-files" id="id20">Using <code class="docutils literal notranslate"><span class="pre">zip</span></code> to create archive files</a></p></li>
+<li><p><a class="reference internal" href="#using-tar-to-create-archive-files" id="id21">Using <code class="docutils literal notranslate"><span class="pre">tar</span></code> to create archive files</a></p></li>
+<li><p><a class="reference internal" href="#the-gwdg-archival-service" id="id22">The GWDG Archival service</a></p>
 <ul>
-<li><p><a class="reference internal" href="#general-information" id="id25">General information</a></p></li>
-<li><p><a class="reference internal" href="#transfer-of-files-to-gwdg-archive-from-linux-osx" id="id26">Transfer of files to GWDG Archive from Linux/OSX</a></p>
-<ul>
-<li><p><a class="reference internal" href="#step-1-find-the-archive-location" id="id27">Step 1: find the archive location.</a></p></li>
-<li><p><a class="reference internal" href="#step-2-copy-our-archive-file-to-the-gwdg-archive" id="id28">Step 2: copy our archive file to the GWDG archive</a></p></li>
-<li><p><a class="reference internal" href="#step-3-check-that-the-transfer-has-been-successful" id="id29">Step 3: check that the transfer has been successful</a></p></li>
+<li><p><a class="reference internal" href="#general-information" id="id23">General information</a></p></li>
+<li><p><a class="reference internal" href="#transfer-of-files-to-gwdg-archive-from-linux-osx" id="id24">Transfer of files to GWDG Archive from Linux/OSX</a></p></li>
+<li><p><a class="reference internal" href="#transfer-of-files-to-gwdg-archive-from-windows" id="id25">Transfer of files to GWDG Archive from Windows</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#transfer-of-files-to-gwdg-archive-from-windows" id="id30">Transfer of files to GWDG Archive from Windows</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#related-information" id="id31">Related information</a></p></li>
+<li><p><a class="reference internal" href="#related-information" id="id26">Related information</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="archiving-research-data">
-<h1><a class="toc-backref" href="#id7"><span class="section-number">5. </span>Archiving research data</a><a class="headerlink" href="#archiving-research-data" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id5"><span class="section-number">5. </span>Archiving research data</a><a class="headerlink" href="#archiving-research-data" title="Permalink to this headline">¶</a></h1>
 <p>As part of <a class="reference internal" href="research-data-management.html"><span class="doc">Research Data Management</span></a>, we may need to or want to
 archive data for longer periods (5 years, 10 years or more).</p>
-<p>We can <em>archive</em> data when we do not expect to work on the data in the near future, and if it
-is acceptable that accessing the data again may take some time (for example
-because the data needs to be read back from tape before we can access it again).
-Archiving data is cheaper than keeping it on spinning disks or SSD memory
-storage, and thus preferred when possible.</p>
+<p>We can <em>archive</em> data when we do not expect to work on the data in the
+near future, and if it is acceptable that accessing the data again may
+take some time (for example because the data needs to be read back from
+tape before we can access it again). Archiving data is cheaper than
+keeping it on spinning disks or SSD memory storage, and thus preferred
+when possible.</p>
 <p>A common strategy (see <a class="reference internal" href="research-data-management.html"><span class="doc">Research Data Management</span></a>) is to create an
 archive for each publication (for example at the time of publication).</p>
 <div class="section" id="what-data-to-archive">
-<h2><a class="toc-backref" href="#id8"><span class="section-number">5.1. </span>What data to archive?</a><a class="headerlink" href="#what-data-to-archive" title="Permalink to this headline">¶</a></h2>
-<p>Storage space is not free (or cheap): we should only archive data that could be
-useful to others or us at some point in the future. On the other hand, we should
-aim to preserve all data that may be useful in the future. How to decide which
-data to keep? We propose the following approach:</p>
+<h2><a class="toc-backref" href="#id6"><span class="section-number">5.1. </span>What data to archive?</a><a class="headerlink" href="#what-data-to-archive" title="Permalink to this headline">¶</a></h2>
+<p>Storage space is not free (or cheap): we should only archive data that
+could be useful to others or us at some point in the future. On the
+other hand, we should aim to preserve all data that may be useful in the
+future. How to decide which data to keep? We propose the following
+approach:</p>
 <div class="section" id="first-archive-data-that-needs-to-be-archived">
-<h3><a class="toc-backref" href="#id9"><span class="section-number">5.1.1. </span>First, archive data that needs to be archived</a><a class="headerlink" href="#first-archive-data-that-needs-to-be-archived" title="Permalink to this headline">¶</a></h3>
-<p>For certain research activities, we may have to archive the data. The prime example are research data associated with publications.</p>
-<p>It is also possible that research (grant) agreements require particular data sets to be archived beyond the run time of a (funded) project.</p>
+<h3><a class="toc-backref" href="#id7"><span class="section-number">5.1.1. </span>First, archive data that needs to be archived</a><a class="headerlink" href="#first-archive-data-that-needs-to-be-archived" title="Permalink to this headline">¶</a></h3>
+<p>For certain research activities, we may have to archive the data. The
+prime example are research data associated with publications.</p>
+<p>It is also possible that research (grant) agreements require particular
+data sets to be archived beyond the run time of a (funded) project.</p>
 <p>Or that the researchers employer, such as the Max Planck Society, has
-<a class="reference external" href="https://www.mpg.de/197494/rulesScientificPractice.pdf">particular expectations relating to archival of data</a>.</p>
+<a class="reference external" href="https://www.mpg.de/197494/rulesScientificPractice.pdf">particular expectations relating to archival of
+data</a>.</p>
 </div>
 <div class="section" id="second-consider-additional-research-data-sets-for-archival">
-<h3><a class="toc-backref" href="#id10"><span class="section-number">5.1.2. </span>Second, consider additional research data sets for archival</a><a class="headerlink" href="#second-consider-additional-research-data-sets-for-archival" title="Permalink to this headline">¶</a></h3>
-<p>Before we archive a data set which we are not required to for reasons outlined
-above, e should consider if those data sets can truly be useful in the future
-(either to us, or others):</p>
+<h3><a class="toc-backref" href="#id8"><span class="section-number">5.1.2. </span>Second, consider additional research data sets for archival</a><a class="headerlink" href="#second-consider-additional-research-data-sets-for-archival" title="Permalink to this headline">¶</a></h3>
+<p>Before we archive a data set which we are not required to for reasons
+outlined above, we should consider if those data sets can truly be
+useful in the future (either to us, or others):</p>
 <ul class="simple">
-<li><p>Is our documentation of the data sufficiently good that we could make sense of
-it in 2 years time (for example)?</p></li>
-<li><p>If we have not managed to analyse the paper now and put it into a manuscript,
-why do we think we would have more time/capacity to do that later in the
-future?</p></li>
-<li><p>Would somebody not familiar with the project be able to benefit from the data?
-(In particular: have we explained what the data represents in sufficient
-details?)</p></li>
+<li><p>Is our documentation of the data sufficiently good that we could make
+sense of it in 2 years time (for example)?</p></li>
+<li><p>If we have not managed to analyse the paper now and put it into a
+manuscript, why do we think we would have more time/capacity to do
+that later in the future?</p></li>
+<li><p>Would somebody not familiar with the project be able to benefit from
+the data? (In particular: have we explained what the data represents
+in sufficient details?)</p></li>
 </ul>
-<p>Important and potentially useful data should be kept, but where it is very
-unlikely that (further) scientific advances can be made, deleting the data might
-be a reasonable way forward: this will free resources that can be used for other
-data sets that may have a higher chance of creating impact.</p>
-<p>Long-term storage of data sets - be it for analysis or archival - requires staff
-time, electricity, hardware, hardware maintenance, refreshing of old tapes, etc.
-This creates cost, the amount of which is not always visible or known to the
-researcher.</p>
-<p>It is not unusual for an experiment to acquire significant amounts of data; out
-of which, for example, 20% are used in publications. The question raised in this
-section is: should we archive the other 80% just in case they contain useful
-data. There is no generic answer to this, but it might be useful to raise the
-question, and discuss it between scientists and infrastructure (storage)
-experts.</p>
+<p>Important and potentially useful data should be kept, but where it is
+very unlikely that (further) scientific advances can be made, deleting
+the data might be a reasonable way forward: this will free resources
+that can be used for other data sets that may have a higher chance of
+creating impact.</p>
+<p>Long-term storage of data sets - be it for analysis or archival -
+requires staff time, electricity, hardware, hardware maintenance,
+refreshing of old tapes, etc. This creates cost, the amount of which is
+not always visible or known to the researcher.</p>
+<p>It is not unusual for an experiment to acquire significant amounts of
+data; out of which, for example, 20% are used in publications. The
+question raised in this section is: should we archive the other 80% just
+in case they contain useful data. There is no generic answer to this,
+but it might be useful to raise the question, and discuss it between
+scientists and infrastructure (storage) experts.</p>
 </div>
 </div>
 <div class="section" id="archival-services">
-<h2><a class="toc-backref" href="#id11"><span class="section-number">5.2. </span>Archival services</a><a class="headerlink" href="#archival-services" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9"><span class="section-number">5.2. </span>Archival services</a><a class="headerlink" href="#archival-services" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="archival-services-max-planck-researchers">
-<h3><a class="toc-backref" href="#id12"><span class="section-number">5.2.1. </span>Archival services Max Planck researchers</a><a class="headerlink" href="#archival-services-max-planck-researchers" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://mpdl.zendesk.com/hc/en-us/articles/360011432700-Archiving">Max Planck Digital Library</a>: data sets up to 500GB, use of Keeper for Archival
-(see <a class="reference internal" href="keeper.html"><span class="doc">Keeper</span></a>). Recommendation for data sets below 500GB.</p>
-<p><a class="reference external" href="https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start">GWDG Archival service</a>: no space limit. Recommendation for larger data sets. See
-Section <a class="reference internal" href="#gwdg-archival-services"><span class="std std-ref">The GWDG Archival service</span></a> for further details.</p>
-<p><a class="reference external" href="https://docs.mpcdf.mpg.de/doc/data/backup-archive/BA_archive.html">Max Planck Compute &amp; Data Facility (MPCDF)</a>: Expected file sizes between 1GB and
-1TB. Recommended for data that is already stored at the MPCDF.</p>
+<h3><a class="toc-backref" href="#id10"><span class="section-number">5.2.1. </span>Archival services Max Planck researchers</a><a class="headerlink" href="#archival-services-max-planck-researchers" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://mpdl.zendesk.com/hc/en-us/articles/360011432700-Archiving">Max Planck Digital
+Library</a>:
+data sets up to 500GB, use of Keeper for Archival (see <a class="reference internal" href="keeper.html"><span class="doc">Keeper</span></a>).
+Recommendation for data sets below 500GB.</p>
+<p><a class="reference external" href="https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start">GWDG Archival
+service</a>:
+no space limit. Recommendation for larger data sets. See Section
+<a class="reference internal" href="#gwdg-archival-services"><span class="std std-ref">The GWDG Archival service</span></a> for further details.</p>
+<p><a class="reference external" href="https://docs.mpcdf.mpg.de/doc/data/backup-archive/archives.html">Max Planck Compute &amp; Data Facility
+(MPCDF)</a>:
+Expected file sizes between 1GB and 1TB. Recommended for data that is
+already stored at the MPCDF.</p>
 </div>
 <div class="section" id="other-archival-services">
-<h3><a class="toc-backref" href="#id13"><span class="section-number">5.2.2. </span>Other archival services</a><a class="headerlink" href="#other-archival-services" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://zenodo.org">Zenodo</a> offers archival of small data sets (up to <a class="reference external" href="https://help.zenodo.org">50GB without special requests</a>), and provides a DOI for such submissions.</p>
+<h3><a class="toc-backref" href="#id11"><span class="section-number">5.2.2. </span>Other archival services</a><a class="headerlink" href="#other-archival-services" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://zenodo.org">Zenodo</a> offers archival of small data sets (up
+to <a class="reference external" href="https://help.zenodo.org">50GB without special requests</a>), and
+provides a DOI for such submissions.</p>
 </div>
 </div>
 <div class="section" id="documenting-the-data-meta-data">
-<span id="archive-metadata"></span><h2><a class="toc-backref" href="#id14"><span class="section-number">5.3. </span>Documenting the data (meta data)?</a><a class="headerlink" href="#documenting-the-data-meta-data" title="Permalink to this headline">¶</a></h2>
+<span id="archive-metadata"></span><h2><a class="toc-backref" href="#id12"><span class="section-number">5.3. </span>Documenting the data (meta data)?</a><a class="headerlink" href="#documenting-the-data-meta-data" title="Permalink to this headline">¶</a></h2>
 <p>A significant challenge is <em>to document</em> the data.</p>
 <p>This includes a description of the format, the meaning of the data, any
 assumptions made in the capturing or processing of the data.</p>
-<p>If software was used to create the data, or if software is required to read the
-data, then <em>the software should be included</em> in the archive, or the very least a
-reference to the software repository and version used must be included.</p>
-<p>Any information that would be required to (re-)use the data in the future should
-be included: it should be possible for others to extract, inspect and use the
-data in the future, without having to consult you or your co-workers to request
-such information. Any assumptions made or limitations of the data should also be
-mentioned.</p>
-<p>This type of information is part of the <em>meta data</em>. It is required to explain and
-understand the data.</p>
+<p>If software was used to create the data, or if software is required to
+read the data, then <em>the software should be included</em> in the archive, or
+the very least a reference to the software repository and version used
+must be included.</p>
+<p>Any information that would be required to (re-)use the data in the
+future should be included: it should be possible for others to extract,
+inspect and use the data in the future, without having to consult you or
+your co-workers to request such information. Any assumptions made or
+limitations of the data should also be mentioned.</p>
+<p>This type of information is part of the <em>meta data</em>. It is required to
+explain and understand the data.</p>
 <p>The use of some <a class="reference internal" href="research-data-management.html#domain-specific-file-formats"><span class="std std-ref">Domain specific file formats</span></a> can much simplify
 the documentation of data, as - in the ideal case - the metadata is
 embedded in the data file format automatically.</p>
-<p>The metadata should be stored together with the actual data in the archive.</p>
-<p>The top level directory of the data set is a place where one would typically
-place such documentation, for example in files such as <code class="docutils literal notranslate"><span class="pre">readme.txt</span></code>, or
-<code class="docutils literal notranslate"><span class="pre">documentation.pdf</span></code>.</p>
+<p>The metadata should be stored together with the actual data in the
+archive.</p>
+<p>The top level directory of the data set is a place where one would
+typically place such documentation, for example in files such as
+<code class="docutils literal notranslate"><span class="pre">readme.txt</span></code>, or <code class="docutils literal notranslate"><span class="pre">documentation.pdf</span></code>.</p>
 </div>
 <div class="section" id="practical-aspects-storing-data-for-long-term-archival">
-<h2><a class="toc-backref" href="#id15"><span class="section-number">5.4. </span>Practical aspects storing data for long-term archival</a><a class="headerlink" href="#practical-aspects-storing-data-for-long-term-archival" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id13"><span class="section-number">5.4. </span>Practical aspects storing data for long-term archival</a><a class="headerlink" href="#practical-aspects-storing-data-for-long-term-archival" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="data-storage-hardware">
-<h3><a class="toc-backref" href="#id16"><span class="section-number">5.4.1. </span>Data storage hardware</a><a class="headerlink" href="#data-storage-hardware" title="Permalink to this headline">¶</a></h3>
-<p>A common model for archiving data is that the users can transfer their files
-into their home directory or a special archive directory on a (linux) archive
-host, where it is stored on hard disks (or solid state storage). From there, the
-files will be copied onto tape (at a point of time that the archival system
-chooses), and (at some time) after that the copy on the disk may be removed.</p>
-<p>If the user needs to access the archived data again, they can logon to that
-archive host, and <em>request</em> the data. In the simplest case, this is possible by
-copying the data to another place, or just by attempting to read the data. At
-that point, a request will be queued for the data to be read back from the tape,
-and to be made available on the disk. It can take hours or longer for that
-request to be fulfilled.</p>
+<h3><a class="toc-backref" href="#id14"><span class="section-number">5.4.1. </span>Data storage hardware</a><a class="headerlink" href="#data-storage-hardware" title="Permalink to this headline">¶</a></h3>
+<p>A common model for archiving data is that the users can transfer their
+files into their home directory or a special archive directory on a
+(linux) archive host, where it is stored on hard disks (or solid state
+storage). From there, the files will be copied onto tape (at a point of
+time that the archival system chooses), and (at some time) after that
+the copy on the disk may be removed.</p>
+<p>If the user needs to access the archived data again, they can logon to
+that archive host, and <em>request</em> the data. In the simplest case, this is
+possible by copying the data to another place, or just by attempting to
+read the data. At that point, a request will be queued for the data to
+be read back from the tape, and to be made available on the disk. It can
+take hours or longer for that request to be fulfilled.</p>
 </div>
 <div class="section" id="converting-the-data-set-into-an-archive-file-for-archival">
-<h3><a class="toc-backref" href="#id17"><span class="section-number">5.4.2. </span>Converting the data set into an archive file for archival</a><a class="headerlink" href="#converting-the-data-set-into-an-archive-file-for-archival" title="Permalink to this headline">¶</a></h3>
-<p>We assume that the data set is gathered within a directory, which could be
-called <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, for example. This subdirectory <code class="docutils literal notranslate"><span class="pre">dataset</span></code> may contain files and
-subdirectories, which in turn may contain more subdirectories and files.</p>
-<p>We assume the data is documented, and that the documentation is part of the
-<code class="docutils literal notranslate"><span class="pre">dataset</span></code> sub directory.</p>
-<p>Before we can archive this data set, we need to convert the set of files into an
-archive file, such as <code class="docutils literal notranslate"><span class="pre">archive.zip</span></code> or <code class="docutils literal notranslate"><span class="pre">archive.tar.gz</span></code>.</p>
-<p>This has two technical advantages: (i) the whole data set then appears as one
-file. Archival systems prefer few and large files over many small files. And
-(ii) our data sets can be compressed in the process. (Note, however, that some
-archival systems will by default compress any data they receive - in that case,
-we do not necessarily need the compression here.)</p>
-<p>Suitable programs that can create such archive files include <code class="docutils literal notranslate"><span class="pre">zip</span></code> and <code class="docutils literal notranslate"><span class="pre">tar</span></code> (see
-<a class="reference internal" href="#using-zip"><span class="std std-ref">Using zip to create archive files</span></a> and below).</p>
+<h3><a class="toc-backref" href="#id15"><span class="section-number">5.4.2. </span>Converting the data set into an archive file for archival</a><a class="headerlink" href="#converting-the-data-set-into-an-archive-file-for-archival" title="Permalink to this headline">¶</a></h3>
+<p>We assume that the data set is gathered within a directory, which could
+be called <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, for example. This subdirectory <code class="docutils literal notranslate"><span class="pre">dataset</span></code> may
+contain files and subdirectories, which in turn may contain more
+subdirectories and files.</p>
+<p>We assume the data is documented, and that the documentation is part of
+the <code class="docutils literal notranslate"><span class="pre">dataset</span></code> sub directory.</p>
+<p>Before we can archive this data set, we need to convert the set of files
+into an archive file, such as <code class="docutils literal notranslate"><span class="pre">archive.zip</span></code> or <code class="docutils literal notranslate"><span class="pre">archive.tar.gz</span></code>.</p>
+<p>This has two technical advantages: (i) the whole data set then appears
+as one file. Archival systems prefer few and large files over many small
+files. And (ii) our data sets can be compressed in the process. (Note,
+however, that some archival systems will by default compress any data
+they receive - in that case, we do not necessarily need the compression
+here.)</p>
+<p>Suitable programs that can create such archive files include <code class="docutils literal notranslate"><span class="pre">zip</span></code> and
+<code class="docutils literal notranslate"><span class="pre">tar</span></code> (see <a class="reference internal" href="#using-zip"><span class="std std-ref">Using zip to create archive files</span></a> and below).</p>
 </div>
 <div class="section" id="table-of-contents-for-archive-file">
-<span id="archive-table-of-contents"></span><h3><a class="toc-backref" href="#id18"><span class="section-number">5.4.3. </span>Table of contents for archive file</a><a class="headerlink" href="#table-of-contents-for-archive-file" title="Permalink to this headline">¶</a></h3>
-<p>Once the data is on tape, it may take a long time (could be up to days) before
-it can be played back from tape onto a (disk-based) system where it can be
-used and explored. It may not be possible to (effectively) extract/view or
-download just one small file: it may still be required to restore the whole
-archive first. There is thus potentially <em>high latency</em> in the data access.</p>
-<p>For this reason, it is useful to keep a short <em>table-of-contents file</em> per
-archived data set in a separate location (and on disk) which can be easily
-accessed, and which has a link to the location of the archived data set. This
-table of contents file can then be easily (and in particular with
-non-noticeable latency) opened and examined; for example to search all
-table-of-contents file for a particular file or data set.</p>
-<p>Such a table-of-contents file should be easily readable in a format that is
-future proof. Suggestions here are plain text files (i.e. not binary and not
-proprietary formats such as MS Word). See <a class="reference internal" href="#create-list-of-files-in-archive"><span class="std std-ref">Checksums to check data consistency (after upload to archive)</span></a>.</p>
-<p>A number of <em>mark up</em> formats have emerged which can (but don’t have to) be used
-to provide additional structure in such files. Example are <a class="reference external" href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>,
-<a class="reference external" href="https://en.wikipedia.org/wiki/ReStructuredText">ReStructuredtext</a>, and <a class="reference external" href="https://en.wikipedia.org/wiki/Org-mode">orgmode</a> (in increasing order of complexity and power).</p>
-<p>The very minimum that the <code class="docutils literal notranslate"><span class="pre">table-of-contents.txt</span></code> file should contain is:</p>
+<span id="archive-table-of-contents"></span><h3><a class="toc-backref" href="#id16"><span class="section-number">5.4.3. </span>Table of contents for archive file</a><a class="headerlink" href="#table-of-contents-for-archive-file" title="Permalink to this headline">¶</a></h3>
+<p>Once the data is on tape, it may take a long time (could be up to days)
+before it can be played back from tape onto a (disk-based) system where
+it can be used and explored. It may not be possible to (effectively)
+extract/view or download just one small file: it may still be required
+to restore the whole archive first. There is thus potentially <em>high
+latency</em> in the data access.</p>
+<p>For this reason, it is useful to keep a short <em>table-of-contents file</em>
+per archived data set in a separate location (and on disk) which can be
+easily accessed, and which has a link to the location of the archived
+data set. This table of contents file can then be easily (and in
+particular with non-noticeable latency) opened and examined; for example
+to search all table-of-contents file for a particular file or data set.</p>
+<p>Such a table-of-contents file should be easily readable in a format that
+is future proof. Suggestions here are plain text files (i.e. not binary
+and not proprietary formats such as MS Word). See
+<a class="reference internal" href="#create-list-of-files-in-archive"><span class="std std-ref">Checksums to check data consistency (after upload to archive)</span></a>.</p>
+<p>A number of <em>mark up</em> formats have emerged which can (but don’t have to)
+be used to provide additional structure in such files. Example are
+<a class="reference external" href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>,
+<a class="reference external" href="https://en.wikipedia.org/wiki/ReStructuredText">ReStructuredtext</a>,
+and <a class="reference external" href="https://en.wikipedia.org/wiki/Org-mode">orgmode</a> (in increasing
+order of complexity and power).</p>
+<p>The very minimum that the <code class="docutils literal notranslate"><span class="pre">table-of-contents.txt</span></code> file should contain
+is:</p>
 <ul class="simple">
 <li><p>the list of files in the archive file (together with their file size)</p></li>
 </ul>
-<p>As a recommendation for the table-of-contents file, one should also include</p>
+<p>As a recommendation for the table-of-contents file, one should also
+include</p>
 <ul class="simple">
 <li><p>title of the data set</p></li>
 <li><p>list of authors (including affiliations)</p></li>
 <li><p>a preferred contact</p></li>
-<li><p>description of the data (this may include pointers to more detailed documents
-in the archive, see &#64;&#64;rst::ref:`archive-metadata`)</p></li>
+<li><p>description of the data (this may include pointers to more detailed
+documents in the archive, see &#64;&#64;rst:<a class="reference internal" href="#archive-metadata"><span class="std std-ref">Documenting the data (meta data)?</span></a>)</p></li>
 <li><p>link to experiment (if appropriate)</p></li>
-<li><p>publication(s) originating from the data set (a DOI per publication is useful)</p></li>
+<li><p>publication(s) originating from the data set (a DOI per publication
+is useful)</p></li>
 <li><p>link to further data sets related to the this data (if appropriate)</p></li>
-<li><p>list of funding bodies who should be acknowledged if the data is re-used (if appropriate)</p></li>
+<li><p>list of funding bodies who should be acknowledged if the data is
+re-used (if appropriate)</p></li>
 <li><p>if the data will be made public:</p>
 <ul>
 <li><p>a publication reference that users of the data are asked to cite</p></li>
@@ -256,69 +287,81 @@ in the archive, see &#64;&#64;rst::ref:`archive-metadata`)</p></li>
 </ul>
 </div>
 <div class="section" id="practical-creation-of-the-table-of-contents-file-list">
-<h3><a class="toc-backref" href="#id19"><span class="section-number">5.4.4. </span>Practical creation of the table-of-contents file list</a><a class="headerlink" href="#practical-creation-of-the-table-of-contents-file-list" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id17"><span class="section-number">5.4.4. </span>Practical creation of the table-of-contents file list</a><a class="headerlink" href="#practical-creation-of-the-table-of-contents-file-list" title="Permalink to this headline">¶</a></h3>
 <p>To list all files with their size in a given zip file, we can use</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zipinfo archive.zip
 </pre></div>
 </div>
-<p>Note that this will require reading the file, and if the file is on tape, it
-will have to be retrieved before the command can be completed. One should thus
-run this command before the data is archived, and keep the output of the command
-somewhere safe and accessible to provide a <em>catalogue</em> of archived data files.</p>
-<p>If we are using <code class="docutils literal notranslate"><span class="pre">tar</span></code>, a corresponding command  for a compressed archive with name <code class="docutils literal notranslate"><span class="pre">archive.tar.gz</span></code> would be</p>
+<p>Note that this will require reading the file, and if the file is on
+tape, it will have to be retrieved before the command can be completed.
+One should thus run this command before the data is archived, and keep
+the output of the command somewhere safe and accessible to provide a
+<em>catalogue</em> of archived data files.</p>
+<p>If we are using <code class="docutils literal notranslate"><span class="pre">tar</span></code>, a corresponding command for a compressed
+archive with name <code class="docutils literal notranslate"><span class="pre">archive.tar.gz</span></code> would be</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar tfvz archive.tar.gz
 </pre></div>
 </div>
-<p>If the data is not yet converted into an archive file, we can create the list of
-files in the subdirectory <code class="docutils literal notranslate"><span class="pre">SUBDIRNAME</span></code> using a command (on Linux and OSX) such as</p>
+<p>If the data is not yet converted into an archive file, we can create the
+list of files in the subdirectory <code class="docutils literal notranslate"><span class="pre">SUBDIRNAME</span></code> using a command (on
+Linux and OSX) such as</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -R -l SUBDIRNAME
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">ls</span></code> command lists files in a subdiretory. The additional option <code class="docutils literal notranslate"><span class="pre">-R</span></code> requests
-to list Recursively all files in all subdirectories. The option <code class="docutils literal notranslate"><span class="pre">-l</span></code> requests the
-Long file format, which includes the size of each file.</p>
-<p>To convert the output from running these commands into a file, we can redirect it, for example</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ls</span></code> command lists files in a subdiretory. The additional option
+<code class="docutils literal notranslate"><span class="pre">-R</span></code> requests to list Recursively all files in all subdirectories. The
+option <code class="docutils literal notranslate"><span class="pre">-l</span></code> requests the Long file format, which includes the size of
+each file.</p>
+<p>To convert the output from running these commands into a file, we can
+redirect it, for example</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zipinfo archive.zip &gt; list-of-files.txt
 </pre></div>
 </div>
 </div>
 <div class="section" id="catalogue-of-archived-data">
-<h3><a class="toc-backref" href="#id20"><span class="section-number">5.4.5. </span>Catalogue of archived data</a><a class="headerlink" href="#catalogue-of-archived-data" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id18"><span class="section-number">5.4.5. </span>Catalogue of archived data</a><a class="headerlink" href="#catalogue-of-archived-data" title="Permalink to this headline">¶</a></h3>
 <p>Archives should be uniquely labelled and catalogued.</p>
 <p>The catalogue should include an entry for every archived data set.</p>
-<p>For each archived data set, the <a class="reference internal" href="#archive-table-of-contents"><span class="std std-ref">Table of contents for archive file</span></a> should be stored in the catalogue.</p>
-<p>The catalogue is something each researcher could maintain in a backed up place on their personal computer.</p>
+<p>For each archived data set, the <a class="reference internal" href="#archive-table-of-contents"><span class="std std-ref">Table of contents for archive file</span></a> should
+be stored in the catalogue.</p>
+<p>The catalogue is something each researcher could maintain in a backed up
+place on their personal computer.</p>
 </div>
 <div class="section" id="checksums-to-check-data-consistency-after-upload-to-archive">
-<span id="create-list-of-files-in-archive"></span><h3><a class="toc-backref" href="#id21"><span class="section-number">5.4.6. </span>Checksums to check data consistency (after upload to archive)</a><a class="headerlink" href="#checksums-to-check-data-consistency-after-upload-to-archive" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Checksum">Checksums</a> are small blocks of data that are computed from a large set of data.
-Checksum calculation algorithms are designed so that a change in the large set
-of data will result in a different checksum. Checksums can thus be used to
-detect (accidental or malicious) changes in the data.</p>
+<span id="create-list-of-files-in-archive"></span><h3><a class="toc-backref" href="#id19"><span class="section-number">5.4.6. </span>Checksums to check data consistency (after upload to archive)</a><a class="headerlink" href="#checksums-to-check-data-consistency-after-upload-to-archive" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Checksum">Checksums</a> are small blocks
+of data that are computed from a large set of data. Checksum calculation
+algorithms are designed so that a change in the large set of data will
+result in a different checksum. Checksums can thus be used to detect
+(accidental or malicious) changes in the data.</p>
 <p>When we create an archive using <code class="docutils literal notranslate"><span class="pre">zip</span></code>, a checksum per file is created
 automatically, and stored with the archive. Using the command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip -t archive.zip
 </pre></div>
 </div>
-<p>the checksums are re-computed, and compared with the checksums stored in the
-file. Any deviation will be highlighted.</p>
-<p>It is recommended to check the checksums after transferring large amounts of
-data at the archival site: a random bit-flip is unlikely to occur but if the
-amount of data is significant, the probability for such a bit flip increases.</p>
-<p>Good archival systems will do checksum tests internally and automatically once
-the data has arrived on their site, but it is the responsibility of the user to
-make sure the transmitted data arrives correctly.</p>
+<p>the checksums are re-computed, and compared with the checksums stored in
+the file. Any deviation will be highlighted.</p>
+<p>It is recommended to check the checksums after transferring large
+amounts of data at the archival site: a random bit-flip is unlikely to
+occur but if the amount of data is significant, the probability for such
+a bit flip increases.</p>
+<p>Good archival systems will do checksum tests internally and
+automatically once the data has arrived on their site, but it is the
+responsibility of the user to make sure the transmitted data arrives
+correctly.</p>
 </div>
 </div>
 <div class="section" id="using-zip-to-create-archive-files">
-<span id="using-zip"></span><h2><a class="toc-backref" href="#id22"><span class="section-number">5.5. </span>Using <code class="docutils literal notranslate"><span class="pre">zip</span></code> to create archive files</a><a class="headerlink" href="#using-zip-to-create-archive-files" title="Permalink to this headline">¶</a></h2>
-<p>This section describes most essential steps of creating (large) archive files
-using the <a class="reference external" href="http://infozip.sourceforge.net">zip</a> tool.</p>
-<p>To convert files in a subdirectory <code class="docutils literal notranslate"><span class="pre">SUBDIRNAME</span></code> into a zipped archive, we can use the command</p>
+<span id="using-zip"></span><h2><a class="toc-backref" href="#id20"><span class="section-number">5.5. </span>Using <code class="docutils literal notranslate"><span class="pre">zip</span></code> to create archive files</a><a class="headerlink" href="#using-zip-to-create-archive-files" title="Permalink to this headline">¶</a></h2>
+<p>This section describes most essential steps of creating (large) archive
+files using the <a class="reference external" href="http://infozip.sourceforge.net">zip</a> tool.</p>
+<p>To convert files in a subdirectory <code class="docutils literal notranslate"><span class="pre">SUBDIRNAME</span></code> into a zipped archive,
+we can use the command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip -r archive.zip SUBDIRNAME
 </pre></div>
 </div>
-<p>If we do not need or want compression to be used, we can use the <code class="docutils literal notranslate"><span class="pre">-0</span></code> switch:</p>
+<p>If we do not need or want compression to be used, we can use the <code class="docutils literal notranslate"><span class="pre">-0</span></code>
+switch:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip -r -0 archive.zip SUBDIRNAME
 </pre></div>
 </div>
@@ -326,11 +369,12 @@ using the <a class="reference external" href="http://infozip.sourceforge.net">zi
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip archive.zip
 </pre></div>
 </div>
-<p>To unpack one file (such as README.txt) from a given zip file, we can use</p>
+<p>To unpack one file (such as README.txt) from a given zip file, we can
+use</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip archive.zip SUBDIRNAME/README.txt
 </pre></div>
 </div>
-<p>To compute checksums (to detect corruption of the archive  file):</p>
+<p>To compute checksums (to detect corruption of the archive file):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip -t archive.zip
 </pre></div>
 </div>
@@ -340,26 +384,28 @@ using the <a class="reference external" href="http://infozip.sourceforge.net">zi
 </div>
 </div>
 <div class="section" id="using-tar-to-create-archive-files">
-<h2><a class="toc-backref" href="#id23"><span class="section-number">5.6. </span>Using <code class="docutils literal notranslate"><span class="pre">tar</span></code> to create archive files</a><a class="headerlink" href="#using-tar-to-create-archive-files" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">tar</span></code> is a popular tool on Linux/Unix. It has no in-built mechanism to detect data
-corruption, and extraction of one file is not possible without reading the whole
-archive. You may wish to consider using <code class="docutils literal notranslate"><span class="pre">zip</span></code> instead (See
-<a class="reference internal" href="#using-zip"><span class="std std-ref">Using zip to create archive files</span></a>).</p>
-<p>This section describes most essential steps of creating (large) archive files
-using the <a class="reference external" href="http://infozip.sourceforge.net">zip</a> tool.</p>
-<p>To convert files in a subdirectory <code class="docutils literal notranslate"><span class="pre">SUBDIRNAME</span></code> into a tarred archive, we can use the command</p>
+<h2><a class="toc-backref" href="#id21"><span class="section-number">5.6. </span>Using <code class="docutils literal notranslate"><span class="pre">tar</span></code> to create archive files</a><a class="headerlink" href="#using-tar-to-create-archive-files" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">tar</span></code> is a popular tool on Linux/Unix. It has no in-built mechanism to
+detect data corruption, and extraction of one file is not possible
+without reading the whole archive. You may wish to consider using
+<code class="docutils literal notranslate"><span class="pre">zip</span></code> instead (See <a class="reference internal" href="#using-zip"><span class="std std-ref">Using zip to create archive files</span></a>).</p>
+<p>This section describes most essential steps of creating (large) archive
+files using the <a class="reference external" href="http://infozip.sourceforge.net">zip</a> tool.</p>
+<p>To convert files in a subdirectory <code class="docutils literal notranslate"><span class="pre">SUBDIRNAME</span></code> into a tarred archive,
+we can use the command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar cf archive.tar SUBDIRNAME
 </pre></div>
 </div>
-<p>This does not compress the files. To apply compression, we can either <code class="docutils literal notranslate"><span class="pre">gzip</span></code> the tar file:</p>
+<p>This does not compress the files. To apply compression, we can either
+<code class="docutils literal notranslate"><span class="pre">gzip</span></code> the tar file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gzip archive.tar
 </pre></div>
 </div>
-<p>which will convert the file into <code class="docutils literal notranslate"><span class="pre">archive.tar.gz</span></code> . (Other compression tools could
-be used, such as <code class="docutils literal notranslate"><span class="pre">bzip2</span></code>.)</p>
-<p>If the data set is large, it is better to combine the tarring and compression to
-be carried out at the same time (to avoid having two uncompressed copies of the
-data on disk at the same time):</p>
+<p>which will convert the file into <code class="docutils literal notranslate"><span class="pre">archive.tar.gz</span></code> . (Other compression
+tools could be used, such as <code class="docutils literal notranslate"><span class="pre">bzip2</span></code>.)</p>
+<p>If the data set is large, it is better to combine the tarring and
+compression to be carried out at the same time (to avoid having two
+uncompressed copies of the data on disk at the same time):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar cfz archive.tar.gz SUBDIRNAME
 </pre></div>
 </div>
@@ -371,52 +417,56 @@ data on disk at the same time):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar tfvz archive.tar.gz
 </pre></div>
 </div>
-<p>To check against file corruption, we can compute a hash manually (before we
-transfer the file, and afterwards), and compare that the two hashes agree. If
-you don’t know how to do this, best use <code class="docutils literal notranslate"><span class="pre">zip</span></code> (see <a class="reference internal" href="#using-zip"><span class="std std-ref">Using zip to create archive files</span></a>).</p>
+<p>To check against file corruption, we can compute a hash manually (before
+we transfer the file, and afterwards), and compare that the two hashes
+agree. If you don’t know how to do this, best use <code class="docutils literal notranslate"><span class="pre">zip</span></code> (see
+<a class="reference internal" href="#using-zip"><span class="std std-ref">Using zip to create archive files</span></a>).</p>
 </div>
 <div class="section" id="the-gwdg-archival-service">
-<span id="gwdg-archival-services"></span><h2><a class="toc-backref" href="#id24"><span class="section-number">5.7. </span>The GWDG Archival service</a><a class="headerlink" href="#the-gwdg-archival-service" title="Permalink to this headline">¶</a></h2>
+<span id="gwdg-archival-services"></span><h2><a class="toc-backref" href="#id22"><span class="section-number">5.7. </span>The GWDG Archival service</a><a class="headerlink" href="#the-gwdg-archival-service" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="general-information">
-<h3><a class="toc-backref" href="#id25"><span class="section-number">5.7.1. </span>General information</a><a class="headerlink" href="#general-information" title="Permalink to this headline">¶</a></h3>
-<p>Please study up-to-date instructions on home page: <a class="reference external" href="https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start">GWDG Archival service</a></p>
+<h3><a class="toc-backref" href="#id23"><span class="section-number">5.7.1. </span>General information</a><a class="headerlink" href="#general-information" title="Permalink to this headline">¶</a></h3>
+<p>Please study up-to-date instructions on home page: <a class="reference external" href="https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start">GWDG Archival
+service</a></p>
 <p>Additional information:</p>
 <ul class="simple">
-<li><p>Preferred size of <code class="docutils literal notranslate"><span class="pre">archive.zip</span></code> or <code class="docutils literal notranslate"><span class="pre">archive.tar.gz</span></code> is between 1 and 4 TB</p></li>
-<li><p>Transfer of data from MPSD to GWDG is expected to be possible at a rate of
-approximately 30MByte/sec, corresponding to 2.5TB per day. If the observed
-rate is well below this, it should be investigated.</p></li>
-<li><p>The archive files will be moved to tape but the directory structure and
-filenames are online and can be browsed. (But no stub files are available,
-i.e. one cannot peek into a file.)</p></li>
-<li><p>archive files should be compressed when uploaded (i.e. the system does not
-attempt to compress files when moving to tape).</p></li>
+<li><p>Preferred size of <code class="docutils literal notranslate"><span class="pre">archive.zip</span></code> or <code class="docutils literal notranslate"><span class="pre">archive.tar.gz</span></code> is between 1
+and 4 TB</p></li>
+<li><p>Transfer of data from MPSD to GWDG is expected to be possible at a
+rate of approximately 30MByte/sec, corresponding to 2.5TB per day. If
+the observed rate is well below this, it should be investigated.</p></li>
+<li><p>The archive files will be moved to tape but the directory structure
+and filenames are online and can be browsed. (But no stub files are
+available, i.e. one cannot peek into a file.)</p></li>
+<li><p>archive files should be compressed when uploaded (i.e. the system
+does not attempt to compress files when moving to tape).</p></li>
 <li><p>2 copies on tape are stored in separate locations.</p></li>
 </ul>
 </div>
 <div class="section" id="transfer-of-files-to-gwdg-archive-from-linux-osx">
-<h3><a class="toc-backref" href="#id26"><span class="section-number">5.7.2. </span>Transfer of files to GWDG Archive from Linux/OSX</a><a class="headerlink" href="#transfer-of-files-to-gwdg-archive-from-linux-osx" title="Permalink to this headline">¶</a></h3>
-<p><em>Prerequisites</em>: You need to have <a class="reference external" href="https://info.gwdg.de/dokuwiki/doku.php?id=de:services:application_services:high_performance_computing:connect_with_ssh">deposited your public ssh key at the GWDG</a>.</p>
-<p>We assume we have a file <code class="docutils literal notranslate"><span class="pre">archive.zip</span></code> on our local Linux or OSX machine, and want
-to transfer this to the archive service of the GWDG.</p>
-<div class="section" id="step-1-find-the-archive-location">
-<h4><a class="toc-backref" href="#id27"><span class="section-number">5.7.2.1. </span>Step 1: find the archive location.</a><a class="headerlink" href="#step-1-find-the-archive-location" title="Permalink to this headline">¶</a></h4>
+<h3><a class="toc-backref" href="#id24"><span class="section-number">5.7.2. </span>Transfer of files to GWDG Archive from Linux/OSX</a><a class="headerlink" href="#transfer-of-files-to-gwdg-archive-from-linux-osx" title="Permalink to this headline">¶</a></h3>
+<p><em>Prerequisites</em>: You need to have <a class="reference external" href="https://info.gwdg.de/dokuwiki/doku.php?id=de:services:application_services:high_performance_computing:connect_with_ssh">deposited your public ssh key at the
+GWDG</a>.</p>
+<p>We assume we have a file <code class="docutils literal notranslate"><span class="pre">archive.zip</span></code> on our local Linux or OSX
+machine, and want to transfer this to the archive service of the GWDG.</p>
+<ol class="arabic">
+<li><p>Step 1: find the archive location.</p>
 <p>SSH to the machine recommended by the GWDG:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh USERNAME@transfer.gwdg.de
 </pre></div>
 </div>
-<p>Once logged in, use <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$AHOME$</span></code> to display the location of your personal archive. Here is an example where <code class="docutils literal notranslate"><span class="pre">USERNAME</span></code> is replaced by <code class="docutils literal notranslate"><span class="pre">hfangoh</span></code>:</p>
+<p>Once logged in, use <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$AHOME$</span></code> to display the location of your
+personal archive. Here is an example where <code class="docutils literal notranslate"><span class="pre">USERNAME</span></code> is replaced
+by <code class="docutils literal notranslate"><span class="pre">hfangoh</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hfangoh@gwdu20:~&gt; <span class="nb">echo</span> <span class="nv">$AHOME</span>
 /usr/users/a/hfangoh
 </pre></div>
 </div>
-<p>This means we need to copy our <code class="docutils literal notranslate"><span class="pre">archive.zip</span></code> file to the machine <code class="docutils literal notranslate"><span class="pre">transfer.gwdg.de</span></code>
-in the location <code class="docutils literal notranslate"><span class="pre">/usr/users/a/USERNAME</span></code>.</p>
-</div>
-<div class="section" id="step-2-copy-our-archive-file-to-the-gwdg-archive">
-<h4><a class="toc-backref" href="#id28"><span class="section-number">5.7.2.2. </span>Step 2: copy our archive file to the GWDG archive</a><a class="headerlink" href="#step-2-copy-our-archive-file-to-the-gwdg-archive" title="Permalink to this headline">¶</a></h4>
-<p>A good command to do this from the
-command line is <code class="docutils literal notranslate"><span class="pre">rsync</span></code>:</p>
+<p>This means we need to copy our <code class="docutils literal notranslate"><span class="pre">archive.zip</span></code> file to the machine
+<code class="docutils literal notranslate"><span class="pre">transfer.gwdg.de</span></code> in the location <code class="docutils literal notranslate"><span class="pre">/usr/users/a/USERNAME</span></code>.</p>
+</li>
+<li><p>Step 2: copy our archive file to the GWDG archive</p>
+<p>A good command to do this from the command line is <code class="docutils literal notranslate"><span class="pre">rsync</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync --progress -e ssh --partial archive.zip  USERNAME@transfer.gwdg.de:/usr/users/a/USERNAME
 </pre></div>
 </div>
@@ -424,47 +474,52 @@ command line is <code class="docutils literal notranslate"><span class="pre">rsy
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">--progress</span></code> display a progress bar (optional)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">ssh</span></code> use ssh (compulsary)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--partial</span></code> allow to continue the transfer if it is interrupted for some reason.
-Recommended for larger files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--partial</span></code> allow to continue the transfer if it is interrupted
+for some reason. Recommended for larger files.</p></li>
 </ul>
-</div>
-<div class="section" id="step-3-check-that-the-transfer-has-been-successful">
-<h4><a class="toc-backref" href="#id29"><span class="section-number">5.7.2.3. </span>Step 3: check that the transfer has been successful</a><a class="headerlink" href="#step-3-check-that-the-transfer-has-been-successful" title="Permalink to this headline">¶</a></h4>
+</li>
+<li><p>Step 3: check that the transfer has been successful</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh USERNAME@transfer.gwdg.de
 <span class="nb">cd</span> <span class="nv">$AHOME</span>
 unzip -t archive.zip
 </pre></div>
 </div>
-<p>For a practical problem, one should choose a more descriptive name instead of
-<code class="docutils literal notranslate"><span class="pre">archive.zip</span></code>. For example <code class="docutils literal notranslate"><span class="pre">2021-physrevletters-90-12222.zip</span></code>, to refer to a data
-set associated with a publication in Physical Review Letters, volume 90, pages
-12222, published in 2021. Over the years, many such archive files may accumulate
-in the same directory, and with the suggested naming convention (or a similar
-one), it will be easy to associate them with the publication.</p>
-<p>It is possible to create subdirectories in the archive home <code class="docutils literal notranslate"><span class="pre">$AHOME</span></code> if you wish
-to do so to structure your collection of archive files differently. However, the
-general guideline is to deposit few and large files (see above).</p>
-</div>
+<p>For a practical problem, one should choose a more descriptive name
+instead of <code class="docutils literal notranslate"><span class="pre">archive.zip</span></code>. For example
+<code class="docutils literal notranslate"><span class="pre">2021-physrevletters-90-12222.zip</span></code>, to refer to a data set
+associated with a publication in Physical Review Letters, volume 90,
+pages 12222, published in 2021. Over the years, many such archive
+files may accumulate in the same directory, and with the suggested
+naming convention (or a similar one), it will be easy to associate
+them with the publication.</p>
+<p>It is possible to create subdirectories in the archive home
+<code class="docutils literal notranslate"><span class="pre">$AHOME</span></code> if you wish to do so to structure your collection of
+archive files differently. However, the general guideline is to
+deposit few and large files (see above).</p>
+</li>
+</ol>
 </div>
 <div class="section" id="transfer-of-files-to-gwdg-archive-from-windows">
-<h3><a class="toc-backref" href="#id30"><span class="section-number">5.7.3. </span>Transfer of files to GWDG Archive from Windows</a><a class="headerlink" href="#transfer-of-files-to-gwdg-archive-from-windows" title="Permalink to this headline">¶</a></h3>
-<p>If you have <code class="docutils literal notranslate"><span class="pre">rsync</span></code> installed on your Windows machine, you should be able to use
-it as described in the section for Linux/OSX. (It can probably be installed via
-Windows Subsystem for Linux, Cygwin, <a class="reference external" href="http://chocolatey.org">Chocolatey</a>, …)</p>
-<p>An alternative is to use secure FTP (sftp), for example with GUI based <code class="docutils literal notranslate"><span class="pre">sftp</span></code>
-clients include PuTTY, WinSCP and Cyberduck. However, for large files, the <code class="docutils literal notranslate"><span class="pre">rsync</span></code> method
-is better: it can continue an interrupted transfer (because the network dropped,
-say), whereas <code class="docutils literal notranslate"><span class="pre">sftp</span></code> would have to restart the transfer.</p>
+<h3><a class="toc-backref" href="#id25"><span class="section-number">5.7.3. </span>Transfer of files to GWDG Archive from Windows</a><a class="headerlink" href="#transfer-of-files-to-gwdg-archive-from-windows" title="Permalink to this headline">¶</a></h3>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">rsync</span></code> installed on your Windows machine, you should be
+able to use it as described in the section for Linux/OSX. (It can
+probably be installed via Windows Subsystem for Linux, Cygwin,
+<a class="reference external" href="http://chocolatey.org">Chocolatey</a>, …)</p>
+<p>An alternative is to use secure FTP (sftp), for example with GUI based
+<code class="docutils literal notranslate"><span class="pre">sftp</span></code> clients include PuTTY, WinSCP and Cyberduck. However, for large
+files, the <code class="docutils literal notranslate"><span class="pre">rsync</span></code> method is better: it can continue an interrupted
+transfer (because the network dropped, say), whereas <code class="docutils literal notranslate"><span class="pre">sftp</span></code> would have
+to restart the transfer.</p>
 </div>
 </div>
 <div class="section" id="related-information">
-<h2><a class="toc-backref" href="#id31"><span class="section-number">5.8. </span>Related information</a><a class="headerlink" href="#related-information" title="Permalink to this headline">¶</a></h2>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<ul class="simple">
-<li><p>From HPC-Carpentry: <a class="reference external" href="http://rits.github-pages.ucl.ac.uk/hpc-intro/15-transferring-files/index.html">transfer of data and use of tar/zip</a></p></li>
+<h2><a class="toc-backref" href="#id26"><span class="section-number">5.8. </span>Related information</a><a class="headerlink" href="#related-information" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>From HPC-Carpentry: <a class="reference external" href="http://rits.github-pages.ucl.ac.uk/hpc-intro/15-transferring-files/index.html">transfer of data and use of
+tar/zip</a></p></li>
 </ul>
-</div>
+</div></blockquote>
 </div>
 </div>
 
@@ -475,45 +530,36 @@ say), whereas <code class="docutils literal notranslate"><span class="pre">sftp<
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">5. Archiving research data</a><ul>
-<li><a class="reference internal" href="#what-data-to-archive">5.1. What data to archive?</a><ul>
-<li><a class="reference internal" href="#first-archive-data-that-needs-to-be-archived">5.1.1. First, archive data that needs to be archived</a></li>
-<li><a class="reference internal" href="#second-consider-additional-research-data-sets-for-archival">5.1.2. Second, consider additional research data sets for archival</a></li>
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo-mpsd-english-blue-sans.png" alt="Logo"/>
+            </a></p><hr>
+<ul>
+    <li> <a href="https://mpsd.mpg.de/en">Max Planck Institute for Structure and Dynamics of Matter</a> </li>
+    <li> <a href="https://www.mpsd.mpg.de/research/ssus/comput-science">SSU Computational Science</a> </li>
+</ul>
+<hr>
+<br>
+<h3><a href="index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-it.html">2. Overview IT services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version-control.html">3. Version control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research-data-management.html">4. Research Data Management</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Archiving research data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-data-to-archive">5.1. What data to archive?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#archival-services">5.2. Archival services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documenting-the-data-meta-data">5.3. Documenting the data (meta data)?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#practical-aspects-storing-data-for-long-term-archival">5.4. Practical aspects storing data for long-term archival</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-zip-to-create-archive-files">5.5. Using <code class="docutils literal notranslate"><span class="pre">zip</span></code> to create archive files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-tar-to-create-archive-files">5.6. Using <code class="docutils literal notranslate"><span class="pre">tar</span></code> to create archive files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-gwdg-archival-service">5.7. The GWDG Archival service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#related-information">5.8. Related information</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#archival-services">5.2. Archival services</a><ul>
-<li><a class="reference internal" href="#archival-services-max-planck-researchers">5.2.1. Archival services Max Planck researchers</a></li>
-<li><a class="reference internal" href="#other-archival-services">5.2.2. Other archival services</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#documenting-the-data-meta-data">5.3. Documenting the data (meta data)?</a></li>
-<li><a class="reference internal" href="#practical-aspects-storing-data-for-long-term-archival">5.4. Practical aspects storing data for long-term archival</a><ul>
-<li><a class="reference internal" href="#data-storage-hardware">5.4.1. Data storage hardware</a></li>
-<li><a class="reference internal" href="#converting-the-data-set-into-an-archive-file-for-archival">5.4.2. Converting the data set into an archive file for archival</a></li>
-<li><a class="reference internal" href="#table-of-contents-for-archive-file">5.4.3. Table of contents for archive file</a></li>
-<li><a class="reference internal" href="#practical-creation-of-the-table-of-contents-file-list">5.4.4. Practical creation of the table-of-contents file list</a></li>
-<li><a class="reference internal" href="#catalogue-of-archived-data">5.4.5. Catalogue of archived data</a></li>
-<li><a class="reference internal" href="#checksums-to-check-data-consistency-after-upload-to-archive">5.4.6. Checksums to check data consistency (after upload to archive)</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#using-zip-to-create-archive-files">5.5. Using <code class="docutils literal notranslate"><span class="pre">zip</span></code> to create archive files</a></li>
-<li><a class="reference internal" href="#using-tar-to-create-archive-files">5.6. Using <code class="docutils literal notranslate"><span class="pre">tar</span></code> to create archive files</a></li>
-<li><a class="reference internal" href="#the-gwdg-archival-service">5.7. The GWDG Archival service</a><ul>
-<li><a class="reference internal" href="#general-information">5.7.1. General information</a></li>
-<li><a class="reference internal" href="#transfer-of-files-to-gwdg-archive-from-linux-osx">5.7.2. Transfer of files to GWDG Archive from Linux/OSX</a><ul>
-<li><a class="reference internal" href="#step-1-find-the-archive-location">5.7.2.1. Step 1: find the archive location.</a></li>
-<li><a class="reference internal" href="#step-2-copy-our-archive-file-to-the-gwdg-archive">5.7.2.2. Step 2: copy our archive file to the GWDG archive</a></li>
-<li><a class="reference internal" href="#step-3-check-that-the-transfer-has-been-successful">5.7.2.3. Step 3: check that the transfer has been successful</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#transfer-of-files-to-gwdg-archive-from-windows">5.7.3. Transfer of files to GWDG Archive from Windows</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#related-information">5.8. Related information</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="keeper.html">6. Keeper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zulip.html">7. Zulip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">8. Changelog</a></li>
 </ul>
 
   <h4>Previous topic</h4>
@@ -540,15 +586,12 @@ say), whereas <code class="docutils literal notranslate"><span class="pre">sftp<
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
           <a href="keeper.html" title="6. Keeper"
-             >next</a> |</li>
+             >next</a></li>
         <li class="right" >
           <a href="research-data-management.html" title="4. Research Data Management"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Computational science  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MPSD SSU Computational Science</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><span class="section-number">5. </span>Archiving research data</a></li> 
       </ul>
     </div>

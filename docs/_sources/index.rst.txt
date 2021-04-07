@@ -3,8 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Computational science resources
-===============================
+
+.. raw:: html
+
+  <br>
+
+
+Computational Science documentation
+===================================
+
+.. raw:: html
+
+   <br>
 
 .. image:: _static/mpsd-cs-logo-with-axis.png
    :align: right

@@ -5,31 +5,40 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Research Data Management &#8212; Computational science  documentation</title>
+    <title>4. Research Data Management &#8212; MPSD SSU Computational Science</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
+    <script src="_static/language_data.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="5. Archiving research data" href="archive.html" />
-    <link rel="prev" title="3. Version control" href="version-control.html" /> 
+    <link rel="prev" title="3. Version control" href="version-control.html" />
+ 
+    <!-- Get MPG fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
           <a href="archive.html" title="5. Archiving research data"
-             accesskey="N">next</a> |</li>
+             accesskey="N">next</a></li>
         <li class="right" >
           <a href="version-control.html" title="3. Version control"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Computational science  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MPSD SSU Computational Science</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><span class="section-number">4. </span>Research Data Management</a></li> 
       </ul>
     </div>  
@@ -43,127 +52,157 @@
 <span id="id1"></span><h1><span class="section-number">4. </span>Research Data Management<a class="headerlink" href="#research-data-management" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-are-research-data">
 <h2><span class="section-number">4.1. </span>What are research data?<a class="headerlink" href="#what-are-research-data" title="Permalink to this headline">¶</a></h2>
-<p>Research data include experimentally captured data sets, processed data, and
-data computed through computer simulation. The software involved in these steps
-<em>and</em> meta-data that describes the data are also research data.</p>
+<p>Research data include experimentally captured data sets, processed data,
+and data computed through computer simulation. The software involved in
+these steps <em>and</em> meta-data that describes the data are also research
+data.</p>
 <p>Research data is created in virtually any research activity.</p>
 </div>
 <div class="section" id="what-is-research-data-management">
 <h2><span class="section-number">4.2. </span>What is research data management?<a class="headerlink" href="#what-is-research-data-management" title="Permalink to this headline">¶</a></h2>
-<p>Research data management includes the storing of data so that it can be actively
-worked on by the owner, sharing of the data with collaborators, and long term
-archiving of (important parts of) the data. The organisation and documentation
-of the data is also part of research data management. For published data, the
-documentation should be to such a standard that other researchers can understand
-and re-use the data.</p>
+<p>Research data management includes the storing of data so that it can be
+actively worked on by the owner, sharing of the data with collaborators,
+and long term archiving of (important parts of) the data. The
+organisation and documentation of the data is also part of research data
+management. For published data, the documentation should be to such a
+standard that other researchers can understand and re-use the data.</p>
 </div>
 <div class="section" id="why-do-we-need-research-data-management">
 <h2><span class="section-number">4.3. </span>Why do we need research data management?<a class="headerlink" href="#why-do-we-need-research-data-management" title="Permalink to this headline">¶</a></h2>
 <p>Good research data management enables effective use of the data by the
-creator/owner, verification or reproduction of published research outputs, and
-re-use of the data leading to new results.</p>
+creator/owner, verification or reproduction of published research
+outputs, and re-use of the data leading to new results.</p>
 <p>Research data management is part of good scientific practice.</p>
-<p>Funding bodies, scientific journals and research organisations (such as the Max
-Planck Society) are increasingly demanding pro-active data management from
-applicants, authors and employers.</p>
+<p>Funding bodies, scientific journals and research organisations (such as
+the Max Planck Society) are increasingly demanding pro-active data
+management from applicants, authors and employers.</p>
 </div>
 <div class="section" id="research-data-life-cycle">
 <h2><span class="section-number">4.4. </span>Research data life cycle<a class="headerlink" href="#research-data-life-cycle" title="Permalink to this headline">¶</a></h2>
-<p>For most research projects, there are different stages of working with the
-relevant research data:</p>
+<p>For most research projects, there are different stages of working with
+the relevant research data:</p>
 <div class="section" id="stage-1-data-capture">
 <h3><span class="section-number">4.4.1. </span>Stage 1: data capture<a class="headerlink" href="#stage-1-data-capture" title="Permalink to this headline">¶</a></h3>
-<p>Initially, <em>data is captured</em> (for example through experiment or computer
-simulation), and iteratively refined: output from first <em>initial analysis</em> of the data may
-guide the experiment or choice of simulation parameters that lead to the next
-data set recorded.</p>
+<p>Initially, <em>data is captured</em> (for example through experiment or
+computer simulation), and iteratively refined: output from first
+<em>initial analysis</em> of the data may guide the experiment or choice of
+simulation parameters that lead to the next data set recorded.</p>
 </div>
 <div class="section" id="stage-2-data-analysis-towards-publication">
 <h3><span class="section-number">4.4.2. </span>Stage 2: data analysis towards publication<a class="headerlink" href="#stage-2-data-analysis-towards-publication" title="Permalink to this headline">¶</a></h3>
-<p>This data capture phase is followed by identification of the most interesting
-parts of the data, and then an in-depth <em>data analysis</em> of those data sets leading
-(in many cases) to a publication.</p>
+<p>This data capture phase is followed by identification of the most
+interesting parts of the data, and then an in-depth <em>data analysis</em> of
+those data sets leading (in many cases) to a publication.</p>
 <p>Stage 1 and 2 may merge into each other, for example if the
-experiment/simulation is available without time limitation and further data
-capture can be carried out following the analysis.</p>
-<p>During stage 1 and 2, we need access to the data sets with a short latency.
-Typically, such data is stored “on disk” (in particular not on tape).</p>
+experiment/simulation is available without time limitation and further
+data capture can be carried out following the analysis.</p>
+<p>During stage 1 and 2, we need access to the data sets with a short
+latency. Typically, such data is stored “on disk” (in particular not on
+tape).</p>
 </div>
 <div class="section" id="stage-3-post-publication-and-data-archival">
 <h3><span class="section-number">4.4.3. </span>Stage 3: post publication and data archival<a class="headerlink" href="#stage-3-post-publication-and-data-archival" title="Permalink to this headline">¶</a></h3>
 <p><em>After publication</em> important data should be kept (see <a class="reference internal" href="archive.html"><span class="doc">Archiving research data</span></a>).</p>
-<p>For economic reasons, such <em>archived data</em> is commonly stored on tape. This means
-access to the data is slow: it may take minutes, hours or days to get the data
-back from tape into a system where it can be read and re-processed.</p>
+<p>For economic reasons, such <em>archived data</em> is commonly stored on tape.
+This means access to the data is slow: it may take minutes, hours or
+days to get the data back from tape into a system where it can be read
+and re-processed.</p>
 </div>
 </div>
 <div class="section" id="research-data-associated-with-a-publication">
 <h2><span class="section-number">4.5. </span>Research data associated with a publication<a class="headerlink" href="#research-data-associated-with-a-publication" title="Permalink to this headline">¶</a></h2>
-<p>To publish scientific results that make use of data (in some form), one should
-create a data repository for this publication which puts together (somehow) and
-archives (somehow) the important information that is required to <em>reproduce</em> the
-findings from the publication manuscript.</p>
+<p>To publish scientific results that make use of data (in some form), one
+should create a data repository for this publication which puts together
+(somehow) and archives (somehow) the important information that is
+required to <em>reproduce</em> the findings from the publication manuscript.</p>
+<blockquote>
+<div><p>Write section on reproducibility.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Comment on “How to manage research data?”</p>
+<ul>
+<li><p>Put important and small documents into <a class="reference internal" href="version-control.html"><span class="doc">Version control</span></a>.</p>
+<p>Simulation research data</p>
+<p>Where the data is computed by a simulation, it is crucial to keep
+a precise record of the version of the simulation and
+post-processing software (typically using <a class="reference internal" href="version-control.html"><span class="doc">Version control</span></a>).</p>
+</li>
+</ul>
+</div></blockquote>
 </div>
 <div class="section" id="dealing-with-data-files">
 <h2><span class="section-number">4.6. </span>Dealing with data files<a class="headerlink" href="#dealing-with-data-files" title="Permalink to this headline">¶</a></h2>
-<p>The MPLD summarises some guidance on <a class="reference external" href="https://rdm.mpdl.mpg.de/file-handling/">naming and handling files</a>.</p>
+<p>The MPLD summarises some guidance on <a class="reference external" href="https://rdm.mpdl.mpg.de/file-handling/">naming and handling
+files</a>.</p>
 <p>Small and important files should be kept under <a class="reference internal" href="version-control.html"><span class="doc">Version control</span></a>.</p>
-<p>During data capture and data analysis, it is desirable to have backups of the
-data files to be ready to respond to unexpected hardware failure or user error
-(such as accidentally deleting important data files). Depending on the file
-size, this may or may not be possible.</p>
+<p>During data capture and data analysis, it is desirable to have backups
+of the data files to be ready to respond to unexpected hardware failure
+or user error (such as accidentally deleting important data files).
+Depending on the file size, this may or may not be possible.</p>
 <p>For medium sized projects (below 500GB), the <a class="reference internal" href="keeper.html"><span class="doc">Keeper</span></a> project from
-the MPDL can be used here (using the SeaDrive client). Keeper can also turn such
-a collection of files into an archive when the project is completed.</p>
-<p>[To have a backup of local data in the cloud, MPG researchers can also use the
-<a class="reference external" href="https://www.gwdg.de/storage-services/gwdg-owncloud">GWDG OwnCloud</a> solution for small data sets. By default, this provides 50GB
-of storage. In contrast to Keeper, there is no associated archival foreseen.]</p>
-<p>For very large data sets, such as those captured at X-ray Free Electron Lasers
-or synchrotrons, the relevant research facility is normally equipped to host the
-data on the research facility site, and provides computational storage to carry
-out (at least the initial) analysis on site.</p>
+the MPDL can be used here (using the SeaDrive client). Keeper can also
+turn such a collection of files into an archive when the project is
+completed.</p>
+<p>[To have a backup of local data in the cloud, MPG researchers can also
+use the <a class="reference external" href="https://www.gwdg.de/storage-services/gwdg-owncloud">GWDG
+OwnCloud</a>
+solution for small data sets. By default, this provides 50GB of storage.
+In contrast to Keeper, there is no associated archival foreseen.]</p>
+<p>For very large data sets, such as those captured at X-ray Free Electron
+Lasers or synchrotrons, the relevant research facility is normally
+equipped to host the data on the research facility site, and provides
+computational storage to carry out (at least the initial) analysis on
+site.</p>
 </div>
 <div class="section" id="file-formats">
 <h2><span class="section-number">4.7. </span>File formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="general-guidance">
 <h3><span class="section-number">4.7.1. </span>General guidance<a class="headerlink" href="#general-guidance" title="Permalink to this headline">¶</a></h3>
-<p>The MPLD summarises some guidance on <a class="reference external" href="https://rdm.mpdl.mpg.de/file-formats">file formats</a>.</p>
-<p>A lot of thought and planning can go into choosing a suitable file format to
-keep the data of a research project. In the rare case of starting a research
-project where there are existing standard or legacy file formats or conventions,
-one should choose file formats that are feasible and convenient to assess in the
-future.</p>
-<p>There are a number metrics that can be optimised in choosing such suitable file
-format. These include: simplicity, human-readability, compression, write speed,
-read speed, accessibility on different platforms, open documentation, widespread
-adoption in the community, number of files and open source. Please seek advice
-if desired.</p>
-<p>In addition to storing data in the files, we also need to document the meaning
-of the stored data (i.e. provide metadata to make the data interpretable).</p>
+<p>The MPLD summarises some guidance on <a class="reference external" href="https://rdm.mpdl.mpg.de/file-formats">file
+formats</a>.</p>
+<p>A lot of thought and planning can go into choosing a suitable file
+format to keep the data of a research project. In the rare case of
+starting a research project where there are existing standard or legacy
+file formats or conventions, one should choose file formats that are
+feasible and convenient to assess in the future.</p>
+<p>There are a number metrics that can be optimised in choosing such
+suitable file format. These include: simplicity, human-readability,
+compression, write speed, read speed, accessibility on different
+platforms, open documentation, widespread adoption in the community,
+number of files and open source. Please seek advice if desired.</p>
+<p>In addition to storing data in the files, we also need to document the
+meaning of the stored data (i.e. provide metadata to make the data
+interpretable).</p>
 </div>
 <div class="section" id="domain-specific-file-formats">
-<span id="id7"></span><h3><span class="section-number">4.7.2. </span>Domain specific file formats<a class="headerlink" href="#domain-specific-file-formats" title="Permalink to this headline">¶</a></h3>
-<p>Some communities have created domain specific data file formats that are <em>self describing</em> and - through this design - <em>embed the metadata</em> automatically.</p>
+<span id="id4"></span><h3><span class="section-number">4.7.2. </span>Domain specific file formats<a class="headerlink" href="#domain-specific-file-formats" title="Permalink to this headline">¶</a></h3>
+<p>Some communities have created domain specific data file formats that are
+<em>self describing</em> and - through this design - <em>embed the metadata</em>
+automatically.</p>
 <p>For example:</p>
 <ul class="simple">
-<li><p>NeXuS - Common data format for neutron, x-ray and muon science (<a class="reference external" href="https://www.nexusformat.org">https://www.nexusformat.org</a>)</p></li>
-<li><p>openPMD - OPEN stand for Particle-Mesh Data files (<a class="reference external" href="https://www.hzdr.de/publications/Publ-27962">https://www.hzdr.de/publications/Publ-27962</a>, <a class="reference external" href="https://www.openpmd.org">https://www.openpmd.org</a>)</p></li>
+<li><p>NeXuS - Common data format for neutron, x-ray and muon science
+(<a class="reference external" href="https://www.nexusformat.org">https://www.nexusformat.org</a>)</p></li>
+<li><p>openPMD - OPEN stand for Particle-Mesh Data files
+(<a class="reference external" href="https://www.hzdr.de/publications/Publ-27962">https://www.hzdr.de/publications/Publ-27962</a>,
+<a class="reference external" href="https://www.openpmd.org">https://www.openpmd.org</a>)</p></li>
 </ul>
-<p>If you can use such a self-describing file format (or develop your own), this
-simplifies creating meaningful archival of the data.</p>
-<p>It provides other benefits: all data sets using the same file format can be
-processed by data analysis tools that support the file format.</p>
+<p>If you can use such a self-describing file format (or develop your own),
+this simplifies creating meaningful archival of the data.</p>
+<p>It provides other benefits: all data sets using the same file format can
+be processed by data analysis tools that support the file format.</p>
 </div>
 </div>
 <div class="section" id="useful-links">
 <h2><span class="section-number">4.8. </span>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://rdm.mpdl.mpg.de">Research Data Management from Max Planck Digital Library</a></p></li>
-<li><p><a class="reference external" href="https://the-turing-way.netlify.app/reproducible-research/rdm.html">Research Data Management from The Turing Way</a></p></li>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://rdm.mpdl.mpg.de">Research Data Management from Max Planck Digital
+Library</a></p></li>
+<li><p><a class="reference external" href="https://the-turing-way.netlify.app/reproducible-research/rdm.html">Research Data Management from The Turing
+Way</a></p></li>
 </ul>
-</div>
+</div></blockquote>
 </div>
 </div>
 
@@ -174,28 +213,36 @@ processed by data analysis tools that support the file format.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">4. Research Data Management</a><ul>
-<li><a class="reference internal" href="#what-are-research-data">4.1. What are research data?</a></li>
-<li><a class="reference internal" href="#what-is-research-data-management">4.2. What is research data management?</a></li>
-<li><a class="reference internal" href="#why-do-we-need-research-data-management">4.3. Why do we need research data management?</a></li>
-<li><a class="reference internal" href="#research-data-life-cycle">4.4. Research data life cycle</a><ul>
-<li><a class="reference internal" href="#stage-1-data-capture">4.4.1. Stage 1: data capture</a></li>
-<li><a class="reference internal" href="#stage-2-data-analysis-towards-publication">4.4.2. Stage 2: data analysis towards publication</a></li>
-<li><a class="reference internal" href="#stage-3-post-publication-and-data-archival">4.4.3. Stage 3: post publication and data archival</a></li>
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo-mpsd-english-blue-sans.png" alt="Logo"/>
+            </a></p><hr>
+<ul>
+    <li> <a href="https://mpsd.mpg.de/en">Max Planck Institute for Structure and Dynamics of Matter</a> </li>
+    <li> <a href="https://www.mpsd.mpg.de/research/ssus/comput-science">SSU Computational Science</a> </li>
+</ul>
+<hr>
+<br>
+<h3><a href="index.html">Table of Contents</a></h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview-it.html">2. Overview IT services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version-control.html">3. Version control</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Research Data Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-research-data">4.1. What are research data?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-research-data-management">4.2. What is research data management?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-do-we-need-research-data-management">4.3. Why do we need research data management?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#research-data-life-cycle">4.4. Research data life cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#research-data-associated-with-a-publication">4.5. Research data associated with a publication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dealing-with-data-files">4.6. Dealing with data files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-formats">4.7. File formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-links">4.8. Useful links</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#research-data-associated-with-a-publication">4.5. Research data associated with a publication</a></li>
-<li><a class="reference internal" href="#dealing-with-data-files">4.6. Dealing with data files</a></li>
-<li><a class="reference internal" href="#file-formats">4.7. File formats</a><ul>
-<li><a class="reference internal" href="#general-guidance">4.7.1. General guidance</a></li>
-<li><a class="reference internal" href="#domain-specific-file-formats">4.7.2. Domain specific file formats</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#useful-links">4.8. Useful links</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="archive.html">5. Archiving research data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keeper.html">6. Keeper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zulip.html">7. Zulip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">8. Changelog</a></li>
 </ul>
 
   <h4>Previous topic</h4>
@@ -222,15 +269,12 @@ processed by data analysis tools that support the file format.</p>
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
           <a href="archive.html" title="5. Archiving research data"
-             >next</a> |</li>
+             >next</a></li>
         <li class="right" >
           <a href="version-control.html" title="3. Version control"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Computational science  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MPSD SSU Computational Science</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href=""><span class="section-number">4. </span>Research Data Management</a></li> 
       </ul>
     </div>
