@@ -75,12 +75,15 @@ Public streams
 -  ``#zulip-help``: use to ask for help in matters regarding use of
    Zulip
 
--  ``#ssu-cs``: Scientific Support Unit Computational Science - feel
-   free to use this stream to informally ask questions regarding
-   Computational problems: high performance computing, data analysis and
-   visualisation. If there is an easy answer available, this could be a
-   fast way of getting it. (Or find that somebody else has asked the
-   same question in the past.)
+-  ``#computing``: scientific computing related discussions - feel free
+   to use this stream to informally ask questions regarding
+   computational problems, including high performance computing, data
+   analysis and visualisation. If there is an easy answer available,
+   this could be a fast way of getting it. Or find that somebody else
+   has asked the same question in the past.
+
+   This stream was formerly called ``#ssu-cs`` (for Scientific Support
+   Unit-Computational Science).
 
 If you cannot see one of these streams, click on `Subscribe to more
 streams <https://zulip.mpsd.mpg.de/#streams/all>`__ to see which ones
