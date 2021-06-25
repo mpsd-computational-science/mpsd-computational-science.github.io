@@ -1,141 +1,162 @@
-
-
-
 Keeper
-------
+======
 
 Archiving and more
 
-Home page: `https://keeper.mpdl.mpg.de <https://keeper.mpdl.mpg.de>`_
-
+Home page: https://keeper.mpdl.mpg.de
 
 .. note:: The section below assumes you are an employee of the `Max Planck Society <https://mpg.de>`__. 
 
 Features
-~~~~~~~~
+--------
 
-- Keeper provides disk space (in the cloud and provided by the Max Planck
-  Digital Library), that can be archived.
-
-- Data is organised into `Libraries`_ (i.e. top level folders represent libraries)
-
-- An overview of all the libraries is available through a web browser at the keeper home page (`https://keeper.mpdl.mpg.de <https://keeper.mpdl.mpg.de>`_)
-
-- Keeper allows upload of large files or directories
-
-- Keeper allows cloud synchronisation of data with local machine
-
-- Access to librariers with other MPG researchers can be managed through `Sharing
-  Libraries or Folders <https://mpdl.zendesk.com/hc/en-us/articles/360007710419-Sharing-Files-and-Folders>`_
-
-- Subdirectories and files and can be made available publicly through a `share link <https://mpdl.zendesk.com/hc/en-us/articles/360007710419-Sharing-Files-and-Folders>`_
-
-- Sharing is possible with MPG researchers and `external collaborators <https://mpdl.zendesk.com/hc/en-us/articles/360008395899-How-to-invite-external-collaborators-to-Keeper>`_
-
-- Libraries can be turned into archives
-
-- `DOIs can be created if desired <https://mpdl.zendesk.com/hc/en-us/articles/360010502479-Digital-Object-Identifier-DOI->`_
-
-- Data will be archived for at least 10 years (`see "Cared Data Committment" <https://keeper.mpdl.mpg.de/f/1b0bfceac2/>`_)
-
-- provides a `"Cared Data Certificate" <https://keeper.mpdl.mpg.de/lib/70815673-26f2-4d36-873b-76b8262a6cf9/file/Cared-Data-Certificate-HowTo.pdf>`_
-
-- `Use as Google-docs alternative for real time collaborative document authoring <https://mpdl.zendesk.com/hc/en-us/articles/360017369119-Office-in-Keeper-Web-OnlyOffice>`_
+-  Keeper provides disk space (in the cloud and provided by the Max
+   Planck Digital Library), that can be archived.
+-  Data is organised into Libraries (i.e. top level folders represent
+   libraries)
+-  An overview of all the libraries is available through a web browser
+   at the keeper home page (https://keeper.mpdl.mpg.de)
+-  Keeper allows upload of large files or directories
+-  Keeper allows cloud synchronisation of data with local machine
+-  Access to librariers with other MPG researchers can be managed
+   through `Sharing Libraries or
+   Folders <https://mpdl.zendesk.com/hc/en-us/articles/360007710419-Sharing-Files-and-Folders>`__
+-  Subdirectories and files and can be made available publicly through a
+   `share
+   link <https://mpdl.zendesk.com/hc/en-us/articles/360007710419-Sharing-Files-and-Folders>`__
+-  Sharing is possible with MPG researchers and `external
+   collaborators <https://mpdl.zendesk.com/hc/en-us/articles/360008395899-How-to-invite-external-collaborators-to-Keeper>`__
+-  Libraries can be turned into archives
+-  `DOIs can be created if
+   desired <https://mpdl.zendesk.com/hc/en-us/articles/360010502479-Digital-Object-Identifier-DOI->`__
+-  Data will be archived for at least 10 years (`see "Cared Data
+   Committment" <https://keeper.mpdl.mpg.de/f/1b0bfceac2/>`__)
+-  provides a `"Cared Data
+   Certificate" <https://keeper.mpdl.mpg.de/lib/70815673-26f2-4d36-873b-76b8262a6cf9/file/Cared-Data-Certificate-HowTo.pdf>`__
+-  `Use as Google-docs alternative for real time collaborative document
+   authoring <https://mpdl.zendesk.com/hc/en-us/articles/360017369119-Office-in-Keeper-Web-OnlyOffice>`__
 
 Quota (data size)
-~~~~~~~~~~~~~~~~~
+-----------------
 
-The amount of storage for each user is 1TB (by default). 
+The amount of storage for each user is 1TB (by default).
 
-Quota is counted by looking at the size of the libraries associated to the owner
-of the libraries. Each library has exactly one owner.
+Quota is counted by looking at the size of the libraries associated to
+the owner of the libraries. Each library has exactly one owner.
 
-By sharing libraries with others, this does not contribute to the data quote of the others.
+By sharing libraries with others, this does not contribute to the data
+quote of the others.
 
-Keeper is not designed to archive significantly larger amounts of data. (As of Jan 2021.)
+Keeper is not designed to archive significantly larger amounts of data.
+(As of Jan 2021.)
 
 Getting started
-~~~~~~~~~~~~~~~
+---------------
 
-.. Important::
+.. raw:: org
 
-    - Keeper home page URL: `https://keeper.mpdl.mpg.de <https://keeper.mpdl.mpg.de>`_
+   #+ATTR_RST: :directive Important
 
-      - shows some documentation links while logged out
+..
 
-      - shows overview of libraries and files in browser when logged in
+   -  Keeper home page URL: https://keeper.mpdl.mpg.de
 
-    - Additional documentation at `https://mpdl.zendesk.com/hc/en-us/categories/360001234340-Keeper <https://mpdl.zendesk.com/hc/en-us/categories/360001234340-Keeper>`_
+      -  shows some documentation links while logged out
+      -  shows overview of libraries and files in browser when logged in
 
-    - One needs to subscribe to use the service and define a new password that is
-      required to connect the SeaLife or SeaDrive clients to Keeper, or when logging
-      in to the Keeper home page (`https://keeper.mpdl.mpg.de <https://keeper.mpdl.mpg.de>`_)
+   -  Additional documentation at
+      https://mpdl.zendesk.com/hc/en-us/categories/360001234340-Keeper
+   -  One needs to subscribe to use the service and define a new
+      password that is required to connect the SeaLife or SeaDrive
+      clients to Keeper, or when logging in to the Keeper home page
+      (https://keeper.mpdl.mpg.de)
 
 Libraries
-~~~~~~~~~
+---------
 
-KEEPER organises files into 'libraries'. Each library can be synced and shared
-separately. One personal library is created on sign-up. You can create more
-libraries later.
+KEEPER organises files into 'libraries'. Each library can be synced and
+shared separately. One personal library is created on sign-up. You can
+create more libraries later.
 
 Getting data into KEEPER (SeaFile)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
-The web interface at `https://keeper.mpdl.mpg.de <https://keeper.mpdl.mpg.de>`_ allows to see all the data in
-keeper, including libraries, shared libraries, all the directory structures and
-files.
+The web interface at https://keeper.mpdl.mpg.de allows to see all the
+data in keeper, including libraries, shared libraries, all the directory
+structures and files.
 
-More convenient access is realised through `keeper clients <https://mpdl.zendesk.com/hc/en-us/articles/360007791160-Keeper-Drive-Client>`_.
+More convenient access is realised through `keeper
+clients <https://mpdl.zendesk.com/hc/en-us/articles/360007791160-Keeper-Drive-Client>`__.
 
 SeaFile
-^^^^^^^
+~~~~~~~
 
-SeaFile can be used to upload files (or whole directories) from the local
-storage system to Keeper, or to download files from keeper to the local machine.
+SeaFile can be used to upload files (or whole directories) from the
+local storage system to Keeper, or to download files from keeper to the
+local machine.
 
-It is also possible to 'sync' local folders with those in Keeper: any change in
-one of the files on the local machine will (in the background) be repeated in
-Keeper's storage.
+It is also possible to 'sync' local folders with those in Keeper: any
+change in one of the files on the local machine will (in the background)
+be repeated in Keeper's storage.
 
-This is convenient to have a synchronised copy of the data at a different
-location, while working on the data.
+This is convenient to have a synchronised copy of the data at a
+different location, while working on the data.
 
-Note that you need to `Unsync`_ such synchronised data before you delete it locally
-(other wise the copy in Keeper will also be deleted).
+Note that you need to Unsync such synchronised data before you delete it
+locally (other wise the copy in Keeper will also be deleted).
 
 SeaDrive
-^^^^^^^^
+~~~~~~~~
 
-Is a more recent client than SeaFile. It is currently not as stable as SeaFile,
-and usage of SeaFile is recommended (as of Jan 2021).
+Is a more recent client than SeaFile. It is currently not as stable as
+SeaFile, and usage of SeaFile is recommended (as of Jan 2021).
 
 .. note:: Experience reports are welcome regarding practical data upload and synchronisation.
 
 Unsync
-^^^^^^
+~~~~~~
 
-When you have synchronised a local folder with Keeper, and want to delete the
-local folder but keep the copy in Keeper, you need to `unsync <https://mpdl.zendesk.com/hc/en-us/articles/360007744619-Unsync-and-Resync-Libraries>`_ that folder before
-deleting it.
+When you have synchronised a local folder with Keeper, and want to
+delete the local folder but keep the copy in Keeper, you need to
+`unsync <https://mpdl.zendesk.com/hc/en-us/articles/360007744619-Unsync-and-Resync-Libraries>`__
+that folder before deleting it.
 
 Notifications
-~~~~~~~~~~~~~
+-------------
 
-Email notifications about changed files can be requested (for example to be sent
-every day, or every 4 hours). This can be helpful when working on a shared
-library.
+Email notifications about changed files can be requested (for example to
+be sent every day, or every 4 hours). This can be helpful when working
+on a shared library.
+
+Sharing a library
+-----------------
+
+Sharing a library is a two stage process:
+
+#. Get the person you want to share with to join Keeper. You can send
+   them an invitee (`Invite
+   People <https://keeper.mpdl.mpg.de/invitations/>`__)
+
+#. Once the person has joined, select the share symbol in the list of
+   `My Libraries <https://keeper.mpdl.mpg.de/my-libs/#>`__, and then
+   select "Share to user".
 
 Usage experience
-~~~~~~~~~~~~~~~~
+----------------
 
-.. Warning::
+.. raw:: org
 
-    Moving files (for example into a subdirectory) within a directory on a local machine
-    using the SeaDrive client (tested with OSX), results in deletion and re-upload
-    of the files to the Cloud. This could take a long time for large files.
+   #+ATTR_RST: :directive Warning
 
-    So the lesson is: best to put files into the right place immediately (if the
-    amount of data is large and upload times are long), or to drive such operations
-    through the web interface.
+..
+
+   Moving files (for example into a subdirectory) within a directory on
+   a local machine using the SeaDrive client (tested with OSX), results
+   in deletion and re-upload of the files to the Cloud. This could take
+   a long time for large files.
+
+   So the lesson is: best to put files into the right place immediately
+   (if the amount of data is large and upload times are long), or to
+   drive such operations through the web interface.
 
 Please share your observations! (Contact :doc:`introduction`)
