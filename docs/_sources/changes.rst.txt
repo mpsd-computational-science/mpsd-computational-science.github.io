@@ -1,13 +1,7 @@
-
-
-
 Changelog
----------
+=========
 
-::
-
-    - <2021-02-17 Wed>  Adding section on Zulip
-
-    - <2021-02-15 Mon>  Completed first draft of archival section
-
-    - <2021-01-22 Fri>  Completed section Keeper
+   -  <2021-02-17 Wed> Adding section on Zulip
+   -  <2021-02-15 Mon> Completed first draft of archival section
+   -  <2021-01-22 Fri> Completed section Keeper
+   -  <2021-07-20 Tue> Add subsection on 7zip
