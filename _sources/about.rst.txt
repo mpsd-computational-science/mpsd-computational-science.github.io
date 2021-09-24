@@ -1,0 +1,131 @@
+
+
+.. image:: _static/mpsd-cs-logo-with-axis.png
+   :align: right
+   :width: 4cm
+   :class: right
+   :alt: MPSD logo, discretised
+
+.. raw:: html
+
+   <!-- insert some vertical space -->
+   <p style="margin-bottom:2cm;"></p>
+
+
+About
+=====
+
+You are looking at the home page of the the `Computational Science scientific support unit <https://www.mpsd.mpg.de/research/ssus/comput-science>`__
+at the
+`Max Planck Institute for Structure and Dynamics of Matter <https://mpsd.mpg.de>`__ in
+Hamburg, Germany.
+
+
+Mission
+=======
+
+Many scientists need to use computational methods to support their work: ranging
+from processing and plotting of experimentally captured data to running
+large-scale simulations on high performance computing hardware.
+
+Our mission is to support scientist with these activities. Our services range
+from providing help for small enquiries to long-term collaboration to jointly
+tackle more ambitious goals.
+
+Our aim is to enable MPSD scientists to use state-of-the-art computational and
+software engineering techniques that (i) make the research process more
+effective, more flexible and more reproducible, and (ii) are acceptable and
+appropriate for the computing skills/interest of the scientists.
+
+Our research activity is in the area of computation for science, including
+software engineering for science, workflows for data analysis, visualisation,
+and computer simulation methodology. Our work is driven by collaboration with
+domain specialists - please get in touch to explore options.
+
+
+How can we help? - Example activities
+=====================================
+
+Do /get in touch/ if any of the following topics are of interested to you:
+
+- How to manage different versions of your analysis scripts / software? (Version control)
+- How to work together with others on software? (version control, github/gitlab)
+- How to worry less about breaking existing functionality when you extend/change software (automatic tests, continuous integration)
+- Can I automate my analysis done in Excel / Origin / ... ?
+- My program or data analysis is too slow - what can be done?
+- Consider making your software open source? 
+- How to visualise my data?
+- How to make my data analysis more reproducible?
+- Do you need to move your calculations to a high performance computing resource?
+- Are you planning a new piece of software and would like to brainstorm a structure?
+- Would you like to refactor your software to be more maintainable and usable in the future?
+- ...
+
+We can help to with the above (and other) questions: we can discuss the problem
+at hand, try to find a solution that is appropriate for your team, provide
+relevant training and advice, or take an active role in implementing the
+solution.
+
+
+----------------------------------
+
+
+People
+======
+
+
+- |pic-hans| Prof Dr `Hans Fangohr <https://fangohr.github.io>`__, Head of group
+
+- |pic-henning| Dr Henning Glawe, Linux and HPC specialist
+
+- |pic2| Daniel Bremer, Reproducibility (PhD student)
+
+- |pic2| Martin Lang, Computational micromagnetics (PhD student)
+
+- |pic-kevin| Kevin Garcia, Octopus data analysis (MSc student)
+
+- |pic-12| Software Research Engineer (to be recruited)
+  
+- |pic-12| Computational Scientist (to be recruited) 
+
+
+
+----------------------------------
+
+.. _contact:
+
+Contact
+=======
+
+There are multiple ways of getting in touch:
+
+- by email, please use `ssu-cs@mpsd.mpg.de <mailto:ssu-cs@mpsd.mpg.de>`_ for general queries
+
+- You can also use the ``#computing`` stream in `MPSD's Zulip instance
+  <https://zulip.mpsd.mpg.de>`__ to raise queries, or browse if your question
+  was discussed (and answered?) before.
+
+- Of course you can contact group members directly (by Email, Zulip or in person)
+
+
+
+.. |pic-hans| image:: https://fangohr.github.io/images/squareface2.jpeg
+              :target: http://fangohr.github.io
+              :width: 50pt
+
+.. |pic-henning| image:: https://www.mpsd.mpg.de/employee_images/47440-1603279794?t=eyJ3aWR0aCI6Mzc2LCJoZWlnaHQiOjQ4MywiZml0IjoiY3JvcCIsImZpbGVfZXh0ZW5zaW9uIjoianBnIn0%3D--03c6b27260fb679a26e1bfd961d65f0dd22dc814
+              :width: 50pt
+              :target: https://www.mpsd.mpg.de/person/47440/2736
+
+
+.. |pic-12| image:: https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Silver_-_replace_this_image_female_and_male.svg/2560px-Silver_-_replace_this_image_female_and_male.svg.png
+                 :width: 50pt
+   
+.. |pic2| image:: https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Gray_-_replace_this_image_male.svg/200px-Gray_-_replace_this_image_male.svg.png
+                :width: 50pt
+
+.. |pic-female| image:: https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Gray_-_replace_this_image_female.svg/200px-Gray_-_replace_this_image_female.svg.png
+                :width: 50pt
+
+.. |pic-kevin| image:: https://media-exp1.licdn.com/dms/image/C4D03AQFkR8n0u32qtg/profile-displayphoto-shrink_200_200/0/1600032362961?e=1635984000&v=beta&t=HfvikhCGLyJ9WumC6qZQQSNoLCJfzGJasphR2vYfqyM
+               :width: 50pt

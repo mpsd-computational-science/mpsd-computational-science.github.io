@@ -1,0 +1,614 @@
+.. _archiving-research-data:
+
+Archiving research data
+=======================
+
+.. contents:: :local:
+
+As part of :doc:`research-data-management`, we may need to or want to
+archive data for longer periods (5 years, 10 years or more).
+
+We can *archive* data when we do not expect to work on the data in the
+near future, and if it is acceptable that accessing the data again may
+take some time (for example because the data needs to be read back from
+tape before we can access it again). Archiving data is cheaper than
+keeping it on spinning disks or SSD memory storage, and thus preferred
+when possible.
+
+A common strategy (see :doc:`research-data-management`) is to create an
+archive for each publication (for example at the time of publication).
+
+What data to archive?
+---------------------
+
+Storage space is not free (or cheap): we should only archive data that
+could be useful to others or us at some point in the future. On the
+other hand, we should aim to preserve all data that may be useful in the
+future. How to decide which data to keep? We propose the following
+approach:
+
+First, archive data that needs to be archived
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For certain research activities, we may have to archive the data. The
+prime example are research data associated with publications.
+
+It is also possible that research (grant) agreements require particular
+data sets to be archived beyond the run time of a (funded) project.
+
+Or that the researchers employer, such as the Max Planck Society, has
+`particular expectations relating to archival of
+data <https://www.mpg.de/197494/rulesScientificPractice.pdf>`__.
+
+Second, consider additional research data sets for archival
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Before we archive a data set which we are not required to for reasons
+outlined above, we should consider if those data sets can truly be
+useful in the future (either to us, or others):
+
+-  Is our documentation of the data sufficiently good that we could make
+   sense of it in 2 years time (for example)?
+-  If we have not managed to analyse the paper now and put it into a
+   manuscript, why do we think we would have more time/capacity to do
+   that later in the future?
+-  Would somebody not familiar with the project be able to benefit from
+   the data? (In particular: have we explained what the data represents
+   in sufficient details?)
+
+Important and potentially useful data should be kept, but where it is
+very unlikely that (further) scientific advances can be made, deleting
+the data might be a reasonable way forward: this will free resources
+that can be used for other data sets that may have a higher chance of
+creating impact.
+
+Long-term storage of data sets - be it for analysis or archival -
+requires staff time, electricity, hardware, hardware maintenance,
+refreshing of old tapes, etc. This creates cost, the amount of which is
+not always visible or known to the researcher.
+
+It is not unusual for an experiment to acquire significant amounts of
+data; out of which, for example, 20% are used in publications. The
+question raised in this section is: should we archive the other 80% just
+in case they contain useful data. There is no generic answer to this,
+but it might be useful to raise the question, and discuss it between
+scientists and infrastructure (storage) experts.
+
+Archival services
+-----------------
+
+Archival services Max Planck researchers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Max Planck Digital
+Library <https://mpdl.zendesk.com/hc/en-us/articles/360011432700-Archiving>`__:
+data sets up to 500GB, use of Keeper for Archival (see :doc:`keeper`).
+Recommendation for data sets below 500GB.
+
+`GWDG Archival
+service <https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start>`__:
+no space limit. Recommendation for larger data sets. See Section
+:ref:`gwdg-archival-services` for further details.
+
+`Max Planck Compute & Data Facility
+(MPCDF) <https://docs.mpcdf.mpg.de/doc/data/backup-archive/archives.html>`__:
+Expected file sizes between 1GB and 1TB. Recommended for data that is
+already stored at the MPCDF.
+
+Other archival services
+~~~~~~~~~~~~~~~~~~~~~~~
+
+`Zenodo <https://zenodo.org>`__ offers archival of small data sets (up
+to `50GB without special requests <https://help.zenodo.org>`__), and
+provides a DOI for such submissions.
+
+.. _archive-metadata:
+
+Documenting the data (meta data)?
+---------------------------------
+
+A significant challenge is *to document* the data.
+
+This includes a description of the format, the meaning of the data, any
+assumptions made in the capturing or processing of the data.
+
+If software was used to create the data, or if software is required to
+read the data, then *the software should be included* in the archive, or
+the very least a reference to the software repository and version used
+must be included.
+
+Any information that would be required to (re-)use the data in the
+future should be included: it should be possible for others to extract,
+inspect and use the data in the future, without having to consult you or
+your co-workers to request such information. Any assumptions made or
+limitations of the data should also be mentioned.
+
+This type of information is part of the *meta data*. It is required to
+explain and understand the data.
+
+The use of some :ref:`domain-specific-file-formats` can much simplify
+the documentation of data, as - in the ideal case - the metadata is
+embedded in the data file format automatically.
+
+The metadata should be stored together with the actual data in the
+archive.
+
+The top level directory of the data set is a place where one would
+typically place such documentation, for example in files such as
+``readme.txt``, or ``documentation.pdf``.
+
+Practical aspects storing data for long-term archival
+-----------------------------------------------------
+
+Data storage hardware
+~~~~~~~~~~~~~~~~~~~~~
+
+A common model for archiving data is that the users can transfer their
+files into their home directory or a special archive directory on a
+(linux) archive host, where it is stored on hard disks (or solid state
+storage). From there, the files will be copied onto tape (at a point of
+time that the archival system chooses), and (at some time) after that
+the copy on the disk may be removed.
+
+If the user needs to access the archived data again, they can logon to
+that archive host, and *request* the data. In the simplest case, this is
+possible by copying the data to another place, or just by attempting to
+read the data. At that point, a request will be queued for the data to
+be read back from the tape, and to be made available on the disk. It can
+take hours or longer for that request to be fulfilled.
+
+Converting the data set into an archive file for archival
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We assume that the data set is gathered within a directory, which could
+be called ``dataset``, for example. This subdirectory ``dataset`` may
+contain files and subdirectories, which in turn may contain more
+subdirectories and files.
+
+We assume the data is documented, and that the documentation is part of
+the ``dataset`` sub directory.
+
+Before we can archive this data set, we need to convert the set of files
+into an archive file, such as ``archive.zip`` or ``archive.7z`` or
+``archive.tar.gz``.
+
+This has two technical advantages: (i) the whole data set then appears
+as one file. Archival systems prefer few and large files over many small
+files. And (ii) our data sets can be compressed in the process. (Note,
+however, that some archival systems will by default compress any data
+they receive - in that case, we do not necessarily need the compression
+here.)
+
+Suitable programs that can create such archive files include ``zip`` and
+``tar`` (see :ref:`using-zip` and below).
+
+.. _archive-table-of-contents:
+
+Table of contents for archive file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once the data is on tape, it may take a long time (could be up to days)
+before it can be played back from tape onto a (disk-based) system where
+it can be used and explored. It may not be possible to (effectively)
+extract/view or download just one small file: it may still be required
+to restore the whole archive first. There is thus potentially *high
+latency* in the data access.
+
+For this reason, it is useful to keep a short *table-of-contents file*
+per archived data set in a separate location (and on disk) which can be
+easily accessed, and which has a link to the location of the archived
+data set. This table of contents file can then be easily (and in
+particular with non-noticeable latency) opened and examined; for example
+to search all table-of-contents file for a particular file or data set.
+
+Such a table-of-contents file should be easily readable in a format that
+is future proof. Suggestions here are plain text files (i.e. not binary
+and not proprietary formats such as MS Word). See
+:ref:`create-list-of-files-in-archive`.
+
+A number of *mark up* formats have emerged which can (but don't have to)
+be used to provide additional structure in such files. Example are
+`Markdown <https://en.wikipedia.org/wiki/Markdown>`__,
+`ReStructuredtext <https://en.wikipedia.org/wiki/ReStructuredText>`__,
+and `orgmode <https://en.wikipedia.org/wiki/Org-mode>`__ (in increasing
+order of complexity and power).
+
+The very minimum that the ``table-of-contents.txt`` file should contain
+is:
+
+-  the list of files in the archive file (together with their file size)
+
+As a recommendation for the table-of-contents file, one should also
+include
+
+-  title of the data set
+-  list of authors (including affiliations)
+-  a preferred contact
+-  description of the data (this may include pointers to more detailed
+   documents in the archive, see @@rst::ref:`archive-metadata`)
+-  link to experiment (if appropriate)
+-  publication(s) originating from the data set (a DOI per publication
+   is useful)
+-  link to further data sets related to the this data (if appropriate)
+-  list of funding bodies who should be acknowledged if the data is
+   re-used (if appropriate)
+-  if the data will be made public:
+
+   -  a publication reference that users of the data are asked to cite
+   -  a license for the use of the data by others
+
+Practical creation of the table-of-contents file list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To list all files with their size in a given zip file, we can use
+
+.. code:: bash
+
+   zipinfo archive.zip
+
+Note that this will require reading the file, and if the file is on
+tape, it will have to be retrieved before the command can be completed.
+One should thus run this command before the data is archived, and keep
+the output of the command somewhere safe and accessible to provide a
+*catalogue* of archived data files.
+
+If we are using ``tar``, a corresponding command for a compressed
+archive with name ``archive.tar.gz`` would be
+
+.. code:: bash
+
+   tar tfvz archive.tar.gz
+
+With ``7zip``, we can use:
+
+.. code:: bash
+
+   7z l archive.7z
+
+If the data is not yet converted into an archive file, we can create the
+list of files in the subdirectory ``SUBDIRNAME`` using a command (on
+Linux and OSX) such as
+
+.. code:: bash
+
+   ls -R -l SUBDIRNAME
+
+The ``ls`` command lists files in a subdiretory. The additional option
+``-R`` requests to list Recursively all files in all subdirectories. The
+option ``-l`` requests the Long file format, which includes the size of
+each file.
+
+To convert the output from running these commands into a file, we can
+redirect it, for example
+
+.. code:: bash
+
+   zipinfo archive.zip > list-of-files.txt
+
+.. todo:: [write more detailed tutorial on use of zip/tar -> Jupyter Notebook?]
+
+Catalogue of archived data
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Archives should be uniquely labelled and catalogued.
+
+The catalogue should include an entry for every archived data set.
+
+For each archived data set, the :ref:`archive-table-of-contents` should
+be stored in the catalogue.
+
+The catalogue is something each researcher could maintain in a backed up
+place on their personal computer.
+
+.. todo:: add pointer to library here 
+
+.. _create-list-of-files-in-archive:
+
+Checksums to check data consistency (after upload to archive)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Checksums <https://en.wikipedia.org/wiki/Checksum>`__ are small blocks
+of data that are computed from a large set of data. Checksum calculation
+algorithms are designed so that a change in the large set of data will
+result in a different checksum. Checksums can thus be used to detect
+(accidental or malicious) changes in the data.
+
+When we create an archive using ``zip``, a checksum per file is created
+automatically, and stored with the archive. Using the command
+
+.. code:: bash
+
+   unzip -t archive.zip 
+
+the checksums are re-computed, and compared with the checksums stored in
+the file. Any deviation will be highlighted.
+
+It is recommended to check the checksums after transferring large
+amounts of data at the archival site: a random bit-flip is unlikely to
+occur but if the amount of data is significant, the probability for such
+a bit flip increases.
+
+Good archival systems will do checksum tests internally and
+automatically once the data has arrived on their site, but it is the
+responsibility of the user to make sure the transmitted data arrives
+correctly.
+
+.. todo:: add example 
+
+.. _using-zip:
+
+Using ``zip`` to create archive files
+-------------------------------------
+
+This section describes most essential steps of creating (large) archive
+files using the `zip <http://infozip.sourceforge.net>`__ tool.
+
+To convert files in a subdirectory ``SUBDIRNAME`` into a zipped archive,
+we can use the command
+
+.. code:: bash
+
+   zip -r archive.zip SUBDIRNAME
+
+If we do not need or want compression to be used, we can use the ``-0``
+switch:
+
+.. code:: bash
+
+   zip -r -0 archive.zip SUBDIRNAME
+
+To unpack files from a given zip file, we can use
+
+.. code:: bash
+
+   unzip archive.zip
+
+To unpack one file (such as README.txt) from a given zip file, we can
+use
+
+.. code:: bash
+
+   unzip archive.zip SUBDIRNAME/README.txt
+
+To compute checksums (to detect corruption of the archive file):
+
+.. code:: bash
+
+   unzip -t archive.zip 
+
+To create a list of files in the archive:
+
+.. code:: bash
+
+   zipinfo archive.zip
+
+Using ``7zip`` to create archive files
+--------------------------------------
+
+`7-zip <https://www.7-zip.org>`__ is another archiving program, that can
+achieve better compression ratios than ``zip``. It is an alternative to
+using ``zip``.
+
+`p7zip <https://sourceforge.net/projects/p7zip/>`__ is a port of
+``7-zip`` for POSIX systems (such as Linux and OSX).
+
+Here are some examples for the (command line) usage:
+
+To Add files to the archive file ``archive.7z`` from the subdirectory
+``SUBDIRNAME`` which contains my data set:
+
+.. code:: bash
+
+   7z a archive.7z SUBDIRNAME
+
+(If the ``archive.7z`` file doesn't exist yet, it will be created. If it
+does exist, the ``SUBDIRNAME`` directory and its contents will be added
+to the file.)
+
+Print a List of files in the archive:
+
+.. code:: bash
+
+   7z l archive.7z
+
+To extract all files from the archive:
+
+.. code:: bash
+
+   7z x archive.7z
+
+To extract a single file – for example ``README.txt`` – from the
+archive, use
+
+.. code:: bash
+
+   7z x archive.7z SUBDIRNAME/README.txt
+
+To Test the integrity of the archive, use
+
+.. code:: bash
+
+   7z t archive.7z
+
+One would expect that this operation extracts each file in the archive,
+computes a checksum for the file, and compares the checksum with the
+checksum of the same uncompressed file that was created when the archive
+was created. We couldn't find a clear confirmation of this, although
+there seems to be the `view that this is the
+case <https://superuser.com/questions/1621563/are-7z-included-checksums-enough-to-verify-backup-integrity>`__.
+
+Using ``tar`` to create archive files
+-------------------------------------
+
+``tar`` is a popular tool on Linux/Unix. It has no in-built mechanism to
+detect data corruption, and extraction of one file is not possible
+without reading the whole archive. You may wish to consider using
+``zip`` instead (See :ref:`using-zip`).
+
+This section describes most essential steps of creating (large) archive
+files using the `zip <http://infozip.sourceforge.net>`__ tool.
+
+To convert files in a subdirectory ``SUBDIRNAME`` into a tarred archive,
+we can use the command
+
+.. code:: bash
+
+   tar cf archive.tar SUBDIRNAME
+
+This does not compress the files. To apply compression, we can either
+``gzip`` the tar file:
+
+.. code:: bash
+
+   gzip archive.tar 
+
+which will convert the file into ``archive.tar.gz`` . (Other compression
+tools could be used, such as ``bzip2``.)
+
+If the data set is large, it is better to combine the tarring and
+compression to be carried out at the same time (to avoid having two
+uncompressed copies of the data on disk at the same time):
+
+.. code:: bash
+
+   tar cfz archive.tar.gz SUBDIRNAME
+
+To unpack files from a given ``tar.gz`` file, we can use
+
+.. code:: bash
+
+   tar xfz archive.tar.gz
+
+To create a list of files in the ``tar.gz`` archive:
+
+.. code:: bash
+
+   tar tfvz archive.tar.gz
+
+To check against file corruption, we can compute a hash manually (before
+we transfer the file, and afterwards), and compare that the two hashes
+agree. If you don't know how to do this, best use ``zip`` (see
+:ref:`using-zip`).
+
+.. _gwdg-archival-services:
+
+The GWDG Archival service
+-------------------------
+
+General information
+~~~~~~~~~~~~~~~~~~~
+
+Please study up-to-date instructions on home page: `GWDG Archival
+service <https://info.gwdg.de/dokuwiki/doku.php?id=en:services:storage_services:data_archiving:start>`__
+
+Additional information:
+
+-  Preferred size of ``archive.zip`` or ``archive.tar.gz`` is between 1
+   and 4 TB
+
+-  Transfer of data from MPSD to GWDG is expected to be possible at a
+   rate of approximately 30MByte/sec, corresponding to 2.5TB per day. If
+   the observed rate is well below this, it should be investigated.
+
+-  The archive files will be moved to tape but the directory structure
+   and filenames are online and can be browsed. (But no stub files are
+   available, i.e. one cannot peek into a file.)
+
+-  archive files should be compressed when uploaded (i.e. the system
+   does not attempt to compress files when moving to tape).
+
+-  2 copies on tape are stored in separate locations.
+
+.. todo:: request adding of functional account / library 
+
+Transfer of files to GWDG Archive from Linux/OSX
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Prerequisites*: You need to have `deposited your public ssh key at the
+GWDG <https://info.gwdg.de/dokuwiki/doku.php?id=de:services:application_services:high_performance_computing:connect_with_ssh>`__.
+
+We assume we have a file ``archive.zip`` on our local Linux or OSX
+machine, and want to transfer this to the archive service of the GWDG.
+
+#. Step 1: find the archive location.
+
+   SSH to the machine recommended by the GWDG:
+
+   .. code:: bash
+
+      ssh USERNAME@transfer.gwdg.de
+
+   Once logged in, use ``echo $AHOME$`` to display the location of your
+   personal archive. Here is an example where ``USERNAME`` is replaced
+   by ``hfangoh``:
+
+   .. code:: bash
+
+      hfangoh@gwdu20:~> echo $AHOME
+      /usr/users/a/hfangoh
+
+   This means we need to copy our ``archive.zip`` file to the machine
+   ``transfer.gwdg.de`` in the location ``/usr/users/a/USERNAME``.
+
+#. Step 2: copy our archive file to the GWDG archive
+
+   A good command to do this from the command line is ``rsync``:
+
+   .. code:: bash
+
+      rsync --progress -e ssh --partial archive.zip  USERNAME@transfer.gwdg.de:/usr/users/a/USERNAME
+
+   This will:
+
+   -  ``--progress`` display a progress bar (optional)
+   -  ``-e ssh`` use ssh (compulsary)
+   -  ``--partial`` allow to continue the transfer if it is interrupted
+      for some reason. Recommended for larger files.
+
+#. Step 3: check that the transfer has been successful
+
+   .. code:: bash
+
+      ssh USERNAME@transfer.gwdg.de
+      cd $AHOME
+      unzip -t archive.zip
+
+   For a practical problem, one should choose a more descriptive name
+   instead of ``archive.zip``. For example
+   ``2021-physrevletters-90-12222.zip``, to refer to a data set
+   associated with a publication in Physical Review Letters, volume 90,
+   pages 12222, published in 2021. Over the years, many such archive
+   files may accumulate in the same directory, and with the suggested
+   naming convention (or a similar one), it will be easy to associate
+   them with the publication.
+
+   It is possible to create subdirectories in the archive home
+   ``$AHOME`` if you wish to do so to structure your collection of
+   archive files differently. However, the general guideline is to
+   deposit few and large files (see above).
+
+Transfer of files to GWDG Archive from Windows
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have ``rsync`` installed on your Windows machine, you should be
+able to use it as described in the section for Linux/OSX. (It can
+probably be installed via Windows Subsystem for Linux, Cygwin,
+`Chocolatey <http://chocolatey.org>`__, …)
+
+An alternative is to use secure FTP (sftp), for example with GUI based
+``sftp`` clients include PuTTY, WinSCP and Cyberduck. However, for large
+files, the ``rsync`` method is better: it can continue an interrupted
+transfer (because the network dropped, say), whereas ``sftp`` would have
+to restart the transfer.
+
+Related information
+-------------------
+
+.. raw:: org
+
+   #+ATTR_RST: :directive seealso
+
+..
+
+   -  From HPC-Carpentry: `transfer of data and use of
+      tar/zip <http://rits.github-pages.ucl.ac.uk/hpc-intro/15-transferring-files/index.html>`__

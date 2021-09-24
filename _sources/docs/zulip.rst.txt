@@ -1,0 +1,134 @@
+Zulip
+=====
+
+Introduction
+------------
+
+Zulip provides chat for distributed teams. It `can be argued that chat
+is a useful communication
+mode <https://fangohr.github.io/blog/zulip.html>`__ for organisations,
+in particular in COVID times where remote work maybe unavoidable.
+
+MPSD
+----
+
+We have a Zulip chat organisation for the Max Planck Institute for the
+Structure and Dynamics of Matter available at https://zulip.mpsd.mpg.de
+.
+
+.. important::
+
+  Disclaimer
+
+  The Zulip service is experimental, so please do not rely on it as an archive for
+  important information as it may be discontinued or fail.
+
+How to get started?
+-------------------
+
+All the important information is available in Zulip's help on `Getting
+started with
+Zulip <https://zulip.mpsd.mpg.de/help/getting-started-with-zulip>`__.
+
+We summarise some key points:
+
+Streams and topics
+~~~~~~~~~~~~~~~~~~
+
+One important topic to understand is that of *Streams* and *topics*.
+
+The conversations are arranged into *streams*. There are some default
+streams that everybody will join such as ``general``, ``random`` and
+``zulip-help``. Within each stream, there is a (growing) list of
+*topics*. Each topic gathers multiple messages belonging to that topic.
+
+See `Zulip's help on streams and
+topics <https://zulip.mpsd.mpg.de/help/about-streams-and-topics>`__.
+
+Public and private streams
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are `public streams <#public-streams>`__ and `private
+streams <#private-streams>`__.
+
+Private streams are useful to contain discussions within one group or
+department, such as the ``theory`` department or the IT group. Only
+invited members can see the stream.
+
+If you would like to create a private stream for your group/department,
+please get in touch with zulip-admin@mpsd.mpg.de .
+
+You can leave public streams, such as ``general``, ``computing``,
+``random`` and ``zulip-help`` if you are not interested in those, or
+change the notification settings.
+
+Private streams
+~~~~~~~~~~~~~~~
+
+There are some private streams (for research groups, PhD students etc) -
+you need to be invited to those by a member of the relevant stream
+before you can see them.
+
+Sending messages
+~~~~~~~~~~~~~~~~
+
+You can post messages in a stream (so everybody in the stream can see
+the message), or you can `send a private message to another
+person <https://zulip.mpsd.mpg.de/help/private-messages>`__ (or a group
+of other people). Such private messages have no topics.
+
+Notifications
+~~~~~~~~~~~~~
+
+You can decide what kind of
+`Notifications <https://zulip.mpsd.mpg.de/help/#notifications>`__ you
+would like to receive when new messages arrive. This can be configured
+for streams or for individual topics only.
+
+Muting topics/streams
+~~~~~~~~~~~~~~~~~~~~~
+
+If there are too many messages on a topic of no interest, you can *mute*
+that topic or stream (see
+`Notifications <https://zulip.mpsd.mpg.de/help/#notifications>`__).
+
+Public streams
+--------------
+
+-  ``#general``: use for questions or announcements of general
+   interested and work-related content (for example a seminar
+   announcements, questions about onboarding, etc)
+
+-  ``#random``: use for non-work related exchange; this can be a
+   substitute for coffee table discussions: looking for a plumber,
+   suggesting a BBQ, discussing the weather or sports or computers etc…
+
+-  ``#zulip-help``: use to ask for help in matters regarding use of
+   Zulip
+
+-  ``#computing``: scientific computing related discussions - feel free
+   to use this stream to informally ask questions regarding
+   computational problems, including high performance computing, data
+   analysis and visualisation. If there is an easy answer available,
+   this could be a fast way of getting it. Or find that somebody else
+   has asked the same question in the past.
+
+   This stream was formerly called ``#ssu-cs`` (for Scientific Support
+   Unit-Computational Science).
+
+If you cannot see one of these streams, click on `Subscribe to more
+streams <https://zulip.mpsd.mpg.de/#streams/all>`__ to see which ones
+are accessible.
+
+Desktop and smartphone apps
+---------------------------
+
+There are `Zulip apps for Linux, OSX, Windows Android, iOS and the
+terminal <https://zulip.com/apps/mac>`__ available.
+
+Further reading
+---------------
+
+.. seealso::
+
+  Please consult the Zulip help (https://zulip.mpsd.mpg.de/help) or post in the ``#zulip-help`` stream inside the Zulip organisation.

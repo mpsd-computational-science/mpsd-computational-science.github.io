@@ -1,0 +1,41 @@
+:orphan:
+
+Content [2/8]
+=============
+
+-  [ ] review carpentry link for tar/zip; currenttly set to UCL copy,
+   should revert to official URL when established and stable again
+
+-  [-] review research data management
+
+   -  [X] mention aligning of data documentation and archival with
+      publications
+   -  [X] add comments on general strategy
+   -  [ ] add link to MPG expectations and best scientific practice
+
+-  [ ] review keeper
+
+   -  [ ] add: can invite non-MPG researchers
+   -  [ ] sharing large files (nmag example)
+
+-  [ ] archive section
+
+   -  [ ] add section on squashfs
+   -  [ ] compare different file archiving tools/methods (zip, 7zip,
+      tar, squashfs)
+
+-  [ ] archive : mention that researcher is responsible for archiving?
+   Or leave this to Markus' document?
+
+-  [ ] checkout todo items. Can be done with:
+
+   .. code:: rst
+
+      .. todolist::
+
+-  [X] add HPC section for MPSD
+
+-  [X] add about the SSU part
+
+-  [ ] make 3-images on front page more stable (create one image file
+   and point to that?) Can also improve on the code image at least.

@@ -1,0 +1,39 @@
+:orphan:
+
+
+
+
+
+The material here is meant to provide some guidance for research involving
+computation. However, the field of computational science, underpinning
+experimental and theoretical research, is relatively new and developing quickly.
+So whatever (opinionated?) views are expressed here, may not be applicable to
+your research challenge, outdated or simply wrong:
+
+Please do get in touch with any corrections, ideas, need for clarifications and
+support requests.
+
+Researchers outside the `MPSD <https://mpsd.mpg.de>`__ are welcome to use these
+resources, and are invited to provide feedback for improvements.
+
+
+About these pages
+=================
+
+These pages are put together using the `sphinx documentation system
+<http://sphinx-doc.org>`__.
+
+You can navigate the pages using the cursor keys: cursor to the left and right
+will jump from section to section. Cursors keys up and down scroll the current
+page.
+
+
+
+
+
+
+.. note::
+
+  - This is work in progress.
+  - More material and pages will be added.
+  - Please approach us to indicate what is of highest importance for your work.

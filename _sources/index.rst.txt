@@ -1,0 +1,106 @@
+.. Computational science resources documentation master file, created by
+   sphinx-quickstart on Wed Jan  6 01:02:59 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+
+.. raw:: html
+
+  <br>
+
+.. image:: _static/mpsd-cs-logo-with-axis.png
+   :align: right
+   :width: 4cm
+   :class: center
+   :alt: MPSD logo, discretised
+
+
+Computational Science SSU
+=========================
+
+.. raw:: html
+
+   <br>
+   <br>
+   <br>
+   <br>
+
+**Welcome**
+
+You are looking at the `home page <index>`__ of the :doc:`Computational Science scientific
+support unit (SSU) <about>` at
+the `Max Planck Institute for Structure and Dynamics of Matter (MPSD)
+<https://mpsd.mpg.de>`__ in Hamburg, Germany.
+
+A growing amount of information is available in our `resources <docs/index.rst>`__ section, including:
+
+- :any:`overview-it`
+- Relevant training and seminars (:doc:`Events <events>`)
+- Advise on :any:`research-data-management`, :any:`archiving-research-data`, :any:`keeper`
+- Documentation on :any:`hpc`
+
+Please get in touch (:any:`contact`) with your queries - the materials are developed in response to your needs. 
+
+.. raw:: html
+
+   <br>
+
+
+
+
+----------------------------------------------------------------
+
+.. raw:: html
+
+   <br>
+
+
+**Recent and future events**
+
+.. include:: recent-events.rst
+
+
+See `Events <events.rst>`__ for more events.
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   :hidden:
+
+   about
+   Resources <docs/index>
+   events
+   gallery
+   
+
+-----------------------------------------------------------------
+
+
+.. raw:: html
+
+   <br>
+
+
+
+.. image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=stack-of-nodes.jpeg
+   :height: 129pt
+   :target: gallery.html
+.. image:: https://www.mpsd.mpg.de/547601/original-1620224604.jpg?t=eyJ3aWR0aCI6MTY5NiwiZmlsZV9leHRlbnNpb24iOiJqcGciLCJvYmpfaWQiOjU0NzYwMX0%3D--8edbb1f65e9565ac0b9d22a06af9511715987c12
+   :height: 129pt
+   :target: gallery.html
+.. image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=compile3.png
+   :height: 129pt
+   :target: gallery.html
+           
+
+----------------------------------------------------------------
+
+
+.. comment:
+  Indices and tables
+  ==================
+  
+  * :ref:`genindex`
+  * :ref:`modindex`
+  * :ref:`search`

@@ -1,0 +1,358 @@
+Events
+======
+
+.. contents::
+   :local:
+
+2021-10-19 MPCDF/NVIDIA GPU Computing Bootcamp (2 days)
+-------------------------------------------------------
+
+NVIDIA and the Max Planck Computing and Data Facility (MPCDF) is hosting
+a GPU Bootcamp open to all researchers and code developers of the Max
+Planck Society (MPG). During this two-day online Bootcamp, participants
+will learn about multiple GPU programming models and can choose the one
+that best fits their needs to run their scientific codes on GPUs (like
+those in the HPC system Raven). This Bootcamp will cover an introduction
+to GPU programming using OpenACC, OpenMP, stdpar and CUDA C, and
+provides hands-on opportunities to learn how to analyse GPU-enabled
+applications using NVIDIA Nsight Systems.
+
+For details and registration please visit
+https://www.mpcdf.mpg.de/about-mpcdf/news-events/gpu-bootcamp
+
+2021-10-13 14:00 Introduction to MPCDF services
+-----------------------------------------------
+
+The course provides a basic introduction to the compute and data
+services available at MPCDF, it includes about 2 hours of tutorial
+sessions, an interactive chat option and a concluding Q&A session and is
+intended specifically to lower the bar for the first-time usage of MPCDF
+services. Major topics include an overview and practical hints for
+connecting to the HPC compute and storage facilities and using them via
+the Slurm batch system. Basic knowledge about working in a Linux
+environment is a prerequisite. An MPCDF account is not needed. This
+course is offered twice per year, with one issue in spring and another
+one in autumn.
+
+For details and registration please visit
+https://www.mpcdf.mpg.de/about-mpcdf/news-events/mpcdf-introductory-user-course
+
+14:00-16:30
+
+2021-10-05 Python for HPC Workshop (3 days)
+-------------------------------------------
+
+This workshop introduces the use of Python for High Performance
+Computing. Main topics are HPC packages like numpy, scipy etc., writing
+parallel code with Python, speeding up Python code with Cython or
+interfaces to compiled languages. Building Python packages and
+documentation as well as a good coding style are further topics of this
+three-day workshop.
+
+See https://www.mpcdf.mpg.de/events/28729/2825 for details and
+registration
+
+2021-09-28 Testing open source Python-centric research software
+---------------------------------------------------------------
+
+Presentation Hans Fangohr at (Day 2, Research software, 13:30)
+
+See https://nfdi4ing.de/konferenz/ for details.
+
+2021-09-20 Introduction to Octopus code Advanced topics - 1 week intensive course
+---------------------------------------------------------------------------------
+
+Research software has become an essential tool in modern science.
+Despite this, often scientist only have basic training in programming,
+missing important aspects of modern software development and
+engineering. In this course we will present key ideas, tools and
+techniques used by researchers to develop robust, efficient codes in a
+collaborative environment. This will be done in the context of the
+Octopus code (https://octopus-code.org). The philosophy of the Octopus
+code is to be a platform which allows to implement new scientific ideas
+with relative ease. The code has a modular structure and to a large
+extend hides numerical nitty-gritties at a lower level, allowing
+researchers to write new modules without the necessity to touch those
+low level parts. The code is actively developed with strict quality
+control. In this second part of the course, the participants will learn
+everything necessary to contribute to the Octopus development, and to
+implement new scientific ideas.
+
+Topics include:
+
+-  Advanced version control in a collaborative environment (merge
+   requests, code review, etc)
+-  Advanced topics of git (merge, rebase, etc)
+-  Regression testing and continuous integration
+-  Object oriented programming
+-  Parallelization and performance
+
+As an outlook this course also provides an overview of current
+state-of-the-art scientific problems with Octopus. Also, the second part
+will last for one week, with a mixture of lectures and demonstration, as
+well as hands-on sessions to try the learned concepts.
+
+Details at https://www.mpsd.mpg.de/events/27629/500135
+
+2021-09-13 BiGmax Summer School 2021 - Big data in materials science
+--------------------------------------------------------------------
+
+The BiGmax Summer School 2021 "Harnessing big data in materials science
+from theory to experiment" will take place from September 13 - 17, 2021
+(held as an online event only).
+
+The school focuses on combining lectures of renowned experts with
+hands-on tutorials predominantly targeted towards PhD students and early
+career researchers.
+
+Details: https://indico.mpi-magdeburg.mpg.de/event/15/overview
+
+2021-09-06 Introduction to Octopus - 1 week intensive course
+------------------------------------------------------------
+
+Density functional theory (DFT) and its time dependent variant,
+time-dependent DFT (TD-DFT), are tools of choice to simulate microscopic
+processes in nature. This, however, requires powerful numerical tools to
+solve the underlying equations and perform simulations of relevant
+physical processes. In his course we will give an introduction on how
+the DFT and TD-DFT equations can be solved numerically on a computer,
+with plently of practical examples using the Octopus code
+(https://octopus-code.org). Octopus is a real-space DFT code, geared
+mainly at the real-time propagation of time-dependent systems. Besides
+introducing the code and highlighting its functionalities, a set of
+hands-on tutorials will allow the students to learn how to set up the
+system, run ground-state and time-dependent calculations.
+
+Topics include:
+
+-  Ground-state calculations and total energy convergence
+-  Model systems
+-  Real-time propagation
+-  Optical absorption
+
+Throughout the course, it will be emphasized how to check the results
+for numerical convergence, but also for computational efficiency.
+
+Details: https://www.mpsd.mpg.de/events/27628/500135
+
+2021-08-04 19:00 Software Engineering Challenges and Best Practices for Multi-Institutional Scientific Software Development
+---------------------------------------------------------------------------------------------------------------------------
+
+Part of the webinar on HPC best practices
+(https://ideas-productivity.org/events/hpc-best-practices-webinars/).
+Registration at link is required.
+
+Presenter is Keith Beattie from Lawrence Berkeley National Laboratory
+(https://crd.lbl.gov/departments/data-science-and-technology/idf/staff/keith-beattie/).
+Here is the summary:
+
+Scientific software is increasingly becoming the backbone of obtaining
+and validating scientific results. This is no longer just the case for
+traditionally computationally intensive areas but is now true across a
+wide variety of scientific disciplines. This circumstance elevates how
+scientific software is developed, independent of the field, to a new
+level of importance. Further, the multi-institutional nature of many
+science projects presents unique challenges to how scientific software
+can be effectively developed and maintained over the long term. In this
+webinar we present the challenges faced in leading the development of
+scientific software across a distributed, multi-institutional team of
+contributors, and we describe a set of best-practices we have found to
+be effective in producing impactful and trustworthy scientific software.
+
+2021-07-21 14:00 GPU Computing on the new HPC system Raven
+----------------------------------------------------------
+
+Wednesday, 2021/07/21, 14:00 - 16:00 CEST, organised by MPCDF training
+team
+
+This online tutorial gives a basic introduction to using the GPUs on the
+new HPC system Raven. The following topics will be covered:
+
+-  hardware configuration
+-  GPU software environment for HPC and AI/data analytics: applications,
+   libraries, compilers, tools
+-  batch system: submitting GPU jobs
+
+See also: https://docs.mpcdf.mpg.de/doc/computing/raven-user-guide.html
+https://www.mpcdf.mpg.de/events/28628/2825
+
+Zoom link available in
+`Zulip <https://zulip.mpsd.mpg.de/#narrow/stream/3-computing/topic/events>`__
+
+2021-07-22 15:00 Workflows in Photon Science Data Analysis
+----------------------------------------------------------
+
+Brainstorming on use of workflows in Photon Science data analysis
+
+(Event from data analysis group at EuXFEL, presentation Thomas Kluyver /
+Robert Rosca).
+
+Target group: research software engineers or scientists with significant
+interest in software / computational methods.
+
+Addition from after the meeting: notes are at
+https://codimd.desy.de/SHbiNcAcRGm7q749cgKzRg?view
+
+Zoom link available in
+`Zulip <https://zulip.mpsd.mpg.de/#narrow/stream/3-computing/topic/events>`__
+
+2021-06-24 16:30 Introduction to ``xarray`` and ``extra-data``
+--------------------------------------------------------------
+
+Introduction to ``xarray`` and ``extra-data``, Thursday, June 24th 2021,
+16:30
+
+Thomas Kluyver from EuXFEL has kindly agreed to provide an informal
+introduction to `xarray <http://xarray.pydata.org>`__ that provides
+labelled array data and the
+`extra-data <http://extra-data.readthedocs.io>`__ data analysis package
+at European XFEL.
+
+Zoom link available in
+`Zulip <https://zulip.mpsd.mpg.de/#narrow/stream/3-computing/topic/events>`__
+
+2021-06-23 15:00 Research Data Management - a biodiverse MOSAiC
+---------------------------------------------------------------
+
+Wednesday, June 23, 2021 from 3:00 p.m. to 4:00 p.m.
+
+Presenter? Prof. Dr. Frank Oliver Glöckner, Head of Data at the
+Computing Center at the AWI Computing and Data Center.
+
+Registration:
+https://gfz-potsdam-de.zoom.us/meeting/register/tJMofuCsrT4vGdYZvbU_QEYoTBbW7c54LgrX
+
+More information:
+https://os.helmholtz.de/de/bewusstsein-schaerfen/veranstaltungen/helmholtz-open-science-online-seminare/59-online-seminar
+
+2021-06-24 14:00 “Geometric Deep Learning: From Euclid to Drug Design”
+----------------------------------------------------------------------
+
+Joint Data Science Colloquium on June 24th, 2021 “Geometric Deep
+Learning: From Euclid to Drug Design” Date: 21 June 2021 at 08:12:42
+CEST
+
+We are looking forward to the talk of Prof. Michael Bronstein (Professor
+for Machine Learning and Pattern Recognition, Faculty of Engineering,
+Department of Computing, Imperial College London, England) on Thursday,
+June 24th, 2021 at 2 pm.
+
+His talk is entitled "Geometric Deep Learning: From Euclid to Drug
+Design". The official announcement of the talk can be found here:
+https://syncandshare.desy.de/index.php/s/AYAEAeMCCpxsHj4
+
+Further information concerning the speakers and the lectures can also be
+found here:
+https://www.dashh.org/events/data_science_colloquium/index_eng.html
+
+Zoom link available in
+`Zulip <https://zulip.mpsd.mpg.de/#narrow/stream/3-computing/topic/events>`__
+
+2021-05-06 14:00 Reproducible Science with Jupyter
+--------------------------------------------------
+
+Dr. Carsten Fortmann-Grote (Max-Planck-Institut für Evolutionsbiologie)
+und Prof. Dr. Hans Fangohr (Max-Planck-Institut für Struktur und Dynamik
+der Materie) at `Forschungsdatenmanagement Workshop
+2021 <https://fdm-workshop.mpdl.mpg.de/programm-2021/>`__
+
+The Jupyter notebook format enables seamless coexistence of computer
+program code, documentation, and execution, as well as interactive
+visualization and discussion of results in one document and provides a
+user-friendly work environment. We will give an overview of the Jupyter
+ecosystem of tools and services and discuss how Jupyter enhances
+reproducibility in data intensive research.
+
+Material:
+
+-  `Slides <https://www.desy.de/~fangohr/publications/talks/2021-05-06-fortmanngrote-fangohr-fdm-workshop-Reproducible-science-with-jupyter.pdf>`__
+-  `Workshop
+   materials <https://gitlab.gwdg.de/mpievolbio-scicomp/fdm2021/-/blob/master/README.md>`__
+   and
+-  `Video recording (MPG/GWDG network
+   only) <https://pure.mpg.de/rest/items/item_3319185_1/component/file_3319380/content>`__
+
+2021-05-10 Numerical Methods and Practical Skills for Computational Physics - intensive course
+----------------------------------------------------------------------------------------------
+
+Theory and experiment have been the two pillars of science that for
+centuries have underpinned our understanding of the world around us.
+With the advent of powerful computers, computational methods have
+emerged as a third pillar of science. Among other techniques, numerical
+methods, data analysis, and visualization have become indispensable
+tools for many scientists nowadays. This course intends to introduce
+basic numerical methods which allow to perform numerical simulations on
+modern computing platforms.
+
+Topics include:
+
+-  Approximation of functions
+-  Root finding and solving nonlinear equations
+-  Numerical differentiation and integration
+-  Solving ordinary and partial differential equations
+-  Solving linear systems of equations
+-  Eigenvalue problems
+-  Optimization
+
+In addition, in the course we provide hands-on exercises for
+participants to gain experience with high-performance computing
+environments. We intend to cover:
+
+-  Compiling and linking codes
+-  The Slurm queueing system and module environments
+-  Basic revision control with git
+
+Details: https://www.mpsd.mpg.de/events/27627/500135
+
+Delivered by Heiko Appel, Henning Glawe, Hans Fangohr, Martin Lueders
+
+2021-04-19 Python for Computational science - 1 week intensive course
+---------------------------------------------------------------------
+
+The one-week course has been designed for scientists and engineers to
+teach the practical programming skills that are relevant for modern
+computational science. The module does not assume prior programming
+knowledge of participants. The module uses hands-on activities for all
+participants to exercise and experiment with the taught material. The
+material covers a wide spectrum of skills that are advantageous for
+scientists who need to handle data - be it from experiment or simulation
+– and provides a basis for self learning or directed learning of more
+specialized topics at a later stage.
+
+More detailed announcement:
+https://www.mpsd.mpg.de/events/27626/500135?1619346787
+
+Teaching materials: https://www.desy.de/~fangohr/teaching/py4cs2021/
+
+Delivered by Hans Fangohr, Henning Glawe, Heiko Appel
+
+2020-11-04 Open Science COVID19 Analysis
+----------------------------------------
+
+Presenter: Hans Fangohr
+
+The Open Science COVID Analysis (OSCOVIDA) project provides an open
+science portal at https://oscovida.github.io/ to display and investigate
+the COVID19 infections and deaths as a function of time for the US
+states, the districts in Germany, and most other countries in the world.
+For each region, different observables are shown as a function of time:
+total infections and deaths, daily changes, the reproduction number and
+growth factor, and doubling times; this can be normalised by the
+population of the relevant region. Data sources are currently the Johns
+Hopkins University and the Robert Koch Institute. All the source code
+that creates the plots is open source, and provides a Python library to
+simplify download of current data and population numbers, and
+computation and display of the COVID tracking plots available on the
+website. The system is based on Jupyter notebooks, which users can
+execute in their browser (using the MyBinder project) to adapt the
+analysis to their own interests, or base additional studies on top of
+the framework. Some tutorials and additional data analysis studies are
+available, and further contributions are welcome.
+
+Details:
+https://www.dashh.org/events/hamburg_covid_19_series/04112020__prof_fangohr/index_eng.html
+
+Slides:
+https://www.dashh.org/sites/sites_custom/site_dashh/content/e101681/e106987/e113556/e122237/Fangohr-2020-11-04-OSCOVIDA-seminar_eng.pdf
+
+Project: https://oscovida.github.io

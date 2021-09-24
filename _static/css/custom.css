@@ -1,0 +1,28 @@
+/* Here we have commands to get a good approximation of the MPSD style.
+
+They need to be integrated into sphynx; probably following
+these instructions:
+
+https://www.sphinx-doc.org/en/master/templating.html
+
+They are used on the teaching webpage
+http://www.desy.de/~fangohr/teaching/py4cs2021/
+
+Not completed due to lack of time, Hans 25 March 2021
+
+
+
+
+body {
+    font-family: 'Roboto', sans-serif; Gill, Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+*/
+
+
+:root {
+    --pst-font-family-base: Roboto, Verdana, var(--pst-font-family-base-system);
+    --pst-font-family-heading: Merriweather, Cambria, Georgia, Times, var(--pst-font-family-base-system);
+    --pst-font-family-monospace: Courier, var(--pst-font-family-monospace-system);
+}

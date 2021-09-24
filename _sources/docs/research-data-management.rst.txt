@@ -1,0 +1,206 @@
+.. _research-data-management:
+
+Research Data Management
+========================
+
+.. contents:: :local:
+
+What are research data?
+-----------------------
+
+Research data include experimentally captured data sets, processed data,
+and data computed through computer simulation. The software involved in
+these steps *and* meta-data that describes the data are also research
+data.
+
+Research data is created in virtually any research activity.
+
+What is research data management?
+---------------------------------
+
+Research data management includes the storing of data so that it can be
+actively worked on by the owner, sharing of the data with collaborators,
+and long term archiving of (important parts of) the data. The
+organisation and documentation of the data is also part of research data
+management. For published data, the documentation should be to such a
+standard that other researchers can understand and re-use the data.
+
+Why do we need research data management?
+----------------------------------------
+
+Good research data management enables effective use of the data by the
+creator/owner, verification or reproduction of published research
+outputs, and re-use of the data leading to new results.
+
+Research data management is part of good scientific practice.
+
+Funding bodies, scientific journals and research organisations (such as
+the Max Planck Society) are increasingly demanding pro-active data
+management from applicants, authors and employers.
+
+.. todo:: link to MPG requirement for research data management
+
+Research data life cycle
+------------------------
+
+For most research projects, there are different stages of working with
+the relevant research data:
+
+Stage 1: data capture
+~~~~~~~~~~~~~~~~~~~~~
+
+Initially, *data is captured* (for example through experiment or
+computer simulation), and iteratively refined: output from first
+*initial analysis* of the data may guide the experiment or choice of
+simulation parameters that lead to the next data set recorded.
+
+Stage 2: data analysis towards publication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This data capture phase is followed by identification of the most
+interesting parts of the data, and then an in-depth *data analysis* of
+those data sets leading (in many cases) to a publication.
+
+Stage 1 and 2 may merge into each other, for example if the
+experiment/simulation is available without time limitation and further
+data capture can be carried out following the analysis.
+
+During stage 1 and 2, we need access to the data sets with a short
+latency. Typically, such data is stored "on disk" (in particular not on
+tape).
+
+Stage 3: post publication and data archival
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*After publication* important data should be kept (see :doc:`archive`).
+
+For economic reasons, such *archived data* is commonly stored on tape.
+This means access to the data is slow: it may take minutes, hours or
+days to get the data back from tape into a system where it can be read
+and re-processed.
+
+Research data associated with a publication
+-------------------------------------------
+
+To publish scientific results that make use of data (in some form), one
+should create a data repository for this publication which puts together
+(somehow) and archives (somehow) the important information that is
+required to *reproduce* the findings from the publication manuscript.
+
+.. raw:: org
+
+   #+ATTR_RST: :directive todo
+
+..
+
+   Write section on reproducibility.
+
+.. raw:: org
+
+   #+ATTR_RST: :directive todo
+
+..
+
+   Comment on "How to manage research data?"
+
+   -  Put important and small documents into :doc:`version-control`.
+
+      Simulation research data
+
+      Where the data is computed by a simulation, it is crucial to keep
+      a precise record of the version of the simulation and
+      post-processing software (typically using :doc:`version-control`).
+
+Dealing with data files
+-----------------------
+
+The MPLD summarises some guidance on `naming and handling
+files <https://rdm.mpdl.mpg.de/file-handling/>`__.
+
+Small and important files should be kept under :doc:`version-control`.
+
+During data capture and data analysis, it is desirable to have backups
+of the data files to be ready to respond to unexpected hardware failure
+or user error (such as accidentally deleting important data files).
+Depending on the file size, this may or may not be possible.
+
+For medium sized projects (below 500GB), the :doc:`keeper` project from
+the MPDL can be used here (using the SeaDrive client). Keeper can also
+turn such a collection of files into an archive when the project is
+completed.
+
+[To have a backup of local data in the cloud, MPG researchers can also
+use the `GWDG
+OwnCloud <https://www.gwdg.de/storage-services/gwdg-owncloud>`__
+solution for small data sets. By default, this provides 50GB of storage.
+In contrast to Keeper, there is no associated archival foreseen.]
+
+For very large data sets, such as those captured at X-ray Free Electron
+Lasers or synchrotrons, the relevant research facility is normally
+equipped to host the data on the research facility site, and provides
+computational storage to carry out (at least the initial) analysis on
+site.
+
+File formats
+------------
+
+General guidance
+~~~~~~~~~~~~~~~~
+
+The MPLD summarises some guidance on `file
+formats <https://rdm.mpdl.mpg.de/file-formats>`__.
+
+A lot of thought and planning can go into choosing a suitable file
+format to keep the data of a research project. In the rare case of
+starting a research project where there are existing standard or legacy
+file formats or conventions, one should choose file formats that are
+feasible and convenient to assess in the future.
+
+There are a number metrics that can be optimised in choosing such
+suitable file format. These include: simplicity, human-readability,
+compression, write speed, read speed, accessibility on different
+platforms, open documentation, widespread adoption in the community,
+number of files and open source. Please seek advice if desired.
+
+In addition to storing data in the files, we also need to document the
+meaning of the stored data (i.e. provide metadata to make the data
+interpretable).
+
+.. todo:: Add links to documents that discuss this
+
+.. _domain-specific-file-formats:
+
+Domain specific file formats
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Some communities have created domain specific data file formats that are
+*self describing* and - through this design - *embed the metadata*
+automatically.
+
+For example:
+
+-  NeXuS - Common data format for neutron, x-ray and muon science
+   (https://www.nexusformat.org)
+-  openPMD - OPEN stand for Particle-Mesh Data files
+   (https://www.hzdr.de/publications/Publ-27962,
+   https://www.openpmd.org)
+
+If you can use such a self-describing file format (or develop your own),
+this simplifies creating meaningful archival of the data.
+
+It provides other benefits: all data sets using the same file format can
+be processed by data analysis tools that support the file format.
+
+Useful links
+------------
+
+.. raw:: org
+
+   #+ATTR_RST: :directive seealso 
+
+..
+
+   -  `Research Data Management from Max Planck Digital
+      Library <https://rdm.mpdl.mpg.de>`__
+   -  `Research Data Management from The Turing
+      Way <https://the-turing-way.netlify.app/reproducible-research/rdm.html>`__

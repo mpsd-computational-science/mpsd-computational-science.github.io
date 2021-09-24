@@ -1,0 +1,77 @@
+
+
+Gallery
+=======
+
+HPC hardware and facilities
+----------------------------
+
+|stack-of-nodes|
+
+A stack of CPU compute nodes waiting to be installed.
+
+|server-room1|
+
+Server room in new MPSD building (not yet in use).
+
+|server-room2| 
+
+Server room in new MPSD building - space to grow.
+
+|mpcdf_Serverkabel_4977|
+
+Back of HPC computing rack (MPCDF)
+
+|Serverkabel_4903|
+
+One dual-CPU compute node partly pulled out from computing rack (MPCDF)
+
+|1809_Wasserkuehlung_5144| 
+
+Water cooling
+
+|1809_Wasserkuehlung_5185|
+
+Water cooling
+
+|1809_Server_5055|
+
+Server room at MPCDF
+
+
+Visualisation
+-------------
+
+|skyrmions|
+
+Excitations knows as Skyrmions in a helimagnetic material (`Details <https://www.mpsd.mpg.de/547470/2021-05-fangohr-jupyter?c=16290>`__).
+
+
+
+MPSD New building
+-----------------
+
+|foyer|
+
+Foyer of the not yet occupied new MPSD building .
+
+|restaurant|
+
+A refactory next to the roof terrace.
+
+|rooflight|
+
+Plenty of light inside the building.
+
+
+.. comment:
+  Visualisations
+
+.. |skyrmions| image:: https://www.mpsd.mpg.de/547601/original-1620224604.jpg?t=eyJ3aWR0aCI6MTY5NiwiZmlsZV9leHRlbnNpb24iOiJqcGciLCJvYmpfaWQiOjU0NzYwMX0%3D--8edbb1f65e9565ac0b9d22a06af9511715987c12
+               :width: 500pt
+
+.. comment:
+  Images of HPC hardware and MPSD building, hosted on owncloud 
+
+.. include:: images.rst
+

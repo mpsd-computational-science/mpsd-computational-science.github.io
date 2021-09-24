@@ -1,0 +1,36 @@
+.. contents:: :local:
+
+.. _overview-it:
+
+Overview IT-related services
+============================
+
+The provision of IT-related services for MPSD is split between
+
+-  `GWDG <http://gwdg.de>`__
+-  `DESY <https://it.desy.de/index_eng.html>`__ (`Webpage for DESY
+   service
+   status <https://it-news-prd.desy.de/index.php?type=infos&lang=en&refresh=300>`__)
+-  `MPCDF <http://mpcdf.mpg.de>`__
+-  `MPDL <http://mpdl.mpg.de>`__
+
+Additional notes are available from the SSU Computational Science at
+http://mpsd-computational-science.github.io .
+
+Useful links
+------------
+
+SSH key-based authentication GWDG
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For many GWDG services, it is required to deposit ssh keys with GWDG
+(for example archiv, gitlab, HPC):
+
+https://info.gwdg.de/dokuwiki/doku.php?id=de:services:application_services:high_performance_computing:connect_with_ssh
+
+Training Opportunities
+----------------------
+
+-  Courses from the GWDG: https://www.gwdg.de/academy
+
+-  Courses from the MPCDF: https://www.mpcdf.mpg.de/services/training

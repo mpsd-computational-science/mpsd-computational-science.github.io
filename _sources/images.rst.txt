@@ -1,0 +1,44 @@
+.. comment:
+
+    The program to create this file is 
+    GWDG owncloud mpsd-ssu-cs-webpage-assets/create-rst-tags.py
+    The image sources are also located there.
+
+.. |compile-octopus-10-3| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=compile-octopus-10-3.png
+  :width: 500pt
+
+.. |server-room1| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=server-room1.jpeg
+  :width: 500pt
+
+.. |mpcdf_Serverkabel_4977| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=mpcdf_Serverkabel_4977.jpg
+  :width: 500pt
+
+.. |1809_Wasserkuehlung_5144| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=mpcdf-1809_Wasserkuehlung_5144.jpg
+  :width: 500pt
+
+.. |Serverkabel_4903| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=mpcdf-Serverkabel_4903.jpg
+  :width: 500pt
+
+.. |1809_Wasserkuehlung_5185| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=mpcdf-1809_Wasserkuehlung_5185.jpg
+  :width: 500pt
+
+.. |restaurant| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=restaurant.jpeg
+  :width: 500pt
+
+.. |stack-of-nodes| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=stack-of-nodes.jpeg
+  :width: 500pt
+
+.. |1809_Server_5055| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=mpcdf-1809_Server_5055.jpg
+  :width: 500pt
+
+.. |server-room2| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=server-room2.jpeg
+  :width: 500pt
+
+.. |roof-terasse1| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=roof-terasse1.jpeg
+  :width: 500pt
+
+.. |foyer| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=foyer.jpeg
+  :width: 500pt
+
+.. |rooflight| image:: https://owncloud.gwdg.de/index.php/s/UZJZIHiYntBKgkA/download?path=%2F&files=rooflight.jpeg
+  :width: 500pt

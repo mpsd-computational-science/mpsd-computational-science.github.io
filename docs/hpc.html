@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>9. Changelog &#8212; MPSD SSU Computational Science</title>
+    <title>3. High Performance Computing (HPC) &#8212; MPSD SSU Computational Science</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -46,8 +46,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Events" href="../events.html" />
-    <link rel="prev" title="8. Zulip" href="zulip.html" />
+    <link rel="next" title="4. Version control" href="version-control.html" />
+    <link rel="prev" title="2. Overview IT-related services" href="overview-it.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -150,8 +150,8 @@
    2. Overview IT-related services
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="hpc.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    3. High Performance Computing (HPC)
   </a>
  </li>
@@ -180,8 +180,8 @@
    8. Zulip
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="changes.html">
    9. Changelog
   </a>
  </li>
@@ -199,9 +199,41 @@
               
               <div class="toc-item">
                 
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selected-hpc-machines">
+   3.1. Selected HPC machines
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#raven-since-2020">
+     3.1.1. Raven (since 2020)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cobra-since-2018">
+     3.1.2. Cobra (since 2018)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mpsd-hpc">
+     3.1.3. MPSD HPC
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gpu-hpc-machine-from-2022-onwards">
+     3.1.4. GPU HPC machine (from 2022 onwards)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -221,17 +253,48 @@
               
               <div>
                 
-  <div class="section" id="changelog">
-<h1><span class="section-number">9. </span>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><ul class="simple">
-<li><p>&lt;2021-02-17 Wed&gt; Adding section on Zulip</p></li>
-<li><p>&lt;2021-02-15 Mon&gt; Completed first draft of archival section</p></li>
-<li><p>&lt;2021-01-22 Fri&gt; Completed section Keeper</p></li>
-<li><p>&lt;2021-07-20 Tue&gt; Add subsection on 7zip</p></li>
-<li><p>&lt;2021-09-21 Tue&gt; Adding home page (level above /docs)</p></li>
-</ul>
-</div></blockquote>
+  <div class="section" id="high-performance-computing-hpc">
+<span id="hpc"></span><h1><span class="section-number">3. </span>High Performance Computing (HPC)<a class="headerlink" href="#high-performance-computing-hpc" title="Permalink to this headline">¶</a></h1>
+<p>Researchers at MPSD have access to multiple HPC compute resources, which
+are hosted at the <a class="reference external" href="http://mpcdf.mpg.de">Max Planck Compute and Data Facility
+(MPCDF)</a>, the
+<a class="reference external" href="https://www.gwdg.de/hpc">GWDG</a>, and at MPSD itself.</p>
+<div class="section" id="selected-hpc-machines">
+<h2><span class="section-number">3.1. </span>Selected HPC machines<a class="headerlink" href="#selected-hpc-machines" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="raven-since-2020">
+<h3><span class="section-number">3.1.1. </span><a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing/raven">Raven</a> (since 2020)<a class="headerlink" href="#raven-since-2020" title="Permalink to this headline">¶</a></h3>
+<p>Based on Intel Xeon IceLake-SP processors and Nvidia A100 GPUs. 1592 CPU
+compute nodes, 114,624 CPU-cores, 375 TB RAM (DDR4), 7.5 PFlop/s
+theoretical peak performance (FP64), 192 GPU-accelerated nodes providing
+768 Nvidia A100 GPUs, 30 TB GPU RAM (HBM2). Shared MPG resource. See
+<a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing">Supercomputing
+services</a> for
+details.</p>
+</div>
+<div class="section" id="cobra-since-2018">
+<h3><span class="section-number">3.1.2. </span><a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing/cobra">Cobra</a> (since 2018)<a class="headerlink" href="#cobra-since-2018" title="Permalink to this headline">¶</a></h3>
+<p>Based on Intel Xeon Skylake-SP processors and Nvidia GPUs (V100,
+RTX5000): 3424 compute nodes, 136,960 CPU-cores, 128 Tesla V100-32 GPUs,
+240 Quadro RTX 5000 GPUs, 529 TB CPU RAM (DDR4), 7.9 TB GPU RAM HBM2,
+11.4 PFlop/s peak (FP64) + 2.64 PFlop/s peak (FP32). Shared MPG
+resource. See <a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing">Supercomputing
+services</a> for
+details.</p>
+</div>
+<div class="section" id="mpsd-hpc">
+<h3><span class="section-number">3.1.3. </span>MPSD HPC<a class="headerlink" href="#mpsd-hpc" title="Permalink to this headline">¶</a></h3>
+<p>Dedicated for MPSD.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p><a class="reference internal" href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ambox_warning_green_construction.svg/378px-Ambox_warning_green_construction.svg.png"><img alt="under-construction" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ambox_warning_green_construction.svg/378px-Ambox_warning_green_construction.svg.png" style="width: 50px;" /></a>  More material and details to be added.</p>
+</div>
+</div>
+<div class="section" id="gpu-hpc-machine-from-2022-onwards">
+<h3><span class="section-number">3.1.4. </span>GPU HPC machine (from 2022 onwards)<a class="headerlink" href="#gpu-hpc-machine-from-2022-onwards" title="Permalink to this headline">¶</a></h3>
+<p>Dedicated machine for <a class="reference external" href="https://www.pks.mpg.de">PKS</a> and MPSD,
+providing 72 nodes with 4xA100 cards each.</p>
+</div>
+</div>
 </div>
 
 
@@ -240,8 +303,8 @@
               
               <div class='prev-next-bottom'>
                 
-    <a class='left-prev' id="prev-link" href="zulip.html" title="previous page"><span class="section-number">8. </span>Zulip</a>
-    <a class='right-next' id="next-link" href="../events.html" title="next page">Events</a>
+    <a class='left-prev' id="prev-link" href="overview-it.html" title="previous page"><span class="section-number">2. </span>Overview IT-related services</a>
+    <a class='right-next' id="next-link" href="version-control.html" title="next page"><span class="section-number">4. </span>Version control</a>
 
               </div>
               

@@ -1,0 +1,72 @@
+.. Computational science resources documentation master file, created by
+   sphinx-quickstart on Wed Jan  6 01:02:59 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+
+.. raw:: html
+
+  <br>
+
+
+.. include:: urls.include
+
+
+Computational Science Resources
+===============================
+
+.. raw:: html
+
+   <br>
+
+.. image:: ../_static/mpsd-cs-logo-with-axis.png
+   :align: right
+   :width: 3cm
+   :class: float-right
+   :alt: MPSD logo, discretised
+
+You are looking at the resources pages of the `Computational Science scientific
+support unit <../about.html>`__ at the
+`Max Planck Institute for Structure and Dynamics of Matter
+<https://mpsd.mpg.de>`__ in Hamburg, Germany.
+
+The material here is meant to provide some guidance for research involving
+computation. See :doc:`introduction`.
+
+----------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   :numbered:
+
+   introduction
+   overview-it
+   hpc
+   version-control
+   research-data-management
+   archive
+   keeper
+   zulip
+   changes
+
+.. comment:
+   content/reproducibility
+      
+.. comment:
+   content/appendix
+   
+
+
+
+* :ref:`search`
+
+.. comment:
+
+  Indices and tables
+  ==================
+  
+  * :ref:`genindex`
+  * :ref:`modindex`
+
