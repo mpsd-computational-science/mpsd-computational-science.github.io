@@ -4,6 +4,22 @@ Events
 .. contents::
    :local:
 
+2021-11-22 Advanced HPC Workshop (4 days)
+-----------------------------------------
+
+This MPCDF workshop helps HPC users to better manage, debug and profile
+their code. One day is dedicated to GPUs. MPCDF organizes again an
+advanced HPC workshop for users of the MPG from Monday, November 22nd
+until Wednesday, November 24th, 2021 with an optional day with hands-on
+on Thursday, November 25th. The workshop will be given online. The main
+topics of the lectures are:
+
+-  Software engineering for HPC codes (git, gitlab, CI, testing)
+-  Debugging and profiling of CPU and GPU codes
+-  Porting codes to GPU-accelerated systems
+
+Details: https://www.mpcdf.mpg.de/events/28006/2491
+
 2021-10-19 MPCDF/NVIDIA GPU Computing Bootcamp (2 days)
 -------------------------------------------------------
 
@@ -55,7 +71,9 @@ registration
 2021-09-28 Testing open source Python-centric research software
 ---------------------------------------------------------------
 
-Presentation Hans Fangohr at (Day 2, Research software, 13:30)
+`Presentation
+(pdf) <https://www.desy.de/~fangohr/publications/talk/2021-09-28-testing-open-source-python-centric-research-software.pdf>`__
+Hans Fangohr at (Day 2, Research software, 13:30)
 
 See https://nfdi4ing.de/konferenz/ for details.
 

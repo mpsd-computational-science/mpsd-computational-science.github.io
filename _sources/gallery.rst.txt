@@ -16,7 +16,7 @@ Server room in new MPSD building (not yet in use).
 
 |server-room2| 
 
-Server room in new MPSD building - space to grow.
+Server room in new MPSD building.
 
 |mpcdf_Serverkabel_4977|
 
