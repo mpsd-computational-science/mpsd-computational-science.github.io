@@ -5,7 +5,8 @@
 Overview IT-related services
 ============================
 
-The provision of IT-related services for MPSD is split between
+The provision of IT and scientific computing related services for MPSD
+is split between
 
 -  `GWDG <http://gwdg.de>`__
 -  `DESY <https://it.desy.de/index_eng.html>`__ (`Webpage for DESY
@@ -13,9 +14,9 @@ The provision of IT-related services for MPSD is split between
    status <https://it-news-prd.desy.de/index.php?type=infos&lang=en&refresh=300>`__)
 -  `MPCDF <http://mpcdf.mpg.de>`__
 -  `MPDL <http://mpdl.mpg.de>`__
-
-Additional notes are available from the SSU Computational Science at
-http://mpsd-computational-science.github.io .
+-  `MPSD's Computational Science
+   Unit <http://mpsd-computational-science.github.io>`__ and overview of
+   HPC computing resources
 
 Useful links
 ------------

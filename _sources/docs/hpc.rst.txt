@@ -8,11 +8,8 @@ are hosted at the `Max Planck Compute and Data Facility
 (MPCDF) <http://mpcdf.mpg.de>`__, the
 `GWDG <https://www.gwdg.de/hpc>`__, and at MPSD itself.
 
-Selected HPC machines
----------------------
-
 `Raven <https://www.mpcdf.mpg.de/services/supercomputing/raven>`__ (since 2020)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------
 
 Based on Intel Xeon IceLake-SP processors and Nvidia A100 GPUs. 1592 CPU
 compute nodes, 114,624 CPU-cores, 375 TB RAM (DDR4), 7.5 PFlop/s
@@ -23,7 +20,7 @@ services <https://www.mpcdf.mpg.de/services/supercomputing>`__ for
 details.
 
 `Cobra <https://www.mpcdf.mpg.de/services/supercomputing/cobra>`__ (since 2018)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------
 
 Based on Intel Xeon Skylake-SP processors and Nvidia GPUs (V100,
 RTX5000): 3424 compute nodes, 136,960 CPU-cores, 128 Tesla V100-32 GPUs,
@@ -33,8 +30,15 @@ resource. See `Supercomputing
 services <https://www.mpcdf.mpg.de/services/supercomputing>`__ for
 details.
 
+Ada (from 2022 onwards)
+-----------------------
+
+Dedicated GPU-based HPC machine for `PKS <https://www.pks.mpg.de>`__ and
+MPSD, providing 72 nodes with 4xA100 cards each. More details to follow.
+Expect to be operational early 2022.
+
 MPSD HPC
-~~~~~~~~
+--------
 
 Dedicated for MPSD.
 
@@ -44,8 +48,9 @@ Dedicated for MPSD.
   |under-construction|  More material and details to be added.
 
 
-GPU HPC machine (from 2022 onwards)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Login nodes are ``mpsd-hpc-login1.desy.de`` and
+``mpsd-hpc-login2.desy.de``.
 
-Dedicated machine for `PKS <https://www.pks.mpg.de>`__ and MPSD,
-providing 72 nodes with 4xA100 cards each.
+For questions, please contact the Henning and Hans at ssu-cs@mpsd.mpg.de
+or via the ``#computing`` stream in
+`Zulip <https://zulip.mpsd.mpg.de/#narrow/stream/3-computing>`__.

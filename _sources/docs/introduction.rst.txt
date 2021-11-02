@@ -27,25 +27,18 @@ experimental and theoretical research, is relatively new and developing quickly.
 So whatever (opinionated?) views are expressed here, may not be applicable to
 your research challenge, outdated or simply wrong:
 
-Please do get in touch with any corrections, ideas, need for clarifications and
-support requests.
+Please do `get in touch <https://mpsd-computational-science.github.io/about.html#contact>`__
+with any corrections, ideas, need for clarifications and support requests.
 
 Researchers outside the `MPSD <https://mpsd.mpg.de>`__ are welcome to use these
 resources, and are invited to provide feedback for improvements.
-
-
-Contact
--------
-
-To contact the group, please get in touch with
-`Hans Fangohr <https://www.mpsd.mpg.de/person/109584/487613>`__.
 
 
 About these pages
 -----------------
 
 These pages are put together using the `sphinx documentation system
-<http://sphinx-doc.org>`__, and are hosted using `GitHub page
+<http://sphinx-doc.org>`__, and are hosted using `GitHub pages
 <https://pages.github.com>`__.
 
 You can navigate the pages using the cursor keys: cursor to the left and right

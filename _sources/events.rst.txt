@@ -4,6 +4,33 @@ Events
 .. contents::
    :local:
 
+2022-02-21 Numerical Methods and Practical Skills for Computational Physics Part II (1 week)
+--------------------------------------------------------------------------------------------
+
+Second part of the course.
+
+Details: https://www.mpsd.mpg.de/events/29311/574005
+
+2022-01-24 Numerical Methods and Practical Skills for Computational Physics Part I (1 week)
+-------------------------------------------------------------------------------------------
+
+Building on "Python for Computational Science", introduction to
+
+-  numerical methods
+-  compiling and linking code
+-  basic revision control with git (managing your files)
+-  using High Performance Computing installations (Slurm and modules)
+
+Details: https://www.mpsd.mpg.de/events/29310/574005
+
+2022-01-10 Python for Computational Science (2 weeks)
+-----------------------------------------------------
+
+One week course not assuming prior Python knowledge - a good starting
+point to get into programming and computation for scientific research.
+
+Details: https://www.mpsd.mpg.de/events/29267/574005
+
 2021-11-22 Advanced HPC Workshop (4 days)
 -----------------------------------------
 
