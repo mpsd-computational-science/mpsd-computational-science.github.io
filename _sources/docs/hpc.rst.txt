@@ -54,3 +54,43 @@ Login nodes are ``mpsd-hpc-login1.desy.de`` and
 For questions, please contact the Henning and Hans at ssu-cs@mpsd.mpg.de
 or via the ``#computing`` stream in
 `Zulip <https://zulip.mpsd.mpg.de/#narrow/stream/3-computing>`__.
+
+Jupyter notebooks
+~~~~~~~~~~~~~~~~~
+
+You can use a Jupyter notebook on a dedicated HPC node as follows:
+
+#. Ensure you are at MPSD or have the DESY VPN set up.
+
+#. login to a login node (for example ``ssh mpsd-hpc-login1.desy.de``)
+
+#. request a node for interactive use. For example, 1 node for 600
+   minutes from the ``mpsd`` partition:
+
+   ``srun -t=600 -n 1 -p mpsd --pty bash``
+
+#. If this was successful, you are now in a terminal (bash) session on
+   your dedicated node. We need to fix one thing before you can start
+   Jupyter by typing this command:
+
+   ``export XDG_RUNTIME_DIR=/tmp/${USER}``
+
+#. You can install Jupyter yourself, or you activate an installed
+   version with the following commands:
+
+   ``module use /opt/easybuild/modules``
+
+   ``module load all/Anaconda3/5.1.0``
+
+#. start the Jupyter notebook server on that node with
+
+   ``jupyter-notebook --ip=${HOSTNAMe}.desy.de``
+
+   Watch the output displayed in your terminal. There is a line similar
+   to this one:
+
+   ``http://mpsd-hpc-ibm-055.desy.de:8888/?token=8814fea339b8fe7d3a52e7d03c2ce942a3f35c8c263ff0b8``
+
+   which you can paste as a URL into your browser (on your
+   laptop/Desktop), and you should be connected to the Notebook server
+   on the compute node.

@@ -1,0 +1,106 @@
+.. raw:: html
+
+  <br>
+
+.. image:: _static/mpsd-cs-logo-with-axis.png
+   :align: right
+   :width: 4cm
+   :class: center
+   :alt: MPSD logo, discretised
+
+Research Software Engineer for Data Science and High Performance Computing
+==========================================================================
+
+Introduction
+------------
+
+Interested in how scientists write and use software to analyse and visualise
+data? Run simulations and make their work reproducible? Use laptops,
+workstations and HPC systems to support their work?
+
+If so, you may be interested in the recently established `Scientific Support Unit for Computational
+Science <index.html>`__ at the `Max Planck Institute for Structure and Dynamics
+of Matter <https://www.mpsd.mpg.de/en>`__ : We combine research software
+engineering services with research into computational science.
+
+Our mission is to provide our scientific colleagues a mixture of training,
+support, and collaborative work in computational matters to enable and
+contribute to leading edge scientific research in the respective fields of the
+scientists - typically in physics or chemistry. 
+
+The unit provides a `High Performance Computing (HPC) <docs/hpc.html>`__ installation, and supports
+software engineering for simulation and data analysis, data science and
+visualization. Your tasks include the software development for simulation, for
+data-analysis and visualisation, some system administration, and the delivery of
+training to students and staff.
+
+Collaboration with scientists of the institute takes a key role. The SSU group
+researches computational methods and infrastructures to stay at the forefront of
+computational science.
+
+
+Our Job
+-------
+
+We are looking for a highly motivated and dynamic person to work on scientific
+software development. The ideal candidate should have a university degree
+(master) in computer science, physics or related fields, and the ability to work
+and collaborate within a diverse team.
+
+Essential skills and expertise
+##############################
+
+- in-depth Python knowledge, including libraries relevant for numeric computation and data analysis
+- good knowledge of a compiled language (such as C, C++, Fortran)
+- enthusiasm for good software engineering methods (such as version control, testing, CI)
+- talented communicator in English (German skills are welcome but not required)
+- experience working as a researcher or as a software engineer 
+- performance engineering experience (such as making existing software faster or more memory efficient)
+- High Performance Computing experience as a user
+- willingness to work interdisciplinary and acquire new skills
+
+Additional desirable skills and experience
+##########################################
+
+Any of the following is a benefit, but none are essential:
+
+- Linux system administration
+- machine learning
+- experience designing or contributing to open source software
+- use of GPUs or other acceleration hardware
+- experience designing and delivering training on computational topics
+- experience working with large data sets (for example hdf5)
+- photon science, condensed matter, or computational magnetism experience
+
+
+Why work for the Max Planck Society - Our offer
+-----------------------------------------------
+
+You will be part of a team of scientists and engineers with complementary and
+overlapping experience, and work in multiple interdisciplinary collaborations to
+advance science. Training on the job is offered and expected - computational
+science is a quickly moving field.
+
+We offer an innovative and well funded environment, providing time and trust to
+support the best scientists with the best computational science to carry out
+curiosity-driven research. [See https://www.youtube.com/watch?v=zZFyD8kSaIo&t=1s
+for a 75 second introduction to the Max Planck Society.]
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zZFyD8kSaIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+The Computational Science unit in the Max Planck Institute for the Structure and
+the Dynamics of Matter is embedded in the Center for Free-Electron Laser Science
+(CFEL), and well connected with the `Max-Planck Compute and Data Facility <https://mpcdf.mpg.de>`__,
+national and international networks such as the research software engineering
+community, and further collaboration partners.
+
+We offer an attractive remuneration up to TVöD E12 according to the German
+public pay scale. The appointment is for two years with the possibility to be
+made permanent subsequently.
+
+You find the home page of the unit at http://mpsd-computational-science.github.io . Please get in touch informally
+with questions you may have before applying (hans.fangohr@mpsd.mpg.de).
+

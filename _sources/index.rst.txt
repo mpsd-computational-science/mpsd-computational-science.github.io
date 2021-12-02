@@ -32,7 +32,7 @@ support unit (SSU) <about>` at
 the `Max Planck Institute for Structure and Dynamics of Matter (MPSD)
 <https://mpsd.mpg.de>`__ in Hamburg, Germany.
 
-A growing amount of information is available in our `resources <docs/index.rst>`__ section, including:
+A growing amount of information `is available in our resources section <docs/index.rst>`__, including:
 
 - :any:`overview-it`
 - Relevant training and seminars (:doc:`Events <events>`)

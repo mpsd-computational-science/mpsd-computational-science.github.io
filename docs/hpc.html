@@ -134,7 +134,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p class="caption">
+    <p class="caption" role="heading">
  <span class="caption-text">
   Contents:
  </span>
@@ -224,6 +224,13 @@
   <a class="reference internal nav-link" href="#mpsd-hpc">
    3.4. MPSD HPC
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-notebooks">
+     3.4.1. Jupyter notebooks
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -290,6 +297,37 @@ Expect to be operational early 2022.</p>
 <p>For questions, please contact the Henning and Hans at <a class="reference external" href="mailto:ssu-cs&#37;&#52;&#48;mpsd&#46;mpg&#46;de">ssu-cs<span>&#64;</span>mpsd<span>&#46;</span>mpg<span>&#46;</span>de</a>
 or via the <code class="docutils literal notranslate"><span class="pre">#computing</span></code> stream in
 <a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing">Zulip</a>.</p>
+<div class="section" id="jupyter-notebooks">
+<h3><span class="section-number">3.4.1. </span>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
+<p>You can use a Jupyter notebook on a dedicated HPC node as follows:</p>
+<ol class="arabic">
+<li><p>Ensure you are at MPSD or have the DESY VPN set up.</p></li>
+<li><p>login to a login node (for example <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">mpsd-hpc-login1.desy.de</span></code>)</p></li>
+<li><p>request a node for interactive use. For example, 1 node for 600
+minutes from the <code class="docutils literal notranslate"><span class="pre">mpsd</span></code> partition:</p>
+<p><code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">-t=600</span> <span class="pre">-n</span> <span class="pre">1</span> <span class="pre">-p</span> <span class="pre">mpsd</span> <span class="pre">--pty</span> <span class="pre">bash</span></code></p>
+</li>
+<li><p>If this was successful, you are now in a terminal (bash) session on
+your dedicated node. We need to fix one thing before you can start
+Jupyter by typing this command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">XDG_RUNTIME_DIR=/tmp/${USER}</span></code></p>
+</li>
+<li><p>You can install Jupyter yourself, or you activate an installed
+version with the following commands:</p>
+<p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">use</span> <span class="pre">/opt/easybuild/modules</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">all/Anaconda3/5.1.0</span></code></p>
+</li>
+<li><p>start the Jupyter notebook server on that node with</p>
+<p><code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span> <span class="pre">--ip=${HOSTNAMe}.desy.de</span></code></p>
+<p>Watch the output displayed in your terminal. There is a line similar
+to this one:</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://mpsd-hpc-ibm-055.desy.de:8888/?token=8814fea339b8fe7d3a52e7d03c2ce942a3f35c8c263ff0b8</span></code></p>
+<p>which you can paste as a URL into your browser (on your
+laptop/Desktop), and you should be connected to the Notebook server
+on the compute node.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 
