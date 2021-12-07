@@ -84,7 +84,7 @@ People
 
 - |pic-kevin| Kevin Garcia, Octopus data analysis (MSc student)
 
-- |pic-12| Software Research Engineer (to be recruited)
+- |pic-12| Software Research Engineer (`to be recruited -- apply now <vacancies.html>`__)
   
 - |pic-12| Computational Scientist (to be recruited) 
 

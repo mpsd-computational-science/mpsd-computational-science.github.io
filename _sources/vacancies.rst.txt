@@ -26,7 +26,7 @@ engineering services with research into computational science.
 Our mission is to provide our scientific colleagues a mixture of training,
 support, and collaborative work in computational matters to enable and
 contribute to leading edge scientific research in the respective fields of the
-scientists - typically in physics or chemistry. 
+scientists - typically in physics and material science.
 
 The unit provides a `High Performance Computing (HPC) <docs/hpc.html>`__ installation, and supports
 software engineering for simulation and data analysis, data science and
@@ -104,3 +104,13 @@ made permanent subsequently.
 You find the home page of the unit at http://mpsd-computational-science.github.io . Please get in touch informally
 with questions you may have before applying (hans.fangohr@mpsd.mpg.de).
 
+How to apply
+------------
+
+To apply, please use the button "Online application" on
+https://jobs.b-ite.com/jobposting/db4264f8330833fbc43da3eb398ddfe7a807725b5 .
+
+Deadline
+--------
+
+Application deadline is Sunday, 23 January 2022.
