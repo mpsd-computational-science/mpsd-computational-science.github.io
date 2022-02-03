@@ -8,55 +8,68 @@ are hosted at the `Max Planck Compute and Data Facility
 (MPCDF) <http://mpcdf.mpg.de>`__, the
 `GWDG <https://www.gwdg.de/hpc>`__, and at MPSD itself.
 
-`Raven <https://www.mpcdf.mpg.de/services/supercomputing/raven>`__ (since 2020)
--------------------------------------------------------------------------------
+#. `Raven <https://www.mpcdf.mpg.de/services/supercomputing/raven>`__
+   (since 2020)
 
-Based on Intel Xeon IceLake-SP processors and Nvidia A100 GPUs. 1592 CPU
-compute nodes, 114,624 CPU-cores, 375 TB RAM (DDR4), 7.5 PFlop/s
-theoretical peak performance (FP64), 192 GPU-accelerated nodes providing
-768 Nvidia A100 GPUs, 30 TB GPU RAM (HBM2). Shared MPG resource. See
-`Supercomputing
-services <https://www.mpcdf.mpg.de/services/supercomputing>`__ for
-details.
+   Based on Intel Xeon IceLake-SP processors and Nvidia A100 GPUs. 1592
+   CPU compute nodes, 114,624 CPU-cores, 375 TB RAM (DDR4), 7.5 PFlop/s
+   theoretical peak performance (FP64), 192 GPU-accelerated nodes
+   providing 768 Nvidia A100 GPUs, 30 TB GPU RAM (HBM2). Shared MPG
+   resource.
 
-`Cobra <https://www.mpcdf.mpg.de/services/supercomputing/cobra>`__ (since 2018)
--------------------------------------------------------------------------------
+   See `Supercomputing
+   services <https://www.mpcdf.mpg.de/services/supercomputing>`__ for
+   details.
 
-Based on Intel Xeon Skylake-SP processors and Nvidia GPUs (V100,
-RTX5000): 3424 compute nodes, 136,960 CPU-cores, 128 Tesla V100-32 GPUs,
-240 Quadro RTX 5000 GPUs, 529 TB CPU RAM (DDR4), 7.9 TB GPU RAM HBM2,
-11.4 PFlop/s peak (FP64) + 2.64 PFlop/s peak (FP32). Shared MPG
-resource. See `Supercomputing
-services <https://www.mpcdf.mpg.de/services/supercomputing>`__ for
-details.
+#. `Cobra <https://www.mpcdf.mpg.de/services/supercomputing/cobra>`__
+   (since 2018)
 
-Ada (from 2022 onwards)
------------------------
+   Based on Intel Xeon Skylake-SP processors and Nvidia GPUs (V100,
+   RTX5000): 3424 compute nodes, 136,960 CPU-cores, 128 Tesla V100-32
+   GPUs, 240 Quadro RTX 5000 GPUs, 529 TB CPU RAM (DDR4), 7.9 TB GPU RAM
+   HBM2, 11.4 PFlop/s peak (FP64) + 2.64 PFlop/s peak (FP32). Shared MPG
+   resource.
 
-Dedicated GPU-based HPC machine for `PKS <https://www.pks.mpg.de>`__ and
-MPSD, providing 72 nodes with 4xA100 cards each. More details to follow.
-Expect to be operational early 2022.
+   See `Supercomputing
+   services <https://www.mpcdf.mpg.de/services/supercomputing/cobra>`__
+   for details.
 
-MPSD HPC
---------
+#. Ada (from 2022 onwards)
 
-Dedicated for MPSD.
+   Dedicated GPU-based HPC machine for `PKS <https://www.pks.mpg.de>`__
+   and MPSD, providing 72 nodes with 4xA100 cards each. More details to
+   follow. Expect to be operational early 2022.
+
+   Link with details to follow.
+
+#. MPSD HPC
+
+   Hardware resources located at MPSD. The remainder of this section
+   refers to this installation.
+
+Login nodes
+-----------
+
+The following documentation is for the MPSD HPC hardware. (There is
+dedicated documentation elsewhere for
+`Raven <https://www.mpcdf.mpg.de/services/supercomputing/raven>`__,
+`Cobra <https://www.mpcdf.mpg.de/services/supercomputing/cobra>`__ and
+Ada.)
+
+Login nodes are ``mpsd-hpc-login1.desy.de`` and
+``mpsd-hpc-login2.desy.de``.
+
+Job submission
+--------------
+
+Job submission is via `Slurm <https://slurm.schedmd.com>`__.
 
 .. include:: urls.include
 .. todo::
 
   |under-construction|  More material and details to be added.
-
-
-Login nodes are ``mpsd-hpc-login1.desy.de`` and
-``mpsd-hpc-login2.desy.de``.
-
-For questions, please contact the Henning and Hans at ssu-cs@mpsd.mpg.de
-or via the ``#computing`` stream in
-`Zulip <https://zulip.mpsd.mpg.de/#narrow/stream/3-computing>`__.
-
 Jupyter notebooks
-~~~~~~~~~~~~~~~~~
+-----------------
 
 You can use a Jupyter notebook on a dedicated HPC node as follows:
 
@@ -94,3 +107,10 @@ You can use a Jupyter notebook on a dedicated HPC node as follows:
    which you can paste as a URL into your browser (on your
    laptop/Desktop), and you should be connected to the Notebook server
    on the compute node.
+
+Usage questions
+---------------
+
+For questions, including installation of software, please contact the
+Henning and Hans at ssu-cs@mpsd.mpg.de or via the ``#computing`` stream
+in `Zulip <https://zulip.mpsd.mpg.de/#narrow/stream/3-computing>`__.

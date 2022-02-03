@@ -45,9 +45,11 @@ Please get in touch (:any:`contact`) with your queries - the materials are devel
 
    <br>
 
-**News**
 
-7 December 2021: We are `recruiting a research software engineer for data science and high performance computing. <vacancies.html>`__
+.. comment:
+   **News**
+   
+   7 December 2021: We are `recruiting a research software engineer for data science and high performance computing. <vacancies.html>`__
 
 
 

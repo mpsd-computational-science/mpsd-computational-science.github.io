@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3. High Performance Computing (HPC) &#8212; MPSD SSU Computational Science</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,13 +31,13 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/blank.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -49,7 +49,10 @@
     <link rel="next" title="4. Version control" href="version-control.html" />
     <link rel="prev" title="2. Overview IT-related services" href="overview-it.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -134,7 +137,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p class="caption" role="heading">
+    <p class="caption">
  <span class="caption-text">
   Contents:
  </span>
@@ -206,31 +209,24 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#raven-since-2020">
-   3.1. Raven (since 2020)
+  <a class="reference internal nav-link" href="#login-nodes">
+   3.1. Login nodes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cobra-since-2018">
-   3.2. Cobra (since 2018)
+  <a class="reference internal nav-link" href="#job-submission">
+   3.2. Job submission
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ada-from-2022-onwards">
-   3.3. Ada (from 2022 onwards)
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   3.3. Jupyter notebooks
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mpsd-hpc">
-   3.4. MPSD HPC
+  <a class="reference internal nav-link" href="#usage-questions">
+   3.4. Usage questions
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyter-notebooks">
-     3.4.1. Jupyter notebooks
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -259,46 +255,60 @@
 are hosted at the <a class="reference external" href="http://mpcdf.mpg.de">Max Planck Compute and Data Facility
 (MPCDF)</a>, the
 <a class="reference external" href="https://www.gwdg.de/hpc">GWDG</a>, and at MPSD itself.</p>
-<div class="section" id="raven-since-2020">
-<h2><span class="section-number">3.1. </span><a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing/raven">Raven</a> (since 2020)<a class="headerlink" href="#raven-since-2020" title="Permalink to this headline">¶</a></h2>
-<p>Based on Intel Xeon IceLake-SP processors and Nvidia A100 GPUs. 1592 CPU
-compute nodes, 114,624 CPU-cores, 375 TB RAM (DDR4), 7.5 PFlop/s
-theoretical peak performance (FP64), 192 GPU-accelerated nodes providing
-768 Nvidia A100 GPUs, 30 TB GPU RAM (HBM2). Shared MPG resource. See
-<a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing">Supercomputing
+<ol class="arabic">
+<li><p><a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing/raven">Raven</a>
+(since 2020)</p>
+<p>Based on Intel Xeon IceLake-SP processors and Nvidia A100 GPUs. 1592
+CPU compute nodes, 114,624 CPU-cores, 375 TB RAM (DDR4), 7.5 PFlop/s
+theoretical peak performance (FP64), 192 GPU-accelerated nodes
+providing 768 Nvidia A100 GPUs, 30 TB GPU RAM (HBM2). Shared MPG
+resource.</p>
+<p>See <a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing">Supercomputing
 services</a> for
 details.</p>
-</div>
-<div class="section" id="cobra-since-2018">
-<h2><span class="section-number">3.2. </span><a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing/cobra">Cobra</a> (since 2018)<a class="headerlink" href="#cobra-since-2018" title="Permalink to this headline">¶</a></h2>
+</li>
+<li><p><a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing/cobra">Cobra</a>
+(since 2018)</p>
 <p>Based on Intel Xeon Skylake-SP processors and Nvidia GPUs (V100,
-RTX5000): 3424 compute nodes, 136,960 CPU-cores, 128 Tesla V100-32 GPUs,
-240 Quadro RTX 5000 GPUs, 529 TB CPU RAM (DDR4), 7.9 TB GPU RAM HBM2,
-11.4 PFlop/s peak (FP64) + 2.64 PFlop/s peak (FP32). Shared MPG
-resource. See <a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing">Supercomputing
-services</a> for
-details.</p>
+RTX5000): 3424 compute nodes, 136,960 CPU-cores, 128 Tesla V100-32
+GPUs, 240 Quadro RTX 5000 GPUs, 529 TB CPU RAM (DDR4), 7.9 TB GPU RAM
+HBM2, 11.4 PFlop/s peak (FP64) + 2.64 PFlop/s peak (FP32). Shared MPG
+resource.</p>
+<p>See <a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing/cobra">Supercomputing
+services</a>
+for details.</p>
+</li>
+<li><p>Ada (from 2022 onwards)</p>
+<p>Dedicated GPU-based HPC machine for <a class="reference external" href="https://www.pks.mpg.de">PKS</a>
+and MPSD, providing 72 nodes with 4xA100 cards each. More details to
+follow. Expect to be operational early 2022.</p>
+<p>Link with details to follow.</p>
+</li>
+<li><p>MPSD HPC</p>
+<p>Hardware resources located at MPSD. The remainder of this section
+refers to this installation.</p>
+</li>
+</ol>
+<div class="section" id="login-nodes">
+<h2><span class="section-number">3.1. </span>Login nodes<a class="headerlink" href="#login-nodes" title="Permalink to this headline">¶</a></h2>
+<p>The following documentation is for the MPSD HPC hardware. (There is
+dedicated documentation elsewhere for
+<a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing/raven">Raven</a>,
+<a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing/cobra">Cobra</a> and
+Ada.)</p>
+<p>Login nodes are <code class="docutils literal notranslate"><span class="pre">mpsd-hpc-login1.desy.de</span></code> and
+<code class="docutils literal notranslate"><span class="pre">mpsd-hpc-login2.desy.de</span></code>.</p>
 </div>
-<div class="section" id="ada-from-2022-onwards">
-<h2><span class="section-number">3.3. </span>Ada (from 2022 onwards)<a class="headerlink" href="#ada-from-2022-onwards" title="Permalink to this headline">¶</a></h2>
-<p>Dedicated GPU-based HPC machine for <a class="reference external" href="https://www.pks.mpg.de">PKS</a> and
-MPSD, providing 72 nodes with 4xA100 cards each. More details to follow.
-Expect to be operational early 2022.</p>
-</div>
-<div class="section" id="mpsd-hpc">
-<h2><span class="section-number">3.4. </span>MPSD HPC<a class="headerlink" href="#mpsd-hpc" title="Permalink to this headline">¶</a></h2>
-<p>Dedicated for MPSD.</p>
+<div class="section" id="job-submission">
+<h2><span class="section-number">3.2. </span>Job submission<a class="headerlink" href="#job-submission" title="Permalink to this headline">¶</a></h2>
+<p>Job submission is via <a class="reference external" href="https://slurm.schedmd.com">Slurm</a>.</p>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
 <p><a class="reference internal" href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ambox_warning_green_construction.svg/378px-Ambox_warning_green_construction.svg.png"><img alt="under-construction" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ambox_warning_green_construction.svg/378px-Ambox_warning_green_construction.svg.png" style="width: 50px;" /></a>  More material and details to be added.</p>
 </div>
-<p>Login nodes are <code class="docutils literal notranslate"><span class="pre">mpsd-hpc-login1.desy.de</span></code> and
-<code class="docutils literal notranslate"><span class="pre">mpsd-hpc-login2.desy.de</span></code>.</p>
-<p>For questions, please contact the Henning and Hans at <a class="reference external" href="mailto:ssu-cs&#37;&#52;&#48;mpsd&#46;mpg&#46;de">ssu-cs<span>&#64;</span>mpsd<span>&#46;</span>mpg<span>&#46;</span>de</a>
-or via the <code class="docutils literal notranslate"><span class="pre">#computing</span></code> stream in
-<a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing">Zulip</a>.</p>
+</div>
 <div class="section" id="jupyter-notebooks">
-<h3><span class="section-number">3.4.1. </span>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">3.3. </span>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
 <p>You can use a Jupyter notebook on a dedicated HPC node as follows:</p>
 <ol class="arabic">
 <li><p>Ensure you are at MPSD or have the DESY VPN set up.</p></li>
@@ -328,6 +338,11 @@ on the compute node.</p>
 </li>
 </ol>
 </div>
+<div class="section" id="usage-questions">
+<h2><span class="section-number">3.4. </span>Usage questions<a class="headerlink" href="#usage-questions" title="Permalink to this headline">¶</a></h2>
+<p>For questions, including installation of software, please contact the
+Henning and Hans at <a class="reference external" href="mailto:ssu-cs&#37;&#52;&#48;mpsd&#46;mpg&#46;de">ssu-cs<span>&#64;</span>mpsd<span>&#46;</span>mpg<span>&#46;</span>de</a> or via the <code class="docutils literal notranslate"><span class="pre">#computing</span></code> stream
+in <a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing">Zulip</a>.</p>
 </div>
 </div>
 
@@ -335,12 +350,23 @@ on the compute node.</p>
               </div>
               
               
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="overview-it.html" title="previous page"><span class="section-number">2. </span>Overview IT-related services</a>
-    <a class='right-next' id="next-link" href="version-control.html" title="next page"><span class="section-number">4. </span>Version control</a>
-
-              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="overview-it.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Overview IT-related services</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="version-control.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Version control</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
               
           </main>
           
@@ -348,14 +374,13 @@ on the compute node.</p>
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="footer mt-5 mt-md-0">
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright 2021 Hans Fangohr, MPSD.<br/>
+    &copy; Copyright 2021 Hans Fangohr, MPSD.<br>
 </p>
     </div>
     

@@ -29,6 +29,8 @@ Details: https://www.mpsd.mpg.de/events/29310/574005
 One week course not assuming prior Python knowledge - a good starting
 point to get into programming and computation for scientific research.
 
+Teaching materials: https://www.desy.de/~fangohr/teaching/py4cs2022/
+
 Details: https://www.mpsd.mpg.de/events/29267/574005
 
 2021-11-22 Advanced HPC Workshop (4 days)
@@ -366,8 +368,6 @@ specialized topics at a later stage.
 
 More detailed announcement:
 https://www.mpsd.mpg.de/events/27626/500135?1619346787
-
-Teaching materials: https://www.desy.de/~fangohr/teaching/py4cs2021/
 
 Delivered by Hans Fangohr, Henning Glawe, Heiko Appel
 

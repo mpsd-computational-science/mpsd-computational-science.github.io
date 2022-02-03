@@ -36,7 +36,7 @@ Further reading and training material on version control and Git
 
    -  `Lecture notes Hans Fangohr on the very basics of version control
       and git
-      (pdf) <https://www.desy.de/~fangohr/teaching/csds2019/pdfs/Introduction-to-version-control-with-git-slides-Fangohr.pdf>`__
+      (pdf) <https://www.desy.de/~fangohr/teaching/archive/csds2019/pdfs/Introduction-to-version-control-with-git-slides-Fangohr.pdf>`__
    -  `Software Carpentry workshop on Git
       (html) <http://swcarpentry.github.io/git-novice>`__
    -  `Version Control from The Turing
