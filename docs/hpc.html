@@ -4,20 +4,21 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>3. High Performance Computing (HPC) &#8212; MPSD SSU Computational Science</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
-
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
     
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
     
 <!-- add `style` or `link` tags with your CSS `@font-face` declarations here -->
 <!-- ... and optionally preload the `woff2` for snappier page loads -->
@@ -31,13 +32,13 @@
 
 
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/blank.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -132,12 +133,13 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p class="caption">
+    <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contents:
  </span>
@@ -192,6 +194,9 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -219,13 +224,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#jupyter-notebooks">
-   3.3. Jupyter notebooks
+  <a class="reference internal nav-link" href="#software">
+   3.3. Software
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#usage-questions">
-   3.4. Usage questions
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   3.4. Jupyter notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usage-questions-and-support">
+   3.5. Usage questions and support
   </a>
  </li>
 </ul>
@@ -249,7 +259,7 @@
               
               <div>
                 
-  <div class="section" id="high-performance-computing-hpc">
+  <section id="high-performance-computing-hpc">
 <span id="hpc"></span><h1><span class="section-number">3. </span>High Performance Computing (HPC)<a class="headerlink" href="#high-performance-computing-hpc" title="Permalink to this headline">¶</a></h1>
 <p>Researchers at MPSD have access to multiple HPC compute resources, which
 are hosted at the <a class="reference external" href="http://mpcdf.mpg.de">Max Planck Compute and Data Facility
@@ -289,7 +299,7 @@ follow. Expect to be operational early 2022.</p>
 refers to this installation.</p>
 </li>
 </ol>
-<div class="section" id="login-nodes">
+<section id="login-nodes">
 <h2><span class="section-number">3.1. </span>Login nodes<a class="headerlink" href="#login-nodes" title="Permalink to this headline">¶</a></h2>
 <p>The following documentation is for the MPSD HPC hardware. (There is
 dedicated documentation elsewhere for
@@ -298,17 +308,70 @@ dedicated documentation elsewhere for
 Ada.)</p>
 <p>Login nodes are <code class="docutils literal notranslate"><span class="pre">mpsd-hpc-login1.desy.de</span></code> and
 <code class="docutils literal notranslate"><span class="pre">mpsd-hpc-login2.desy.de</span></code>.</p>
-</div>
-<div class="section" id="job-submission">
+</section>
+<section id="job-submission">
 <h2><span class="section-number">3.2. </span>Job submission<a class="headerlink" href="#job-submission" title="Permalink to this headline">¶</a></h2>
 <p>Job submission is via <a class="reference external" href="https://slurm.schedmd.com">Slurm</a>.</p>
+<p>The following partitions are available to all (partial output from
+<code class="docutils literal notranslate"><span class="pre">sinfo</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PARTITION</span>     <span class="n">TIMELIMIT</span>  <span class="n">NODES</span>  <span class="n">NODELIST</span>
+<span class="n">express</span>         <span class="mi">6</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>      <span class="mi">2</span>  <span class="n">mpsd</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">ibm</span><span class="o">-</span><span class="p">[</span><span class="mi">019</span><span class="o">-</span><span class="mi">020</span><span class="p">]</span>
+<span class="n">interactive</span>     <span class="mi">8</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>      <span class="mi">1</span>  <span class="n">mpsd</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">ibm</span><span class="o">-</span><span class="mi">021</span>
+<span class="n">bigmem</span>       <span class="mi">28</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">0</span>      <span class="mi">8</span>  <span class="n">mpsd</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">hp</span><span class="o">-</span><span class="p">[</span><span class="mi">001</span><span class="o">-</span><span class="mi">008</span><span class="p">]</span>
+<span class="n">gpu</span>          <span class="mi">28</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">0</span>      <span class="mi">2</span>  <span class="n">mpsd</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">gpu</span><span class="o">-</span><span class="p">[</span><span class="mi">001</span><span class="o">-</span><span class="mi">002</span><span class="p">]</span>
+<span class="n">mpsd</span>         <span class="mi">28</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">0</span>     <span class="mi">22</span>  <span class="n">mpsd</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">ibm</span><span class="o">-</span><span class="p">[</span><span class="mi">022</span><span class="o">-</span><span class="mi">030</span><span class="p">,</span><span class="mi">035</span><span class="o">-</span><span class="mi">036</span><span class="p">,</span><span class="mi">043</span><span class="o">-</span><span class="mi">049</span><span class="p">,</span><span class="mi">053</span><span class="o">-</span><span class="mi">062</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Please use the two <code class="docutils literal notranslate"><span class="pre">gpu</span></code> machines only if your code supports
+nvidia-cuda ;)</p>
+<p>Resources per node:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">express</span></code> / <code class="docutils literal notranslate"><span class="pre">interactive</span></code> / <code class="docutils literal notranslate"><span class="pre">mpsd</span></code> partitions</p>
+<ul>
+<li><p>8 physical cores (16 with hyperthreading)</p></li>
+<li><p>64GB RAM</p></li>
+<li><p>only 10GB ethernet for MPI communication, so better avoid running
+multi-node jobs in this partition</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bigmem</span></code></p>
+<ul>
+<li><p>96 physical cores (192 with hyperthreading)</p></li>
+<li><p>2T RAM</p></li>
+<li><p>fast FDR infiniband for MPI communication</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gpu</span></code></p>
+<ul>
+<li><p>16 physical cores (32 with hyperthreading)</p></li>
+<li><p>1.5T RAM</p></li>
+<li><p>fast FDR infiniband for MPI communication</p></li>
+<li><p>8 Tesla V100 GPUs</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="software">
+<h2><span class="section-number">3.3. </span>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h2>
+<p>We are working on an upgrade of software stack and documentation on the
+local HPC cluster. In the meantime, the following may be sufficient or a
+starting point before you contact us for furthe support (see below).</p>
+<p>Check the available modules afterwards via <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">avail</span></code>, and load
+the modules of your choice via <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">&lt;modulename&gt;</span></code>.</p>
+<p>More modules become available with this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module use /opt/easybuild/modules/all/
+</pre></div>
+</div>
+<p>For additional software, you can try to install it using
+<a class="reference external" href="https://spack.readthedocs.io/en/latest/">Spack</a>. Or ask help (see
+below).</p>
 <div class="admonition-todo admonition" id="id1">
 <p class="admonition-title">Todo</p>
 <p><a class="reference internal" href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ambox_warning_green_construction.svg/378px-Ambox_warning_green_construction.svg.png"><img alt="under-construction" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ambox_warning_green_construction.svg/378px-Ambox_warning_green_construction.svg.png" style="width: 50px;" /></a>  More material and details to be added.</p>
 </div>
-</div>
-<div class="section" id="jupyter-notebooks">
-<h2><span class="section-number">3.3. </span>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="jupyter-notebooks">
+<h2><span class="section-number">3.4. </span>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
 <p>You can use a Jupyter notebook on a dedicated HPC node as follows:</p>
 <ol class="arabic">
 <li><p>Ensure you are at MPSD or have the DESY VPN set up.</p></li>
@@ -337,21 +400,21 @@ laptop/Desktop), and you should be connected to the Notebook server
 on the compute node.</p>
 </li>
 </ol>
-</div>
-<div class="section" id="usage-questions">
-<h2><span class="section-number">3.4. </span>Usage questions<a class="headerlink" href="#usage-questions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="usage-questions-and-support">
+<h2><span class="section-number">3.5. </span>Usage questions and support<a class="headerlink" href="#usage-questions-and-support" title="Permalink to this headline">¶</a></h2>
 <p>For questions, including installation of software, please contact the
 Henning and Hans at <a class="reference external" href="mailto:ssu-cs&#37;&#52;&#48;mpsd&#46;mpg&#46;de">ssu-cs<span>&#64;</span>mpsd<span>&#46;</span>mpg<span>&#46;</span>de</a> or via the <code class="docutils literal notranslate"><span class="pre">#computing</span></code> stream
 in <a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing">Zulip</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="overview-it.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -374,8 +437,8 @@ in <a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">

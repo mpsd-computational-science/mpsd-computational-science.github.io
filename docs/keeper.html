@@ -4,20 +4,21 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>7. Keeper &#8212; MPSD SSU Computational Science</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
-
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
     
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
     
 <!-- add `style` or `link` tags with your CSS `@font-face` declarations here -->
 <!-- ... and optionally preload the `woff2` for snappier page loads -->
@@ -31,13 +32,13 @@
 
 
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/blank.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -132,12 +133,13 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p class="caption">
+    <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contents:
  </span>
@@ -192,6 +194,9 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -286,7 +291,7 @@
               
               <div>
                 
-  <div class="section" id="keeper">
+  <section id="keeper">
 <span id="id1"></span><h1><span class="section-number">7. </span>Keeper<a class="headerlink" href="#keeper" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -312,7 +317,7 @@
 <p class="admonition-title">Note</p>
 <p>The section below assumes you are an employee of the <a class="reference external" href="https://mpg.de">Max Planck Society</a>.</p>
 </div>
-<div class="section" id="features">
+<section id="features">
 <h2><a class="toc-backref" href="#id2"><span class="section-number">7.1. </span>Features</a><a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Keeper provides disk space (in the cloud and provided by the Max
@@ -341,8 +346,8 @@ Certificate”</a></p></li>
 <li><p><a class="reference external" href="https://mpdl.zendesk.com/hc/en-us/articles/360017369119-Office-in-Keeper-Web-OnlyOffice">Use as Google-docs alternative for real time collaborative document
 authoring</a></p></li>
 </ul>
-</div>
-<div class="section" id="quota-data-size">
+</section>
+<section id="quota-data-size">
 <h2><a class="toc-backref" href="#id3"><span class="section-number">7.2. </span>Quota (data size)</a><a class="headerlink" href="#quota-data-size" title="Permalink to this headline">¶</a></h2>
 <p>The amount of storage for each user is 1TB (by default).</p>
 <p>Quota is counted by looking at the size of the libraries associated to
@@ -351,8 +356,8 @@ the owner of the libraries. Each library has exactly one owner.</p>
 quote of the others.</p>
 <p>Keeper is not designed to archive significantly larger amounts of data.
 (As of Jan 2021.)</p>
-</div>
-<div class="section" id="getting-started">
+</section>
+<section id="getting-started">
 <h2><a class="toc-backref" href="#id4"><span class="section-number">7.3. </span>Getting started</a><a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
@@ -370,21 +375,21 @@ clients to Keeper, or when logging in to the Keeper home page
 (<a class="reference external" href="https://keeper.mpdl.mpg.de">https://keeper.mpdl.mpg.de</a>)</p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="libraries">
+</section>
+<section id="libraries">
 <h2><a class="toc-backref" href="#id5"><span class="section-number">7.4. </span>Libraries</a><a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h2>
 <p>KEEPER organises files into ‘libraries’. Each library can be synced and
 shared separately. One personal library is created on sign-up. You can
 create more libraries later.</p>
-</div>
-<div class="section" id="getting-data-into-keeper-seafile">
+</section>
+<section id="getting-data-into-keeper-seafile">
 <h2><a class="toc-backref" href="#id6"><span class="section-number">7.5. </span>Getting data into KEEPER (SeaFile)</a><a class="headerlink" href="#getting-data-into-keeper-seafile" title="Permalink to this headline">¶</a></h2>
 <p>The web interface at <a class="reference external" href="https://keeper.mpdl.mpg.de">https://keeper.mpdl.mpg.de</a> allows to see all the
 data in keeper, including libraries, shared libraries, all the directory
 structures and files.</p>
 <p>More convenient access is realised through <a class="reference external" href="https://mpdl.zendesk.com/hc/en-us/articles/360007791160-Keeper-Drive-Client">keeper
 clients</a>.</p>
-<div class="section" id="seafile">
+<section id="seafile">
 <h3><a class="toc-backref" href="#id7"><span class="section-number">7.5.1. </span>SeaFile</a><a class="headerlink" href="#seafile" title="Permalink to this headline">¶</a></h3>
 <p>SeaFile can be used to upload files (or whole directories) from the
 local storage system to Keeper, or to download files from keeper to the
@@ -396,8 +401,8 @@ be repeated in Keeper’s storage.</p>
 different location, while working on the data.</p>
 <p>Note that you need to <em>Unsync</em> such synchronised data before you delete
 it locally (other wise the copy in Keeper will also be deleted).</p>
-</div>
-<div class="section" id="seadrive">
+</section>
+<section id="seadrive">
 <h3><a class="toc-backref" href="#id8"><span class="section-number">7.5.2. </span>SeaDrive</a><a class="headerlink" href="#seadrive" title="Permalink to this headline">¶</a></h3>
 <p>Is a more recent client than SeaFile. It is currently not as stable as
 SeaFile, and usage of SeaFile is recommended (as of Jan 2021).</p>
@@ -405,22 +410,22 @@ SeaFile, and usage of SeaFile is recommended (as of Jan 2021).</p>
 <p class="admonition-title">Note</p>
 <p>Experience reports are welcome regarding practical data upload and synchronisation.</p>
 </div>
-</div>
-<div class="section" id="unsync">
+</section>
+<section id="unsync">
 <h3><a class="toc-backref" href="#id9"><span class="section-number">7.5.3. </span>Unsync</a><a class="headerlink" href="#unsync" title="Permalink to this headline">¶</a></h3>
 <p>When you have synchronised a local folder with Keeper, and want to
 delete the local folder but keep the copy in Keeper, you need to
 <a class="reference external" href="https://mpdl.zendesk.com/hc/en-us/articles/360007744619-Unsync-and-Resync-Libraries">unsync</a>
 that folder before deleting it.</p>
-</div>
-</div>
-<div class="section" id="notifications">
+</section>
+</section>
+<section id="notifications">
 <h2><a class="toc-backref" href="#id10"><span class="section-number">7.6. </span>Notifications</a><a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h2>
 <p>Email notifications about changed files can be requested (for example to
 be sent every day, or every 4 hours). This can be helpful when working
 on a shared library.</p>
-</div>
-<div class="section" id="sharing-a-library">
+</section>
+<section id="sharing-a-library">
 <h2><a class="toc-backref" href="#id11"><span class="section-number">7.7. </span>Sharing a library</a><a class="headerlink" href="#sharing-a-library" title="Permalink to this headline">¶</a></h2>
 <p>Sharing a library is a two stage process:</p>
 <ol class="arabic simple">
@@ -431,8 +436,8 @@ People</a>)</p></li>
 <a class="reference external" href="https://keeper.mpdl.mpg.de/my-libs/#">My Libraries</a>, and then
 select “Share to user”.</p></li>
 </ol>
-</div>
-<div class="section" id="usage-experience">
+</section>
+<section id="usage-experience">
 <h2><a class="toc-backref" href="#id12"><span class="section-number">7.8. </span>Usage experience</a><a class="headerlink" href="#usage-experience" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Moving files (for example into a subdirectory) within a directory on
@@ -444,15 +449,15 @@ a long time for large files.</p>
 drive such operations through the web interface.</p>
 </div></blockquote>
 <p>Please share your observations! (Contact <a class="reference internal" href="introduction.html"><span class="doc">Introduction</span></a>)</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="archive.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -475,8 +480,8 @@ drive such operations through the web interface.</p>
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">

@@ -4,20 +4,21 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>5. Research Data Management &#8212; MPSD SSU Computational Science</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
-
+    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
     
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
+    <link rel="stylesheet"
+      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
     
 <!-- add `style` or `link` tags with your CSS `@font-face` declarations here -->
 <!-- ... and optionally preload the `woff2` for snappier page loads -->
@@ -31,13 +32,13 @@
 
 
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/blank.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -132,12 +133,13 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p class="caption">
+    <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contents:
  </span>
@@ -192,6 +194,9 @@
 
   </div>
 </nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
             </div>
             
           
@@ -298,7 +303,7 @@
               
               <div>
                 
-  <div class="section" id="research-data-management">
+  <section id="research-data-management">
 <span id="id1"></span><h1><span class="section-number">5. </span>Research Data Management<a class="headerlink" href="#research-data-management" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -323,15 +328,15 @@
 <li><p><a class="reference internal" href="#useful-links" id="id17">Useful links</a></p></li>
 </ul>
 </div>
-<div class="section" id="what-are-research-data">
+<section id="what-are-research-data">
 <h2><a class="toc-backref" href="#id5"><span class="section-number">5.1. </span>What are research data?</a><a class="headerlink" href="#what-are-research-data" title="Permalink to this headline">¶</a></h2>
 <p>Research data include experimentally captured data sets, processed data,
 and data computed through computer simulation. The software involved in
 these steps <em>and</em> meta-data that describes the data are also research
 data.</p>
 <p>Research data is created in virtually any research activity.</p>
-</div>
-<div class="section" id="what-is-research-data-management">
+</section>
+<section id="what-is-research-data-management">
 <h2><a class="toc-backref" href="#id6"><span class="section-number">5.2. </span>What is research data management?</a><a class="headerlink" href="#what-is-research-data-management" title="Permalink to this headline">¶</a></h2>
 <p>Research data management includes the storing of data so that it can be
 actively worked on by the owner, sharing of the data with collaborators,
@@ -339,8 +344,8 @@ and long term archiving of (important parts of) the data. The
 organisation and documentation of the data is also part of research data
 management. For published data, the documentation should be to such a
 standard that other researchers can understand and re-use the data.</p>
-</div>
-<div class="section" id="why-do-we-need-research-data-management">
+</section>
+<section id="why-do-we-need-research-data-management">
 <h2><a class="toc-backref" href="#id7"><span class="section-number">5.3. </span>Why do we need research data management?</a><a class="headerlink" href="#why-do-we-need-research-data-management" title="Permalink to this headline">¶</a></h2>
 <p>Good research data management enables effective use of the data by the
 creator/owner, verification or reproduction of published research
@@ -353,19 +358,19 @@ management from applicants, authors and employers.</p>
 <p class="admonition-title">Todo</p>
 <p>link to MPG requirement for research data management</p>
 </div>
-</div>
-<div class="section" id="research-data-life-cycle">
+</section>
+<section id="research-data-life-cycle">
 <h2><a class="toc-backref" href="#id8"><span class="section-number">5.4. </span>Research data life cycle</a><a class="headerlink" href="#research-data-life-cycle" title="Permalink to this headline">¶</a></h2>
 <p>For most research projects, there are different stages of working with
 the relevant research data:</p>
-<div class="section" id="stage-1-data-capture">
+<section id="stage-1-data-capture">
 <h3><a class="toc-backref" href="#id9"><span class="section-number">5.4.1. </span>Stage 1: data capture</a><a class="headerlink" href="#stage-1-data-capture" title="Permalink to this headline">¶</a></h3>
 <p>Initially, <em>data is captured</em> (for example through experiment or
 computer simulation), and iteratively refined: output from first
 <em>initial analysis</em> of the data may guide the experiment or choice of
 simulation parameters that lead to the next data set recorded.</p>
-</div>
-<div class="section" id="stage-2-data-analysis-towards-publication">
+</section>
+<section id="stage-2-data-analysis-towards-publication">
 <h3><a class="toc-backref" href="#id10"><span class="section-number">5.4.2. </span>Stage 2: data analysis towards publication</a><a class="headerlink" href="#stage-2-data-analysis-towards-publication" title="Permalink to this headline">¶</a></h3>
 <p>This data capture phase is followed by identification of the most
 interesting parts of the data, and then an in-depth <em>data analysis</em> of
@@ -376,17 +381,17 @@ data capture can be carried out following the analysis.</p>
 <p>During stage 1 and 2, we need access to the data sets with a short
 latency. Typically, such data is stored “on disk” (in particular not on
 tape).</p>
-</div>
-<div class="section" id="stage-3-post-publication-and-data-archival">
+</section>
+<section id="stage-3-post-publication-and-data-archival">
 <h3><a class="toc-backref" href="#id11"><span class="section-number">5.4.3. </span>Stage 3: post publication and data archival</a><a class="headerlink" href="#stage-3-post-publication-and-data-archival" title="Permalink to this headline">¶</a></h3>
 <p><em>After publication</em> important data should be kept (see <a class="reference internal" href="archive.html"><span class="doc">Archiving research data</span></a>).</p>
 <p>For economic reasons, such <em>archived data</em> is commonly stored on tape.
 This means access to the data is slow: it may take minutes, hours or
 days to get the data back from tape into a system where it can be read
 and re-processed.</p>
-</div>
-</div>
-<div class="section" id="research-data-associated-with-a-publication">
+</section>
+</section>
+<section id="research-data-associated-with-a-publication">
 <h2><a class="toc-backref" href="#id12"><span class="section-number">5.5. </span>Research data associated with a publication</a><a class="headerlink" href="#research-data-associated-with-a-publication" title="Permalink to this headline">¶</a></h2>
 <p>To publish scientific results that make use of data (in some form), one
 should create a data repository for this publication which puts together
@@ -406,8 +411,8 @@ post-processing software (typically using <a class="reference internal" href="ve
 </li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="dealing-with-data-files">
+</section>
+<section id="dealing-with-data-files">
 <h2><a class="toc-backref" href="#id13"><span class="section-number">5.6. </span>Dealing with data files</a><a class="headerlink" href="#dealing-with-data-files" title="Permalink to this headline">¶</a></h2>
 <p>The MPLD summarises some guidance on <a class="reference external" href="https://rdm.mpdl.mpg.de/file-handling/">naming and handling
 files</a>.</p>
@@ -430,10 +435,10 @@ Lasers or synchrotrons, the relevant research facility is normally
 equipped to host the data on the research facility site, and provides
 computational storage to carry out (at least the initial) analysis on
 site.</p>
-</div>
-<div class="section" id="file-formats">
+</section>
+<section id="file-formats">
 <h2><a class="toc-backref" href="#id14"><span class="section-number">5.7. </span>File formats</a><a class="headerlink" href="#file-formats" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="general-guidance">
+<section id="general-guidance">
 <h3><a class="toc-backref" href="#id15"><span class="section-number">5.7.1. </span>General guidance</a><a class="headerlink" href="#general-guidance" title="Permalink to this headline">¶</a></h3>
 <p>The MPLD summarises some guidance on <a class="reference external" href="https://rdm.mpdl.mpg.de/file-formats">file
 formats</a>.</p>
@@ -454,8 +459,8 @@ interpretable).</p>
 <p class="admonition-title">Todo</p>
 <p>Add links to documents that discuss this</p>
 </div>
-</div>
-<div class="section" id="domain-specific-file-formats">
+</section>
+<section id="domain-specific-file-formats">
 <span id="id4"></span><h3><a class="toc-backref" href="#id16"><span class="section-number">5.7.2. </span>Domain specific file formats</a><a class="headerlink" href="#domain-specific-file-formats" title="Permalink to this headline">¶</a></h3>
 <p>Some communities have created domain specific data file formats that are
 <em>self describing</em> and - through this design - <em>embed the metadata</em>
@@ -472,9 +477,9 @@ automatically.</p>
 this simplifies creating meaningful archival of the data.</p>
 <p>It provides other benefits: all data sets using the same file format can
 be processed by data analysis tools that support the file format.</p>
-</div>
-</div>
-<div class="section" id="useful-links">
+</section>
+</section>
+<section id="useful-links">
 <h2><a class="toc-backref" href="#id17"><span class="section-number">5.8. </span>Useful links</a><a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
@@ -484,15 +489,15 @@ Library</a></p></li>
 Way</a></p></li>
 </ul>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="version-control.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -515,8 +520,8 @@ Way</a></p></li>
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-<footer class="footer mt-5 mt-md-0">
+    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">

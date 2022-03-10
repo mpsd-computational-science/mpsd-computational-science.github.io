@@ -4,6 +4,31 @@ Events
 .. contents::
    :local:
 
+2022-05-22 AI for Science - Bootcamp with NVIDIA (2 days)
+---------------------------------------------------------
+
+NVIDIA and the Max Planck Computing and Data Facility (MPCDF) are
+hosting a GPU Bootcamp open to all researchers and code developers of
+the Max Planck Society (MPG). During this online Bootcamp, participants
+will learn how to apply AI tools, techniques, and algorithms to
+real-life problems. You'll study the key concepts of Deep Neural
+Networks, how to build Deep Learning models, and how to measure and
+improve the accuracy of your models. You'll also learn essential data
+preprocessing techniques to ensure a robust machine learning pipeline.
+This online Bootcamp is a hands-on learning experience where you'll be
+guided by step-by-step instructions with mentors on hand to help
+throughout the process.
+
+START: May 23, 2022 09:00
+
+END: May 24, 2022 12:30
+
+LOCATION: online via Zoom HOST
+
+Details:
+https://www.mpcdf.mpg.de/about-mpcdf/news-events/ai-bootcamp.html /
+https://www.mpcdf.mpg.de/services/training
+
 2022-02-21 Numerical Methods and Practical Skills for Computational Physics Part II (1 week)
 --------------------------------------------------------------------------------------------
 

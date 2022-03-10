@@ -64,6 +64,63 @@ Job submission
 
 Job submission is via `Slurm <https://slurm.schedmd.com>`__.
 
+The following partitions are available to all (partial output from
+``sinfo``):
+
+::
+
+   PARTITION     TIMELIMIT  NODES  NODELIST
+   express         6:00:00      2  mpsd-hpc-ibm-[019-020]
+   interactive     8:00:00      1  mpsd-hpc-ibm-021
+   bigmem       28-00:00:0      8  mpsd-hpc-hp-[001-008]
+   gpu          28-00:00:0      2  mpsd-hpc-gpu-[001-002]
+   mpsd         28-00:00:0     22  mpsd-hpc-ibm-[022-030,035-036,043-049,053-062]
+
+Please use the two ``gpu`` machines only if your code supports
+nvidia-cuda ;)
+
+Resources per node:
+
+-  ``express`` / ``interactive`` / ``mpsd`` partitions
+
+   -  8 physical cores (16 with hyperthreading)
+   -  64GB RAM
+   -  only 10GB ethernet for MPI communication, so better avoid running
+      multi-node jobs in this partition
+
+-  ``bigmem``
+
+   -  96 physical cores (192 with hyperthreading)
+   -  2T RAM
+   -  fast FDR infiniband for MPI communication
+
+-  ``gpu``
+
+   -  16 physical cores (32 with hyperthreading)
+   -  1.5T RAM
+   -  fast FDR infiniband for MPI communication
+   -  8 Tesla V100 GPUs
+
+Software
+--------
+
+We are working on an upgrade of software stack and documentation on the
+local HPC cluster. In the meantime, the following may be sufficient or a
+starting point before you contact us for furthe support (see below).
+
+Check the available modules afterwards via ``module avail``, and load
+the modules of your choice via ``module add <modulename>``.
+
+More modules become available with this command:
+
+::
+
+   $ module use /opt/easybuild/modules/all/
+
+For additional software, you can try to install it using
+`Spack <https://spack.readthedocs.io/en/latest/>`__. Or ask help (see
+below).
+
 .. include:: urls.include
 .. todo::
 
@@ -108,8 +165,8 @@ You can use a Jupyter notebook on a dedicated HPC node as follows:
    laptop/Desktop), and you should be connected to the Notebook server
    on the compute node.
 
-Usage questions
----------------
+Usage questions and support
+---------------------------
 
 For questions, including installation of software, please contact the
 Henning and Hans at ssu-cs@mpsd.mpg.de or via the ``#computing`` stream
