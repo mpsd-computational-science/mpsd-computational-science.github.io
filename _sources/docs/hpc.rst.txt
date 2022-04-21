@@ -34,13 +34,13 @@ are hosted at the `Max Planck Compute and Data Facility
    services <https://www.mpcdf.mpg.de/services/supercomputing/cobra>`__
    for details.
 
-#. Ada (from 2022 onwards)
+#. Ada
 
    Dedicated GPU-based HPC machine for `PKS <https://www.pks.mpg.de>`__
-   and MPSD, providing 72 nodes with 4xA100 cards each. More details to
-   follow. Expect to be operational early 2022.
+   and MPSD with 72 GPU nodes. Each GPU node hosts 4 A100 GPUs, two
+   Intel Xeon IceLake-SP 8360Y CPUs (72 cores in total) and 1 TB RAM.
 
-   Link with details to follow.
+   Expect machine to become operational during spring 2022.
 
 #. MPSD HPC
 
@@ -137,7 +137,7 @@ You can use a Jupyter notebook on a dedicated HPC node as follows:
 #. request a node for interactive use. For example, 1 node for 600
    minutes from the ``mpsd`` partition:
 
-   ``srun -t=600 -n 1 -p mpsd --pty bash``
+   ``srun -t 600 -n 1 -p mpsd --pty bash``
 
 #. If this was successful, you are now in a terminal (bash) session on
    your dedicated node. We need to fix one thing before you can start

@@ -84,7 +84,9 @@ People
 
 - |pic-kevin| Kevin Garcia, Octopus data analysis (MSc student)
 
-- |pic-12| Software Research Engineer (`to be recruited -- apply now <vacancies.html>`__)
+- |pic-swapneel| Dr Swapneel Amit Pathak, Computational magnetism (Visiting Scientist)
+
+- |pic-12| Software Research Engineer (`to be recruited <vacancies.html>`__)
   
 - |pic-12| Computational Scientist (to be recruited) 
 
@@ -135,3 +137,8 @@ There are multiple ways of getting in touch:
 
 .. |pic-daniel| image:: https://www.mpsd.mpg.de/employee_images/113518-1634543125?t=eyJ3aWR0aCI6NDI0LCJoZWlnaHQiOjU0NSwiZml0IjoiY3JvcCIsImZpbGVfZXh0ZW5zaW9uIjoid2VicCJ9--eb7a266f6ab0372c2bd6afc1bfd45697dfcea658
                :width: 50pt
+
+.. |pic-swapneel| image:: https://www.mpsd.mpg.de/employee_images/122138-1644318635?t=eyJ3aWR0aCI6MjEzLCJoZWlnaHQiOjI3NCwiZml0IjoiY3JvcCIsImZpbGVfZXh0ZW5zaW9uIjoid2VicCIsInF1YWxpdHkiOjg2fQ%3D%3D--3e1d41ff4b1ea8928e6734bc473242a90f797dea
+               :width: 50pt
+
+

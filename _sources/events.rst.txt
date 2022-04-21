@@ -4,8 +4,37 @@ Events
 .. contents::
    :local:
 
-2022-05-22 AI for Science - Bootcamp with NVIDIA (2 days)
----------------------------------------------------------
+2022-06-15 and 2022-06-16 High Performance Data Analytics - Part 2
+------------------------------------------------------------------
+
+Big Data Analytics efficient tools for storing, processing and analyzing
+Big Data in powerful supercomputers are necessary. This course is
+divided into two parts. In the second part, learners will apply skills
+acquired from the first part to advance their knowledge on Machine and
+Deep Learning applied on scientific research and related topics. The
+course will involve necessary theoretical lectures, and hands-on and lab
+sessions. The course is generally geared towards efficient use of HPC
+resources for Big Data Analytics. The topics covered include Supervised
+and Unsupervised Machine Learning, and Convolutional and Recurrent
+Neural Network (CNN and RNN).
+
+`Details <https://www.gwdg.de/academy/course?course=1398>`__
+
+2022-05-24 Programming with CUDA
+--------------------------------
+
+CUDA is a widely used programming environment for GPUs. This course
+introduces hardware and parallelization concepts for GPUs. The CUDA
+programming environment is described in detail. both for C and Fortran,
+including the language elements for controlling the processor
+parallelism and for accessing the various levels of memory. The use of
+GPU accelerated libraries (cuBLAS, cuFFT) is demonstrated. All topics
+are explained by means of examples in practical exercises.
+
+`Details <https://www.gwdg.de/academy/course?course=1393>`__
+
+2022-05-22 and 2022-05-23 AI for Science - Bootcamp with NVIDIA (2 days)
+------------------------------------------------------------------------
 
 NVIDIA and the Max Planck Computing and Data Facility (MPCDF) are
 hosting a GPU Bootcamp open to all researchers and code developers of
@@ -19,15 +48,117 @@ This online Bootcamp is a hands-on learning experience where you'll be
 guided by step-by-step instructions with mentors on hand to help
 throughout the process.
 
-START: May 23, 2022 09:00
-
-END: May 24, 2022 12:30
-
 LOCATION: online via Zoom HOST
 
 Details:
 https://www.mpcdf.mpg.de/about-mpcdf/news-events/ai-bootcamp.html /
 https://www.mpcdf.mpg.de/services/training
+
+2022-05-17 to 2022-05-18 Parallel Programming with MPI
+------------------------------------------------------
+
+The most important parallelization constructs of MPI are explained and
+applied in hands on exercises. The parallelization of algorithms is
+demonstrated in simple examples, their implementation as MPI programs
+will be studied in practical exercises. Fundamentals of parallel
+processing (computer architectures and programming models), Introduction
+to the Message Passing Interface (MPI), The main language constructs of
+MPI-1 and MPI-2 (Point-to-point communication, Collective communication
+incl. synchronization, Parallel operations, Data Structures, Parallel I
+/ O, Process management), Demonstration and practical exercises with
+Fortran, C and Python source codes for all topics; Practice for the
+parallelization of sample programs; Analysis and optimization of
+parallel efficiency.
+
+`Details <https://www.gwdg.de/academy/course?course=1396>`__
+
+2022-05-16 Using the GWDG Scientific Compute Cluster - An Introduction
+----------------------------------------------------------------------
+
+This course is intended to provide a smooth entry into the world of High
+Performance Computing. We will show the most important Linux commands,
+how to log onto the Cluster, compile and install software and give
+examples how to efficiently use the compute resources
+
+`Details <https://www.gwdg.de/academy/course?course=1391>`__
+
+2022-05-12 and 2022-05-13 Future Opportunities for Software in Research
+-----------------------------------------------------------------------
+
+Software literacy has become a key competence for scientists across all
+disciplines. Scientists use the software daily, and software development
+is becoming an increasingly important component of scientific
+productivity. However, the software needed for certain research projects
+can get highly complex and take up resources otherwise needed for core
+research. In the demanded professionalization of software development in
+research, specialized Research Software Engineers have emerged in recent
+years. With their help, researchers tackle the challenges in the areas
+of software and data, such as reproducibility, correctness,
+user-friendliness, performance, or maintenance. Our two-day workshop
+provides new opportunities for learning about best practices in
+scientific software development, such as
+
+-  Seeing recent flagship projects in action.
+-  Discussing software licensing and intellectual property issues.
+-  Discovering new ways to make your software known and recognized.
+
+We invite all interested scientists, research software engineers, IT and
+computing specialists and individuals involved in creating, using or
+otherwise dealing with research software in the Max Planck Society. We
+also welcome participants from other research institutions.
+
+Registration deadline: 25 April 2022.
+
+`Details <https://workshops.evolbio.mpg.de/event/54/>`__
+
+2022-04-28 Introduction to MPCDF Services
+-----------------------------------------
+
+How to start with the MPCDF systems and services: This introductory
+course helps new users with the first steps on the MPCDF systems. It
+covers login, file systems, HPC systems, SLURM, and the MPCDF services
+remote visualization, Jupyter notebooks and datashare. Basic knowledge
+of Linux is required.
+
+Apr 28, 2022 TIME: 14:00 - 16:30 (online, via Zoom)
+
+Details and registration:
+https://www.mpcdf.mpg.de/about-mpcdf/news-events/mpcdf-introductory-user-course
+
+2022-04-25 to 2022-04-29 Practical course in High-Performance Computing
+-----------------------------------------------------------------------
+
+This practical course is comprised of two parts. The first part is a
+crash course on the basics of High-Performance Computing, where you'll
+get hands-on experience, it covers the theoretical knowledge regarding
+parallel computing, high-performance computing, supercomputers, and the
+development and performance analysis of parallel applications using MPI
+and OpenMP. In the second part, you will team up in groups of two and
+parallelize a non-trivial problem of your choice, create a sequential
+solution and parallelize and analyze the scalability of the application.
+
+If you are just interested to learn about parallel programming and don't
+need credits, you can join only the first part of the course from April
+25th to 29th and gain a certificate.
+
+For additional information check the
+`Details <https://www.gwdg.de/academy/course?course=1447>`__
+
+The deadline for registration is April 10th.
+
+2022-04-13 Container Workshop
+-----------------------------
+
+The GWDG are going to give you an introduction to Container usage in HPC
+for Users. This workshop will be an interesting excursion into the field
+of Containers in HPC. The main part will be the hands-on session where
+participants will get course accounts for our SCC cluster and use
+JupyterHub on HPC. In Jupyter you will be running prepared Jupyter
+notebooks with Singularity, which you will be able to access with your
+browser. You can also use the materials afterwards as a starting point
+for your own workflows with Singularity containers.
+
+`Details <https://events.gwdg.de/event/224/>`__
 
 2022-02-21 Numerical Methods and Practical Skills for Computational Physics Part II (1 week)
 --------------------------------------------------------------------------------------------
@@ -89,6 +220,8 @@ applications using NVIDIA Nsight Systems.
 
 For details and registration please visit
 https://www.mpcdf.mpg.de/about-mpcdf/news-events/gpu-bootcamp
+
+.. _introduction-to-mpcdf-services-1:
 
 2021-10-13 14:00 Introduction to MPCDF services
 -----------------------------------------------
