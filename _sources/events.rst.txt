@@ -125,6 +125,15 @@ Apr 28, 2022 TIME: 14:00 - 16:30 (online, via Zoom)
 Details and registration:
 https://www.mpcdf.mpg.de/about-mpcdf/news-events/mpcdf-introductory-user-course
 
+2022-04-27 Introduction to Dask (GöHPC Coffee)
+----------------------------------------------
+
+As part of the (virtual) 2-weekly Göttingen HPC Coffee meeting, there is
+a short introduction to Dask on offer.
+
+Details: `11:00 online, via Big Blue
+Button <https://docs.gwdg.de/doku.php?id=en:services:application_services:high_performance_computing:hpc_coffee>`__
+
 2022-04-25 to 2022-04-29 Practical course in High-Performance Computing
 -----------------------------------------------------------------------
 
