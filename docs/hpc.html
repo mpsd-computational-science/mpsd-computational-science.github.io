@@ -288,24 +288,28 @@ resource.</p>
 services</a>
 for details.</p>
 </li>
-<li><p>Ada</p>
+<li><p><a class="reference external" href="https://docs.mpcdf.mpg.de/doc/computing/clusters/systems/MPSD_PKS_ADA.html">Ada</a></p>
 <p>Dedicated GPU-based HPC machine for <a class="reference external" href="https://www.pks.mpg.de">PKS</a>
 and MPSD with 72 GPU nodes. Each GPU node hosts 4 A100 GPUs, two
 Intel Xeon IceLake-SP 8360Y CPUs (72 cores in total) and 1 TB RAM.</p>
-<p>Expect machine to become operational during spring 2022.</p>
+<p>See <a class="reference external" href="https://docs.mpcdf.mpg.de/doc/computing/clusters/systems/MPSD_PKS_ADA.html">Ada
+documentation</a>
+for details.</p>
 </li>
 <li><p>MPSD HPC</p>
 <p>Hardware resources located at MPSD. The remainder of this section
 refers to this installation.</p>
 </li>
 </ol>
+<p>To get access to Raven, Cobra and Ada, <a class="reference external" href="https://selfservice.mpcdf.mpg.de/register/antrag.php?lang=en">request an account
+here</a>.</p>
 <section id="login-nodes">
 <h2><span class="section-number">3.1. </span>Login nodes<a class="headerlink" href="#login-nodes" title="Permalink to this headline">¶</a></h2>
 <p>The following documentation is for the MPSD HPC hardware. (There is
 dedicated documentation elsewhere for
 <a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing/raven">Raven</a>,
 <a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing/cobra">Cobra</a> and
-Ada.)</p>
+<a class="reference external" href="https://docs.mpcdf.mpg.de/doc/computing/clusters/systems/MPSD_PKS_ADA.html">Ada</a>.)</p>
 <p>Login nodes are <code class="docutils literal notranslate"><span class="pre">mpsd-hpc-login1.desy.de</span></code> and
 <code class="docutils literal notranslate"><span class="pre">mpsd-hpc-login2.desy.de</span></code>.</p>
 </section>
@@ -375,7 +379,10 @@ below).</p>
 <p>You can use a Jupyter notebook on a dedicated HPC node as follows:</p>
 <ol class="arabic">
 <li><p>Ensure you are at MPSD or have the DESY VPN set up.</p></li>
-<li><p>login to a login node (for example <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">mpsd-hpc-login1.desy.de</span></code>)</p></li>
+<li><p>login to a login node (for example <code class="docutils literal notranslate"><span class="pre">mosh</span> <span class="pre">mpsd-hpc-login1.desy.de</span></code>,
+<a class="reference external" href="https://mosh.org/">mosh</a> is recommended over <code class="docutils literal notranslate"><span class="pre">ssh</span></code> to avoid
+losing the session in case of short connection interruptions e.g. on
+WiFi)</p></li>
 <li><p>request a node for interactive use. For example, 1 node for 600
 minutes from the <code class="docutils literal notranslate"><span class="pre">mpsd</span></code> partition:</p>
 <p><code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">-t</span> <span class="pre">600</span> <span class="pre">-n</span> <span class="pre">1</span> <span class="pre">-p</span> <span class="pre">mpsd</span> <span class="pre">--pty</span> <span class="pre">bash</span></code></p>
@@ -391,7 +398,7 @@ version with the following commands:</p>
 <p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">all/Anaconda3/5.1.0</span></code></p>
 </li>
 <li><p>start the Jupyter notebook server on that node with</p>
-<p><code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span> <span class="pre">--ip=${HOSTNAMe}.desy.de</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">jupyter-notebook</span> <span class="pre">--ip=${HOSTNAME}.desy.de</span></code></p>
 <p>Watch the output displayed in your terminal. There is a line similar
 to this one:</p>
 <p><code class="docutils literal notranslate"><span class="pre">http://mpsd-hpc-ibm-055.desy.de:8888/?token=8814fea339b8fe7d3a52e7d03c2ce942a3f35c8c263ff0b8</span></code></p>

@@ -34,18 +34,23 @@ are hosted at the `Max Planck Compute and Data Facility
    services <https://www.mpcdf.mpg.de/services/supercomputing/cobra>`__
    for details.
 
-#. Ada
+#. `Ada <https://docs.mpcdf.mpg.de/doc/computing/clusters/systems/MPSD_PKS_ADA.html>`__
 
    Dedicated GPU-based HPC machine for `PKS <https://www.pks.mpg.de>`__
    and MPSD with 72 GPU nodes. Each GPU node hosts 4 A100 GPUs, two
    Intel Xeon IceLake-SP 8360Y CPUs (72 cores in total) and 1 TB RAM.
 
-   Expect machine to become operational during spring 2022.
+   See `Ada
+   documentation <https://docs.mpcdf.mpg.de/doc/computing/clusters/systems/MPSD_PKS_ADA.html>`__
+   for details.
 
 #. MPSD HPC
 
    Hardware resources located at MPSD. The remainder of this section
    refers to this installation.
+
+To get access to Raven, Cobra and Ada, `request an account
+here <https://selfservice.mpcdf.mpg.de/register/antrag.php?lang=en>`__.
 
 Login nodes
 -----------
@@ -54,7 +59,7 @@ The following documentation is for the MPSD HPC hardware. (There is
 dedicated documentation elsewhere for
 `Raven <https://www.mpcdf.mpg.de/services/supercomputing/raven>`__,
 `Cobra <https://www.mpcdf.mpg.de/services/supercomputing/cobra>`__ and
-Ada.)
+`Ada <https://docs.mpcdf.mpg.de/doc/computing/clusters/systems/MPSD_PKS_ADA.html>`__.)
 
 Login nodes are ``mpsd-hpc-login1.desy.de`` and
 ``mpsd-hpc-login2.desy.de``.
@@ -132,7 +137,10 @@ You can use a Jupyter notebook on a dedicated HPC node as follows:
 
 #. Ensure you are at MPSD or have the DESY VPN set up.
 
-#. login to a login node (for example ``ssh mpsd-hpc-login1.desy.de``)
+#. login to a login node (for example ``mosh mpsd-hpc-login1.desy.de``,
+   `mosh <https://mosh.org/>`__ is recommended over ``ssh`` to avoid
+   losing the session in case of short connection interruptions e.g. on
+   WiFi)
 
 #. request a node for interactive use. For example, 1 node for 600
    minutes from the ``mpsd`` partition:
@@ -154,7 +162,7 @@ You can use a Jupyter notebook on a dedicated HPC node as follows:
 
 #. start the Jupyter notebook server on that node with
 
-   ``jupyter-notebook --ip=${HOSTNAMe}.desy.de``
+   ``jupyter-notebook --ip=${HOSTNAME}.desy.de``
 
    Watch the output displayed in your terminal. There is a line similar
    to this one:
