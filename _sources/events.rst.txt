@@ -3,7 +3,6 @@ Events
 
 .. contents::
    :local:
-
 2022-06-15 and 2022-06-16 High Performance Data Analytics - Part 2
 ------------------------------------------------------------------
 
@@ -356,8 +355,7 @@ Part of the webinar on HPC best practices
 (https://ideas-productivity.org/events/hpc-best-practices-webinars/).
 Registration at link is required.
 
-Presenter is Keith Beattie from Lawrence Berkeley National Laboratory
-(https://crd.lbl.gov/departments/data-science-and-technology/idf/staff/keith-beattie/).
+Presenter is Keith Beattie from Lawrence Berkeley National Laboratory.
 Here is the summary:
 
 Scientific software is increasingly becoming the backbone of obtaining

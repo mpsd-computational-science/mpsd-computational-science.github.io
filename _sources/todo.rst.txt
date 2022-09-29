@@ -3,39 +3,39 @@
 Content [2/8]
 =============
 
--  ☐ review carpentry link for tar/zip; currenttly set to UCL copy,
+-  [ ] review carpentry link for tar/zip; currenttly set to UCL copy,
    should revert to official URL when established and stable again
 
--  ☐ review research data management
+-  [-] review research data management
 
-   -  ☒ mention aligning of data documentation and archival with
+   -  [X] mention aligning of data documentation and archival with
       publications
-   -  ☒ add comments on general strategy
-   -  ☐ add link to MPG expectations and best scientific practice
+   -  [X] add comments on general strategy
+   -  [ ] add link to MPG expectations and best scientific practice
 
--  ☐ review keeper
+-  [ ] review keeper
 
-   -  ☐ add: can invite non-MPG researchers
-   -  ☐ sharing large files (nmag example)
+   -  [ ] add: can invite non-MPG researchers
+   -  [ ] sharing large files (nmag example)
 
--  ☐ archive section
+-  [ ] archive section
 
-   -  ☐ add section on squashfs
-   -  ☐ compare different file archiving tools/methods (zip, 7zip, tar,
-      squashfs)
+   -  [ ] add section on squashfs
+   -  [ ] compare different file archiving tools/methods (zip, 7zip,
+      tar, squashfs)
 
--  ☐ archive : mention that researcher is responsible for archiving? Or
-   leave this to Markus' document?
+-  [ ] archive : mention that researcher is responsible for archiving?
+   Or leave this to Markus' document?
 
--  ☐ checkout todo items. Can be done with:
+-  [ ] checkout todo items. Can be done with:
 
    .. code:: rst
 
       .. todolist::
 
--  ☒ add HPC section for MPSD
+-  [X] add HPC section for MPSD
 
--  ☒ add about the SSU part
+-  [X] add about the SSU part
 
--  ☐ make 3-images on front page more stable (create one image file and
-   point to that?) Can also improve on the code image at least.
+-  [ ] make 3-images on front page more stable (create one image file
+   and point to that?) Can also improve on the code image at least.
