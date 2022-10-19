@@ -15,7 +15,7 @@
 About
 =====
 
-You are looking at the home page of the the `Computational Science scientific support unit <https://www.mpsd.mpg.de/research/ssus/comput-science>`__
+You are looking at the home page of the the `Computational Science scientific support unit <https://www.mpsd.mpg.de/research/ssus/computational-science>`__
 at the
 `Max Planck Institute for Structure and Dynamics of Matter <https://mpsd.mpg.de>`__ in
 Hamburg, Germany.

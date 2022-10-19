@@ -16,7 +16,7 @@ is split between
 -  `MPDL <http://mpdl.mpg.de>`__
 -  `MPSD's Computational Science
    Unit <http://mpsd-computational-science.github.io>`__ and overview of
-   *HPC computing resources*
+   HPC computing resources
 
 Useful links
 ------------
