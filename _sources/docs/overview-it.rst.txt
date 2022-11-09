@@ -13,7 +13,7 @@ is split between
    service
    status <https://it-news-prd.desy.de/index.php?type=infos&lang=en&refresh=300>`__)
 -  `MPCDF <http://mpcdf.mpg.de>`__
--  `MPDL <http://mpdl.mpg.de>`__
+-  `MPDL <https://www.mpdl.mpg.de>`__
 -  `MPSD's Computational Science
    Unit <http://mpsd-computational-science.github.io>`__ and overview of
    HPC computing resources
