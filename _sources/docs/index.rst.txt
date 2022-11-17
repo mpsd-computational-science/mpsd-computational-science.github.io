@@ -12,8 +12,8 @@
 .. include:: urls.include
 
 
-Computational Science Resources
-===============================
+Computational Science Resources and Documentation
+=================================================
 
 .. raw:: html
 

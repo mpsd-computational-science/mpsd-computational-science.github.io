@@ -74,7 +74,7 @@ See `Events <events.rst>`__ for more events.
    :hidden:
 
    about
-   Resources <docs/index>
+   Docs <docs/index>
    events
    gallery
    

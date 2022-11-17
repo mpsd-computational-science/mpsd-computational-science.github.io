@@ -173,6 +173,42 @@ You can use a Jupyter notebook on a dedicated HPC node as follows:
    laptop/Desktop), and you should be connected to the Notebook server
    on the compute node.
 
+Matlab
+------
+
+Matlab can be used in the following ways.
+
+Matlab on "theory laptop"
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Matlab can be started from the applications menu. Alternatively, you can
+start it by typing ``matlab`` in a shell.
+
+To be able to use it, your laptop needs to be connected to the office
+network, or have an active GWDG VPN connection (so the license server
+can be contacted).
+
+Matlab on Raven
+~~~~~~~~~~~~~~~
+
+On `Raven <https://www.mpcdf.mpg.de/services/supercomputing/raven>`__,
+the Matlab modules can be found using ``find-module matlab``. For
+example (as on November 2022):
+
+.. code:: bash
+
+   hafan@raven02:~> find-module matlab
+   matlab/R2020b
+   matlab/R2021bU2
+   matlab/R2022b
+
+To activate Matlab R2022b, use the ``module load matlab/R2022b``
+command. Then use ``matlab`` to start the program.
+
+See `MPCDF's documentation on
+Matlab <https://docs.mpcdf.mpg.de/faq/hpc_software.html#matlab>`__,
+which also covers triggering Matlab execution via Slurm.
+
 Usage questions and support
 ---------------------------
 

@@ -91,7 +91,7 @@
 
 <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="index.html">
-  Resources
+  Docs
  </a>
 </li>
 
@@ -144,7 +144,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p class="caption" role="heading">
+    <p class="caption">
  <span class="caption-text">
   Contents:
  </span>
@@ -236,8 +236,25 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matlab">
+   3.5. Matlab
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matlab-on-theory-laptop">
+     3.5.1. Matlab on “theory laptop”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matlab-on-raven">
+     3.5.2. Matlab on Raven
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#usage-questions-and-support">
-   3.5. Usage questions and support
+   3.6. Usage questions and support
   </a>
  </li>
 </ul>
@@ -410,8 +427,37 @@ on the compute node.</p>
 </li>
 </ol>
 </div>
+<div class="section" id="matlab">
+<h2><span class="section-number">3.5. </span>Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
+<p>Matlab can be used in the following ways.</p>
+<div class="section" id="matlab-on-theory-laptop">
+<h3><span class="section-number">3.5.1. </span>Matlab on “theory laptop”<a class="headerlink" href="#matlab-on-theory-laptop" title="Permalink to this headline">¶</a></h3>
+<p>Matlab can be started from the applications menu. Alternatively, you can
+start it by typing <code class="docutils literal notranslate"><span class="pre">matlab</span></code> in a shell.</p>
+<p>To be able to use it, your laptop needs to be connected to the office
+network, or have an active GWDG VPN connection (so the license server
+can be contacted).</p>
+</div>
+<div class="section" id="matlab-on-raven">
+<h3><span class="section-number">3.5.2. </span>Matlab on Raven<a class="headerlink" href="#matlab-on-raven" title="Permalink to this headline">¶</a></h3>
+<p>On <a class="reference external" href="https://www.mpcdf.mpg.de/services/supercomputing/raven">Raven</a>,
+the Matlab modules can be found using <code class="docutils literal notranslate"><span class="pre">find-module</span> <span class="pre">matlab</span></code>. For
+example (as on November 2022):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hafan@raven02:~&gt; find-module matlab
+matlab/R2020b
+matlab/R2021bU2
+matlab/R2022b
+</pre></div>
+</div>
+<p>To activate Matlab R2022b, use the <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">matlab/R2022b</span></code>
+command. Then use <code class="docutils literal notranslate"><span class="pre">matlab</span></code> to start the program.</p>
+<p>See <a class="reference external" href="https://docs.mpcdf.mpg.de/faq/hpc_software.html#matlab">MPCDF’s documentation on
+Matlab</a>,
+which also covers triggering Matlab execution via Slurm.</p>
+</div>
+</div>
 <div class="section" id="usage-questions-and-support">
-<h2><span class="section-number">3.5. </span>Usage questions and support<a class="headerlink" href="#usage-questions-and-support" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.6. </span>Usage questions and support<a class="headerlink" href="#usage-questions-and-support" title="Permalink to this headline">¶</a></h2>
 <p>For questions, including installation of software, please contact the
 Henning and Hans at <a class="reference external" href="mailto:ssu-cs&#37;&#52;&#48;mpsd&#46;mpg&#46;de">ssu-cs<span>&#64;</span>mpsd<span>&#46;</span>mpg<span>&#46;</span>de</a> or via the <code class="docutils literal notranslate"><span class="pre">#computing</span></code> stream
 in <a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing">Zulip</a>.</p>
