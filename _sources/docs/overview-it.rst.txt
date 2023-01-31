@@ -62,7 +62,7 @@ are hosted at the `Max Planck Compute and Data Facility
    documentation <https://docs.mpcdf.mpg.de/doc/computing/clusters/systems/MPSD_PKS_ADA.html>`__
    for details.
 
-#. *MPSD HPC*
+#. :doc:`mpsd-hpc`
 
    Hardware resources located at MPSD.
 
