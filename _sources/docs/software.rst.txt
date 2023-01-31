@@ -1,0 +1,67 @@
+.. _software:
+
+Software
+========
+
+For software on
+`Raven <https://www.mpcdf.mpg.de/services/supercomputing/raven>`__,
+`Cobra <https://www.mpcdf.mpg.de/services/supercomputing/cobra>`__ and
+`Ada <https://docs.mpcdf.mpg.de/doc/computing/clusters/systems/MPSD_PKS_ADA.html>`__
+please check the `Raven user
+guide <https://docs.mpcdf.mpg.de/doc/computing/raven-user-guide.html#software>`__,
+`Cobra user
+guide <https://docs.mpcdf.mpg.de/doc/computing/cobra-user-guide.html>`__
+and `Ada user
+guide <https://docs.mpcdf.mpg.de/doc/computing/clusters/systems/MPSD_PKS_ADA.html>`__.
+To use Jupyter notebooks on Cobra and Raven please check
+https://docs.mpcdf.mpg.de/doc/visualization/index.html.
+
+For software on the MPSD HPC system please refer to
+:ref:`mpsd-hpc-software`.
+
+Matlab
+------
+
+Matlab on Raven
+~~~~~~~~~~~~~~~
+
+On `Raven <https://www.mpcdf.mpg.de/services/supercomputing/raven>`__,
+the Matlab modules can be found using ``find-module matlab``. For
+example (as on November 2022):
+
+.. code:: bash
+
+   hafan@raven02:~> find-module matlab
+   matlab/R2020b
+   matlab/R2021bU2
+   matlab/R2022b
+
+To activate Matlab R2022b, use the ``module load matlab/R2022b``
+command. Then use ``matlab`` to start the program.
+
+See `MPCDF's documentation on
+Matlab <https://docs.mpcdf.mpg.de/faq/hpc_software.html#matlab>`__,
+which also covers triggering Matlab execution via Slurm.
+
+Matlab on "theory laptop" at MPSD
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Matlab can be started from the applications menu. Alternatively, you can
+start it by typing ``matlab`` in a shell.
+
+To be able to use it, your laptop needs to be connected to the office
+network, or have an active GWDG VPN connection (so the license server
+can be contacted).
+
+Spack on "theory laptops" with binary cache
+-------------------------------------------
+
+-  advanced topic
+
+Usage questions and support
+---------------------------
+
+For questions, including installation of software, please contact the
+SSU Computational Science at ssu-cs@mpsd.mpg.de or via the
+``#computing`` stream in
+`Zulip <https://zulip.mpsd.mpg.de/#narrow/stream/3-computing>`__.

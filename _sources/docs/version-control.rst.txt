@@ -4,7 +4,7 @@ Version control
 Version control refers to the process of systematically storing
 important versions of documents for the future.
 
-A typical tool to achieve this is ``~git~``.
+A typical tool to achieve this is ``git``.
 
 Documents that should be put under version control include:
 
@@ -28,7 +28,7 @@ Further reading and training material on version control and Git
 
 .. raw:: org
 
-   #+ATTR_RST: :directive seealso 
+   #+ATTR_RST: :directive seealso
 
 ..
 

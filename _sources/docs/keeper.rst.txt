@@ -16,7 +16,7 @@ Features
 
 -  Keeper provides disk space (in the cloud and provided by the Max
    Planck Digital Library), that can be archived.
--  Data is organised into Libraries (i.e. top level folders represent
+-  Data is organised into *Libraries* (i.e. top level folders represent
    libraries)
 -  An overview of all the libraries is available through a web browser
    at the keeper home page (https://keeper.mpdl.mpg.de)
@@ -57,23 +57,15 @@ Keeper is not designed to archive significantly larger amounts of data.
 Getting started
 ---------------
 
-.. raw:: org
+.. important::
 
-   #+ATTR_RST: :directive Important
-
-..
-
-   -  Keeper home page URL: https://keeper.mpdl.mpg.de
-
-      -  shows some documentation links while logged out
-      -  shows overview of libraries and files in browser when logged in
-
-   -  Additional documentation at
-      https://mpdl.zendesk.com/hc/en-us/categories/360001234340-Keeper
-   -  One needs to subscribe to use the service and define a new
-      password that is required to connect the SeaLife or SeaDrive
-      clients to Keeper, or when logging in to the Keeper home page
-      (https://keeper.mpdl.mpg.de)
+   - Keeper home page URL: https://keeper.mpdl.mpg.de
+     - shows some documentation links while logged out
+     - shows overview of libraries and files in browser when logged in
+   - Additional documentation at https://mpdl.zendesk.com/hc/en-us/categories/360001234340-Keeper
+   - One needs to subscribe to use the service and define a new password that is
+     required to connect the SeaLife or SeaDrive clients to Keeper, or when logging
+     in to the Keeper home page (https://keeper.mpdl.mpg.de)
 
 Libraries
 ---------
@@ -106,8 +98,8 @@ be repeated in Keeper's storage.
 This is convenient to have a synchronised copy of the data at a
 different location, while working on the data.
 
-Note that you need to Unsync such synchronised data before you delete it
-locally (other wise the copy in Keeper will also be deleted).
+Note that you need to *Unsync* such synchronised data before you delete
+it locally (other wise the copy in Keeper will also be deleted).
 
 SeaDrive
 ~~~~~~~~
@@ -148,19 +140,14 @@ Sharing a library is a two stage process:
 Usage experience
 ----------------
 
-.. raw:: org
+.. warning::
 
-   #+ATTR_RST: :directive Warning
+   Moving files (for example into a subdirectory) within a directory on a local machine
+   using the SeaDrive client (tested with OSX), results in deletion and re-upload
+   of the files to the Cloud. This could take a long time for large files.
 
-..
+   So the lesson is: best to put files into the right place immediately (if the
+   amount of data is large and upload times are long), or to drive such operations
+   through the web interface.
 
-   Moving files (for example into a subdirectory) within a directory on
-   a local machine using the SeaDrive client (tested with OSX), results
-   in deletion and re-upload of the files to the Cloud. This could take
-   a long time for large files.
-
-   So the lesson is: best to put files into the right place immediately
-   (if the amount of data is large and upload times are long), or to
-   drive such operations through the web interface.
-
-Please share your observations! (Contact :doc:`introduction`)
+Please share your observations! (:ref:`contact`)

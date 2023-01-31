@@ -1,127 +1,196 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>Events &#8212; MPSD SSU Computational Science</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    
-<!-- add `style` or `link` tags with your CSS `@font-face` declarations here -->
-<!-- ... and optionally preload the `woff2` for snappier page loads -->
-
-
-<!-- Google fonts that look 'in-brand'. Would need to store them locally if we want to use them.
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
--->
-
-
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'events';</script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Gallery" href="gallery.html" />
     <link rel="prev" title="9. Changelog" href="docs/changes.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
 
-    
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="index.html">
-  <img src="_static/computational-science-mpsd2.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="_static/computational-science-mpsd2.png" class="logo__image only-light" alt="Logo image">
+    <img src="_static/computational-science-mpsd2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
   
-  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+  <div class="col-lg-9 navbar-header-items">
     <div id="navbar-center" class="mr-auto">
       
       <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="about.html">
-  About
- </a>
-</li>
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="about.html">
+                        About
+                      </a>
+                    </li>
+                
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="docs/index.html">
-  Docs
- </a>
-</li>
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="docs/index.html">
+                        Docs
+                      </a>
+                    </li>
+                
 
-<li class="toctree-l1 current active nav-item">
- <a class="current reference internal nav-link" href="#">
-  Events
- </a>
-</li>
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Events
+                      </a>
+                    </li>
+                
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="gallery.html">
-  Gallery
- </a>
-</li>
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
 
-    
-    <li class="nav-item">
-        <a class="nav-link nav-external" href="https://www.mpsd.mpg.de/imprint">Imprint<i class="fas fa-external-link-alt"></i></a>
-    </li>
-    
-    <li class="nav-item">
-        <a class="nav-link nav-external" href="https://www.mpsd.mpg.de/289505/dataprotection">Privacy Policy<i class="fas fa-external-link-alt"></i></a>
-    </li>
-    
-</ul>
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="support.html">
+                        Support
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.mpsd.mpg.de/imprint">
+                    Imprint
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.mpsd.mpg.de/289505/dataprotection">
+                    Privacy Policy
+                  </a>
+                </li>
+                
+    </ul>
+</nav>
       </div>
       
     </div>
 
     <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
@@ -130,38 +199,820 @@
       
     </div>
   </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
 </div>
-    </nav>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="about.html">
+                        About
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="docs/index.html">
+                        Docs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Events
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="support.html">
+                        Support
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.mpsd.mpg.de/imprint">
+                    Imprint
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.mpsd.mpg.de/289505/dataprotection">
+                    Privacy Policy
+                  </a>
+                </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
     
 
-    <div class="container-xl">
-      <div class="row">
-          
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <div class="bd-toc-item active">
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
     
   </div>
-</nav>
+
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
             </div>
             
-          
-
-          
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
             
+            <article class="bd-article" role="main">
               
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+  <section id="events">
+<h1>Events<a class="headerlink" href="#events" title="Permalink to this heading">#</a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#week-numerical-methods-and-practical-skills-for-computational-physics-part-ii" id="id2">2023-02-20 (1 week) Numerical Methods and Practical Skills for Computational Physics Part II</a></p></li>
+<li><p><a class="reference internal" href="#week-numerical-methods-and-practical-skills-for-computational-physics-part-i" id="id3">2023-02-13 (1 week) Numerical Methods and Practical Skills for Computational Physics Part I</a></p></li>
+<li><p><a class="reference internal" href="#weeks-programming-with-python-for-computational-science" id="id4">2023-01-16 (2 weeks) Programming with Python for Computational Science</a></p></li>
+<li><p><a class="reference internal" href="#days-python-for-hpc-mpcdf" id="id5">2022-11-15 (3 days) Python for HPC (MPCDF)</a></p></li>
+<li><p><a class="reference internal" href="#days-mpcdf-advanced-hpc-workshop" id="id6">2022-11-22 (3 days) MPCDF Advanced HPC Workshop</a></p></li>
+<li><p><a class="reference internal" href="#and-2022-06-16-high-performance-data-analytics-part-2" id="id7">2022-06-15 and 2022-06-16 High Performance Data Analytics - Part 2</a></p></li>
+<li><p><a class="reference internal" href="#programming-with-cuda" id="id8">2022-05-24 Programming with CUDA</a></p></li>
+<li><p><a class="reference internal" href="#and-2022-05-23-ai-for-science-bootcamp-with-nvidia-2-days" id="id9">2022-05-22 and 2022-05-23 AI for Science - Bootcamp with NVIDIA (2 days)</a></p></li>
+<li><p><a class="reference internal" href="#to-2022-05-18-parallel-programming-with-mpi" id="id10">2022-05-17 to 2022-05-18 Parallel Programming with MPI</a></p></li>
+<li><p><a class="reference internal" href="#using-the-gwdg-scientific-compute-cluster-an-introduction" id="id11">2022-05-16 Using the GWDG Scientific Compute Cluster - An Introduction</a></p></li>
+<li><p><a class="reference internal" href="#and-2022-05-13-future-opportunities-for-software-in-research" id="id12">2022-05-12 and 2022-05-13 Future Opportunities for Software in Research</a></p></li>
+<li><p><a class="reference internal" href="#introduction-to-mpcdf-services" id="id13">2022-04-28 Introduction to MPCDF Services</a></p></li>
+<li><p><a class="reference internal" href="#introduction-to-dask-gohpc-coffee" id="id14">2022-04-27 Introduction to Dask (GöHPC Coffee)</a></p></li>
+<li><p><a class="reference internal" href="#to-2022-04-29-practical-course-in-high-performance-computing" id="id15">2022-04-25 to 2022-04-29 Practical course in High-Performance Computing</a></p></li>
+<li><p><a class="reference internal" href="#container-workshop" id="id16">2022-04-13 Container Workshop</a></p></li>
+<li><p><a class="reference internal" href="#numerical-methods-and-practical-skills-for-computational-physics-part-ii-1-week" id="id17">2022-02-21 Numerical Methods and Practical Skills for Computational Physics Part II (1 week)</a></p></li>
+<li><p><a class="reference internal" href="#numerical-methods-and-practical-skills-for-computational-physics-part-i-1-week" id="id18">2022-01-24 Numerical Methods and Practical Skills for Computational Physics Part I (1 week)</a></p></li>
+<li><p><a class="reference internal" href="#python-for-computational-science-2-weeks" id="id19">2022-01-10 Python for Computational Science (2 weeks)</a></p></li>
+<li><p><a class="reference internal" href="#advanced-hpc-workshop-4-days" id="id20">2021-11-22 Advanced HPC Workshop (4 days)</a></p></li>
+<li><p><a class="reference internal" href="#mpcdf-nvidia-gpu-computing-bootcamp-2-days" id="id21">2021-10-19 MPCDF/NVIDIA GPU Computing Bootcamp (2 days)</a></p></li>
+<li><p><a class="reference internal" href="#introduction-to-mpcdf-services-1" id="id22">2021-10-13 14:00 Introduction to MPCDF services</a></p></li>
+<li><p><a class="reference internal" href="#python-for-hpc-workshop-3-days" id="id23">2021-10-05 Python for HPC Workshop (3 days)</a></p></li>
+<li><p><a class="reference internal" href="#testing-open-source-python-centric-research-software" id="id24">2021-09-28 Testing open source Python-centric research software</a></p></li>
+<li><p><a class="reference internal" href="#introduction-to-octopus-code-advanced-topics-1-week-intensive-course" id="id25">2021-09-20 Introduction to Octopus code Advanced topics - 1 week intensive course</a></p></li>
+<li><p><a class="reference internal" href="#bigmax-summer-school-2021-big-data-in-materials-science" id="id26">2021-09-13 BiGmax Summer School 2021 - Big data in materials science</a></p></li>
+<li><p><a class="reference internal" href="#introduction-to-octopus-1-week-intensive-course" id="id27">2021-09-06 Introduction to Octopus - 1 week intensive course</a></p></li>
+<li><p><a class="reference internal" href="#software-engineering-challenges-and-best-practices-for-multi-institutional-scientific-software-development" id="id28">2021-08-04 19:00 Software Engineering Challenges and Best Practices for Multi-Institutional Scientific Software Development</a></p></li>
+<li><p><a class="reference internal" href="#gpu-computing-on-the-new-hpc-system-raven" id="id29">2021-07-21 14:00 GPU Computing on the new HPC system Raven</a></p></li>
+<li><p><a class="reference internal" href="#workflows-in-photon-science-data-analysis" id="id30">2021-07-22 15:00 Workflows in Photon Science Data Analysis</a></p></li>
+<li><p><a class="reference internal" href="#introduction-to-xarray-and-extra-data" id="id31">2021-06-24 16:30 Introduction to <code class="docutils literal notranslate"><span class="pre">xarray</span></code> and <code class="docutils literal notranslate"><span class="pre">extra-data</span></code></a></p></li>
+<li><p><a class="reference internal" href="#research-data-management-a-biodiverse-mosaic" id="id32">2021-06-23 15:00 Research Data Management - a biodiverse MOSAiC</a></p></li>
+<li><p><a class="reference internal" href="#geometric-deep-learning-from-euclid-to-drug-design" id="id33">2021-06-24 14:00 “Geometric Deep Learning: From Euclid to Drug Design”</a></p></li>
+<li><p><a class="reference internal" href="#reproducible-science-with-jupyter" id="id34">2021-05-06 14:00 Reproducible Science with Jupyter</a></p></li>
+<li><p><a class="reference internal" href="#numerical-methods-and-practical-skills-for-computational-physics-intensive-course" id="id35">2021-05-10 Numerical Methods and Practical Skills for Computational Physics - intensive course</a></p></li>
+<li><p><a class="reference internal" href="#python-for-computational-science-1-week-intensive-course" id="id36">2021-04-19 Python for Computational science - 1 week intensive course</a></p></li>
+<li><p><a class="reference internal" href="#open-science-covid19-analysis" id="id37">2020-11-04 Open Science COVID19 Analysis</a></p></li>
+</ul>
+</nav>
+<section id="week-numerical-methods-and-practical-skills-for-computational-physics-part-ii">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">2023-02-20 (1 week) Numerical Methods and Practical Skills for Computational Physics Part II</a><a class="headerlink" href="#week-numerical-methods-and-practical-skills-for-computational-physics-part-ii" title="Permalink to this heading">#</a></h2>
+<p>Daily, 9:30 to 13:00</p>
+<p>Numerical Methods in Computational Physics</p>
+<p>Abstract:</p>
+<p>Theory and experiment have been the two pillars of science that for
+centuries have underpinned our understanding of the world around us.
+With the advent of powerful computers, computational methods have
+emerged as a third pillar of science. Among other techniques, numerical
+methods, data analysis, and visualization have become indispensable
+tools for many scientists nowadays. This course intends to introduce
+basic numerical methods which allow to perform numerical simulations on
+modern computing platforms.</p>
+<p>Topics include:</p>
+<ul class="simple">
+<li><p>Root finding and solving nonlinear equations</p></li>
+<li><p>Numerical differentiation and integration</p></li>
+<li><p>Solving ordinary and partial differential equations</p></li>
+<li><p>Solving linear systems of equations</p></li>
+<li><p>Eigenvalue problems</p></li>
+<li><p>Optimization</p></li>
+</ul>
+<p>In addition, in the course we provide hands-on exercises for
+participants to gain experience with high-performance computing
+environments.</p>
+<p>Prerequisites: Basic Python knowledge, for example as provided by
+<a class="reference external" href="https://www.mpsd.mpg.de/events/32404/652780">Programming with Python for Computational
+Science</a>.</p>
+<p>Lecturer: Heiko Appel</p>
+</section>
+<section id="week-numerical-methods-and-practical-skills-for-computational-physics-part-i">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">2023-02-13 (1 week) Numerical Methods and Practical Skills for Computational Physics Part I</a><a class="headerlink" href="#week-numerical-methods-and-practical-skills-for-computational-physics-part-i" title="Permalink to this heading">#</a></h2>
+<p>Daily, 9:30 to 13:00</p>
+<p>Practical Skills for Computational Physics</p>
+<p>Abstract:</p>
+<p>Theory and experiment have been the two pillars of science that for
+centuries have underpinned our understanding of the world around us.
+With the advent of powerful computers, computational methods have
+emerged as a third pillar of science. Among other techniques, numerical
+methods, data analysis, and visualization have become indispensable
+tools for many scientists nowadays. This course intends to introduce
+basic numerical methods which allow to perform numerical simulations on
+modern computing platforms.</p>
+<p>Topics include:</p>
+<ul class="simple">
+<li><p>Basic revision control with git</p></li>
+<li><p>Collaborative revision control with Gitlab</p></li>
+<li><p>Continuous integration with Gitlab pipelines</p></li>
+<li><p>Jupyter Notebooks, Jupyter Books, and Gitlab user pages</p></li>
+<li><p>Compiling and linking codes</p></li>
+<li><p>The Slurm queueing system and module environments</p></li>
+</ul>
+<p>In addition, in the course we provide hands-on exercises for
+participants to gain experience with high-performance computing
+environments.</p>
+<p>Prerequisites: Basic Python knowledge, for example as provided by
+<a class="reference external" href="https://www.mpsd.mpg.de/events/32404/652780">Programming with Python for Computational
+Science</a>.</p>
+<p>Lecturers: Heiko Appel, Henning Glawe</p>
+</section>
+<section id="weeks-programming-with-python-for-computational-science">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">2023-01-16 (2 weeks) Programming with Python for Computational Science</a><a class="headerlink" href="#weeks-programming-with-python-for-computational-science" title="Permalink to this heading">#</a></h2>
+<p>Details: <a class="reference external" href="https://www.mpsd.mpg.de/events/32404/652780">https://www.mpsd.mpg.de/events/32404/652780</a></p>
+<p>The course has been designed for scientists to learn the practical
+programming skills that are relevant for modern computational science.
+The module does not assume prior programming knowledge of participants.
+The module uses hands-on activities for all participants to exercise and
+experiment with the taught material. The material covers a wide spectrum
+of skills that are advantageous for scientists who need to handle data -
+be it from experiment or simulation – and provides a basis for self
+learning or directed learning of more specialized topics at a later
+stage.</p>
+<p>Topics include:</p>
+<ul class="simple">
+<li><p>Introduction to data types in Python</p></li>
+<li><p>Control flow</p></li>
+<li><p>Name spaces</p></li>
+<li><p>Input/Output</p></li>
+<li><p>Higher order functions</p></li>
+<li><p>Main programming paradigms (imperative, functional, object oriented)</p></li>
+<li><p>Important Python modules for computational science (numpy, scipy,
+pandas, sympy)</p></li>
+<li><p>Data visualization with matplotlib</p></li>
+<li><p>Testing</p></li>
+</ul>
+<p>Lecturer: Hans Fangohr</p>
+</section>
+<section id="days-python-for-hpc-mpcdf">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">2022-11-15 (3 days) Python for HPC (MPCDF)</a><a class="headerlink" href="#days-python-for-hpc-mpcdf" title="Permalink to this heading">#</a></h2>
+<p>Registration: <a class="reference external" href="https://events.gwdg.de/e/python4hpc-2022">https://events.gwdg.de/e/python4hpc-2022</a></p>
+<p>The MPCDF course “Python for HPC” teaches strategies to write
+well-performing Python code suitable for HPC environments. The online
+lectures focus on performance-related topics such as NumPy, Cython,
+Numba, compiled C- and Fortran extensions, profiling of Python and
+compiled code, parallelism using multiprocessing, mpi4py, dask and ray,
+and efficient IO with HDF5. In addition, topics related to
+software-engineering are covered such as packaging, publishing, testing,
+and the semi-automated generation of documentation. Finally, basic
+visualization workflows using matplotlib and related topics are
+discussed. The lectures will take place in the morning from 9:00 to
+13:00, and the exercises will be discussed in the later afternoon
+starting from 16:00.</p>
+</section>
+<section id="days-mpcdf-advanced-hpc-workshop">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">2022-11-22 (3 days) MPCDF Advanced HPC Workshop</a><a class="headerlink" href="#days-mpcdf-advanced-hpc-workshop" title="Permalink to this heading">#</a></h2>
+<p>MPCDF Advanced HPC Workshop for MPG and NOMAD, Nov 22 - Nov 24 2022</p>
+<p>Registration: <a class="reference external" href="https://events.gwdg.de/e/hpc-workshop-2022">https://events.gwdg.de/e/hpc-workshop-2022</a></p>
+<p>This workshop helps HPC developers in the MPG to better manage, debug
+and profile their code. One day is dedicated to GPU programming.</p>
+<p>We plan to give the lectures on Nov 22-23 in a hybrid fashion, onsite
+and streamed online. The (optional) hands-on part on Nov 24 will be
+onsite at the MPCDF in Garching if the pandemic situation permits. The
+main topics of the lectures are:</p>
+<ul class="simple">
+<li><p>Debugging and profiling of CPU and GPU codes</p></li>
+<li><p>Porting codes to GPU-accelerated systems</p></li>
+</ul>
+<p>The workshop will be given by members of the application group of the
+MPCDF together with experts from Intel and Nvidia.</p>
+</section>
+<section id="and-2022-06-16-high-performance-data-analytics-part-2">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">2022-06-15 and 2022-06-16 High Performance Data Analytics - Part 2</a><a class="headerlink" href="#and-2022-06-16-high-performance-data-analytics-part-2" title="Permalink to this heading">#</a></h2>
+<p>Big Data Analytics efficient tools for storing, processing and analyzing
+Big Data in powerful supercomputers are necessary. This course is
+divided into two parts. In the second part, learners will apply skills
+acquired from the first part to advance their knowledge on Machine and
+Deep Learning applied on scientific research and related topics. The
+course will involve necessary theoretical lectures, and hands-on and lab
+sessions. The course is generally geared towards efficient use of HPC
+resources for Big Data Analytics. The topics covered include Supervised
+and Unsupervised Machine Learning, and Convolutional and Recurrent
+Neural Network (CNN and RNN).</p>
+<p><a class="reference external" href="https://www.gwdg.de/academy/course?course=1398">Details</a></p>
+</section>
+<section id="programming-with-cuda">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">2022-05-24 Programming with CUDA</a><a class="headerlink" href="#programming-with-cuda" title="Permalink to this heading">#</a></h2>
+<p>CUDA is a widely used programming environment for GPUs. This course
+introduces hardware and parallelization concepts for GPUs. The CUDA
+programming environment is described in detail. both for C and Fortran,
+including the language elements for controlling the processor
+parallelism and for accessing the various levels of memory. The use of
+GPU accelerated libraries (cuBLAS, cuFFT) is demonstrated. All topics
+are explained by means of examples in practical exercises.</p>
+<p><a class="reference external" href="https://www.gwdg.de/academy/course?course=1393">Details</a></p>
+</section>
+<section id="and-2022-05-23-ai-for-science-bootcamp-with-nvidia-2-days">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">2022-05-22 and 2022-05-23 AI for Science - Bootcamp with NVIDIA (2 days)</a><a class="headerlink" href="#and-2022-05-23-ai-for-science-bootcamp-with-nvidia-2-days" title="Permalink to this heading">#</a></h2>
+<p>NVIDIA and the Max Planck Computing and Data Facility (MPCDF) are
+hosting a GPU Bootcamp open to all researchers and code developers of
+the Max Planck Society (MPG). During this online Bootcamp, participants
+will learn how to apply AI tools, techniques, and algorithms to
+real-life problems. You’ll study the key concepts of Deep Neural
+Networks, how to build Deep Learning models, and how to measure and
+improve the accuracy of your models. You’ll also learn essential data
+preprocessing techniques to ensure a robust machine learning pipeline.
+This online Bootcamp is a hands-on learning experience where you’ll be
+guided by step-by-step instructions with mentors on hand to help
+throughout the process.</p>
+<p>LOCATION: online via Zoom HOST</p>
+<p>Details:
+<a class="reference external" href="https://www.mpcdf.mpg.de/about-mpcdf/news-events/ai-bootcamp.html">https://www.mpcdf.mpg.de/about-mpcdf/news-events/ai-bootcamp.html</a> /
+<a class="reference external" href="https://www.mpcdf.mpg.de/services/training">https://www.mpcdf.mpg.de/services/training</a></p>
+</section>
+<section id="to-2022-05-18-parallel-programming-with-mpi">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">2022-05-17 to 2022-05-18 Parallel Programming with MPI</a><a class="headerlink" href="#to-2022-05-18-parallel-programming-with-mpi" title="Permalink to this heading">#</a></h2>
+<p>The most important parallelization constructs of MPI are explained and
+applied in hands on exercises. The parallelization of algorithms is
+demonstrated in simple examples, their implementation as MPI programs
+will be studied in practical exercises. Fundamentals of parallel
+processing (computer architectures and programming models), Introduction
+to the Message Passing Interface (MPI), The main language constructs of
+MPI-1 and MPI-2 (Point-to-point communication, Collective communication
+incl. synchronization, Parallel operations, Data Structures, Parallel I
+/ O, Process management), Demonstration and practical exercises with
+Fortran, C and Python source codes for all topics; Practice for the
+parallelization of sample programs; Analysis and optimization of
+parallel efficiency.</p>
+<p><a class="reference external" href="https://www.gwdg.de/academy/course?course=1396">Details</a></p>
+</section>
+<section id="using-the-gwdg-scientific-compute-cluster-an-introduction">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">2022-05-16 Using the GWDG Scientific Compute Cluster - An Introduction</a><a class="headerlink" href="#using-the-gwdg-scientific-compute-cluster-an-introduction" title="Permalink to this heading">#</a></h2>
+<p>This course is intended to provide a smooth entry into the world of High
+Performance Computing. We will show the most important Linux commands,
+how to log onto the Cluster, compile and install software and give
+examples how to efficiently use the compute resources</p>
+<p><a class="reference external" href="https://www.gwdg.de/academy/course?course=1391">Details</a></p>
+</section>
+<section id="and-2022-05-13-future-opportunities-for-software-in-research">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">2022-05-12 and 2022-05-13 Future Opportunities for Software in Research</a><a class="headerlink" href="#and-2022-05-13-future-opportunities-for-software-in-research" title="Permalink to this heading">#</a></h2>
+<p>Software literacy has become a key competence for scientists across all
+disciplines. Scientists use the software daily, and software development
+is becoming an increasingly important component of scientific
+productivity. However, the software needed for certain research projects
+can get highly complex and take up resources otherwise needed for core
+research. In the demanded professionalization of software development in
+research, specialized Research Software Engineers have emerged in recent
+years. With their help, researchers tackle the challenges in the areas
+of software and data, such as reproducibility, correctness,
+user-friendliness, performance, or maintenance. Our two-day workshop
+provides new opportunities for learning about best practices in
+scientific software development, such as</p>
+<ul class="simple">
+<li><p>Seeing recent flagship projects in action.</p></li>
+<li><p>Discussing software licensing and intellectual property issues.</p></li>
+<li><p>Discovering new ways to make your software known and recognized.</p></li>
+</ul>
+<p>We invite all interested scientists, research software engineers, IT and
+computing specialists and individuals involved in creating, using or
+otherwise dealing with research software in the Max Planck Society. We
+also welcome participants from other research institutions.</p>
+<p>Registration deadline: 25 April 2022.</p>
+<p><a class="reference external" href="https://workshops.evolbio.mpg.de/event/54/">Details</a></p>
+</section>
+<section id="introduction-to-mpcdf-services">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">2022-04-28 Introduction to MPCDF Services</a><a class="headerlink" href="#introduction-to-mpcdf-services" title="Permalink to this heading">#</a></h2>
+<p>How to start with the MPCDF systems and services: This introductory
+course helps new users with the first steps on the MPCDF systems. It
+covers login, file systems, HPC systems, SLURM, and the MPCDF services
+remote visualization, Jupyter notebooks and datashare. Basic knowledge
+of Linux is required.</p>
+<p>Apr 28, 2022 TIME: 14:00 - 16:30 (online, via Zoom)</p>
+<p>Details and registration:
+<a class="reference external" href="https://www.mpcdf.mpg.de/about-mpcdf/news-events/mpcdf-introductory-user-course">https://www.mpcdf.mpg.de/about-mpcdf/news-events/mpcdf-introductory-user-course</a></p>
+</section>
+<section id="introduction-to-dask-gohpc-coffee">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">2022-04-27 Introduction to Dask (GöHPC Coffee)</a><a class="headerlink" href="#introduction-to-dask-gohpc-coffee" title="Permalink to this heading">#</a></h2>
+<p>As part of the (virtual) 2-weekly Göttingen HPC Coffee meeting, there is
+a short introduction to Dask on offer.</p>
+<p>Details: <a class="reference external" href="https://docs.gwdg.de/doku.php?id=en:services:application_services:high_performance_computing:hpc_coffee">11:00 online, via Big Blue
+Button</a></p>
+</section>
+<section id="to-2022-04-29-practical-course-in-high-performance-computing">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">2022-04-25 to 2022-04-29 Practical course in High-Performance Computing</a><a class="headerlink" href="#to-2022-04-29-practical-course-in-high-performance-computing" title="Permalink to this heading">#</a></h2>
+<p>This practical course is comprised of two parts. The first part is a
+crash course on the basics of High-Performance Computing, where you’ll
+get hands-on experience, it covers the theoretical knowledge regarding
+parallel computing, high-performance computing, supercomputers, and the
+development and performance analysis of parallel applications using MPI
+and OpenMP. In the second part, you will team up in groups of two and
+parallelize a non-trivial problem of your choice, create a sequential
+solution and parallelize and analyze the scalability of the application.</p>
+<p>If you are just interested to learn about parallel programming and don’t
+need credits, you can join only the first part of the course from April
+25th to 29th and gain a certificate.</p>
+<p>For additional information check the
+<a class="reference external" href="https://www.gwdg.de/academy/course?course=1447">Details</a></p>
+<p>The deadline for registration is April 10th.</p>
+</section>
+<section id="container-workshop">
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">2022-04-13 Container Workshop</a><a class="headerlink" href="#container-workshop" title="Permalink to this heading">#</a></h2>
+<p>The GWDG are going to give you an introduction to Container usage in HPC
+for Users. This workshop will be an interesting excursion into the field
+of Containers in HPC. The main part will be the hands-on session where
+participants will get course accounts for our SCC cluster and use
+JupyterHub on HPC. In Jupyter you will be running prepared Jupyter
+notebooks with Singularity, which you will be able to access with your
+browser. You can also use the materials afterwards as a starting point
+for your own workflows with Singularity containers.</p>
+<p><a class="reference external" href="https://events.gwdg.de/event/224/">Details</a></p>
+</section>
+<section id="numerical-methods-and-practical-skills-for-computational-physics-part-ii-1-week">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">2022-02-21 Numerical Methods and Practical Skills for Computational Physics Part II (1 week)</a><a class="headerlink" href="#numerical-methods-and-practical-skills-for-computational-physics-part-ii-1-week" title="Permalink to this heading">#</a></h2>
+<p>Second part of the course.</p>
+<p>Details: <a class="reference external" href="https://www.mpsd.mpg.de/events/29311/574005">https://www.mpsd.mpg.de/events/29311/574005</a></p>
+</section>
+<section id="numerical-methods-and-practical-skills-for-computational-physics-part-i-1-week">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">2022-01-24 Numerical Methods and Practical Skills for Computational Physics Part I (1 week)</a><a class="headerlink" href="#numerical-methods-and-practical-skills-for-computational-physics-part-i-1-week" title="Permalink to this heading">#</a></h2>
+<p>Building on “Python for Computational Science”, introduction to</p>
+<ul class="simple">
+<li><p>numerical methods</p></li>
+<li><p>compiling and linking code</p></li>
+<li><p>basic revision control with git (managing your files)</p></li>
+<li><p>using High Performance Computing installations (Slurm and modules)</p></li>
+</ul>
+<p>Details: <a class="reference external" href="https://www.mpsd.mpg.de/events/29310/574005">https://www.mpsd.mpg.de/events/29310/574005</a></p>
+</section>
+<section id="python-for-computational-science-2-weeks">
+<h2><a class="toc-backref" href="#id19" role="doc-backlink">2022-01-10 Python for Computational Science (2 weeks)</a><a class="headerlink" href="#python-for-computational-science-2-weeks" title="Permalink to this heading">#</a></h2>
+<p>One week course not assuming prior Python knowledge - a good starting
+point to get into programming and computation for scientific research.</p>
+<p>Details: <a class="reference external" href="https://www.mpsd.mpg.de/events/29267/574005">https://www.mpsd.mpg.de/events/29267/574005</a></p>
+</section>
+<section id="advanced-hpc-workshop-4-days">
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">2021-11-22 Advanced HPC Workshop (4 days)</a><a class="headerlink" href="#advanced-hpc-workshop-4-days" title="Permalink to this heading">#</a></h2>
+<p>This MPCDF workshop helps HPC users to better manage, debug and profile
+their code. One day is dedicated to GPUs. MPCDF organizes again an
+advanced HPC workshop for users of the MPG from Monday, November 22nd
+until Wednesday, November 24th, 2021 with an optional day with hands-on
+on Thursday, November 25th. The workshop will be given online. The main
+topics of the lectures are:</p>
+<ul class="simple">
+<li><p>Software engineering for HPC codes (git, gitlab, CI, testing)</p></li>
+<li><p>Debugging and profiling of CPU and GPU codes</p></li>
+<li><p>Porting codes to GPU-accelerated systems</p></li>
+</ul>
+<p>Details: <a class="reference external" href="https://www.mpcdf.mpg.de/events/28006/2491">https://www.mpcdf.mpg.de/events/28006/2491</a></p>
+</section>
+<section id="mpcdf-nvidia-gpu-computing-bootcamp-2-days">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">2021-10-19 MPCDF/NVIDIA GPU Computing Bootcamp (2 days)</a><a class="headerlink" href="#mpcdf-nvidia-gpu-computing-bootcamp-2-days" title="Permalink to this heading">#</a></h2>
+<p>NVIDIA and the Max Planck Computing and Data Facility (MPCDF) is hosting
+a GPU Bootcamp open to all researchers and code developers of the Max
+Planck Society (MPG). During this two-day online Bootcamp, participants
+will learn about multiple GPU programming models and can choose the one
+that best fits their needs to run their scientific codes on GPUs (like
+those in the HPC system Raven). This Bootcamp will cover an introduction
+to GPU programming using OpenACC, OpenMP, stdpar and CUDA C, and
+provides hands-on opportunities to learn how to analyse GPU-enabled
+applications using NVIDIA Nsight Systems.</p>
+<p>For details and registration please visit
+<a class="reference external" href="https://www.mpcdf.mpg.de/about-mpcdf/news-events/gpu-bootcamp">https://www.mpcdf.mpg.de/about-mpcdf/news-events/gpu-bootcamp</a></p>
+</section>
+<section id="introduction-to-mpcdf-services-1">
+<span id="id1"></span><h2><a class="toc-backref" href="#id22" role="doc-backlink">2021-10-13 14:00 Introduction to MPCDF services</a><a class="headerlink" href="#introduction-to-mpcdf-services-1" title="Permalink to this heading">#</a></h2>
+<p>The course provides a basic introduction to the compute and data
+services available at MPCDF, it includes about 2 hours of tutorial
+sessions, an interactive chat option and a concluding Q&amp;A session and is
+intended specifically to lower the bar for the first-time usage of MPCDF
+services. Major topics include an overview and practical hints for
+connecting to the HPC compute and storage facilities and using them via
+the Slurm batch system. Basic knowledge about working in a Linux
+environment is a prerequisite. An MPCDF account is not needed. This
+course is offered twice per year, with one issue in spring and another
+one in autumn.</p>
+<p>For details and registration please visit
+<a class="reference external" href="https://www.mpcdf.mpg.de/about-mpcdf/news-events/mpcdf-introductory-user-course">https://www.mpcdf.mpg.de/about-mpcdf/news-events/mpcdf-introductory-user-course</a></p>
+<p>14:00-16:30</p>
+</section>
+<section id="python-for-hpc-workshop-3-days">
+<h2><a class="toc-backref" href="#id23" role="doc-backlink">2021-10-05 Python for HPC Workshop (3 days)</a><a class="headerlink" href="#python-for-hpc-workshop-3-days" title="Permalink to this heading">#</a></h2>
+<p>This workshop introduces the use of Python for High Performance
+Computing. Main topics are HPC packages like numpy, scipy etc., writing
+parallel code with Python, speeding up Python code with Cython or
+interfaces to compiled languages. Building Python packages and
+documentation as well as a good coding style are further topics of this
+three-day workshop.</p>
+<p>See <a class="reference external" href="https://www.mpcdf.mpg.de/events/28729/2825">https://www.mpcdf.mpg.de/events/28729/2825</a> for details and
+registration</p>
+</section>
+<section id="testing-open-source-python-centric-research-software">
+<h2><a class="toc-backref" href="#id24" role="doc-backlink">2021-09-28 Testing open source Python-centric research software</a><a class="headerlink" href="#testing-open-source-python-centric-research-software" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.desy.de/~fangohr/publications/talk/2021-09-28-testing-open-source-python-centric-research-software.pdf">Presentation
+(pdf)</a>
+Hans Fangohr at (Day 2, Research software, 13:30)</p>
+<p>See <a class="reference external" href="https://nfdi4ing.de/konferenz/">https://nfdi4ing.de/konferenz/</a> for details.</p>
+</section>
+<section id="introduction-to-octopus-code-advanced-topics-1-week-intensive-course">
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">2021-09-20 Introduction to Octopus code Advanced topics - 1 week intensive course</a><a class="headerlink" href="#introduction-to-octopus-code-advanced-topics-1-week-intensive-course" title="Permalink to this heading">#</a></h2>
+<p>Research software has become an essential tool in modern science.
+Despite this, often scientist only have basic training in programming,
+missing important aspects of modern software development and
+engineering. In this course we will present key ideas, tools and
+techniques used by researchers to develop robust, efficient codes in a
+collaborative environment. This will be done in the context of the
+Octopus code (<a class="reference external" href="https://octopus-code.org">https://octopus-code.org</a>). The philosophy of the Octopus
+code is to be a platform which allows to implement new scientific ideas
+with relative ease. The code has a modular structure and to a large
+extend hides numerical nitty-gritties at a lower level, allowing
+researchers to write new modules without the necessity to touch those
+low level parts. The code is actively developed with strict quality
+control. In this second part of the course, the participants will learn
+everything necessary to contribute to the Octopus development, and to
+implement new scientific ideas.</p>
+<p>Topics include:</p>
+<ul class="simple">
+<li><p>Advanced version control in a collaborative environment (merge
+requests, code review, etc)</p></li>
+<li><p>Advanced topics of git (merge, rebase, etc)</p></li>
+<li><p>Regression testing and continuous integration</p></li>
+<li><p>Object oriented programming</p></li>
+<li><p>Parallelization and performance</p></li>
+</ul>
+<p>As an outlook this course also provides an overview of current
+state-of-the-art scientific problems with Octopus. Also, the second part
+will last for one week, with a mixture of lectures and demonstration, as
+well as hands-on sessions to try the learned concepts.</p>
+<p>Details at <a class="reference external" href="https://www.mpsd.mpg.de/events/27629/500135">https://www.mpsd.mpg.de/events/27629/500135</a></p>
+</section>
+<section id="bigmax-summer-school-2021-big-data-in-materials-science">
+<h2><a class="toc-backref" href="#id26" role="doc-backlink">2021-09-13 BiGmax Summer School 2021 - Big data in materials science</a><a class="headerlink" href="#bigmax-summer-school-2021-big-data-in-materials-science" title="Permalink to this heading">#</a></h2>
+<p>The BiGmax Summer School 2021 “Harnessing big data in materials science
+from theory to experiment” will take place from September 13 - 17, 2021
+(held as an online event only).</p>
+<p>The school focuses on combining lectures of renowned experts with
+hands-on tutorials predominantly targeted towards PhD students and early
+career researchers.</p>
+<p>Details: <a class="reference external" href="https://indico.mpi-magdeburg.mpg.de/event/15/overview">https://indico.mpi-magdeburg.mpg.de/event/15/overview</a></p>
+</section>
+<section id="introduction-to-octopus-1-week-intensive-course">
+<h2><a class="toc-backref" href="#id27" role="doc-backlink">2021-09-06 Introduction to Octopus - 1 week intensive course</a><a class="headerlink" href="#introduction-to-octopus-1-week-intensive-course" title="Permalink to this heading">#</a></h2>
+<p>Density functional theory (DFT) and its time dependent variant,
+time-dependent DFT (TD-DFT), are tools of choice to simulate microscopic
+processes in nature. This, however, requires powerful numerical tools to
+solve the underlying equations and perform simulations of relevant
+physical processes. In his course we will give an introduction on how
+the DFT and TD-DFT equations can be solved numerically on a computer,
+with plently of practical examples using the Octopus code
+(<a class="reference external" href="https://octopus-code.org">https://octopus-code.org</a>). Octopus is a real-space DFT code, geared
+mainly at the real-time propagation of time-dependent systems. Besides
+introducing the code and highlighting its functionalities, a set of
+hands-on tutorials will allow the students to learn how to set up the
+system, run ground-state and time-dependent calculations.</p>
+<p>Topics include:</p>
+<ul class="simple">
+<li><p>Ground-state calculations and total energy convergence</p></li>
+<li><p>Model systems</p></li>
+<li><p>Real-time propagation</p></li>
+<li><p>Optical absorption</p></li>
+</ul>
+<p>Throughout the course, it will be emphasized how to check the results
+for numerical convergence, but also for computational efficiency.</p>
+<p>Details: <a class="reference external" href="https://www.mpsd.mpg.de/events/27628/500135">https://www.mpsd.mpg.de/events/27628/500135</a></p>
+</section>
+<section id="software-engineering-challenges-and-best-practices-for-multi-institutional-scientific-software-development">
+<h2><a class="toc-backref" href="#id28" role="doc-backlink">2021-08-04 19:00 Software Engineering Challenges and Best Practices for Multi-Institutional Scientific Software Development</a><a class="headerlink" href="#software-engineering-challenges-and-best-practices-for-multi-institutional-scientific-software-development" title="Permalink to this heading">#</a></h2>
+<p>Part of the webinar on HPC best practices
+(<a class="reference external" href="https://ideas-productivity.org/events/hpc-best-practices-webinars/">https://ideas-productivity.org/events/hpc-best-practices-webinars/</a>).
+Registration at link is required.</p>
+<p>Presenter is Keith Beattie from Lawrence Berkeley National Laboratory.
+Here is the summary:</p>
+<p>Scientific software is increasingly becoming the backbone of obtaining
+and validating scientific results. This is no longer just the case for
+traditionally computationally intensive areas but is now true across a
+wide variety of scientific disciplines. This circumstance elevates how
+scientific software is developed, independent of the field, to a new
+level of importance. Further, the multi-institutional nature of many
+science projects presents unique challenges to how scientific software
+can be effectively developed and maintained over the long term. In this
+webinar we present the challenges faced in leading the development of
+scientific software across a distributed, multi-institutional team of
+contributors, and we describe a set of best-practices we have found to
+be effective in producing impactful and trustworthy scientific software.</p>
+</section>
+<section id="gpu-computing-on-the-new-hpc-system-raven">
+<h2><a class="toc-backref" href="#id29" role="doc-backlink">2021-07-21 14:00 GPU Computing on the new HPC system Raven</a><a class="headerlink" href="#gpu-computing-on-the-new-hpc-system-raven" title="Permalink to this heading">#</a></h2>
+<p>Wednesday, 2021/07/21, 14:00 - 16:00 CEST, organised by MPCDF training
+team</p>
+<p>This online tutorial gives a basic introduction to using the GPUs on the
+new HPC system Raven. The following topics will be covered:</p>
+<ul class="simple">
+<li><p>hardware configuration</p></li>
+<li><p>GPU software environment for HPC and AI/data analytics: applications,
+libraries, compilers, tools</p></li>
+<li><p>batch system: submitting GPU jobs</p></li>
+</ul>
+<p>See also: <a class="reference external" href="https://docs.mpcdf.mpg.de/doc/computing/raven-user-guide.html">https://docs.mpcdf.mpg.de/doc/computing/raven-user-guide.html</a>
+<a class="reference external" href="https://www.mpcdf.mpg.de/events/28628/2825">https://www.mpcdf.mpg.de/events/28628/2825</a></p>
+<p>Zoom link available in
+<a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing/topic/events">Zulip</a></p>
+</section>
+<section id="workflows-in-photon-science-data-analysis">
+<h2><a class="toc-backref" href="#id30" role="doc-backlink">2021-07-22 15:00 Workflows in Photon Science Data Analysis</a><a class="headerlink" href="#workflows-in-photon-science-data-analysis" title="Permalink to this heading">#</a></h2>
+<p>Brainstorming on use of workflows in Photon Science data analysis</p>
+<p>(Event from data analysis group at EuXFEL, presentation Thomas Kluyver /
+Robert Rosca).</p>
+<p>Target group: research software engineers or scientists with significant
+interest in software / computational methods.</p>
+<p>Addition from after the meeting: notes are at
+<a class="reference external" href="https://codimd.desy.de/SHbiNcAcRGm7q749cgKzRg?view">https://codimd.desy.de/SHbiNcAcRGm7q749cgKzRg?view</a></p>
+<p>Zoom link available in
+<a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing/topic/events">Zulip</a></p>
+</section>
+<section id="introduction-to-xarray-and-extra-data">
+<h2><a class="toc-backref" href="#id31" role="doc-backlink">2021-06-24 16:30 Introduction to <code class="docutils literal notranslate"><span class="pre">xarray</span></code> and <code class="docutils literal notranslate"><span class="pre">extra-data</span></code></a><a class="headerlink" href="#introduction-to-xarray-and-extra-data" title="Permalink to this heading">#</a></h2>
+<p>Introduction to <code class="docutils literal notranslate"><span class="pre">xarray</span></code> and <code class="docutils literal notranslate"><span class="pre">extra-data</span></code>, Thursday, June 24th 2021,
+16:30</p>
+<p>Thomas Kluyver from EuXFEL has kindly agreed to provide an informal
+introduction to <a class="reference external" href="http://xarray.pydata.org">xarray</a> that provides
+labelled array data and the
+<a class="reference external" href="http://extra-data.readthedocs.io">extra-data</a> data analysis package
+at European XFEL.</p>
+<p>Zoom link available in
+<a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing/topic/events">Zulip</a></p>
+</section>
+<section id="research-data-management-a-biodiverse-mosaic">
+<h2><a class="toc-backref" href="#id32" role="doc-backlink">2021-06-23 15:00 Research Data Management - a biodiverse MOSAiC</a><a class="headerlink" href="#research-data-management-a-biodiverse-mosaic" title="Permalink to this heading">#</a></h2>
+<p>Wednesday, June 23, 2021 from 3:00 p.m. to 4:00 p.m.</p>
+<p>Presenter? Prof. Dr. Frank Oliver Glöckner, Head of Data at the
+Computing Center at the AWI Computing and Data Center.</p>
+<p>Registration:
+<a class="reference external" href="https://gfz-potsdam-de.zoom.us/meeting/register/tJMofuCsrT4vGdYZvbU_QEYoTBbW7c54LgrX">https://gfz-potsdam-de.zoom.us/meeting/register/tJMofuCsrT4vGdYZvbU_QEYoTBbW7c54LgrX</a></p>
+</section>
+<section id="geometric-deep-learning-from-euclid-to-drug-design">
+<h2><a class="toc-backref" href="#id33" role="doc-backlink">2021-06-24 14:00 “Geometric Deep Learning: From Euclid to Drug Design”</a><a class="headerlink" href="#geometric-deep-learning-from-euclid-to-drug-design" title="Permalink to this heading">#</a></h2>
+<p>Joint Data Science Colloquium on June 24th, 2021 “Geometric Deep
+Learning: From Euclid to Drug Design” Date: 21 June 2021 at 08:12:42
+CEST</p>
+<p>We are looking forward to the talk of Prof. Michael Bronstein (Professor
+for Machine Learning and Pattern Recognition, Faculty of Engineering,
+Department of Computing, Imperial College London, England) on Thursday,
+June 24th, 2021 at 2 pm.</p>
+<p>His talk is entitled “Geometric Deep Learning: From Euclid to Drug
+Design”. The official announcement of the talk can be found here:
+<a class="reference external" href="https://syncandshare.desy.de/index.php/s/AYAEAeMCCpxsHj4">https://syncandshare.desy.de/index.php/s/AYAEAeMCCpxsHj4</a></p>
+<p>Further information concerning the speakers and the lectures can also be
+found here:
+<a class="reference external" href="https://www.dashh.org/events/data_science_colloquium/index_eng.html">https://www.dashh.org/events/data_science_colloquium/index_eng.html</a></p>
+<p>Zoom link available in
+<a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing/topic/events">Zulip</a></p>
+</section>
+<section id="reproducible-science-with-jupyter">
+<h2><a class="toc-backref" href="#id34" role="doc-backlink">2021-05-06 14:00 Reproducible Science with Jupyter</a><a class="headerlink" href="#reproducible-science-with-jupyter" title="Permalink to this heading">#</a></h2>
+<p>Dr. Carsten Fortmann-Grote (Max-Planck-Institut für Evolutionsbiologie)
+und Prof. Dr. Hans Fangohr (Max-Planck-Institut für Struktur und Dynamik
+der Materie) at <a class="reference external" href="https://fdm-workshop.mpdl.mpg.de/programm-2021/">Forschungsdatenmanagement Workshop
+2021</a></p>
+<p>The Jupyter notebook format enables seamless coexistence of computer
+program code, documentation, and execution, as well as interactive
+visualization and discussion of results in one document and provides a
+user-friendly work environment. We will give an overview of the Jupyter
+ecosystem of tools and services and discuss how Jupyter enhances
+reproducibility in data intensive research.</p>
+<p>Material:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.desy.de/~fangohr/publications/talks/2021-05-06-fortmanngrote-fangohr-fdm-workshop-Reproducible-science-with-jupyter.pdf">Slides</a></p></li>
+<li><p><a class="reference external" href="https://gitlab.gwdg.de/mpievolbio-scicomp/fdm2021/-/blob/master/README.md">Workshop
+materials</a>
+and</p></li>
+<li><p><a class="reference external" href="https://pure.mpg.de/rest/items/item_3319185_1/component/file_3319380/content">Video recording (MPG/GWDG network
+only)</a></p></li>
+</ul>
+</section>
+<section id="numerical-methods-and-practical-skills-for-computational-physics-intensive-course">
+<h2><a class="toc-backref" href="#id35" role="doc-backlink">2021-05-10 Numerical Methods and Practical Skills for Computational Physics - intensive course</a><a class="headerlink" href="#numerical-methods-and-practical-skills-for-computational-physics-intensive-course" title="Permalink to this heading">#</a></h2>
+<p>Theory and experiment have been the two pillars of science that for
+centuries have underpinned our understanding of the world around us.
+With the advent of powerful computers, computational methods have
+emerged as a third pillar of science. Among other techniques, numerical
+methods, data analysis, and visualization have become indispensable
+tools for many scientists nowadays. This course intends to introduce
+basic numerical methods which allow to perform numerical simulations on
+modern computing platforms.</p>
+<p>Topics include:</p>
+<ul class="simple">
+<li><p>Approximation of functions</p></li>
+<li><p>Root finding and solving nonlinear equations</p></li>
+<li><p>Numerical differentiation and integration</p></li>
+<li><p>Solving ordinary and partial differential equations</p></li>
+<li><p>Solving linear systems of equations</p></li>
+<li><p>Eigenvalue problems</p></li>
+<li><p>Optimization</p></li>
+</ul>
+<p>In addition, in the course we provide hands-on exercises for
+participants to gain experience with high-performance computing
+environments. We intend to cover:</p>
+<ul class="simple">
+<li><p>Compiling and linking codes</p></li>
+<li><p>The Slurm queueing system and module environments</p></li>
+<li><p>Basic revision control with git</p></li>
+</ul>
+<p>Details: <a class="reference external" href="https://www.mpsd.mpg.de/events/27627/500135">https://www.mpsd.mpg.de/events/27627/500135</a></p>
+<p>Delivered by Heiko Appel, Henning Glawe, Hans Fangohr, Martin Lueders</p>
+</section>
+<section id="python-for-computational-science-1-week-intensive-course">
+<h2><a class="toc-backref" href="#id36" role="doc-backlink">2021-04-19 Python for Computational science - 1 week intensive course</a><a class="headerlink" href="#python-for-computational-science-1-week-intensive-course" title="Permalink to this heading">#</a></h2>
+<p>The one-week course has been designed for scientists and engineers to
+teach the practical programming skills that are relevant for modern
+computational science. The module does not assume prior programming
+knowledge of participants. The module uses hands-on activities for all
+participants to exercise and experiment with the taught material. The
+material covers a wide spectrum of skills that are advantageous for
+scientists who need to handle data - be it from experiment or simulation
+– and provides a basis for self learning or directed learning of more
+specialized topics at a later stage.</p>
+<p>More detailed announcement:
+<a class="reference external" href="https://www.mpsd.mpg.de/events/27626/500135?1619346787">https://www.mpsd.mpg.de/events/27626/500135?1619346787</a></p>
+<p>Delivered by Hans Fangohr, Henning Glawe, Heiko Appel</p>
+</section>
+<section id="open-science-covid19-analysis">
+<h2><a class="toc-backref" href="#id37" role="doc-backlink">2020-11-04 Open Science COVID19 Analysis</a><a class="headerlink" href="#open-science-covid19-analysis" title="Permalink to this heading">#</a></h2>
+<p>Presenter: Hans Fangohr</p>
+<p>The Open Science COVID Analysis (OSCOVIDA) project provides an open
+science portal at <a class="reference external" href="https://oscovida.github.io/">https://oscovida.github.io/</a> to display and investigate
+the COVID19 infections and deaths as a function of time for the US
+states, the districts in Germany, and most other countries in the world.
+For each region, different observables are shown as a function of time:
+total infections and deaths, daily changes, the reproduction number and
+growth factor, and doubling times; this can be normalised by the
+population of the relevant region. Data sources are currently the Johns
+Hopkins University and the Robert Koch Institute. All the source code
+that creates the plots is open source, and provides a Python library to
+simplify download of current data and population numbers, and
+computation and display of the COVID tracking plots available on the
+website. The system is based on Jupyter notebooks, which users can
+execute in their browser (using the MyBinder project) to adapt the
+analysis to their own interests, or base additional studies on top of
+the framework. Some tutorials and additional data analysis studies are
+available, and further contributions are welcome.</p>
+<p>Details:
+<a class="reference external" href="https://www.dashh.org/events/hamburg_covid_19_series/04112020__prof_fangohr/index_eng.html">https://www.dashh.org/events/hamburg_covid_19_series/04112020__prof_fangohr/index_eng.html</a></p>
+<p>Slides:
+<a class="reference external" href="https://www.dashh.org/sites/sites_custom/site_dashh/content/e101681/e106987/e113556/e122237/Fangohr-2020-11-04-OSCOVIDA-seminar_eng.pdf">https://www.dashh.org/sites/sites_custom/site_dashh/content/e101681/e106987/e113556/e122237/Fangohr-2020-11-04-OSCOVIDA-seminar_eng.pdf</a></p>
+<p>Project: <a class="reference external" href="https://oscovida.github.io">https://oscovida.github.io</a></p>
+</section>
+</section>
 
-<nav id="bd-toc-nav">
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="docs/changes.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title"><span class="section-number">9. </span>Changelog</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="gallery.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Gallery</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#week-numerical-methods-and-practical-skills-for-computational-physics-part-ii">
@@ -357,691 +1208,54 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
             
           </div>
-          
-
-          
-          
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-              
-              <div>
-                
-  <div class="section" id="events">
-<h1>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h1>
-<div class="contents local topic" id="contents">
-<ul class="simple">
-<li><p><a class="reference internal" href="#week-numerical-methods-and-practical-skills-for-computational-physics-part-ii" id="id2">2023-02-20 (1 week) Numerical Methods and Practical Skills for Computational Physics Part II</a></p></li>
-<li><p><a class="reference internal" href="#week-numerical-methods-and-practical-skills-for-computational-physics-part-i" id="id3">2023-02-13 (1 week) Numerical Methods and Practical Skills for Computational Physics Part I</a></p></li>
-<li><p><a class="reference internal" href="#weeks-programming-with-python-for-computational-science" id="id4">2023-01-16 (2 weeks) Programming with Python for Computational Science</a></p></li>
-<li><p><a class="reference internal" href="#days-python-for-hpc-mpcdf" id="id5">2022-11-15 (3 days) Python for HPC (MPCDF)</a></p></li>
-<li><p><a class="reference internal" href="#days-mpcdf-advanced-hpc-workshop" id="id6">2022-11-22 (3 days) MPCDF Advanced HPC Workshop</a></p></li>
-<li><p><a class="reference internal" href="#and-2022-06-16-high-performance-data-analytics-part-2" id="id7">2022-06-15 and 2022-06-16 High Performance Data Analytics - Part 2</a></p></li>
-<li><p><a class="reference internal" href="#programming-with-cuda" id="id8">2022-05-24 Programming with CUDA</a></p></li>
-<li><p><a class="reference internal" href="#and-2022-05-23-ai-for-science-bootcamp-with-nvidia-2-days" id="id9">2022-05-22 and 2022-05-23 AI for Science - Bootcamp with NVIDIA (2 days)</a></p></li>
-<li><p><a class="reference internal" href="#to-2022-05-18-parallel-programming-with-mpi" id="id10">2022-05-17 to 2022-05-18 Parallel Programming with MPI</a></p></li>
-<li><p><a class="reference internal" href="#using-the-gwdg-scientific-compute-cluster-an-introduction" id="id11">2022-05-16 Using the GWDG Scientific Compute Cluster - An Introduction</a></p></li>
-<li><p><a class="reference internal" href="#and-2022-05-13-future-opportunities-for-software-in-research" id="id12">2022-05-12 and 2022-05-13 Future Opportunities for Software in Research</a></p></li>
-<li><p><a class="reference internal" href="#introduction-to-mpcdf-services" id="id13">2022-04-28 Introduction to MPCDF Services</a></p></li>
-<li><p><a class="reference internal" href="#introduction-to-dask-gohpc-coffee" id="id14">2022-04-27 Introduction to Dask (GöHPC Coffee)</a></p></li>
-<li><p><a class="reference internal" href="#to-2022-04-29-practical-course-in-high-performance-computing" id="id15">2022-04-25 to 2022-04-29 Practical course in High-Performance Computing</a></p></li>
-<li><p><a class="reference internal" href="#container-workshop" id="id16">2022-04-13 Container Workshop</a></p></li>
-<li><p><a class="reference internal" href="#numerical-methods-and-practical-skills-for-computational-physics-part-ii-1-week" id="id17">2022-02-21 Numerical Methods and Practical Skills for Computational Physics Part II (1 week)</a></p></li>
-<li><p><a class="reference internal" href="#numerical-methods-and-practical-skills-for-computational-physics-part-i-1-week" id="id18">2022-01-24 Numerical Methods and Practical Skills for Computational Physics Part I (1 week)</a></p></li>
-<li><p><a class="reference internal" href="#python-for-computational-science-2-weeks" id="id19">2022-01-10 Python for Computational Science (2 weeks)</a></p></li>
-<li><p><a class="reference internal" href="#advanced-hpc-workshop-4-days" id="id20">2021-11-22 Advanced HPC Workshop (4 days)</a></p></li>
-<li><p><a class="reference internal" href="#mpcdf-nvidia-gpu-computing-bootcamp-2-days" id="id21">2021-10-19 MPCDF/NVIDIA GPU Computing Bootcamp (2 days)</a></p></li>
-<li><p><a class="reference internal" href="#introduction-to-mpcdf-services-1" id="id22">2021-10-13 14:00 Introduction to MPCDF services</a></p></li>
-<li><p><a class="reference internal" href="#python-for-hpc-workshop-3-days" id="id23">2021-10-05 Python for HPC Workshop (3 days)</a></p></li>
-<li><p><a class="reference internal" href="#testing-open-source-python-centric-research-software" id="id24">2021-09-28 Testing open source Python-centric research software</a></p></li>
-<li><p><a class="reference internal" href="#introduction-to-octopus-code-advanced-topics-1-week-intensive-course" id="id25">2021-09-20 Introduction to Octopus code Advanced topics - 1 week intensive course</a></p></li>
-<li><p><a class="reference internal" href="#bigmax-summer-school-2021-big-data-in-materials-science" id="id26">2021-09-13 BiGmax Summer School 2021 - Big data in materials science</a></p></li>
-<li><p><a class="reference internal" href="#introduction-to-octopus-1-week-intensive-course" id="id27">2021-09-06 Introduction to Octopus - 1 week intensive course</a></p></li>
-<li><p><a class="reference internal" href="#software-engineering-challenges-and-best-practices-for-multi-institutional-scientific-software-development" id="id28">2021-08-04 19:00 Software Engineering Challenges and Best Practices for Multi-Institutional Scientific Software Development</a></p></li>
-<li><p><a class="reference internal" href="#gpu-computing-on-the-new-hpc-system-raven" id="id29">2021-07-21 14:00 GPU Computing on the new HPC system Raven</a></p></li>
-<li><p><a class="reference internal" href="#workflows-in-photon-science-data-analysis" id="id30">2021-07-22 15:00 Workflows in Photon Science Data Analysis</a></p></li>
-<li><p><a class="reference internal" href="#introduction-to-xarray-and-extra-data" id="id31">2021-06-24 16:30 Introduction to <code class="docutils literal notranslate"><span class="pre">xarray</span></code> and <code class="docutils literal notranslate"><span class="pre">extra-data</span></code></a></p></li>
-<li><p><a class="reference internal" href="#research-data-management-a-biodiverse-mosaic" id="id32">2021-06-23 15:00 Research Data Management - a biodiverse MOSAiC</a></p></li>
-<li><p><a class="reference internal" href="#geometric-deep-learning-from-euclid-to-drug-design" id="id33">2021-06-24 14:00 “Geometric Deep Learning: From Euclid to Drug Design”</a></p></li>
-<li><p><a class="reference internal" href="#reproducible-science-with-jupyter" id="id34">2021-05-06 14:00 Reproducible Science with Jupyter</a></p></li>
-<li><p><a class="reference internal" href="#numerical-methods-and-practical-skills-for-computational-physics-intensive-course" id="id35">2021-05-10 Numerical Methods and Practical Skills for Computational Physics - intensive course</a></p></li>
-<li><p><a class="reference internal" href="#python-for-computational-science-1-week-intensive-course" id="id36">2021-04-19 Python for Computational science - 1 week intensive course</a></p></li>
-<li><p><a class="reference internal" href="#open-science-covid19-analysis" id="id37">2020-11-04 Open Science COVID19 Analysis</a></p></li>
-</ul>
-</div>
-<div class="section" id="week-numerical-methods-and-practical-skills-for-computational-physics-part-ii">
-<h2><a class="toc-backref" href="#id2">2023-02-20 (1 week) Numerical Methods and Practical Skills for Computational Physics Part II</a><a class="headerlink" href="#week-numerical-methods-and-practical-skills-for-computational-physics-part-ii" title="Permalink to this headline">¶</a></h2>
-<p>Daily, 9:30 to 13:00</p>
-<p>Numerical Methods in Computational Physics</p>
-<p>Abstract:</p>
-<p>Theory and experiment have been the two pillars of science that for
-centuries have underpinned our understanding of the world around us.
-With the advent of powerful computers, computational methods have
-emerged as a third pillar of science. Among other techniques, numerical
-methods, data analysis, and visualization have become indispensable
-tools for many scientists nowadays. This course intends to introduce
-basic numerical methods which allow to perform numerical simulations on
-modern computing platforms.</p>
-<p>Topics include:</p>
-<ul class="simple">
-<li><p>Root finding and solving nonlinear equations</p></li>
-<li><p>Numerical differentiation and integration</p></li>
-<li><p>Solving ordinary and partial differential equations</p></li>
-<li><p>Solving linear systems of equations</p></li>
-<li><p>Eigenvalue problems</p></li>
-<li><p>Optimization</p></li>
-</ul>
-<p>In addition, in the course we provide hands-on exercises for
-participants to gain experience with high-performance computing
-environments.</p>
-<p>Prerequisites: Basic Python knowledge, for example as provided by
-<a class="reference external" href="https://www.mpsd.mpg.de/events/32404/652780">Programming with Python for Computational
-Science</a>.</p>
-<p>Lecturer: Heiko Appel</p>
-</div>
-<div class="section" id="week-numerical-methods-and-practical-skills-for-computational-physics-part-i">
-<h2><a class="toc-backref" href="#id3">2023-02-13 (1 week) Numerical Methods and Practical Skills for Computational Physics Part I</a><a class="headerlink" href="#week-numerical-methods-and-practical-skills-for-computational-physics-part-i" title="Permalink to this headline">¶</a></h2>
-<p>Daily, 9:30 to 13:00</p>
-<p>Practical Skills for Computational Physics</p>
-<p>Abstract:</p>
-<p>Theory and experiment have been the two pillars of science that for
-centuries have underpinned our understanding of the world around us.
-With the advent of powerful computers, computational methods have
-emerged as a third pillar of science. Among other techniques, numerical
-methods, data analysis, and visualization have become indispensable
-tools for many scientists nowadays. This course intends to introduce
-basic numerical methods which allow to perform numerical simulations on
-modern computing platforms.</p>
-<p>Topics include:</p>
-<ul class="simple">
-<li><p>Basic revision control with git</p></li>
-<li><p>Collaborative revision control with Gitlab</p></li>
-<li><p>Continuous integration with Gitlab pipelines</p></li>
-<li><p>Jupyter Notebooks, Jupyter Books, and Gitlab user pages</p></li>
-<li><p>Compiling and linking codes</p></li>
-<li><p>The Slurm queueing system and module environments</p></li>
-</ul>
-<p>In addition, in the course we provide hands-on exercises for
-participants to gain experience with high-performance computing
-environments.</p>
-<p>Prerequisites: Basic Python knowledge, for example as provided by
-<a class="reference external" href="https://www.mpsd.mpg.de/events/32404/652780">Programming with Python for Computational
-Science</a>.</p>
-<p>Lecturers: Heiko Appel, Henning Glawe</p>
-</div>
-<div class="section" id="weeks-programming-with-python-for-computational-science">
-<h2><a class="toc-backref" href="#id4">2023-01-16 (2 weeks) Programming with Python for Computational Science</a><a class="headerlink" href="#weeks-programming-with-python-for-computational-science" title="Permalink to this headline">¶</a></h2>
-<p>Details: <a class="reference external" href="https://www.mpsd.mpg.de/events/32404/652780">https://www.mpsd.mpg.de/events/32404/652780</a></p>
-<p>The course has been designed for scientists to learn the practical
-programming skills that are relevant for modern computational science.
-The module does not assume prior programming knowledge of participants.
-The module uses hands-on activities for all participants to exercise and
-experiment with the taught material. The material covers a wide spectrum
-of skills that are advantageous for scientists who need to handle data -
-be it from experiment or simulation – and provides a basis for self
-learning or directed learning of more specialized topics at a later
-stage.</p>
-<p>Topics include:</p>
-<ul class="simple">
-<li><p>Introduction to data types in Python</p></li>
-<li><p>Control flow</p></li>
-<li><p>Name spaces</p></li>
-<li><p>Input/Output</p></li>
-<li><p>Higher order functions</p></li>
-<li><p>Main programming paradigms (imperative, functional, object oriented)</p></li>
-<li><p>Important Python modules for computational science (numpy, scipy,
-pandas, sympy)</p></li>
-<li><p>Data visualization with matplotlib</p></li>
-<li><p>Testing</p></li>
-</ul>
-<p>Lecturer: Hans Fangohr</p>
-</div>
-<div class="section" id="days-python-for-hpc-mpcdf">
-<h2><a class="toc-backref" href="#id5">2022-11-15 (3 days) Python for HPC (MPCDF)</a><a class="headerlink" href="#days-python-for-hpc-mpcdf" title="Permalink to this headline">¶</a></h2>
-<p>Registration: <a class="reference external" href="https://events.gwdg.de/e/python4hpc-2022">https://events.gwdg.de/e/python4hpc-2022</a></p>
-<p>The MPCDF course “Python for HPC” teaches strategies to write
-well-performing Python code suitable for HPC environments. The online
-lectures focus on performance-related topics such as NumPy, Cython,
-Numba, compiled C- and Fortran extensions, profiling of Python and
-compiled code, parallelism using multiprocessing, mpi4py, dask and ray,
-and efficient IO with HDF5. In addition, topics related to
-software-engineering are covered such as packaging, publishing, testing,
-and the semi-automated generation of documentation. Finally, basic
-visualization workflows using matplotlib and related topics are
-discussed. The lectures will take place in the morning from 9:00 to
-13:00, and the exercises will be discussed in the later afternoon
-starting from 16:00.</p>
-</div>
-<div class="section" id="days-mpcdf-advanced-hpc-workshop">
-<h2><a class="toc-backref" href="#id6">2022-11-22 (3 days) MPCDF Advanced HPC Workshop</a><a class="headerlink" href="#days-mpcdf-advanced-hpc-workshop" title="Permalink to this headline">¶</a></h2>
-<p>MPCDF Advanced HPC Workshop for MPG and NOMAD, Nov 22 - Nov 24 2022</p>
-<p>Registration: <a class="reference external" href="https://events.gwdg.de/e/hpc-workshop-2022">https://events.gwdg.de/e/hpc-workshop-2022</a></p>
-<p>This workshop helps HPC developers in the MPG to better manage, debug
-and profile their code. One day is dedicated to GPU programming.</p>
-<p>We plan to give the lectures on Nov 22-23 in a hybrid fashion, onsite
-and streamed online. The (optional) hands-on part on Nov 24 will be
-onsite at the MPCDF in Garching if the pandemic situation permits. The
-main topics of the lectures are:</p>
-<ul class="simple">
-<li><p>Debugging and profiling of CPU and GPU codes</p></li>
-<li><p>Porting codes to GPU-accelerated systems</p></li>
-</ul>
-<p>The workshop will be given by members of the application group of the
-MPCDF together with experts from Intel and Nvidia.</p>
-</div>
-<div class="section" id="and-2022-06-16-high-performance-data-analytics-part-2">
-<h2><a class="toc-backref" href="#id7">2022-06-15 and 2022-06-16 High Performance Data Analytics - Part 2</a><a class="headerlink" href="#and-2022-06-16-high-performance-data-analytics-part-2" title="Permalink to this headline">¶</a></h2>
-<p>Big Data Analytics efficient tools for storing, processing and analyzing
-Big Data in powerful supercomputers are necessary. This course is
-divided into two parts. In the second part, learners will apply skills
-acquired from the first part to advance their knowledge on Machine and
-Deep Learning applied on scientific research and related topics. The
-course will involve necessary theoretical lectures, and hands-on and lab
-sessions. The course is generally geared towards efficient use of HPC
-resources for Big Data Analytics. The topics covered include Supervised
-and Unsupervised Machine Learning, and Convolutional and Recurrent
-Neural Network (CNN and RNN).</p>
-<p><a class="reference external" href="https://www.gwdg.de/academy/course?course=1398">Details</a></p>
-</div>
-<div class="section" id="programming-with-cuda">
-<h2><a class="toc-backref" href="#id8">2022-05-24 Programming with CUDA</a><a class="headerlink" href="#programming-with-cuda" title="Permalink to this headline">¶</a></h2>
-<p>CUDA is a widely used programming environment for GPUs. This course
-introduces hardware and parallelization concepts for GPUs. The CUDA
-programming environment is described in detail. both for C and Fortran,
-including the language elements for controlling the processor
-parallelism and for accessing the various levels of memory. The use of
-GPU accelerated libraries (cuBLAS, cuFFT) is demonstrated. All topics
-are explained by means of examples in practical exercises.</p>
-<p><a class="reference external" href="https://www.gwdg.de/academy/course?course=1393">Details</a></p>
-</div>
-<div class="section" id="and-2022-05-23-ai-for-science-bootcamp-with-nvidia-2-days">
-<h2><a class="toc-backref" href="#id9">2022-05-22 and 2022-05-23 AI for Science - Bootcamp with NVIDIA (2 days)</a><a class="headerlink" href="#and-2022-05-23-ai-for-science-bootcamp-with-nvidia-2-days" title="Permalink to this headline">¶</a></h2>
-<p>NVIDIA and the Max Planck Computing and Data Facility (MPCDF) are
-hosting a GPU Bootcamp open to all researchers and code developers of
-the Max Planck Society (MPG). During this online Bootcamp, participants
-will learn how to apply AI tools, techniques, and algorithms to
-real-life problems. You’ll study the key concepts of Deep Neural
-Networks, how to build Deep Learning models, and how to measure and
-improve the accuracy of your models. You’ll also learn essential data
-preprocessing techniques to ensure a robust machine learning pipeline.
-This online Bootcamp is a hands-on learning experience where you’ll be
-guided by step-by-step instructions with mentors on hand to help
-throughout the process.</p>
-<p>LOCATION: online via Zoom HOST</p>
-<p>Details:
-<a class="reference external" href="https://www.mpcdf.mpg.de/about-mpcdf/news-events/ai-bootcamp.html">https://www.mpcdf.mpg.de/about-mpcdf/news-events/ai-bootcamp.html</a> /
-<a class="reference external" href="https://www.mpcdf.mpg.de/services/training">https://www.mpcdf.mpg.de/services/training</a></p>
-</div>
-<div class="section" id="to-2022-05-18-parallel-programming-with-mpi">
-<h2><a class="toc-backref" href="#id10">2022-05-17 to 2022-05-18 Parallel Programming with MPI</a><a class="headerlink" href="#to-2022-05-18-parallel-programming-with-mpi" title="Permalink to this headline">¶</a></h2>
-<p>The most important parallelization constructs of MPI are explained and
-applied in hands on exercises. The parallelization of algorithms is
-demonstrated in simple examples, their implementation as MPI programs
-will be studied in practical exercises. Fundamentals of parallel
-processing (computer architectures and programming models), Introduction
-to the Message Passing Interface (MPI), The main language constructs of
-MPI-1 and MPI-2 (Point-to-point communication, Collective communication
-incl. synchronization, Parallel operations, Data Structures, Parallel I
-/ O, Process management), Demonstration and practical exercises with
-Fortran, C and Python source codes for all topics; Practice for the
-parallelization of sample programs; Analysis and optimization of
-parallel efficiency.</p>
-<p><a class="reference external" href="https://www.gwdg.de/academy/course?course=1396">Details</a></p>
-</div>
-<div class="section" id="using-the-gwdg-scientific-compute-cluster-an-introduction">
-<h2><a class="toc-backref" href="#id11">2022-05-16 Using the GWDG Scientific Compute Cluster - An Introduction</a><a class="headerlink" href="#using-the-gwdg-scientific-compute-cluster-an-introduction" title="Permalink to this headline">¶</a></h2>
-<p>This course is intended to provide a smooth entry into the world of High
-Performance Computing. We will show the most important Linux commands,
-how to log onto the Cluster, compile and install software and give
-examples how to efficiently use the compute resources</p>
-<p><a class="reference external" href="https://www.gwdg.de/academy/course?course=1391">Details</a></p>
-</div>
-<div class="section" id="and-2022-05-13-future-opportunities-for-software-in-research">
-<h2><a class="toc-backref" href="#id12">2022-05-12 and 2022-05-13 Future Opportunities for Software in Research</a><a class="headerlink" href="#and-2022-05-13-future-opportunities-for-software-in-research" title="Permalink to this headline">¶</a></h2>
-<p>Software literacy has become a key competence for scientists across all
-disciplines. Scientists use the software daily, and software development
-is becoming an increasingly important component of scientific
-productivity. However, the software needed for certain research projects
-can get highly complex and take up resources otherwise needed for core
-research. In the demanded professionalization of software development in
-research, specialized Research Software Engineers have emerged in recent
-years. With their help, researchers tackle the challenges in the areas
-of software and data, such as reproducibility, correctness,
-user-friendliness, performance, or maintenance. Our two-day workshop
-provides new opportunities for learning about best practices in
-scientific software development, such as</p>
-<ul class="simple">
-<li><p>Seeing recent flagship projects in action.</p></li>
-<li><p>Discussing software licensing and intellectual property issues.</p></li>
-<li><p>Discovering new ways to make your software known and recognized.</p></li>
-</ul>
-<p>We invite all interested scientists, research software engineers, IT and
-computing specialists and individuals involved in creating, using or
-otherwise dealing with research software in the Max Planck Society. We
-also welcome participants from other research institutions.</p>
-<p>Registration deadline: 25 April 2022.</p>
-<p><a class="reference external" href="https://workshops.evolbio.mpg.de/event/54/">Details</a></p>
-</div>
-<div class="section" id="introduction-to-mpcdf-services">
-<h2><a class="toc-backref" href="#id13">2022-04-28 Introduction to MPCDF Services</a><a class="headerlink" href="#introduction-to-mpcdf-services" title="Permalink to this headline">¶</a></h2>
-<p>How to start with the MPCDF systems and services: This introductory
-course helps new users with the first steps on the MPCDF systems. It
-covers login, file systems, HPC systems, SLURM, and the MPCDF services
-remote visualization, Jupyter notebooks and datashare. Basic knowledge
-of Linux is required.</p>
-<p>Apr 28, 2022 TIME: 14:00 - 16:30 (online, via Zoom)</p>
-<p>Details and registration:
-<a class="reference external" href="https://www.mpcdf.mpg.de/about-mpcdf/news-events/mpcdf-introductory-user-course">https://www.mpcdf.mpg.de/about-mpcdf/news-events/mpcdf-introductory-user-course</a></p>
-</div>
-<div class="section" id="introduction-to-dask-gohpc-coffee">
-<h2><a class="toc-backref" href="#id14">2022-04-27 Introduction to Dask (GöHPC Coffee)</a><a class="headerlink" href="#introduction-to-dask-gohpc-coffee" title="Permalink to this headline">¶</a></h2>
-<p>As part of the (virtual) 2-weekly Göttingen HPC Coffee meeting, there is
-a short introduction to Dask on offer.</p>
-<p>Details: <a class="reference external" href="https://docs.gwdg.de/doku.php?id=en:services:application_services:high_performance_computing:hpc_coffee">11:00 online, via Big Blue
-Button</a></p>
-</div>
-<div class="section" id="to-2022-04-29-practical-course-in-high-performance-computing">
-<h2><a class="toc-backref" href="#id15">2022-04-25 to 2022-04-29 Practical course in High-Performance Computing</a><a class="headerlink" href="#to-2022-04-29-practical-course-in-high-performance-computing" title="Permalink to this headline">¶</a></h2>
-<p>This practical course is comprised of two parts. The first part is a
-crash course on the basics of High-Performance Computing, where you’ll
-get hands-on experience, it covers the theoretical knowledge regarding
-parallel computing, high-performance computing, supercomputers, and the
-development and performance analysis of parallel applications using MPI
-and OpenMP. In the second part, you will team up in groups of two and
-parallelize a non-trivial problem of your choice, create a sequential
-solution and parallelize and analyze the scalability of the application.</p>
-<p>If you are just interested to learn about parallel programming and don’t
-need credits, you can join only the first part of the course from April
-25th to 29th and gain a certificate.</p>
-<p>For additional information check the
-<a class="reference external" href="https://www.gwdg.de/academy/course?course=1447">Details</a></p>
-<p>The deadline for registration is April 10th.</p>
-</div>
-<div class="section" id="container-workshop">
-<h2><a class="toc-backref" href="#id16">2022-04-13 Container Workshop</a><a class="headerlink" href="#container-workshop" title="Permalink to this headline">¶</a></h2>
-<p>The GWDG are going to give you an introduction to Container usage in HPC
-for Users. This workshop will be an interesting excursion into the field
-of Containers in HPC. The main part will be the hands-on session where
-participants will get course accounts for our SCC cluster and use
-JupyterHub on HPC. In Jupyter you will be running prepared Jupyter
-notebooks with Singularity, which you will be able to access with your
-browser. You can also use the materials afterwards as a starting point
-for your own workflows with Singularity containers.</p>
-<p><a class="reference external" href="https://events.gwdg.de/event/224/">Details</a></p>
-</div>
-<div class="section" id="numerical-methods-and-practical-skills-for-computational-physics-part-ii-1-week">
-<h2><a class="toc-backref" href="#id17">2022-02-21 Numerical Methods and Practical Skills for Computational Physics Part II (1 week)</a><a class="headerlink" href="#numerical-methods-and-practical-skills-for-computational-physics-part-ii-1-week" title="Permalink to this headline">¶</a></h2>
-<p>Second part of the course.</p>
-<p>Details: <a class="reference external" href="https://www.mpsd.mpg.de/events/29311/574005">https://www.mpsd.mpg.de/events/29311/574005</a></p>
-</div>
-<div class="section" id="numerical-methods-and-practical-skills-for-computational-physics-part-i-1-week">
-<h2><a class="toc-backref" href="#id18">2022-01-24 Numerical Methods and Practical Skills for Computational Physics Part I (1 week)</a><a class="headerlink" href="#numerical-methods-and-practical-skills-for-computational-physics-part-i-1-week" title="Permalink to this headline">¶</a></h2>
-<p>Building on “Python for Computational Science”, introduction to</p>
-<ul class="simple">
-<li><p>numerical methods</p></li>
-<li><p>compiling and linking code</p></li>
-<li><p>basic revision control with git (managing your files)</p></li>
-<li><p>using High Performance Computing installations (Slurm and modules)</p></li>
-</ul>
-<p>Details: <a class="reference external" href="https://www.mpsd.mpg.de/events/29310/574005">https://www.mpsd.mpg.de/events/29310/574005</a></p>
-</div>
-<div class="section" id="python-for-computational-science-2-weeks">
-<h2><a class="toc-backref" href="#id19">2022-01-10 Python for Computational Science (2 weeks)</a><a class="headerlink" href="#python-for-computational-science-2-weeks" title="Permalink to this headline">¶</a></h2>
-<p>One week course not assuming prior Python knowledge - a good starting
-point to get into programming and computation for scientific research.</p>
-<p>Teaching materials: <a class="reference external" href="https://www.desy.de/~fangohr/teaching/py4cs2022/">https://www.desy.de/~fangohr/teaching/py4cs2022/</a></p>
-<p>Details: <a class="reference external" href="https://www.mpsd.mpg.de/events/29267/574005">https://www.mpsd.mpg.de/events/29267/574005</a></p>
-</div>
-<div class="section" id="advanced-hpc-workshop-4-days">
-<h2><a class="toc-backref" href="#id20">2021-11-22 Advanced HPC Workshop (4 days)</a><a class="headerlink" href="#advanced-hpc-workshop-4-days" title="Permalink to this headline">¶</a></h2>
-<p>This MPCDF workshop helps HPC users to better manage, debug and profile
-their code. One day is dedicated to GPUs. MPCDF organizes again an
-advanced HPC workshop for users of the MPG from Monday, November 22nd
-until Wednesday, November 24th, 2021 with an optional day with hands-on
-on Thursday, November 25th. The workshop will be given online. The main
-topics of the lectures are:</p>
-<ul class="simple">
-<li><p>Software engineering for HPC codes (git, gitlab, CI, testing)</p></li>
-<li><p>Debugging and profiling of CPU and GPU codes</p></li>
-<li><p>Porting codes to GPU-accelerated systems</p></li>
-</ul>
-<p>Details: <a class="reference external" href="https://www.mpcdf.mpg.de/events/28006/2491">https://www.mpcdf.mpg.de/events/28006/2491</a></p>
-</div>
-<div class="section" id="mpcdf-nvidia-gpu-computing-bootcamp-2-days">
-<h2><a class="toc-backref" href="#id21">2021-10-19 MPCDF/NVIDIA GPU Computing Bootcamp (2 days)</a><a class="headerlink" href="#mpcdf-nvidia-gpu-computing-bootcamp-2-days" title="Permalink to this headline">¶</a></h2>
-<p>NVIDIA and the Max Planck Computing and Data Facility (MPCDF) is hosting
-a GPU Bootcamp open to all researchers and code developers of the Max
-Planck Society (MPG). During this two-day online Bootcamp, participants
-will learn about multiple GPU programming models and can choose the one
-that best fits their needs to run their scientific codes on GPUs (like
-those in the HPC system Raven). This Bootcamp will cover an introduction
-to GPU programming using OpenACC, OpenMP, stdpar and CUDA C, and
-provides hands-on opportunities to learn how to analyse GPU-enabled
-applications using NVIDIA Nsight Systems.</p>
-<p>For details and registration please visit
-<a class="reference external" href="https://www.mpcdf.mpg.de/about-mpcdf/news-events/gpu-bootcamp">https://www.mpcdf.mpg.de/about-mpcdf/news-events/gpu-bootcamp</a></p>
-</div>
-<div class="section" id="introduction-to-mpcdf-services-1">
-<span id="id1"></span><h2><a class="toc-backref" href="#id22">2021-10-13 14:00 Introduction to MPCDF services</a><a class="headerlink" href="#introduction-to-mpcdf-services-1" title="Permalink to this headline">¶</a></h2>
-<p>The course provides a basic introduction to the compute and data
-services available at MPCDF, it includes about 2 hours of tutorial
-sessions, an interactive chat option and a concluding Q&amp;A session and is
-intended specifically to lower the bar for the first-time usage of MPCDF
-services. Major topics include an overview and practical hints for
-connecting to the HPC compute and storage facilities and using them via
-the Slurm batch system. Basic knowledge about working in a Linux
-environment is a prerequisite. An MPCDF account is not needed. This
-course is offered twice per year, with one issue in spring and another
-one in autumn.</p>
-<p>For details and registration please visit
-<a class="reference external" href="https://www.mpcdf.mpg.de/about-mpcdf/news-events/mpcdf-introductory-user-course">https://www.mpcdf.mpg.de/about-mpcdf/news-events/mpcdf-introductory-user-course</a></p>
-<p>14:00-16:30</p>
-</div>
-<div class="section" id="python-for-hpc-workshop-3-days">
-<h2><a class="toc-backref" href="#id23">2021-10-05 Python for HPC Workshop (3 days)</a><a class="headerlink" href="#python-for-hpc-workshop-3-days" title="Permalink to this headline">¶</a></h2>
-<p>This workshop introduces the use of Python for High Performance
-Computing. Main topics are HPC packages like numpy, scipy etc., writing
-parallel code with Python, speeding up Python code with Cython or
-interfaces to compiled languages. Building Python packages and
-documentation as well as a good coding style are further topics of this
-three-day workshop.</p>
-<p>See <a class="reference external" href="https://www.mpcdf.mpg.de/events/28729/2825">https://www.mpcdf.mpg.de/events/28729/2825</a> for details and
-registration</p>
-</div>
-<div class="section" id="testing-open-source-python-centric-research-software">
-<h2><a class="toc-backref" href="#id24">2021-09-28 Testing open source Python-centric research software</a><a class="headerlink" href="#testing-open-source-python-centric-research-software" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.desy.de/~fangohr/publications/talk/2021-09-28-testing-open-source-python-centric-research-software.pdf">Presentation
-(pdf)</a>
-Hans Fangohr at (Day 2, Research software, 13:30)</p>
-<p>See <a class="reference external" href="https://nfdi4ing.de/konferenz/">https://nfdi4ing.de/konferenz/</a> for details.</p>
-</div>
-<div class="section" id="introduction-to-octopus-code-advanced-topics-1-week-intensive-course">
-<h2><a class="toc-backref" href="#id25">2021-09-20 Introduction to Octopus code Advanced topics - 1 week intensive course</a><a class="headerlink" href="#introduction-to-octopus-code-advanced-topics-1-week-intensive-course" title="Permalink to this headline">¶</a></h2>
-<p>Research software has become an essential tool in modern science.
-Despite this, often scientist only have basic training in programming,
-missing important aspects of modern software development and
-engineering. In this course we will present key ideas, tools and
-techniques used by researchers to develop robust, efficient codes in a
-collaborative environment. This will be done in the context of the
-Octopus code (<a class="reference external" href="https://octopus-code.org">https://octopus-code.org</a>). The philosophy of the Octopus
-code is to be a platform which allows to implement new scientific ideas
-with relative ease. The code has a modular structure and to a large
-extend hides numerical nitty-gritties at a lower level, allowing
-researchers to write new modules without the necessity to touch those
-low level parts. The code is actively developed with strict quality
-control. In this second part of the course, the participants will learn
-everything necessary to contribute to the Octopus development, and to
-implement new scientific ideas.</p>
-<p>Topics include:</p>
-<ul class="simple">
-<li><p>Advanced version control in a collaborative environment (merge
-requests, code review, etc)</p></li>
-<li><p>Advanced topics of git (merge, rebase, etc)</p></li>
-<li><p>Regression testing and continuous integration</p></li>
-<li><p>Object oriented programming</p></li>
-<li><p>Parallelization and performance</p></li>
-</ul>
-<p>As an outlook this course also provides an overview of current
-state-of-the-art scientific problems with Octopus. Also, the second part
-will last for one week, with a mixture of lectures and demonstration, as
-well as hands-on sessions to try the learned concepts.</p>
-<p>Details at <a class="reference external" href="https://www.mpsd.mpg.de/events/27629/500135">https://www.mpsd.mpg.de/events/27629/500135</a></p>
-</div>
-<div class="section" id="bigmax-summer-school-2021-big-data-in-materials-science">
-<h2><a class="toc-backref" href="#id26">2021-09-13 BiGmax Summer School 2021 - Big data in materials science</a><a class="headerlink" href="#bigmax-summer-school-2021-big-data-in-materials-science" title="Permalink to this headline">¶</a></h2>
-<p>The BiGmax Summer School 2021 “Harnessing big data in materials science
-from theory to experiment” will take place from September 13 - 17, 2021
-(held as an online event only).</p>
-<p>The school focuses on combining lectures of renowned experts with
-hands-on tutorials predominantly targeted towards PhD students and early
-career researchers.</p>
-<p>Details: <a class="reference external" href="https://indico.mpi-magdeburg.mpg.de/event/15/overview">https://indico.mpi-magdeburg.mpg.de/event/15/overview</a></p>
-</div>
-<div class="section" id="introduction-to-octopus-1-week-intensive-course">
-<h2><a class="toc-backref" href="#id27">2021-09-06 Introduction to Octopus - 1 week intensive course</a><a class="headerlink" href="#introduction-to-octopus-1-week-intensive-course" title="Permalink to this headline">¶</a></h2>
-<p>Density functional theory (DFT) and its time dependent variant,
-time-dependent DFT (TD-DFT), are tools of choice to simulate microscopic
-processes in nature. This, however, requires powerful numerical tools to
-solve the underlying equations and perform simulations of relevant
-physical processes. In his course we will give an introduction on how
-the DFT and TD-DFT equations can be solved numerically on a computer,
-with plently of practical examples using the Octopus code
-(<a class="reference external" href="https://octopus-code.org">https://octopus-code.org</a>). Octopus is a real-space DFT code, geared
-mainly at the real-time propagation of time-dependent systems. Besides
-introducing the code and highlighting its functionalities, a set of
-hands-on tutorials will allow the students to learn how to set up the
-system, run ground-state and time-dependent calculations.</p>
-<p>Topics include:</p>
-<ul class="simple">
-<li><p>Ground-state calculations and total energy convergence</p></li>
-<li><p>Model systems</p></li>
-<li><p>Real-time propagation</p></li>
-<li><p>Optical absorption</p></li>
-</ul>
-<p>Throughout the course, it will be emphasized how to check the results
-for numerical convergence, but also for computational efficiency.</p>
-<p>Details: <a class="reference external" href="https://www.mpsd.mpg.de/events/27628/500135">https://www.mpsd.mpg.de/events/27628/500135</a></p>
-</div>
-<div class="section" id="software-engineering-challenges-and-best-practices-for-multi-institutional-scientific-software-development">
-<h2><a class="toc-backref" href="#id28">2021-08-04 19:00 Software Engineering Challenges and Best Practices for Multi-Institutional Scientific Software Development</a><a class="headerlink" href="#software-engineering-challenges-and-best-practices-for-multi-institutional-scientific-software-development" title="Permalink to this headline">¶</a></h2>
-<p>Part of the webinar on HPC best practices
-(<a class="reference external" href="https://ideas-productivity.org/events/hpc-best-practices-webinars/">https://ideas-productivity.org/events/hpc-best-practices-webinars/</a>).
-Registration at link is required.</p>
-<p>Presenter is Keith Beattie from Lawrence Berkeley National Laboratory.
-Here is the summary:</p>
-<p>Scientific software is increasingly becoming the backbone of obtaining
-and validating scientific results. This is no longer just the case for
-traditionally computationally intensive areas but is now true across a
-wide variety of scientific disciplines. This circumstance elevates how
-scientific software is developed, independent of the field, to a new
-level of importance. Further, the multi-institutional nature of many
-science projects presents unique challenges to how scientific software
-can be effectively developed and maintained over the long term. In this
-webinar we present the challenges faced in leading the development of
-scientific software across a distributed, multi-institutional team of
-contributors, and we describe a set of best-practices we have found to
-be effective in producing impactful and trustworthy scientific software.</p>
-</div>
-<div class="section" id="gpu-computing-on-the-new-hpc-system-raven">
-<h2><a class="toc-backref" href="#id29">2021-07-21 14:00 GPU Computing on the new HPC system Raven</a><a class="headerlink" href="#gpu-computing-on-the-new-hpc-system-raven" title="Permalink to this headline">¶</a></h2>
-<p>Wednesday, 2021/07/21, 14:00 - 16:00 CEST, organised by MPCDF training
-team</p>
-<p>This online tutorial gives a basic introduction to using the GPUs on the
-new HPC system Raven. The following topics will be covered:</p>
-<ul class="simple">
-<li><p>hardware configuration</p></li>
-<li><p>GPU software environment for HPC and AI/data analytics: applications,
-libraries, compilers, tools</p></li>
-<li><p>batch system: submitting GPU jobs</p></li>
-</ul>
-<p>See also: <a class="reference external" href="https://docs.mpcdf.mpg.de/doc/computing/raven-user-guide.html">https://docs.mpcdf.mpg.de/doc/computing/raven-user-guide.html</a>
-<a class="reference external" href="https://www.mpcdf.mpg.de/events/28628/2825">https://www.mpcdf.mpg.de/events/28628/2825</a></p>
-<p>Zoom link available in
-<a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing/topic/events">Zulip</a></p>
-</div>
-<div class="section" id="workflows-in-photon-science-data-analysis">
-<h2><a class="toc-backref" href="#id30">2021-07-22 15:00 Workflows in Photon Science Data Analysis</a><a class="headerlink" href="#workflows-in-photon-science-data-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Brainstorming on use of workflows in Photon Science data analysis</p>
-<p>(Event from data analysis group at EuXFEL, presentation Thomas Kluyver /
-Robert Rosca).</p>
-<p>Target group: research software engineers or scientists with significant
-interest in software / computational methods.</p>
-<p>Addition from after the meeting: notes are at
-<a class="reference external" href="https://codimd.desy.de/SHbiNcAcRGm7q749cgKzRg?view">https://codimd.desy.de/SHbiNcAcRGm7q749cgKzRg?view</a></p>
-<p>Zoom link available in
-<a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing/topic/events">Zulip</a></p>
-</div>
-<div class="section" id="introduction-to-xarray-and-extra-data">
-<h2><a class="toc-backref" href="#id31">2021-06-24 16:30 Introduction to <code class="docutils literal notranslate"><span class="pre">xarray</span></code> and <code class="docutils literal notranslate"><span class="pre">extra-data</span></code></a><a class="headerlink" href="#introduction-to-xarray-and-extra-data" title="Permalink to this headline">¶</a></h2>
-<p>Introduction to <code class="docutils literal notranslate"><span class="pre">xarray</span></code> and <code class="docutils literal notranslate"><span class="pre">extra-data</span></code>, Thursday, June 24th 2021,
-16:30</p>
-<p>Thomas Kluyver from EuXFEL has kindly agreed to provide an informal
-introduction to <a class="reference external" href="http://xarray.pydata.org">xarray</a> that provides
-labelled array data and the
-<a class="reference external" href="http://extra-data.readthedocs.io">extra-data</a> data analysis package
-at European XFEL.</p>
-<p>Zoom link available in
-<a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing/topic/events">Zulip</a></p>
-</div>
-<div class="section" id="research-data-management-a-biodiverse-mosaic">
-<h2><a class="toc-backref" href="#id32">2021-06-23 15:00 Research Data Management - a biodiverse MOSAiC</a><a class="headerlink" href="#research-data-management-a-biodiverse-mosaic" title="Permalink to this headline">¶</a></h2>
-<p>Wednesday, June 23, 2021 from 3:00 p.m. to 4:00 p.m.</p>
-<p>Presenter? Prof. Dr. Frank Oliver Glöckner, Head of Data at the
-Computing Center at the AWI Computing and Data Center.</p>
-<p>Registration:
-<a class="reference external" href="https://gfz-potsdam-de.zoom.us/meeting/register/tJMofuCsrT4vGdYZvbU_QEYoTBbW7c54LgrX">https://gfz-potsdam-de.zoom.us/meeting/register/tJMofuCsrT4vGdYZvbU_QEYoTBbW7c54LgrX</a></p>
-</div>
-<div class="section" id="geometric-deep-learning-from-euclid-to-drug-design">
-<h2><a class="toc-backref" href="#id33">2021-06-24 14:00 “Geometric Deep Learning: From Euclid to Drug Design”</a><a class="headerlink" href="#geometric-deep-learning-from-euclid-to-drug-design" title="Permalink to this headline">¶</a></h2>
-<p>Joint Data Science Colloquium on June 24th, 2021 “Geometric Deep
-Learning: From Euclid to Drug Design” Date: 21 June 2021 at 08:12:42
-CEST</p>
-<p>We are looking forward to the talk of Prof. Michael Bronstein (Professor
-for Machine Learning and Pattern Recognition, Faculty of Engineering,
-Department of Computing, Imperial College London, England) on Thursday,
-June 24th, 2021 at 2 pm.</p>
-<p>His talk is entitled “Geometric Deep Learning: From Euclid to Drug
-Design”. The official announcement of the talk can be found here:
-<a class="reference external" href="https://syncandshare.desy.de/index.php/s/AYAEAeMCCpxsHj4">https://syncandshare.desy.de/index.php/s/AYAEAeMCCpxsHj4</a></p>
-<p>Further information concerning the speakers and the lectures can also be
-found here:
-<a class="reference external" href="https://www.dashh.org/events/data_science_colloquium/index_eng.html">https://www.dashh.org/events/data_science_colloquium/index_eng.html</a></p>
-<p>Zoom link available in
-<a class="reference external" href="https://zulip.mpsd.mpg.de/#narrow/stream/3-computing/topic/events">Zulip</a></p>
-</div>
-<div class="section" id="reproducible-science-with-jupyter">
-<h2><a class="toc-backref" href="#id34">2021-05-06 14:00 Reproducible Science with Jupyter</a><a class="headerlink" href="#reproducible-science-with-jupyter" title="Permalink to this headline">¶</a></h2>
-<p>Dr. Carsten Fortmann-Grote (Max-Planck-Institut für Evolutionsbiologie)
-und Prof. Dr. Hans Fangohr (Max-Planck-Institut für Struktur und Dynamik
-der Materie) at <a class="reference external" href="https://fdm-workshop.mpdl.mpg.de/programm-2021/">Forschungsdatenmanagement Workshop
-2021</a></p>
-<p>The Jupyter notebook format enables seamless coexistence of computer
-program code, documentation, and execution, as well as interactive
-visualization and discussion of results in one document and provides a
-user-friendly work environment. We will give an overview of the Jupyter
-ecosystem of tools and services and discuss how Jupyter enhances
-reproducibility in data intensive research.</p>
-<p>Material:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.desy.de/~fangohr/publications/talks/2021-05-06-fortmanngrote-fangohr-fdm-workshop-Reproducible-science-with-jupyter.pdf">Slides</a></p></li>
-<li><p><a class="reference external" href="https://gitlab.gwdg.de/mpievolbio-scicomp/fdm2021/-/blob/master/README.md">Workshop
-materials</a>
-and</p></li>
-<li><p><a class="reference external" href="https://pure.mpg.de/rest/items/item_3319185_1/component/file_3319380/content">Video recording (MPG/GWDG network
-only)</a></p></li>
-</ul>
-</div>
-<div class="section" id="numerical-methods-and-practical-skills-for-computational-physics-intensive-course">
-<h2><a class="toc-backref" href="#id35">2021-05-10 Numerical Methods and Practical Skills for Computational Physics - intensive course</a><a class="headerlink" href="#numerical-methods-and-practical-skills-for-computational-physics-intensive-course" title="Permalink to this headline">¶</a></h2>
-<p>Theory and experiment have been the two pillars of science that for
-centuries have underpinned our understanding of the world around us.
-With the advent of powerful computers, computational methods have
-emerged as a third pillar of science. Among other techniques, numerical
-methods, data analysis, and visualization have become indispensable
-tools for many scientists nowadays. This course intends to introduce
-basic numerical methods which allow to perform numerical simulations on
-modern computing platforms.</p>
-<p>Topics include:</p>
-<ul class="simple">
-<li><p>Approximation of functions</p></li>
-<li><p>Root finding and solving nonlinear equations</p></li>
-<li><p>Numerical differentiation and integration</p></li>
-<li><p>Solving ordinary and partial differential equations</p></li>
-<li><p>Solving linear systems of equations</p></li>
-<li><p>Eigenvalue problems</p></li>
-<li><p>Optimization</p></li>
-</ul>
-<p>In addition, in the course we provide hands-on exercises for
-participants to gain experience with high-performance computing
-environments. We intend to cover:</p>
-<ul class="simple">
-<li><p>Compiling and linking codes</p></li>
-<li><p>The Slurm queueing system and module environments</p></li>
-<li><p>Basic revision control with git</p></li>
-</ul>
-<p>Details: <a class="reference external" href="https://www.mpsd.mpg.de/events/27627/500135">https://www.mpsd.mpg.de/events/27627/500135</a></p>
-<p>Delivered by Heiko Appel, Henning Glawe, Hans Fangohr, Martin Lueders</p>
-</div>
-<div class="section" id="python-for-computational-science-1-week-intensive-course">
-<h2><a class="toc-backref" href="#id36">2021-04-19 Python for Computational science - 1 week intensive course</a><a class="headerlink" href="#python-for-computational-science-1-week-intensive-course" title="Permalink to this headline">¶</a></h2>
-<p>The one-week course has been designed for scientists and engineers to
-teach the practical programming skills that are relevant for modern
-computational science. The module does not assume prior programming
-knowledge of participants. The module uses hands-on activities for all
-participants to exercise and experiment with the taught material. The
-material covers a wide spectrum of skills that are advantageous for
-scientists who need to handle data - be it from experiment or simulation
-– and provides a basis for self learning or directed learning of more
-specialized topics at a later stage.</p>
-<p>More detailed announcement:
-<a class="reference external" href="https://www.mpsd.mpg.de/events/27626/500135?1619346787">https://www.mpsd.mpg.de/events/27626/500135?1619346787</a></p>
-<p>Delivered by Hans Fangohr, Henning Glawe, Heiko Appel</p>
-</div>
-<div class="section" id="open-science-covid19-analysis">
-<h2><a class="toc-backref" href="#id37">2020-11-04 Open Science COVID19 Analysis</a><a class="headerlink" href="#open-science-covid19-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Presenter: Hans Fangohr</p>
-<p>The Open Science COVID Analysis (OSCOVIDA) project provides an open
-science portal at <a class="reference external" href="https://oscovida.github.io/">https://oscovida.github.io/</a> to display and investigate
-the COVID19 infections and deaths as a function of time for the US
-states, the districts in Germany, and most other countries in the world.
-For each region, different observables are shown as a function of time:
-total infections and deaths, daily changes, the reproduction number and
-growth factor, and doubling times; this can be normalised by the
-population of the relevant region. Data sources are currently the Johns
-Hopkins University and the Robert Koch Institute. All the source code
-that creates the plots is open source, and provides a Python library to
-simplify download of current data and population numbers, and
-computation and display of the COVID tracking plots available on the
-website. The system is based on Jupyter notebooks, which users can
-execute in their browser (using the MyBinder project) to adapt the
-analysis to their own interests, or base additional studies on top of
-the framework. Some tutorials and additional data analysis studies are
-available, and further contributions are welcome.</p>
-<p>Details:
-<a class="reference external" href="https://www.dashh.org/events/hamburg_covid_19_series/04112020__prof_fangohr/index_eng.html">https://www.dashh.org/events/hamburg_covid_19_series/04112020__prof_fangohr/index_eng.html</a></p>
-<p>Slides:
-<a class="reference external" href="https://www.dashh.org/sites/sites_custom/site_dashh/content/e101681/e106987/e113556/e122237/Fangohr-2020-11-04-OSCOVIDA-seminar_eng.pdf">https://www.dashh.org/sites/sites_custom/site_dashh/content/e101681/e106987/e113556/e122237/Fangohr-2020-11-04-OSCOVIDA-seminar_eng.pdf</a></p>
-<p>Project: <a class="reference external" href="https://oscovida.github.io">https://oscovida.github.io</a></p>
-</div>
-</div>
-
-
-              </div>
-              
-              
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="docs/changes.html" title="previous page"><span class="section-number">9. </span>Changelog</a>
-    <a class='right-next' id="next-link" href="gallery.html" title="next page">Gallery</a>
-
-              </div>
-              
-          </main>
-          
-
-      </div>
+        </footer>
+        
+      </main>
     </div>
-  
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
-    &copy; Copyright 2021- Hans Fangohr, MPSD.<br/>
-</p>
-    </div>
-    
   </div>
-</footer>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2021- Hans Fangohr, MPSD.<br>
+
+</p>
+
+  </div>
+  
+</div>
+  </footer>
   </body>
 </html>

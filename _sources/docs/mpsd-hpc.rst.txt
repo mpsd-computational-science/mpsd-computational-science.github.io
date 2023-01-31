@@ -1,0 +1,971 @@
+.. _mpsd_hpc:
+
+MPSD HPC system
+===============
+
+.. important::
+
+   We are working on an upgrade of software stack and documentation on the local
+   HPC cluster. The cluster will be unavailable until the end of this maintenance.
+
+For the Raven and Ada machine, please check :doc:`overview-it`.
+
+Login nodes
+-----------
+
+Login nodes are ``mpsd-hpc-login1.desy.de`` and
+``mpsd-hpc-login2.desy.de``.
+
+.. note::
+
+   During the first login your home directory will be created. This could take up to a minute. Please be patient.
+
+Job submission
+--------------
+
+Job submission is via `Slurm <https://slurm.schedmd.com>`__.
+
+The following partitions are available to all (partial output from
+``sinfo``):
+
+::
+
+   PARTITION     TIMELIMIT  NODES  NODELIST
+   express         6:00:00      2  mpsd-hpc-ibm-[019-020]
+   interactive     8:00:00      1  mpsd-hpc-ibm-021
+   bigmem       28-00:00:0      8  mpsd-hpc-hp-[001-008]
+   gpu          28-00:00:0      2  mpsd-hpc-gpu-[001-002]
+   mpsd         28-00:00:0     22  mpsd-hpc-ibm-[022-030,035-036,043-049,053-062]
+
+Please use the two ``gpu`` machines only if your code supports
+nvidia-cuda ;)
+
+Resources per node:
+
+-  ``express`` / ``interactive`` / ``mpsd`` partitions
+
+   -  8 physical cores (16 with hyperthreading)
+   -  64GB RAM
+   -  only 10GB ethernet for MPI communication, so better avoid running
+      multi-node jobs in this partition
+
+-  ``bigmem``
+
+   -  96 physical cores (192 with hyperthreading)
+   -  2T RAM
+   -  fast FDR infiniband for MPI communication
+
+-  ``gpu``
+
+   -  16 physical cores (32 with hyperthreading)
+   -  1.5T RAM
+   -  fast FDR infiniband for MPI communication
+   -  8 Tesla V100 GPUs
+
+Storage and quotas
+------------------
+
+``/home/<username>`` (``$HOME``)
+
+-  home file system for code and scripts
+-  user quota (storage limit): 100 GB
+-  quota can be checked with ``df -h $HOME``
+-  regular backups
+-  users have access to the backup of their data under
+   ``$HOME/.zfs/snapshots``
+
+``/scratch/<username>``
+
+-  scratch file system for simulation output and other temporary data
+
+-  there are no backups for ``/scratch``: hardware error or human error
+   can lead to data loss.
+
+-  there is no individual quota, but a policy to manage overall usage:
+
+   If ``/scratch`` fills up, the cluster becomes unusable. Should this
+   happen, we will make space available through the following actions:
+
+   #. purchase and installation of additional hardware to increase
+      storage available ``/scratch`` (if funding and other constraints
+      allow this)
+
+   #. ask users to voluntarily reduce their usage of ``/scratch`` (by,
+      for example, deleting some data, or archiving completed projects
+      elsewhere)
+
+   #. if 1. and 2. do not resolve the situation, a script will be
+      started that deletes some of the files on ``/scratch`` (starting
+      with the oldest files). Notice will be given of this procedure.
+
+.. note::
+
+   The backup of the old HPC installation is available under
+   ``/backup/<username>`` on the login nodes. Users can copy their existing data to
+   the new home and scratch directories. No data will be transfered automatically.
+
+.. _mpsd-hpc-software:
+
+Software
+--------
+
+The software on the MPSD HPC system is provided via environment modules.
+This facilitates providing different versions of the same software. The
+software is organised in a hierarchical structure. In order to use a
+module we first have to load a base compiler and MPI. That way we can
+choose between different compilers and MPI implementations for a
+software. More details are given below.
+
+From a high-level perspective, the required steps to use a particular
+module are:
+
+#. Activate the desired set of modules (e.g. the *generic* set)
+#. Search for the module to find available versions and required base
+   modules
+#. Load required base modules (such as a compiler)
+#. Load the desired module
+
+TLDR
+~~~~
+
+-  Modules are organised in a hierarchical structure with compiler and
+   MPI implementation as base modules.
+-  Modules are compiled with two different feature sets. Use
+   ``mpsd_modules`` for switching.
+
+   -  a generic feature set (runs on all nodes), activated by default
+
+      ::
+
+         mpsd_modules default generic
+
+   -  architecture-dependent feature sets (depending on the CPU micro
+      architecture ``$MPSD_MICROARCH`` of the nodes)
+
+      ::
+
+         mpsd_modules default $MPSD_MICROARCH
+
+-  To find and load modules:
+
+   -  ``module avail``
+   -  ``module spider <module-name>``
+   -  ``module load <module1> [<module2> ...]``
+
+-  ``toolchain`` modules replicate `easybuild
+   toolchains <https://docs.easybuild.io/en/latest/Common-toolchains.html>`__
+   and additionally contain all modules required to compile octopus.
+-  Configure scripts to compile octopus are available under
+   ``/opt_hpc/examples/octopus``.
+
+Initial setup
+~~~~~~~~~~~~~
+
+The MPSD HPC system consists of a heterogeneous set of compute nodes
+with different CPU features. This is reflected in the available software
+stack by providing both a *generic* set of modules that can be used on
+all nodes as well as *specialised* sets of modules for the different
+available architectures. The latter will only run on certain nodes.
+
+A versioning scheme is used for the MPSD software environment to improve
+reproducibility. Currently, all software is available in the ``23a``
+release (i.e. the first release in 2023). Additional modules will be
+added to this environment as long as they do not break anything.
+Therefore, users should always specify the version of the modules the
+use (even if only a single version is available). A new release will be
+made if any addition/change would break backwards compatibility.
+
+This heterogeneous setup makes it necessary to first add an additional
+path where module files can be found. To activate the different sets of
+modules we can use ``mpsd_modules``. The function takes two arguments:
+the *release number* (of the MPSD software environment, mandatory) and
+the *feature set* (optional, the *generic* set is used by default).
+Calling ``mpsd_modules`` without arguments will show help and list
+available options.
+
+To demonstrate the use of ``mpsd_modules`` we activate the ``generic``
+module set of the current software environment ``23a``. These modules
+can be used on all HPC nodes.
+
+.. code:: bash
+
+   ~$ mpsd_modules 23a
+
+Now, we can list available modules. At the time of writing this produces
+the following output (truncated):
+
+.. code:: bash
+
+   ~$ module avail
+
+   ------------ /opt_hpc/linux-debian11/develop/sandybridge/lmod/Core -------------
+      gcc/10.3.0                       toolchains/foss2021a-mpi
+      toolchains/foss2021a-cuda-mpi    toolchains/foss2021a-serial (D)
+
+   ----------------------- /usr/share/lmod/lmod/modulefiles -----------------------
+      Core/lmod    Core/settarg (D)
+
+   ------------------------ /usr/share/modules/modulefiles ------------------------
+      mathematica    mathematica12p2    matlab    matlab2021b
+
+     Where:
+      D:  Default Module
+
+We can only see a small number of modules. The reason for this is the
+hierarchical structure mentioned before. The majority of modules are
+only visible once we load a compiler (and depending on the package an
+MPI implementation).
+
+We can load a compiler and again list available modules. Now many more
+are available:
+
+.. code:: bash
+
+   ~$ module load gcc/10.3.0
+   ~$ module avail
+
+   --------- /opt_hpc/linux-debian11/develop/sandybridge/lmod/gcc/10.3.0 ----------
+      autoconf-archive/2022.02.11               libsigsegv/2.13
+      autoconf/2.71                             libtiff/4.4.0
+      automake/1.16.3                           libtool/2.4.6
+      bdftopcf/1.0.5                            libvdwxc/0.4.0
+      berkeley-db/18.1.40                       libxc/4.3.4
+      berkeleygw/2.1                            libxfont/1.5.2
+      binutils/2.36.1                           libxml2/2.10.1
+      bison/3.8.2                               lz4/1.9.4
+      boost/1.80.0                              m4.1.1.19
+      bzip2/1.0.8                               meson/0.63.3
+      ca-certificates-mozilla/2022-10-11        metis/5.1.0
+      cgal/5.0.3                                mkfontdir/1.0.7
+      cmake/3.24.3                              mkfontscale/1.1.2
+      cuda/11.4.4                               mpfr/4.1.0
+      curl/7.85.0                               munge/0.5.15
+      diffutils/3.8                             nasm/2.15.05
+      eigen/3.4.0                               ncurses/6.3
+      expat/2.4.8                               nfft/3.4.1
+      fftw/3.3.9                                ninja/1.11.1
+      findutils/4.9.0                           nlopt/2.7.0
+      flex/2.6.3                                numactl/2.0.14
+      flexiblas/3.0.4                           openmpi/4.1.1-cuda-11.4.4
+      font-util/1.3.2                           openmpi/4.1.1             (D)
+      fontconfig/2.13.94                        openssh/9.1p1
+      fontsproto/2.1.3                          openssl/1.1.1s
+      freetype/2.11.1                           pcre/8.45
+      gawk/5.1.1                                pcre2/10.39
+      gdbm/1.23                                 perl/5.36.0
+      gdrcopy/2.3                               pigz/2.7
+      gettext/0.21.1                            pkgconf/1.8.0
+      glib/2.74.1                               pmix/4.1.2-cuda-11.4.4
+      gmp/6.2.1                                 pmix/4.1.2                (D)
+      gperf/3.1                                 py-cython/0.29.32
+      gsl/2.7                                   py-docutils/0.19
+      hdf5/1.12.2                               py-numpy/1.23.4
+      hwloc/2.8.0-cuda-11.4.4                   py-pip/22.2.2
+      hwloc/2.8.0                        (D)    py-setuptools/59.4.0
+      json-c/0.16                               py-wheel/0.37.1
+      knem/1.1.4-cuda-11.4.4                    python/3.9.5
+      knem/1.1.4                         (D)    rdma-core/41.0
+      krb5/1.19.3                               readline/8.1.2
+      libbsd/0.11.5                             slurm/21-08-8-2
+      libedit/3.1-20210216                      sparskit/develop
+      libevent/2.1.12                           sqlite/3.39.4
+      libffi/3.4.2                              swig/4.0.2
+      libfontenc/1.1.3                          tar/1.34
+      libfuse/3.11.0                            texinfo/6.5
+      libgcrypt/1.10.1                          ucx/1.13.1-cuda-11.4.4
+      libgd/2.2.4                               ucx/1.13.1                (D)
+      libgpg-error/1.46                         util-linux-uuid/2.38.1
+      libiconv/1.16                             util-macros/1.19.3
+      libjpeg-turbo/2.1.3                       xproto/7.0.31
+      libmd/1.0.4                               xtrans/1.3.5
+      libnl/3.3.0                               xz/5.2.7
+      libpciaccess/0.16                         zlib/1.2.13
+      libpng/1.6.37                             zstd/1.5.2
+
+   ------------ /opt_hpc/linux-debian11/develop/sandybridge/lmod/Core -------------
+      gcc/10.3.0                    (L)    toolchains/foss2021a-mpi
+      toolchains/foss2021a-cuda-mpi        toolchains/foss2021a-serial (D)
+
+   ----------------------- /usr/share/lmod/lmod/modulefiles -----------------------
+      Core/lmod    Core/settarg (D)
+
+   ------------------------ /usr/share/modules/modulefiles ------------------------
+      mathematica (L)    mathematica12p2 (L)    matlab (L)    matlab2021b (L)
+
+     Where:
+      L:  Module is loaded
+      D:  Default Module
+
+We now unload all loaded modules:
+
+.. code:: bash
+
+   ~$ module purge
+
+.. _loading_specific_packages:
+
+Loading specific packages
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To find a specific package we can use the ``module spider`` command.
+Without extra arguments this would list all modules. We can search for a
+specific module by adding the module name.
+
+As an example we can search for ``octopus``:
+
+.. code:: bash
+
+   ~$ module spider octopus
+
+We see that different versions of ``octopus`` are available. We have to
+specify a particular version in order to get more information on how to
+load the module:
+
+.. code:: bash
+
+   ~$ module spider octopus/12.1
+
+We can see that we have to first load ``gcc/10.3.0`` and
+``openmpi/4.1.1`` in order to be able to load and use ``octopus/12.1``.
+
+.. note::
+
+   Sometimes ``module spider`` will suggest to either only load a compiler or
+   compiler + MPI implementation. Then, we generally want to also load the MPI
+   implementation as only this version of the program will use MPI. Loading the MPI-enabled
+   version of the desired program is crucial when running a slurm job on multiple nodes.
+
+We load ``gcc/10.3.0``, ``openmpi/4.1.1`` and finally ``octopus/12.1``.
+All of this can be done in one line as long as the packages are given in
+the correct order (as shown by ``module spider``):
+
+.. code:: bash
+
+   ~$ module load gcc/10.3.0 openmpi/4.1.1 octopus/12.1
+
+As a first simple check we display the version number of ``octopus``:
+
+::
+
+   ~$ octopus --version
+   octopus 12.1 (git commit )
+
+Python
+~~~~~~
+
+To use Python we load the ``anaconda3`` module:
+
+.. code:: bash
+
+   ~$ module load anaconda3/2022.05
+
+Anaconda comes with a wide variety of pre-installed Python packages such
+as ``numpy``, ``scipy``, ``matplotlib``, etc.
+
+#. Numpy example
+
+   We can execute a small demo program called ``hello-numpy.py``. The
+   file has the following content. The source is available under
+   ``/opt_hpc/examples/slurm-examples/python-numpy``.
+
+   .. code:: python
+
+      import numpy as np
+
+      print("Hello world")
+      print(f"numpy version: {np.__version__}")
+      x = np.arange(5)
+      y = x**2
+      print(y)
+
+   ::
+
+      ~$ python3 hello_numpy.py
+      Hello world
+      numpy version: 1.21.5
+      [ 0  1  4  9 16]
+
+#. Custom conda environment with global conda
+
+   We can also create a separate conda environment if we need additional
+   Python software or different versions. We can use ``conda`` from the
+   ``anaconda3`` module for this.
+
+   As an example we create a new environment with a newer version of
+   Python and a specific numpy version. We create the environment in a
+   new folder ``my_conda_env`` in the home directory.
+
+   ::
+
+      ~$ conda create -p $HOME/my_conda_env python=3.10 numpy=1.23
+
+   .. note::
+
+      It is initially not possible to use ``conda activate`` because the shell is not
+      configured properly. We have to run ``conda init bash`` but this will fail
+      because it tries to also modify the global installation where we do not have
+      write permissions. However, it will modify your ``.bashrc`` as required and
+      this may be enough to use ``conda activate`` and ``conda deactivate`` after
+      logging out and in again. If not you can replace ``conda activate`` with
+      ``source activate`` (which is deprecated but still works at the time of
+      writing).
+
+   We can now activate the environment and check the versions of Python
+   and numpy.
+
+   ::
+
+      ~$ conda activate $HOME/my_conda_env
+      ~$ python --version
+      Python 3.10.8
+      ~$ python -c "import numpy; print(numpy.__version__)"
+      1.24.1
+
+   We can deactivate and remove the environment using:
+
+   ::
+
+      ~$ conda deactivate $HOME/my_conda_env
+      ~$ conda env remove -p $HOME/my_conda_env
+
+Jupyter notebooks
+~~~~~~~~~~~~~~~~~
+
+You can use a Jupyter notebook on a dedicated HPC node as follows:
+
+#. Ensure you are at MPSD or have the DESY VPN set up.
+
+#. Login to a login node (for example ``mosh mpsd-hpc-login1.desy.de``,
+   `mosh <https://mosh.org/>`__ is recommended over ``ssh`` to avoid
+   losing the session in case of short connection interruptions e.g. on
+   WiFi)
+
+#. Request a node for interactive use. For example, 1 node for 600
+   minutes from the ``mpsd`` partition:
+
+   .. code:: bash
+
+      srun -t 600 -n 1 -p mpsd --pty bash
+
+#. If this was successful, you are now in a terminal (bash) session on
+   your dedicated node. We need to fix one thing before you can start
+   Jupyter by typing this command:
+
+   .. code:: bash
+
+      export XDG_RUNTIME_DIR=/tmp/${USER}
+
+#. You can install Jupyter yourself, or you activate an installed
+   version with the following commands:
+
+   .. code:: bash
+
+      module load anaconda3/2022.05
+
+#. start the Jupyter notebook (or Jupyter lab) server on that node with
+
+   .. code:: bash
+
+      jupyter-notebook --no-browser --ip=${HOSTNAME}.desy.de
+
+   Watch the output displayed in your terminal. There is a line similar
+   to this one:
+
+   ``http://mpsd-hpc-ibm-055.desy.de:8888/?token=8814fea339b8fe7d3a52e7d03c2ce942a3f35c8c263ff0b8``
+
+   which you can paste as a URL into your browser (on your
+   laptop/Desktop), and you should be connected to the Notebook server
+   on the compute node.
+
+Matlab
+~~~~~~
+
+``module load matlab``
+
+Loading a toolchain to compile octopus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There is also a set of special meta-modules, called *toolchains*. These
+load groups of modules (e.g. compiler, MPI, blas, …). The versions of
+the individual packages follow the `easybuild
+toolchains <https://docs.easybuild.io/en/latest/Common-toolchains.html>`__.
+In addition to the set of modules defined by easybuild the toolchains on
+the HPC system also contain all modules required to compile ``octopus``
+from source.
+
+Here, we show two examples how to compile ``octopus``, a serial and an
+MPI version. Following this guide is only recommended if you need to
+compile octopus from source. We also provide pre-compiled modules for
+octopus as outlined in :ref:`loading_specific_packages` above.
+
+As mentioned before, different variants of (most) modules are available
+that support different CPU feature sets. So far we only discussed the
+*generic* set that can be used on all nodes. In order to make use of all
+available features on a specific node we can instead load a more
+optimised set of modules. The CPU architecture is available in the
+environment variable ``$MPSD_MICORARCH``.
+
+First, we remove the *generic* module set and activate the optimised set
+for the current node.
+
+.. code:: bash
+
+   ~$ module purge
+   ~$ mpsd_modules generic $MPSD_MICROARCH
+
+#. Parallel version of octopus
+
+   We can load the toolchain ``foss2021a-mpi`` to compile ``octopus``
+   using ``gcc 10.3.0`` and ``openmpi 4.1.1``:
+
+   .. code:: bash
+
+      ~$ module load toolchains/foss2021a-mpi
+
+   Next, we clone octopus:
+
+   .. code:: bash
+
+      ~$ git clone https://gitlab.com/octopus-code/octopus.git
+      ~$ cd octopus
+
+   The SSU Computational science maintains a set of configure scripts
+   that can be used to compile octopus with standard feature sets. These
+   scripts are available at ``/opt_hpc/examples/octopus``. We use the
+   following script (``foss2021a-mpi-config.sh``) for this compilation:
+
+   .. code:: bash
+
+      export FCFLAGS="-O2 -g -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz"
+      export FFLAGS="-O2 -g -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz"
+      export CFLAGS="-O2 -g"
+      export CC="mpicc"
+      export FC="mpif90"
+
+      #HG: ugly hack to include rpath while linking
+      #    becomes necessary for spack >= 0.19, as it does not set LD_LIBRARY_PATH anymore
+      export LDFLAGS=`echo ${LIBRARY_PATH:+:$LIBRARY_PATH} | sed -e 's/:/ -Wl,-rpath=/g'`
+
+      ../configure \
+          --with-libxc-prefix="$MPSD_LIBXC_ROOT" \
+          --with-gsl-prefix="$MPSD_GSL_ROOT" \
+          --with-sparskit="$MPSD_SPARSKIT_ROOT/lib/libskit.a" \
+          --with-nlopt-prefix="$MPSD_NLOPT_ROOT" \
+          --with-fftw-prefix="$MPSD_FFTW_ROOT" \
+          --with-nfft="$MPSD_NFFT_ROOT" \
+          --with-libvdwxc-prefix="$MPSD_LIBVDWXC_ROOT" \
+          --enable-mpi \
+          --enable-openmp \
+          --with-blas="-L$MPSD_FLEXIBLAS_ROOT/lib -lflexiblas -lgfortran" \
+          --with-elpa-prefix="$MPSD_ELPA_ROOT" \
+          --with-pfft-prefix="$MPSD_PFFT_ROOT" \
+          --with-pnfft-prefix="$MPSD_PNFFT_ROOT" \
+          --with-blacs="-L$MPSD_SCALAPACK_ROOT/lib -lscalapack -lflexiblas -lgfortran" \
+          --with-berkeleygw-prefix="$MPSD_BERKELEYGW_ROOT" \
+          "$@"
+
+   Now, we can configure and compile octopus:
+
+   .. code:: shell
+
+      ~$ autoreconf -i
+      ~$ mkdir _build && cd _build
+      ~$ cp PATH_TO_OCTOPUS_CONFIGURE_SCRIPTS/foss2021a-mpi-config.sh .
+      ~$ source foss2021a-mpi-config.sh
+      ~$ make
+      ~$ make check-short
+
+#. Serial version of octopus
+
+   Compiling the serial version in principle consists of the same steps
+   as the parallel version. We use a different toolchain and
+   configuration script.
+
+   We load the serial toolchain:
+
+   .. code:: bash
+
+      ~$ module load toolchains/foss2021a-serial
+
+   and use the following configure script
+   (``foss2021a-serial-config.sh``):
+
+   #+name foss2021a-serial-config.sh
+
+   .. code:: bash
+
+      export FCFLAGS="-O2 -g -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz"
+      export FFLAGS="-O2 -g -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz"
+      export CFLAGS="-O2 -g"
+
+      #HG: ugly hack to include rpath while linking
+      #    becomes necessary for spack >= 0.19, as it does not set LD_LIBRARY_PATH anymore
+      export LDFLAGS=`echo ${LIBRARY_PATH:+:$LIBRARY_PATH} | sed -e 's/:/ -Wl,-rpath=/g'`
+
+      ../configure \
+          --with-libxc-prefix="$MPSD_LIBXC_ROOT" \
+          --with-gsl-prefix="$MPSD_GSL_ROOT" \
+          --with-sparskit="$MPSD_SPARSKIT_ROOT/lib/libskit.a" \
+          --with-nlopt-prefix="$MPSD_NLOPT_ROOT" \
+          --with-berkeleygw-prefix="$MPSD_BERKELEYGW_ROOT" \
+          --with-fftw-prefix="$MPSD_FFTW_ROOT" \
+          --with-nfft="$MPSD_NFFT_ROOT" \
+          --with-libvdwxc-prefix="$MPSD_LIBVDWXC_ROOT" \
+          --enable-openmp \
+          --with-blas="-L$MPSD_FLEXIBLAS_ROOT/lib -lflexiblas -lgfortran" \
+          "$@"
+
+   We can then follow the instructions from the previous section.
+
+Compiling custom code
+~~~~~~~~~~~~~~~~~~~~~
+
+To compile other custom code we generally require a different collection
+of modules than the one provided by the ``toolchains`` meta-modules. In
+these cases it might be necessary to manually load all required modules.
+The same general notes about *generic* and optimised module sets
+explained in the previous section apply.
+
+Here, we show two different examples. The sources are available under
+``/opt_hpc/examples/slurm-examples``.
+
+#. Serial "Hello world" in Fortran
+
+   First, we want to compile the following "hello world" Fortran program
+   using ``gcc``. We assume it is saved in a file ``hello.f90``. The
+   source is available in
+   ``/opt_hpc/examples/slurm-examples/serial-fortran``.
+
+   .. code:: fortran
+
+      program hello
+        write(*,*) "Hello world!"
+      end program
+
+   We have to load ``gcc``:
+
+   .. code:: bash
+
+      module load gcc/10.3.0
+
+   Then, we can compile and execute the program:
+
+   .. code:: bash
+
+      ~$ gfortran -o hello hello.f90
+      ~$ ./hello
+       Hello world!
+
+#. MPI-parallelised "Hello world" in C
+
+   As a second example we compile an MPI-parallelised "Hello world" C
+   program, again using ``gcc``. We assume the source is saved in a file
+   ``hello-mpi.c`` (source available under
+   ``/opt_hpc/examples/slurm-examples/mpi-c``).
+
+   .. code:: c
+
+      #include <mpi.h>
+      #include <stdio.h>
+
+      int main(int argc, char** argv) {
+          MPI_Init(NULL, NULL);
+
+          int world_size, world_rank;
+          MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+          MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
+
+          char processor_name[MPI_MAX_PROCESSOR_NAME];
+          int name_len;
+          MPI_Get_processor_name(processor_name, &name_len);
+
+          printf("Hello world from rank %d out of %d on %s.\n",
+                 world_rank, world_size, processor_name);
+
+          MPI_Finalize();
+      }
+
+   We have to load ``gcc`` and ``openmpi``:
+
+   .. code:: bash
+
+      ~$ module load gcc/10.3.0 openmpi/4.1.1
+
+   Now, we can compile and execute the test program:
+
+   ::
+
+      ~$ mpicc -o hello-mpi hello-mpi.c
+      ~$ orterun -n 4 ./hello-mpi
+      Hello world from rank 2 out of 4 on mpsd-hpc-login1.
+      Hello world from rank 3 out of 4 on mpsd-hpc-login1.
+      Hello world from rank 1 out of 4 on mpsd-hpc-login1.
+      Hello world from rank 0 out of 4 on mpsd-hpc-login1.
+
+   *Note*: Inside a slurm job ``srun`` has to be used instead of
+   ``orterun``.
+
+Example batch scripts
+---------------------
+
+Here, we show a number of example batch scripts for different types of
+jobs. All examples are available on the HPC system under
+``/opt_hpc/examples/slurm-examples`` together with the example programs.
+We use the ``mpsd`` partition and the *generic* module set for all
+examples.
+
+To test an example on the HPC system we can copy the relevant directory
+into our scratch directory. If required we can compile the code using
+``make`` and then submit the job using ``sbatch submission-script.sh``.
+
+MPI
+~~~
+
+The source code and submission script are in
+``/opt_hpc/examples/slurm-examples/mpi-c``.
+
+.. code:: bash
+
+   #!/bin/bash --login
+   #
+   # Standard output and error
+   #SBATCH -o ./out.%j
+   #SBATCH -e ./err.%j
+   #
+   # working directory
+   #SBATCH -D ./
+   #
+   # partition
+   #SBATCH -p mpsd
+   #
+   # job name
+   #SBATCH -J MPI-example
+   #
+   #SBATCH --mail-type=ALL
+   #SBATCH --mail-user=<USERID>@mpsd.mpg.de
+   #
+   # job requirements
+   #SBATCH --nodes=4
+   #SBATCH --ntasks-per-node=16
+   #SBATCH --time=00:10:00
+
+   module purge
+   mpsd_modules default generic
+
+   module load gcc/10.3.0 openmpi/4.1.1
+
+   srun ./hello-mpi
+
+MPI + OpenMP
+~~~~~~~~~~~~
+
+The source code and submission script are in
+``/opt_hpc/examples/slurm-examples/mpi-openmp-c``.
+
+.. code:: bash
+
+   #!/bin/bash --login
+   #
+   # Standard output and error
+   #SBATCH -o ./out.%j
+   #SBATCH -e ./err.%j
+   #
+   # working directory
+   #SBATCH -D ./
+   #
+   # partition
+   #SBATCH -p mpsd
+   #
+   # job name
+   #SBATCH -J MPI-OpenMP-example
+   #
+   #SBATCH --mail-type=ALL
+   #SBATCH --mail-user=<USERID>@mpsd.mpg.de
+   #
+   # job requirements
+   #SBATCH --nodes=4
+   #SBATCH --ntasks-per-node=2
+   #SBATCH --cpus-per-task=8
+   #SBATCH --time=00:10:00
+
+   module purge
+   mpsd_modules default generic
+
+   module load gcc/10.3.0 openmpi/4.1.1
+
+   export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+
+   # TODO from the MPCDF example, does the same apply here?
+   # For pinning threads correctly:
+   export OMP_PLACES=cores
+
+   srun ./hello-mpi-openmp
+
+CUDA **TODO**
+~~~~~~~~~~~~~
+
+The source code and submission script are in
+``/opt_hpc/examples/slurm-examples/CUDA``.
+
+OpenMP
+~~~~~~
+
+The source code and submission script are in
+``/opt_hpc/examples/slurm-examples/openmp-c``.
+
+.. code:: bash
+
+   #!/bin/bash --login
+   #
+   # Standard output and error
+   #SBATCH -o ./out.%j
+   #SBATCH -e ./err.%j
+   #
+   # working directory
+   #SBATCH -D ./
+   #
+   # partition
+   #SBATCH -p mpsd
+   #
+   # job name
+   #SBATCH -J OpenMP-example
+   #
+   #SBATCH --mail-type=ALL
+   #SBATCH --mail-user=<USERID>@mpsd.mpg.de
+   #
+   # job requirements
+   #SBATCH --nodes=1
+   #SBATCH --ntasks-per-node=1
+   #SBATCH --cpus-per-task=16
+   #SBATCH --time=00:10:00
+
+   module purge
+   mpsd_modules default generic
+
+   module load gcc/10.3.0
+
+   export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+
+   # TODO from the MPCDF example, does the same apply here?
+   # For pinning threads correctly:
+   export OMP_PLACES=cores
+
+   srun ./hello-openmp
+
+Python with numpy or multiprocessing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The source code and submission script are in
+``/opt_hpc/examples/slurm-examples/python-numpy``.
+
+.. code:: bash
+
+   #!/bin/bash --login
+   #
+   # Standard output and error
+   #SBATCH -o ./out.%j
+   #SBATCH -e ./err.%j
+   #
+   # working directory
+   #SBATCH -D ./
+   #
+   # partition
+   #SBATCH -p mpsd
+   #
+   # job name
+   #SBATCH -J OpenMP-example
+   #
+   #SBATCH --mail-type=ALL
+   #SBATCH --mail-user=<USERID>@mpsd.mpg.de
+   #
+   # job requirements
+   #SBATCH --nodes=1
+   #SBATCH --ntasks-per-node=1
+   #SBATCH --cpus-per-task=16
+   #SBATCH --time=00:10:00
+
+   module purge
+   mpsd_modules default generic
+
+   module load anaconda/2022.05
+
+   export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+
+   srun python3 ./hello-numpy.py
+
+Single-core job
+~~~~~~~~~~~~~~~
+
+The source code and submission script are in
+``/opt_hpc/examples/slurm-eaxmples/serial-fortran``.
+
+.. code:: bash
+
+   #!/bin/bash --login
+   #
+   # Standard output and error
+   #SBATCH -o ./out.%j
+   #SBATCH -e ./err.%j
+   #
+   # working directory
+   #SBATCH -D ./
+   #
+   # partition
+   #SBATCH -p mpsd
+   #
+   # job name
+   #SBATCH -J OpenMP-example
+   #
+   #SBATCH --mail-type=ALL
+   #SBATCH --mail-user=<USERID>@mpsd.mpg.de
+   #
+   # job requirements
+   #SBATCH --nodes=1
+   #SBATCH --ntasks-per-node=1
+   #SBATCH --time=00:10:00
+
+   module purge
+   mpsd_modules default generic
+   # TODO do we want to use any modules for this example
+
+   srun ./hello
+
+Serial Python
+~~~~~~~~~~~~~
+
+The source code and submission script are in
+``/opt_hpc/examples/slurm-examples/python-serial``.
+
+.. code:: bash
+
+   #!/bin/bash --login
+   #
+   # Standard output and error
+   #SBATCH -o ./out.%j
+   #SBATCH -e ./err.%j
+   #
+   # working directory
+   #SBATCH -D ./
+   #
+   # partition
+   #SBATCH -p mpsd
+   #
+   # job name
+   #SBATCH -J OpenMP-example
+   #
+   #SBATCH --mail-type=ALL
+   #SBATCH --mail-user=<USERID>@mpsd.mpg.de
+   #
+   # job requirements
+   #SBATCH --nodes=1
+   #SBATCH --ntasks-per-node=1
+   #SBATCH --time=00:10:00
+
+   module purge
+   mpsd_modules default generic
+
+   module load anaconda/2022.05
+
+   export OMP_NUM_THREADS=1  # restrict numpy (and other libraries) to one core
+
+   srun python3 ./hello.py

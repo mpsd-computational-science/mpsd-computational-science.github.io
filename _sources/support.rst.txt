@@ -1,0 +1,7 @@
+Usage questions and support
+===========================
+
+For questions, including installation of software, please contact the
+SSU Computational Science at ssu-cs@mpsd.mpg.de or via the
+``#computing`` stream in
+`Zulip <https://zulip.mpsd.mpg.de/#narrow/stream/3-computing>`__.

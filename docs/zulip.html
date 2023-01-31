@@ -1,127 +1,196 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>8. Zulip &#8212; MPSD SSU Computational Science</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    
-<!-- add `style` or `link` tags with your CSS `@font-face` declarations here -->
-<!-- ... and optionally preload the `woff2` for snappier page loads -->
-
-
-<!-- Google fonts that look 'in-brand'. Would need to store them locally if we want to use them.
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
--->
-
-
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/zulip';</script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="9. Changelog" href="changes.html" />
     <link rel="prev" title="7. Keeper" href="keeper.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
 
-    
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
   <div id="navbar-start">
     
     
+  
 
-<a class="navbar-brand" href="../index.html">
-  <img src="../_static/computational-science-mpsd2.png" class="logo" alt="logo">
+
+<a class="navbar-brand logo" href="../index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/computational-science-mpsd2.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/computational-science-mpsd2.png" class="logo__image only-dark" alt="Logo image">
+  
+  
 </a>
-
-
     
   </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
   
-  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+  <div class="col-lg-9 navbar-header-items">
     <div id="navbar-center" class="mr-auto">
       
       <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../about.html">
-  About
- </a>
-</li>
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../about.html">
+                        About
+                      </a>
+                    </li>
+                
 
-<li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="index.html">
-  Docs
- </a>
-</li>
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Docs
+                      </a>
+                    </li>
+                
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../events.html">
-  Events
- </a>
-</li>
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../events.html">
+                        Events
+                      </a>
+                    </li>
+                
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../gallery.html">
-  Gallery
- </a>
-</li>
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
 
-    
-    <li class="nav-item">
-        <a class="nav-link nav-external" href="https://www.mpsd.mpg.de/imprint">Imprint<i class="fas fa-external-link-alt"></i></a>
-    </li>
-    
-    <li class="nav-item">
-        <a class="nav-link nav-external" href="https://www.mpsd.mpg.de/289505/dataprotection">Privacy Policy<i class="fas fa-external-link-alt"></i></a>
-    </li>
-    
-</ul>
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../support.html">
+                        Support
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.mpsd.mpg.de/imprint">
+                    Imprint
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.mpsd.mpg.de/289505/dataprotection">
+                    Privacy Policy
+                  </a>
+                </li>
+                
+    </ul>
+</nav>
       </div>
       
     </div>
 
     <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
@@ -130,90 +199,322 @@
       
     </div>
   </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
 </div>
-    </nav>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../about.html">
+                        About
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Docs
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../events.html">
+                        Events
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../gallery.html">
+                        Gallery
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../support.html">
+                        Support
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.mpsd.mpg.de/imprint">
+                    Imprint
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.mpsd.mpg.de/289505/dataprotection">
+                    Privacy Policy
+                  </a>
+                </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
     
 
-    <div class="container-xl">
-      <div class="row">
-          
-            
-            <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <div class="bd-toc-item active">
-    <p class="caption">
- <span class="caption-text">
-  Contents:
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="introduction.html">
-   1. Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="overview-it.html">
-   2. Overview IT-related services
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="hpc.html">
-   3. High Performance Computing (HPC)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="version-control.html">
-   4. Version control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="research-data-management.html">
-   5. Research Data Management
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="archive.html">
-   6. Archiving research data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="keeper.html">
-   7. Keeper
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   8. Zulip
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="changes.html">
-   9. Changelog
-  </a>
- </li>
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="overview-it.html">1. Overview computing services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mpsd-hpc.html">2. MPSD HPC system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">3. Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version-control.html">4. Version control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="research-data-management.html">5. Research Data Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archive.html">6. Archiving research data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="keeper.html">7. Keeper</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Zulip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">9. Changelog</a></li>
 </ul>
 
   </div>
 </nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
             </div>
             
-          
-
-          
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
             
+            <article class="bd-article" role="main">
               
-              <div class="toc-item">
-                
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
+  <section id="zulip">
+<h1><span class="section-number">8. </span>Zulip<a class="headerlink" href="#zulip" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2><span class="section-number">8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>Zulip provides chat for distributed teams. It <a class="reference external" href="https://fangohr.github.io/blog/zulip.html">can be argued that chat
+is a useful communication
+mode</a> for organisations,
+in particular in COVID times where remote work maybe unavoidable.</p>
+</section>
+<section id="mpsd">
+<h2><span class="section-number">8.2. </span>MPSD<a class="headerlink" href="#mpsd" title="Permalink to this heading">#</a></h2>
+<p>We have a Zulip chat organisation for the Max Planck Institute for the
+Structure and Dynamics of Matter available at <a class="reference external" href="https://zulip.mpsd.mpg.de">https://zulip.mpsd.mpg.de</a>
+.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Disclaimer</p>
+<p>The Zulip service is experimental, so please do not rely on it as an archive for
+important information as it may be discontinued or fail.</p>
 </div>
+</section>
+<section id="how-to-get-started">
+<h2><span class="section-number">8.3. </span>How to get started?<a class="headerlink" href="#how-to-get-started" title="Permalink to this heading">#</a></h2>
+<p>All the important information is available in Zulip’s help on <a class="reference external" href="https://zulip.mpsd.mpg.de/help/getting-started-with-zulip">Getting
+started with
+Zulip</a>.</p>
+<p>We summarise some key points:</p>
+<section id="streams-and-topics">
+<h3><span class="section-number">8.3.1. </span>Streams and topics<a class="headerlink" href="#streams-and-topics" title="Permalink to this heading">#</a></h3>
+<p>One important topic to understand is that of <em>Streams</em> and <em>topics</em>.</p>
+<p>The conversations are arranged into <em>streams</em>. There are some default
+streams that everybody will join such as <code class="docutils literal notranslate"><span class="pre">general</span></code>, <code class="docutils literal notranslate"><span class="pre">random</span></code> and
+<code class="docutils literal notranslate"><span class="pre">zulip-help</span></code>. Within each stream, there is a (growing) list of
+<em>topics</em>. Each topic gathers multiple messages belonging to that topic.</p>
+<p>See <a class="reference external" href="https://zulip.mpsd.mpg.de/help/about-streams-and-topics">Zulip’s help on streams and
+topics</a>.</p>
+</section>
+<section id="public-and-private-streams">
+<h3><span class="section-number">8.3.2. </span>Public and private streams<a class="headerlink" href="#public-and-private-streams" title="Permalink to this heading">#</a></h3>
+<p>There are <a class="reference external" href="#public-streams">public streams</a> and <a class="reference external" href="#private-streams">private
+streams</a>.</p>
+<p>Private streams are useful to contain discussions within one group or
+department, such as the <code class="docutils literal notranslate"><span class="pre">theory</span></code> department or the IT group. Only
+invited members can see the stream.</p>
+<p>If you would like to create a private stream for your group/department,
+please get in touch with <a class="reference external" href="mailto:zulip-admin&#37;&#52;&#48;mpsd&#46;mpg&#46;de">zulip-admin<span>&#64;</span>mpsd<span>&#46;</span>mpg<span>&#46;</span>de</a> .</p>
+<p>You can leave public streams, such as <code class="docutils literal notranslate"><span class="pre">general</span></code>, <code class="docutils literal notranslate"><span class="pre">computing</span></code>,
+<code class="docutils literal notranslate"><span class="pre">random</span></code> and <code class="docutils literal notranslate"><span class="pre">zulip-help</span></code> if you are not interested in those, or
+change the notification settings.</p>
+</section>
+<section id="private-streams">
+<h3><span class="section-number">8.3.3. </span>Private streams<a class="headerlink" href="#private-streams" title="Permalink to this heading">#</a></h3>
+<p>There are some private streams (for research groups, PhD students etc) -
+you need to be invited to those by a member of the relevant stream
+before you can see them.</p>
+</section>
+<section id="sending-messages">
+<h3><span class="section-number">8.3.4. </span>Sending messages<a class="headerlink" href="#sending-messages" title="Permalink to this heading">#</a></h3>
+<p>You can post messages in a stream (so everybody in the stream can see
+the message), or you can <a class="reference external" href="https://zulip.mpsd.mpg.de/help/private-messages">send a private message to another
+person</a> (or a group
+of other people). Such private messages have no topics.</p>
+</section>
+<section id="notifications">
+<h3><span class="section-number">8.3.5. </span>Notifications<a class="headerlink" href="#notifications" title="Permalink to this heading">#</a></h3>
+<p>You can decide what kind of
+<a class="reference external" href="https://zulip.mpsd.mpg.de/help/#notifications">Notifications</a> you
+would like to receive when new messages arrive. This can be configured
+for streams or for individual topics only.</p>
+</section>
+<section id="muting-topics-streams">
+<h3><span class="section-number">8.3.6. </span>Muting topics/streams<a class="headerlink" href="#muting-topics-streams" title="Permalink to this heading">#</a></h3>
+<p>If there are too many messages on a topic of no interest, you can <em>mute</em>
+that topic or stream (see
+<a class="reference external" href="https://zulip.mpsd.mpg.de/help/#notifications">Notifications</a>).</p>
+</section>
+</section>
+<section id="public-streams">
+<h2><span class="section-number">8.4. </span>Public streams<a class="headerlink" href="#public-streams" title="Permalink to this heading">#</a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">#general</span></code>: use for questions or announcements of general
+interested and work-related content (for example a seminar
+announcements, questions about onboarding, etc)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#random</span></code>: use for non-work related exchange; this can be a
+substitute for coffee table discussions: looking for a plumber,
+suggesting a BBQ, discussing the weather or sports or computers etc…</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#zulip-help</span></code>: use to ask for help in matters regarding use of
+Zulip</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#computing</span></code>: scientific computing related discussions - feel free
+to use this stream to informally ask questions regarding
+computational problems, including high performance computing, data
+analysis and visualisation. If there is an easy answer available,
+this could be a fast way of getting it. Or find that somebody else
+has asked the same question in the past.</p>
+<p>This stream was formerly called <code class="docutils literal notranslate"><span class="pre">#ssu-cs</span></code> (for Scientific Support
+Unit-Computational Science).</p>
+</li>
+</ul>
+<p>If you cannot see one of these streams, click on <a class="reference external" href="https://zulip.mpsd.mpg.de/#streams/all">Subscribe to more
+streams</a> to see which ones
+are accessible.</p>
+</section>
+<section id="desktop-and-smartphone-apps">
+<h2><span class="section-number">8.5. </span>Desktop and smartphone apps<a class="headerlink" href="#desktop-and-smartphone-apps" title="Permalink to this heading">#</a></h2>
+<p>There are <a class="reference external" href="https://zulip.com/apps/mac">Zulip apps for Linux, OSX, Windows Android, iOS and the
+terminal</a> available.</p>
+</section>
+<section id="further-reading">
+<h2><span class="section-number">8.6. </span>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this heading">#</a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Please consult the Zulip help (<a class="reference external" href="https://zulip.mpsd.mpg.de/help">https://zulip.mpsd.mpg.de/help</a>) or post in the <code class="docutils literal notranslate"><span class="pre">#zulip-help</span></code> stream inside the Zulip organisation.</p>
+</div>
+</section>
+</section>
 
-<nav id="bd-toc-nav">
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="keeper.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title"><span class="section-number">7. </span>Keeper</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="changes.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title"><span class="section-number">9. </span>Changelog</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
@@ -280,169 +581,54 @@
 </ul>
 
 </nav>
-              </div>
-              
-              <div class="toc-item">
-                
-              </div>
-              
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
             
           </div>
-          
-
-          
-          
-            
-          
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
-              
-              <div>
-                
-  <div class="section" id="zulip">
-<h1><span class="section-number">8. </span>Zulip<a class="headerlink" href="#zulip" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2><span class="section-number">8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Zulip provides chat for distributed teams. It <a class="reference external" href="https://fangohr.github.io/blog/zulip.html">can be argued that chat
-is a useful communication
-mode</a> for organisations,
-in particular in COVID times where remote work maybe unavoidable.</p>
-</div>
-<div class="section" id="mpsd">
-<h2><span class="section-number">8.2. </span>MPSD<a class="headerlink" href="#mpsd" title="Permalink to this headline">¶</a></h2>
-<p>We have a Zulip chat organisation for the Max Planck Institute for the
-Structure and Dynamics of Matter available at <a class="reference external" href="https://zulip.mpsd.mpg.de">https://zulip.mpsd.mpg.de</a>
-.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Disclaimer</p>
-<p>The Zulip service is experimental, so please do not rely on it as an archive for
-important information as it may be discontinued or fail.</p>
-</div>
-</div>
-<div class="section" id="how-to-get-started">
-<h2><span class="section-number">8.3. </span>How to get started?<a class="headerlink" href="#how-to-get-started" title="Permalink to this headline">¶</a></h2>
-<p>All the important information is available in Zulip’s help on <a class="reference external" href="https://zulip.mpsd.mpg.de/help/getting-started-with-zulip">Getting
-started with
-Zulip</a>.</p>
-<p>We summarise some key points:</p>
-<div class="section" id="streams-and-topics">
-<h3><span class="section-number">8.3.1. </span>Streams and topics<a class="headerlink" href="#streams-and-topics" title="Permalink to this headline">¶</a></h3>
-<p>One important topic to understand is that of <em>Streams</em> and <em>topics</em>.</p>
-<p>The conversations are arranged into <em>streams</em>. There are some default
-streams that everybody will join such as <code class="docutils literal notranslate"><span class="pre">general</span></code>, <code class="docutils literal notranslate"><span class="pre">random</span></code> and
-<code class="docutils literal notranslate"><span class="pre">zulip-help</span></code>. Within each stream, there is a (growing) list of
-<em>topics</em>. Each topic gathers multiple messages belonging to that topic.</p>
-<p>See <a class="reference external" href="https://zulip.mpsd.mpg.de/help/about-streams-and-topics">Zulip’s help on streams and
-topics</a>.</p>
-</div>
-<div class="section" id="public-and-private-streams">
-<h3><span class="section-number">8.3.2. </span>Public and private streams<a class="headerlink" href="#public-and-private-streams" title="Permalink to this headline">¶</a></h3>
-<p>There are <a class="reference external" href="#public-streams">public streams</a> and <a class="reference external" href="#private-streams">private
-streams</a>.</p>
-<p>Private streams are useful to contain discussions within one group or
-department, such as the <code class="docutils literal notranslate"><span class="pre">theory</span></code> department or the IT group. Only
-invited members can see the stream.</p>
-<p>If you would like to create a private stream for your group/department,
-please get in touch with <a class="reference external" href="mailto:zulip-admin&#37;&#52;&#48;mpsd&#46;mpg&#46;de">zulip-admin<span>&#64;</span>mpsd<span>&#46;</span>mpg<span>&#46;</span>de</a> .</p>
-<p>You can leave public streams, such as <code class="docutils literal notranslate"><span class="pre">general</span></code>, <code class="docutils literal notranslate"><span class="pre">computing</span></code>,
-<code class="docutils literal notranslate"><span class="pre">random</span></code> and <code class="docutils literal notranslate"><span class="pre">zulip-help</span></code> if you are not interested in those, or
-change the notification settings.</p>
-</div>
-<div class="section" id="private-streams">
-<h3><span class="section-number">8.3.3. </span>Private streams<a class="headerlink" href="#private-streams" title="Permalink to this headline">¶</a></h3>
-<p>There are some private streams (for research groups, PhD students etc) -
-you need to be invited to those by a member of the relevant stream
-before you can see them.</p>
-</div>
-<div class="section" id="sending-messages">
-<h3><span class="section-number">8.3.4. </span>Sending messages<a class="headerlink" href="#sending-messages" title="Permalink to this headline">¶</a></h3>
-<p>You can post messages in a stream (so everybody in the stream can see
-the message), or you can <a class="reference external" href="https://zulip.mpsd.mpg.de/help/private-messages">send a private message to another
-person</a> (or a group
-of other people). Such private messages have no topics.</p>
-</div>
-<div class="section" id="notifications">
-<h3><span class="section-number">8.3.5. </span>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h3>
-<p>You can decide what kind of
-<a class="reference external" href="https://zulip.mpsd.mpg.de/help/#notifications">Notifications</a> you
-would like to receive when new messages arrive. This can be configured
-for streams or for individual topics only.</p>
-</div>
-<div class="section" id="muting-topics-streams">
-<h3><span class="section-number">8.3.6. </span>Muting topics/streams<a class="headerlink" href="#muting-topics-streams" title="Permalink to this headline">¶</a></h3>
-<p>If there are too many messages on a topic of no interest, you can <em>mute</em>
-that topic or stream (see
-<a class="reference external" href="https://zulip.mpsd.mpg.de/help/#notifications">Notifications</a>).</p>
-</div>
-</div>
-<div class="section" id="public-streams">
-<h2><span class="section-number">8.4. </span>Public streams<a class="headerlink" href="#public-streams" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">#general</span></code>: use for questions or announcements of general
-interested and work-related content (for example a seminar
-announcements, questions about onboarding, etc)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#random</span></code>: use for non-work related exchange; this can be a
-substitute for coffee table discussions: looking for a plumber,
-suggesting a BBQ, discussing the weather or sports or computers etc…</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#zulip-help</span></code>: use to ask for help in matters regarding use of
-Zulip</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#computing</span></code>: scientific computing related discussions - feel free
-to use this stream to informally ask questions regarding
-computational problems, including high performance computing, data
-analysis and visualisation. If there is an easy answer available,
-this could be a fast way of getting it. Or find that somebody else
-has asked the same question in the past.</p>
-<p>This stream was formerly called <code class="docutils literal notranslate"><span class="pre">#ssu-cs</span></code> (for Scientific Support
-Unit-Computational Science).</p>
-</li>
-</ul>
-<p>If you cannot see one of these streams, click on <a class="reference external" href="https://zulip.mpsd.mpg.de/#streams/all">Subscribe to more
-streams</a> to see which ones
-are accessible.</p>
-</div>
-<div class="section" id="desktop-and-smartphone-apps">
-<h2><span class="section-number">8.5. </span>Desktop and smartphone apps<a class="headerlink" href="#desktop-and-smartphone-apps" title="Permalink to this headline">¶</a></h2>
-<p>There are <a class="reference external" href="https://zulip.com/apps/mac">Zulip apps for Linux, OSX, Windows Android, iOS and the
-terminal</a> available.</p>
-</div>
-<div class="section" id="further-reading">
-<h2><span class="section-number">8.6. </span>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Please consult the Zulip help (<a class="reference external" href="https://zulip.mpsd.mpg.de/help">https://zulip.mpsd.mpg.de/help</a>) or post in the <code class="docutils literal notranslate"><span class="pre">#zulip-help</span></code> stream inside the Zulip organisation.</p>
-</div>
-</div>
-</div>
-
-
-              </div>
-              
-              
-              <div class='prev-next-bottom'>
-                
-    <a class='left-prev' id="prev-link" href="keeper.html" title="previous page"><span class="section-number">7. </span>Keeper</a>
-    <a class='right-next' id="next-link" href="changes.html" title="next page"><span class="section-number">9. </span>Changelog</a>
-
-              </div>
-              
-          </main>
-          
-
-      </div>
+        </footer>
+        
+      </main>
     </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    
-    <div class="footer-item">
-      <p class="copyright">
-    &copy; Copyright 2021- Hans Fangohr, MPSD.<br/>
-</p>
-    </div>
-    
   </div>
-</footer>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2021- Hans Fangohr, MPSD.<br>
+
+</p>
+
+  </div>
+  
+</div>
+  </footer>
   </body>
 </html>

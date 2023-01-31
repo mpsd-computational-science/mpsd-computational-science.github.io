@@ -3,6 +3,7 @@ Events
 
 .. contents::
    :local:
+
 2023-02-20 (1 week) Numerical Methods and Practical Skills for Computational Physics Part II
 --------------------------------------------------------------------------------------------
 
@@ -335,8 +336,6 @@ Details: https://www.mpsd.mpg.de/events/29310/574005
 
 One week course not assuming prior Python knowledge - a good starting
 point to get into programming and computation for scientific research.
-
-Teaching materials: https://www.desy.de/~fangohr/teaching/py4cs2022/
 
 Details: https://www.mpsd.mpg.de/events/29267/574005
 

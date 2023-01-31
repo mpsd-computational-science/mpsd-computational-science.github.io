@@ -77,7 +77,7 @@ See `Events <events.rst>`__ for more events.
    Docs <docs/index>
    events
    gallery
-   
+   Support <support>
 
 -----------------------------------------------------------------
 

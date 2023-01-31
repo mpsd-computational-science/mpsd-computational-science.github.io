@@ -4,20 +4,22 @@
    contain the root `toctree` directive.
 
 
-.. raw:: html
+..
+   .. raw:: html
 
-  <br>
+     <br>
 
 
-.. include:: urls.include
+   .. include:: urls.include
 
 
 Computational Science Resources and Documentation
 =================================================
 
-.. raw:: html
+..
+   .. raw:: html
 
-   <br>
+      <br>
 
 .. image:: ../_static/mpsd-cs-logo-with-axis.png
    :align: right
@@ -30,43 +32,50 @@ support unit <../about.html>`__ at the
 `Max Planck Institute for Structure and Dynamics of Matter
 <https://mpsd.mpg.de>`__ in Hamburg, Germany.
 
+..
+   The material here is meant to provide some guidance for research involving
+   computation. See :doc:`introduction`.
+
 The material here is meant to provide some guidance for research involving
-computation. See :doc:`introduction`.
+computation. However, the field of computational science, underpinning
+experimental and theoretical research, is relatively new and developing quickly.
+So whatever (opinionated?) views are expressed here, may not be applicable to
+your research challenge, outdated or simply wrong:
 
-----------------------------------------------------------------
+Please do `get in touch <https://mpsd-computational-science.github.io/about.html#contact>`__
+with any corrections, ideas, need for clarifications and support requests.
 
+Researchers outside the `MPSD <https://mpsd.mpg.de>`__ are welcome to use these
+resources, and are invited to provide feedback for improvements.
+
+
+About these pages
+-----------------
+
+These pages are put together using the `sphinx documentation system
+<http://sphinx-doc.org>`__, and are hosted using `GitHub pages
+<https://pages.github.com>`__.
+
+You can navigate the pages using the cursor keys: cursor to the left and right
+will jump from section to section. Cursors keys up and down scroll the current
+page.
+
+.. note::
+
+  - This is work in progress.
+  - More material and pages will be added.
+  - Please approach us to indicate what is of highest importance for your work.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :hidden:
    :numbered:
 
-   introduction
    overview-it
-   hpc
+   mpsd-hpc
+   software
    version-control
    research-data-management
    archive
    keeper
    zulip
    changes
-
-.. comment:
-   content/reproducibility
-      
-.. comment:
-   content/appendix
-   
-
-
-
-* :ref:`search`
-
-.. comment:
-
-  Indices and tables
-  ==================
-  
-  * :ref:`genindex`
-  * :ref:`modindex`
-
