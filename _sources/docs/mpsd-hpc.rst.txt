@@ -168,7 +168,7 @@ all nodes as well as *specialised* sets of modules for the different
 available architectures. The latter will only run on certain nodes.
 
 A versioning scheme is used for the MPSD software environment to improve
-reproducibility. Currently, all software is available in the ``23a``
+reproducibility. Currently, all software is available in the ``dev-23a``
 release (i.e. the first release in 2023). Additional modules will be
 added to this environment as long as they do not break anything.
 Therefore, users should always specify the version of the modules the
@@ -184,12 +184,12 @@ Calling ``mpsd_modules`` without arguments will show help and list
 available options.
 
 To demonstrate the use of ``mpsd_modules`` we activate the ``generic``
-module set of the current software environment ``23a``. These modules
-can be used on all HPC nodes.
+module set of the current software environment ``dev-23a``. These
+modules can be used on all HPC nodes.
 
 .. code:: bash
 
-   ~$ mpsd_modules 23a
+   ~$ mpsd_modules dev-23a
 
 Now, we can list available modules. At the time of writing this produces
 the following output (truncated):
@@ -511,7 +511,7 @@ for the current node.
 .. code:: bash
 
    ~$ module purge
-   ~$ mpsd_modules generic $MPSD_MICROARCH
+   ~$ mpsd_modules dev-23a $MPSD_MICROARCH
 
 #. Parallel version of octopus
 
@@ -531,8 +531,10 @@ for the current node.
 
    The SSU Computational science maintains a set of configure scripts
    that can be used to compile octopus with standard feature sets. These
-   scripts are available at ``/opt_hpc/examples/octopus``. We use the
-   following script (``foss2021a-mpi-config.sh``) for this compilation:
+   scripts are available at
+   ``/opt_mpsd/linux-debian11/dev-23a/spack-environments/octopus/``. We
+   use the following script (``foss2021a-mpi-config.sh``) for this
+   compilation:
 
    .. code:: bash
 
@@ -541,6 +543,7 @@ for the current node.
       export CFLAGS="-O2 -g"
       export CC="mpicc"
       export FC="mpif90"
+      export MPIEXEC="orterun"
 
       #HG: ugly hack to include rpath while linking
       #    becomes necessary for spack >= 0.19, as it does not set LD_LIBRARY_PATH anymore
@@ -590,7 +593,9 @@ for the current node.
    and use the following configure script
    (``foss2021a-serial-config.sh``):
 
-   #+name foss2021a-serial-config.sh
+   .. raw:: org
+
+      #+name foss2021a-serial-config.sh
 
    .. code:: bash
 

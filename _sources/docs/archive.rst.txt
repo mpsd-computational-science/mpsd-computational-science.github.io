@@ -225,7 +225,7 @@ include
 -  list of authors (including affiliations)
 -  a preferred contact
 -  description of the data (this may include pointers to more detailed
-   documents in the archive, see @@rst::ref:`archive-metadata`)
+   documents in the archive, see :ref:`archive-metadata`)
 -  link to experiment (if appropriate)
 -  publication(s) originating from the data set (a DOI per publication
    is useful)

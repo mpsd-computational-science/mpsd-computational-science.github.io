@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>2. MPSD HPC system &#8212; MPSD SSU Computational Science</title>
   
@@ -520,7 +520,7 @@ stack by providing both a <em>generic</em> set of modules that can be used on
 all nodes as well as <em>specialised</em> sets of modules for the different
 available architectures. The latter will only run on certain nodes.</p>
 <p>A versioning scheme is used for the MPSD software environment to improve
-reproducibility. Currently, all software is available in the <code class="docutils literal notranslate"><span class="pre">23a</span></code>
+reproducibility. Currently, all software is available in the <code class="docutils literal notranslate"><span class="pre">dev-23a</span></code>
 release (i.e. the first release in 2023). Additional modules will be
 added to this environment as long as they do not break anything.
 Therefore, users should always specify the version of the modules the
@@ -534,9 +534,9 @@ the <em>feature set</em> (optional, the <em>generic</em> set is used by default)
 Calling <code class="docutils literal notranslate"><span class="pre">mpsd_modules</span></code> without arguments will show help and list
 available options.</p>
 <p>To demonstrate the use of <code class="docutils literal notranslate"><span class="pre">mpsd_modules</span></code> we activate the <code class="docutils literal notranslate"><span class="pre">generic</span></code>
-module set of the current software environment <code class="docutils literal notranslate"><span class="pre">23a</span></code>. These modules
-can be used on all HPC nodes.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$<span class="w"> </span>mpsd_modules<span class="w"> </span>23a
+module set of the current software environment <code class="docutils literal notranslate"><span class="pre">dev-23a</span></code>. These
+modules can be used on all HPC nodes.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$<span class="w"> </span>mpsd_modules<span class="w"> </span>dev-23a
 </pre></div>
 </div>
 <p>Now, we can list available modules. At the time of writing this produces
@@ -814,7 +814,7 @@ environment variable <code class="docutils literal notranslate"><span class="pre
 <p>First, we remove the <em>generic</em> module set and activate the optimised set
 for the current node.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$<span class="w"> </span>module<span class="w"> </span>purge
-~$<span class="w"> </span>mpsd_modules<span class="w"> </span>generic<span class="w"> </span><span class="nv">$MPSD_MICROARCH</span>
+~$<span class="w"> </span>mpsd_modules<span class="w"> </span>dev-23a<span class="w"> </span><span class="nv">$MPSD_MICROARCH</span>
 </pre></div>
 </div>
 <ol class="arabic">
@@ -831,13 +831,16 @@ using <code class="docutils literal notranslate"><span class="pre">gcc</span> <s
 </div>
 <p>The SSU Computational science maintains a set of configure scripts
 that can be used to compile octopus with standard feature sets. These
-scripts are available at <code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/octopus</span></code>. We use the
-following script (<code class="docutils literal notranslate"><span class="pre">foss2021a-mpi-config.sh</span></code>) for this compilation:</p>
+scripts are available at
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/linux-debian11/dev-23a/spack-environments/octopus/</span></code>. We
+use the following script (<code class="docutils literal notranslate"><span class="pre">foss2021a-mpi-config.sh</span></code>) for this
+compilation:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">FCFLAGS</span><span class="o">=</span><span class="s2">&quot;-O2 -g -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">FFLAGS</span><span class="o">=</span><span class="s2">&quot;-O2 -g -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-O2 -g&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span><span class="s2">&quot;mpicc&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">FC</span><span class="o">=</span><span class="s2">&quot;mpif90&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MPIEXEC</span><span class="o">=</span><span class="s2">&quot;orterun&quot;</span>
 
 <span class="c1">#HG: ugly hack to include rpath while linking</span>
 <span class="c1">#    becomes necessary for spack &gt;= 0.19, as it does not set LD_LIBRARY_PATH anymore</span>
@@ -882,7 +885,6 @@ configuration script.</p>
 </div>
 <p>and use the following configure script
 (<code class="docutils literal notranslate"><span class="pre">foss2021a-serial-config.sh</span></code>):</p>
-<p>#+name foss2021a-serial-config.sh</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">FCFLAGS</span><span class="o">=</span><span class="s2">&quot;-O2 -g -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">FFLAGS</span><span class="o">=</span><span class="s2">&quot;-O2 -g -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-O2 -g&quot;</span>
