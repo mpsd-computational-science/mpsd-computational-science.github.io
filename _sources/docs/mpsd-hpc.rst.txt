@@ -111,15 +111,24 @@ Software
 
 The software on the MPSD HPC system is provided via environment modules.
 This facilitates providing different versions of the same software. The
-software is organised in a hierarchical structure. In order to use a
-module we first have to load a base compiler and MPI. That way we can
-choose between different compilers and MPI implementations for a
-software. More details are given below.
+software is organised in a hierarchical structure.
+
+First, you need to decide which MPSD software environment **version**
+you need. These are named according to calendar years: the first one in
+2023 is \`23a`. In preparation of that version, there is a \`dev-23a\`
+which is used until \`23a\` is completed. In the examples below, this is
+always \`dev-23a`. We select that version using the
+\`mpsd\ :sub:`modules`\ \` command, for example \`mpsd\ :sub:`modules`
+dev-23a`.
+
+In order to use a module we first have to load a base compiler and MPI.
+That way we can choose between different compilers and MPI
+implementations for a software. More details are given below.
 
 From a high-level perspective, the required steps to use a particular
 module are:
 
-#. Activate the desired set of modules (e.g. the *generic* set)
+#. Activate the MPSD software environment version of modules
 #. Search for the module to find available versions and required base
    modules
 #. Load required base modules (such as a compiler)
@@ -130,23 +139,23 @@ TLDR
 
 -  Modules are organised in a hierarchical structure with compiler and
    MPI implementation as base modules.
--  Modules are compiled with two different feature sets. Use
+-  Modules may be compiled with different feature sets. Use
    ``mpsd_modules`` for switching.
 
    -  a generic feature set (runs on all nodes), activated by default
 
       ::
 
-         mpsd_modules default generic
+         mpsd_modules dev-23a
 
    -  architecture-dependent feature sets (depending on the CPU micro
       architecture ``$MPSD_MICROARCH`` of the nodes)
 
       ::
 
-         mpsd_modules default $MPSD_MICROARCH
+         mpsd_modules dev-23a $MPSD_MICROARCH
 
--  To find and load modules:
+-  To subsequently find and load modules:
 
    -  ``module avail``
    -  ``module spider <module-name>``
@@ -156,7 +165,7 @@ TLDR
    toolchains <https://docs.easybuild.io/en/latest/Common-toolchains.html>`__
    and additionally contain all modules required to compile octopus.
 -  Configure scripts to compile octopus are available under
-   ``/opt_hpc/examples/octopus``.
+   ``/opt_mpsd/linux-debian11/dev-23a/spack-environments/octopus/``.
 
 Initial setup
 ~~~~~~~~~~~~~
@@ -198,7 +207,7 @@ the following output (truncated):
 
    ~$ module avail
 
-   ------------ /opt_hpc/linux-debian11/develop/sandybridge/lmod/Core -------------
+   ------------ /opt_mpsd/linux-debian11/develop/sandybridge/lmod/Core -------------
       gcc/10.3.0                       toolchains/foss2021a-mpi
       toolchains/foss2021a-cuda-mpi    toolchains/foss2021a-serial (D)
 
@@ -224,7 +233,7 @@ are available:
    ~$ module load gcc/10.3.0
    ~$ module avail
 
-   --------- /opt_hpc/linux-debian11/develop/sandybridge/lmod/gcc/10.3.0 ----------
+   --------- /opt_mpsd/linux-debian11/develop/sandybridge/lmod/gcc/10.3.0 ----------
       autoconf-archive/2022.02.11               libsigsegv/2.13
       autoconf/2.71                             libtiff/4.4.0
       automake/1.16.3                           libtool/2.4.6
@@ -282,7 +291,7 @@ are available:
       libpciaccess/0.16                         zlib/1.2.13
       libpng/1.6.37                             zstd/1.5.2
 
-   ------------ /opt_hpc/linux-debian11/develop/sandybridge/lmod/Core -------------
+   ------------ /opt_mpsd/linux-debian11/develop/sandybridge/lmod/Core -------------
       gcc/10.3.0                    (L)    toolchains/foss2021a-mpi
       toolchains/foss2021a-cuda-mpi        toolchains/foss2021a-serial (D)
 
@@ -366,7 +375,7 @@ as ``numpy``, ``scipy``, ``matplotlib``, etc.
 
    We can execute a small demo program called ``hello-numpy.py``. The
    file has the following content. The source is available under
-   ``/opt_hpc/examples/slurm-examples/python-numpy``.
+   ``/opt_mpsd/examples/slurm-examples/python-numpy``.
 
    .. code:: python
 
@@ -385,48 +394,62 @@ as ``numpy``, ``scipy``, ``matplotlib``, etc.
       numpy version: 1.21.5
       [ 0  1  4  9 16]
 
-#. Custom conda environment with global conda
+#. Custom conda environment
 
    We can also create a separate conda environment if we need additional
-   Python software or different versions. We can use ``conda`` from the
-   ``anaconda3`` module for this.
+   Python software or different versions. We suggest to use *Miniconda*
+   for this (as documented
+   `here <https://conda.io/projects/conda/en/latest/user-guide/install/linux.html>`__
+   in more detail).
 
-   As an example we create a new environment with a newer version of
-   Python and a specific numpy version. We create the environment in a
-   new folder ``my_conda_env`` in the home directory.
+   First, we have to download the Miniconda installer from
+   https://docs.conda.io/en/latest/miniconda.html#linux-installers.
+   Then, we can run the installer and follow the instructions.
+
+   .. code:: bash
+
+      ~$ wget https://repo.anaconda.com/miniconda/Miniconda3-py310_22.11.1-1-Linux-x86_64.sh
+      ~$ bash Miniconda3-py310_22.11.1-1-Linux-x86_64.sh
+
+   .. note:: Recommendations
+
+      - run ``conda init`` when asked about to get access to the conda
+        executable and
+      - remove the auto-activation of the base environment to avoid potential conflicts:
+        ``conda config --set auto_activate_base false``
+
+        (If you need to activate the base environment, use ``conda activate base``.)
+
+   As an example we now create a new environment, called
+   ``my_conda_env``, with an older version of Python and a specific
+   numpy version from the ``conda-forge`` channel.
 
    ::
 
-      ~$ conda create -p $HOME/my_conda_env python=3.10 numpy=1.23
-
-   .. note::
-
-      It is initially not possible to use ``conda activate`` because the shell is not
-      configured properly. We have to run ``conda init bash`` but this will fail
-      because it tries to also modify the global installation where we do not have
-      write permissions. However, it will modify your ``.bashrc`` as required and
-      this may be enough to use ``conda activate`` and ``conda deactivate`` after
-      logging out and in again. If not you can replace ``conda activate`` with
-      ``source activate`` (which is deprecated but still works at the time of
-      writing).
+      ~$ conda create -n my_conda_env -c conda-forge python=3.9 numpy=1.23
 
    We can now activate the environment and check the versions of Python
    and numpy.
 
    ::
 
-      ~$ conda activate $HOME/my_conda_env
+      ~$ conda activate my_conda_env
       ~$ python --version
-      Python 3.10.8
+      Python 3.9.16
       ~$ python -c "import numpy; print(numpy.__version__)"
-      1.24.1
+      1.23.5
 
    We can deactivate and remove the environment using:
 
    ::
 
-      ~$ conda deactivate $HOME/my_conda_env
-      ~$ conda env remove -p $HOME/my_conda_env
+      ~$ conda deactivate my_conda_env
+      ~$ conda env remove -n my_conda_env
+
+   .. warning::
+
+      The local conda executable becomes unusable if you load and unload the
+      ``anaconda3`` module. If running into this problem start a new shell.
 
 Jupyter notebooks
 ~~~~~~~~~~~~~~~~~
@@ -441,28 +464,26 @@ You can use a Jupyter notebook on a dedicated HPC node as follows:
    WiFi)
 
 #. Request a node for interactive use. For example, 1 node for 600
-   minutes from the ``mpsd`` partition:
+   minutes from the ``public`` partition:
 
    .. code:: bash
 
-      srun -t 600 -n 1 -p mpsd --pty bash
-
-#. If this was successful, you are now in a terminal (bash) session on
-   your dedicated node. We need to fix one thing before you can start
-   Jupyter by typing this command:
-
-   .. code:: bash
-
-      export XDG_RUNTIME_DIR=/tmp/${USER}
+      salloc --nodes=1 --ntasks-per-node=1 --cpus-per-task=1 --time=06:00:00 -p public
 
 #. You can install Jupyter yourself, or you activate an installed
    version with the following commands:
 
    .. code:: bash
 
-      module load anaconda3/2022.05
+      module load anaconda3
 
-#. start the Jupyter notebook (or Jupyter lab) server on that node with
+#. Limit numpy (and other libraries) to the available cores
+
+   .. code:: bash
+
+      export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+#. Start the Jupyter notebook (or Jupyter lab) server on that node with
 
    .. code:: bash
 
@@ -632,14 +653,14 @@ The same general notes about *generic* and optimised module sets
 explained in the previous section apply.
 
 Here, we show two different examples. The sources are available under
-``/opt_hpc/examples/slurm-examples``.
+``/opt_mpsd/examples/slurm-examples``.
 
 #. Serial "Hello world" in Fortran
 
    First, we want to compile the following "hello world" Fortran program
    using ``gcc``. We assume it is saved in a file ``hello.f90``. The
    source is available in
-   ``/opt_hpc/examples/slurm-examples/serial-fortran``.
+   ``/opt_mpsd/examples/slurm-examples/serial-fortran``.
 
    .. code:: fortran
 
@@ -666,7 +687,7 @@ Here, we show two different examples. The sources are available under
    As a second example we compile an MPI-parallelised "Hello world" C
    program, again using ``gcc``. We assume the source is saved in a file
    ``hello-mpi.c`` (source available under
-   ``/opt_hpc/examples/slurm-examples/mpi-c``).
+   ``/opt_mpsd/examples/slurm-examples/mpi-c``).
 
    .. code:: c
 
@@ -715,9 +736,9 @@ Example batch scripts
 
 Here, we show a number of example batch scripts for different types of
 jobs. All examples are available on the HPC system under
-``/opt_hpc/examples/slurm-examples`` together with the example programs.
-We use the ``mpsd`` partition and the *generic* module set for all
-examples.
+``/opt_mpsd/examples/slurm-examples`` together with the example
+programs. We use the ``mpsd`` partition and the *generic* module set for
+all examples.
 
 To test an example on the HPC system we can copy the relevant directory
 into our scratch directory. If required we can compile the code using
@@ -727,7 +748,7 @@ MPI
 ~~~
 
 The source code and submission script are in
-``/opt_hpc/examples/slurm-examples/mpi-c``.
+``/opt_mpsd/examples/slurm-examples/mpi-c``.
 
 .. code:: bash
 
@@ -755,17 +776,17 @@ The source code and submission script are in
    #SBATCH --time=00:10:00
 
    module purge
-   mpsd_modules default generic
+   mpsd_modules dev-23a
 
    module load gcc/10.3.0 openmpi/4.1.1
 
-   srun ./hello-mpi
+   srun --mpi=pmix ./hello-mpi
 
 MPI + OpenMP
 ~~~~~~~~~~~~
 
 The source code and submission script are in
-``/opt_hpc/examples/slurm-examples/mpi-openmp-c``.
+``/opt_mpsd/examples/slurm-examples/mpi-openmp-c``.
 
 .. code:: bash
 
@@ -794,7 +815,7 @@ The source code and submission script are in
    #SBATCH --time=00:10:00
 
    module purge
-   mpsd_modules default generic
+   mpsd_modules dev-23a
 
    module load gcc/10.3.0 openmpi/4.1.1
 
@@ -804,19 +825,19 @@ The source code and submission script are in
    # For pinning threads correctly:
    export OMP_PLACES=cores
 
-   srun ./hello-mpi-openmp
+   srun --mpi=pmix ./hello-mpi-openmp
 
 CUDA **TODO**
 ~~~~~~~~~~~~~
 
 The source code and submission script are in
-``/opt_hpc/examples/slurm-examples/CUDA``.
+``/opt_mpsd/examples/slurm-examples/CUDA``.
 
 OpenMP
 ~~~~~~
 
 The source code and submission script are in
-``/opt_hpc/examples/slurm-examples/openmp-c``.
+``/opt_mpsd/examples/slurm-examples/openmp-c``.
 
 .. code:: bash
 
@@ -845,7 +866,7 @@ The source code and submission script are in
    #SBATCH --time=00:10:00
 
    module purge
-   mpsd_modules default generic
+   mpsd_modules dev-23a
 
    module load gcc/10.3.0
 
@@ -861,7 +882,7 @@ Python with numpy or multiprocessing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The source code and submission script are in
-``/opt_hpc/examples/slurm-examples/python-numpy``.
+``/opt_mpsd/examples/slurm-examples/python-numpy``.
 
 .. code:: bash
 
@@ -890,7 +911,7 @@ The source code and submission script are in
    #SBATCH --time=00:10:00
 
    module purge
-   mpsd_modules default generic
+   mpsd_modules dev-23a
 
    module load anaconda/2022.05
 
@@ -902,7 +923,7 @@ Single-core job
 ~~~~~~~~~~~~~~~
 
 The source code and submission script are in
-``/opt_hpc/examples/slurm-eaxmples/serial-fortran``.
+``/opt_mpsd/examples/slurm-eaxmples/serial-fortran``.
 
 .. code:: bash
 
@@ -930,7 +951,7 @@ The source code and submission script are in
    #SBATCH --time=00:10:00
 
    module purge
-   mpsd_modules default generic
+   mpsd_modules dev-23a
    # TODO do we want to use any modules for this example
 
    srun ./hello
@@ -939,7 +960,7 @@ Serial Python
 ~~~~~~~~~~~~~
 
 The source code and submission script are in
-``/opt_hpc/examples/slurm-examples/python-serial``.
+``/opt_mpsd/examples/slurm-examples/python-serial``.
 
 .. code:: bash
 
@@ -967,7 +988,7 @@ The source code and submission script are in
    #SBATCH --time=00:10:00
 
    module purge
-   mpsd_modules default generic
+   mpsd_modules dev-23a
 
    module load anaconda/2022.05
 

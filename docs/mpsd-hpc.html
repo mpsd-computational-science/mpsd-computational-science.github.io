@@ -464,14 +464,21 @@ the new home and scratch directories. No data will be transfered automatically.<
 <span id="mpsd-hpc-software"></span><h2><span class="section-number">2.4. </span>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h2>
 <p>The software on the MPSD HPC system is provided via environment modules.
 This facilitates providing different versions of the same software. The
-software is organised in a hierarchical structure. In order to use a
-module we first have to load a base compiler and MPI. That way we can
-choose between different compilers and MPI implementations for a
-software. More details are given below.</p>
+software is organised in a hierarchical structure.</p>
+<p>First, you need to decide which MPSD software environment <strong>version</strong>
+you need. These are named according to calendar years: the first one in
+2023 is `23a`. In preparation of that version, there is a `dev-23a`
+which is used until `23a` is completed. In the examples below, this is
+always `dev-23a`. We select that version using the
+`mpsd<sub>modules</sub>` command, for example `mpsd<sub>modules</sub>
+dev-23a`.</p>
+<p>In order to use a module we first have to load a base compiler and MPI.
+That way we can choose between different compilers and MPI
+implementations for a software. More details are given below.</p>
 <p>From a high-level perspective, the required steps to use a particular
 module are:</p>
 <ol class="arabic simple">
-<li><p>Activate the desired set of modules (e.g. the <em>generic</em> set)</p></li>
+<li><p>Activate the MPSD software environment version of modules</p></li>
 <li><p>Search for the module to find available versions and required base
 modules</p></li>
 <li><p>Load required base modules (such as a compiler)</p></li>
@@ -482,23 +489,23 @@ modules</p></li>
 <ul>
 <li><p>Modules are organised in a hierarchical structure with compiler and
 MPI implementation as base modules.</p></li>
-<li><p>Modules are compiled with two different feature sets. Use
+<li><p>Modules may be compiled with different feature sets. Use
 <code class="docutils literal notranslate"><span class="pre">mpsd_modules</span></code> for switching.</p>
 <ul>
 <li><p>a generic feature set (runs on all nodes), activated by default</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpsd_modules</span> <span class="n">default</span> <span class="n">generic</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpsd_modules</span> <span class="n">dev</span><span class="o">-</span><span class="mi">23</span><span class="n">a</span>
 </pre></div>
 </div>
 </li>
 <li><p>architecture-dependent feature sets (depending on the CPU micro
 architecture <code class="docutils literal notranslate"><span class="pre">$MPSD_MICROARCH</span></code> of the nodes)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mpsd_modules default $MPSD_MICROARCH
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mpsd_modules dev-23a $MPSD_MICROARCH
 </pre></div>
 </div>
 </li>
 </ul>
 </li>
-<li><p>To find and load modules:</p>
+<li><p>To subsequently find and load modules:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">avail</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">spider</span> <span class="pre">&lt;module-name&gt;</span></code></p></li>
@@ -509,7 +516,7 @@ architecture <code class="docutils literal notranslate"><span class="pre">$MPSD_
 toolchains</a>
 and additionally contain all modules required to compile octopus.</p></li>
 <li><p>Configure scripts to compile octopus are available under
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/octopus</span></code>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/linux-debian11/dev-23a/spack-environments/octopus/</span></code>.</p></li>
 </ul>
 </section>
 <section id="initial-setup">
@@ -543,7 +550,7 @@ modules can be used on all HPC nodes.</p>
 the following output (truncated):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$<span class="w"> </span>module<span class="w"> </span>avail
 
-------------<span class="w"> </span>/opt_hpc/linux-debian11/develop/sandybridge/lmod/Core<span class="w"> </span>-------------
+------------<span class="w"> </span>/opt_mpsd/linux-debian11/develop/sandybridge/lmod/Core<span class="w"> </span>-------------
 <span class="w">   </span>gcc/10.3.0<span class="w">                       </span>toolchains/foss2021a-mpi
 <span class="w">   </span>toolchains/foss2021a-cuda-mpi<span class="w">    </span>toolchains/foss2021a-serial<span class="w"> </span><span class="o">(</span>D<span class="o">)</span>
 
@@ -566,7 +573,7 @@ are available:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>gcc/10.3.0
 ~$<span class="w"> </span>module<span class="w"> </span>avail
 
----------<span class="w"> </span>/opt_hpc/linux-debian11/develop/sandybridge/lmod/gcc/10.3.0<span class="w"> </span>----------
+---------<span class="w"> </span>/opt_mpsd/linux-debian11/develop/sandybridge/lmod/gcc/10.3.0<span class="w"> </span>----------
 <span class="w">   </span>autoconf-archive/2022.02.11<span class="w">               </span>libsigsegv/2.13
 <span class="w">   </span>autoconf/2.71<span class="w">                             </span>libtiff/4.4.0
 <span class="w">   </span>automake/1.16.3<span class="w">                           </span>libtool/2.4.6
@@ -624,7 +631,7 @@ are available:</p>
 <span class="w">   </span>libpciaccess/0.16<span class="w">                         </span>zlib/1.2.13
 <span class="w">   </span>libpng/1.6.37<span class="w">                             </span>zstd/1.5.2
 
-------------<span class="w"> </span>/opt_hpc/linux-debian11/develop/sandybridge/lmod/Core<span class="w"> </span>-------------
+------------<span class="w"> </span>/opt_mpsd/linux-debian11/develop/sandybridge/lmod/Core<span class="w"> </span>-------------
 <span class="w">   </span>gcc/10.3.0<span class="w">                    </span><span class="o">(</span>L<span class="o">)</span><span class="w">    </span>toolchains/foss2021a-mpi
 <span class="w">   </span>toolchains/foss2021a-cuda-mpi<span class="w">        </span>toolchains/foss2021a-serial<span class="w"> </span><span class="o">(</span>D<span class="o">)</span>
 
@@ -692,7 +699,7 @@ as <code class="docutils literal notranslate"><span class="pre">numpy</span></co
 <li><p>Numpy example</p>
 <p>We can execute a small demo program called <code class="docutils literal notranslate"><span class="pre">hello-numpy.py</span></code>. The
 file has the following content. The source is available under
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/slurm-examples/python-numpy</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/python-numpy</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
@@ -709,40 +716,55 @@ numpy version: 1.21.5
 </pre></div>
 </div>
 </li>
-<li><p>Custom conda environment with global conda</p>
+<li><p>Custom conda environment</p>
 <p>We can also create a separate conda environment if we need additional
-Python software or different versions. We can use <code class="docutils literal notranslate"><span class="pre">conda</span></code> from the
-<code class="docutils literal notranslate"><span class="pre">anaconda3</span></code> module for this.</p>
-<p>As an example we create a new environment with a newer version of
-Python and a specific numpy version. We create the environment in a
-new folder <code class="docutils literal notranslate"><span class="pre">my_conda_env</span></code> in the home directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ conda create -p $HOME/my_conda_env python=3.10 numpy=1.23
+Python software or different versions. We suggest to use <em>Miniconda</em>
+for this (as documented
+<a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/linux.html">here</a>
+in more detail).</p>
+<p>First, we have to download the Miniconda installer from
+<a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html#linux-installers">https://docs.conda.io/en/latest/miniconda.html#linux-installers</a>.
+Then, we can run the installer and follow the instructions.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$<span class="w"> </span>wget<span class="w"> </span>https://repo.anaconda.com/miniconda/Miniconda3-py310_22.11.1-1-Linux-x86_64.sh
+~$<span class="w"> </span>bash<span class="w"> </span>Miniconda3-py310_22.11.1-1-Linux-x86_64.sh
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is initially not possible to use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code> because the shell is not
-configured properly. We have to run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span> <span class="pre">bash</span></code> but this will fail
-because it tries to also modify the global installation where we do not have
-write permissions. However, it will modify your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> as required and
-this may be enough to use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code> after
-logging out and in again. If not you can replace <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span></code> with
-<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span></code> (which is deprecated but still works at the time of
-writing).</p>
+<p>Recommendations</p>
+<ul>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code> when asked about to get access to the conda
+executable and</p></li>
+<li><p>remove the auto-activation of the base environment to avoid potential conflicts:
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span> <span class="pre">auto_activate_base</span> <span class="pre">false</span></code></p>
+<p>(If you need to activate the base environment, use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">base</span></code>.)</p>
+</li>
+</ul>
+</div>
+<p>As an example we now create a new environment, called
+<code class="docutils literal notranslate"><span class="pre">my_conda_env</span></code>, with an older version of Python and a specific
+numpy version from the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ conda create -n my_conda_env -c conda-forge python=3.9 numpy=1.23
+</pre></div>
 </div>
 <p>We can now activate the environment and check the versions of Python
 and numpy.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ conda activate $HOME/my_conda_env
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ conda activate my_conda_env
 ~$ python --version
-Python 3.10.8
+Python 3.9.16
 ~$ python -c &quot;import numpy; print(numpy.__version__)&quot;
-1.24.1
+1.23.5
 </pre></div>
 </div>
 <p>We can deactivate and remove the environment using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ conda deactivate $HOME/my_conda_env
-~$ conda env remove -p $HOME/my_conda_env
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>~$ conda deactivate my_conda_env
+~$ conda env remove -n my_conda_env
 </pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The local conda executable becomes unusable if you load and unload the
+<code class="docutils literal notranslate"><span class="pre">anaconda3</span></code> module. If running into this problem start a new shell.</p>
 </div>
 </li>
 </ol>
@@ -757,25 +779,23 @@ Python 3.10.8
 losing the session in case of short connection interruptions e.g. on
 WiFi)</p></li>
 <li><p>Request a node for interactive use. For example, 1 node for 600
-minutes from the <code class="docutils literal notranslate"><span class="pre">mpsd</span></code> partition:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun<span class="w"> </span>-t<span class="w"> </span><span class="m">600</span><span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>-p<span class="w"> </span>mpsd<span class="w"> </span>--pty<span class="w"> </span>bash
-</pre></div>
-</div>
-</li>
-<li><p>If this was successful, you are now in a terminal (bash) session on
-your dedicated node. We need to fix one thing before you can start
-Jupyter by typing this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span>/tmp/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
+minutes from the <code class="docutils literal notranslate"><span class="pre">public</span></code> partition:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salloc<span class="w"> </span>--nodes<span class="o">=</span><span class="m">1</span><span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">1</span><span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">1</span><span class="w"> </span>--time<span class="o">=</span><span class="m">06</span>:00:00<span class="w"> </span>-p<span class="w"> </span>public
 </pre></div>
 </div>
 </li>
 <li><p>You can install Jupyter yourself, or you activate an installed
 version with the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>anaconda3/2022.05
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>anaconda3
 </pre></div>
 </div>
 </li>
-<li><p>start the Jupyter notebook (or Jupyter lab) server on that node with</p>
+<li><p>Limit numpy (and other libraries) to the available cores</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_CPUS_PER_TASK</span>
+</pre></div>
+</div>
+</li>
+<li><p>Start the Jupyter notebook (or Jupyter lab) server on that node with</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-notebook<span class="w"> </span>--no-browser<span class="w"> </span>--ip<span class="o">=</span><span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}</span>.desy.de
 </pre></div>
 </div>
@@ -919,13 +939,13 @@ these cases it might be necessary to manually load all required modules.
 The same general notes about <em>generic</em> and optimised module sets
 explained in the previous section apply.</p>
 <p>Here, we show two different examples. The sources are available under
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/slurm-examples</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples</span></code>.</p>
 <ol class="arabic">
 <li><p>Serial “Hello world” in Fortran</p>
 <p>First, we want to compile the following “hello world” Fortran program
 using <code class="docutils literal notranslate"><span class="pre">gcc</span></code>. We assume it is saved in a file <code class="docutils literal notranslate"><span class="pre">hello.f90</span></code>. The
 source is available in
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/slurm-examples/serial-fortran</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/serial-fortran</span></code>.</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">hello</span>
 <span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Hello world!&quot;</span>
 <span class="k">end program</span>
@@ -946,7 +966,7 @@ source is available in
 <p>As a second example we compile an MPI-parallelised “Hello world” C
 program, again using <code class="docutils literal notranslate"><span class="pre">gcc</span></code>. We assume the source is saved in a file
 <code class="docutils literal notranslate"><span class="pre">hello-mpi.c</span></code> (source available under
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/slurm-examples/mpi-c</span></code>).</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/mpi-c</span></code>).</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mpi.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
@@ -991,16 +1011,16 @@ Hello world from rank 0 out of 4 on mpsd-hpc-login1.
 <h2><span class="section-number">2.5. </span>Example batch scripts<a class="headerlink" href="#example-batch-scripts" title="Permalink to this heading">#</a></h2>
 <p>Here, we show a number of example batch scripts for different types of
 jobs. All examples are available on the HPC system under
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/slurm-examples</span></code> together with the example programs.
-We use the <code class="docutils literal notranslate"><span class="pre">mpsd</span></code> partition and the <em>generic</em> module set for all
-examples.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples</span></code> together with the example
+programs. We use the <code class="docutils literal notranslate"><span class="pre">mpsd</span></code> partition and the <em>generic</em> module set for
+all examples.</p>
 <p>To test an example on the HPC system we can copy the relevant directory
 into our scratch directory. If required we can compile the code using
 <code class="docutils literal notranslate"><span class="pre">make</span></code> and then submit the job using <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">submission-script.sh</span></code>.</p>
 <section id="mpi">
 <h3><span class="section-number">2.5.1. </span>MPI<a class="headerlink" href="#mpi" title="Permalink to this heading">#</a></h3>
 <p>The source code and submission script are in
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/slurm-examples/mpi-c</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/mpi-c</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#</span>
 <span class="c1"># Standard output and error</span>
@@ -1025,18 +1045,18 @@ into our scratch directory. If required we can compile the code using
 <span class="c1">#SBATCH --time=00:10:00</span>
 
 module<span class="w"> </span>purge
-mpsd_modules<span class="w"> </span>default<span class="w"> </span>generic
+mpsd_modules<span class="w"> </span>dev-23a
 
 module<span class="w"> </span>load<span class="w"> </span>gcc/10.3.0<span class="w"> </span>openmpi/4.1.1
 
-srun<span class="w"> </span>./hello-mpi
+srun<span class="w"> </span>--mpi<span class="o">=</span>pmix<span class="w"> </span>./hello-mpi
 </pre></div>
 </div>
 </section>
 <section id="mpi-openmp">
 <h3><span class="section-number">2.5.2. </span>MPI + OpenMP<a class="headerlink" href="#mpi-openmp" title="Permalink to this heading">#</a></h3>
 <p>The source code and submission script are in
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/slurm-examples/mpi-openmp-c</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/mpi-openmp-c</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#</span>
 <span class="c1"># Standard output and error</span>
@@ -1062,7 +1082,7 @@ srun<span class="w"> </span>./hello-mpi
 <span class="c1">#SBATCH --time=00:10:00</span>
 
 module<span class="w"> </span>purge
-mpsd_modules<span class="w"> </span>default<span class="w"> </span>generic
+mpsd_modules<span class="w"> </span>dev-23a
 
 module<span class="w"> </span>load<span class="w"> </span>gcc/10.3.0<span class="w"> </span>openmpi/4.1.1
 
@@ -1072,19 +1092,19 @@ module<span class="w"> </span>load<span class="w"> </span>gcc/10.3.0<span class=
 <span class="c1"># For pinning threads correctly:</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">OMP_PLACES</span><span class="o">=</span>cores
 
-srun<span class="w"> </span>./hello-mpi-openmp
+srun<span class="w"> </span>--mpi<span class="o">=</span>pmix<span class="w"> </span>./hello-mpi-openmp
 </pre></div>
 </div>
 </section>
 <section id="cuda-todo">
 <h3><span class="section-number">2.5.3. </span>CUDA <strong>TODO</strong><a class="headerlink" href="#cuda-todo" title="Permalink to this heading">#</a></h3>
 <p>The source code and submission script are in
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/slurm-examples/CUDA</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/CUDA</span></code>.</p>
 </section>
 <section id="openmp">
 <h3><span class="section-number">2.5.4. </span>OpenMP<a class="headerlink" href="#openmp" title="Permalink to this heading">#</a></h3>
 <p>The source code and submission script are in
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/slurm-examples/openmp-c</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/openmp-c</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#</span>
 <span class="c1"># Standard output and error</span>
@@ -1110,7 +1130,7 @@ srun<span class="w"> </span>./hello-mpi-openmp
 <span class="c1">#SBATCH --time=00:10:00</span>
 
 module<span class="w"> </span>purge
-mpsd_modules<span class="w"> </span>default<span class="w"> </span>generic
+mpsd_modules<span class="w"> </span>dev-23a
 
 module<span class="w"> </span>load<span class="w"> </span>gcc/10.3.0
 
@@ -1127,7 +1147,7 @@ srun<span class="w"> </span>./hello-openmp
 <section id="python-with-numpy-or-multiprocessing">
 <h3><span class="section-number">2.5.5. </span>Python with numpy or multiprocessing<a class="headerlink" href="#python-with-numpy-or-multiprocessing" title="Permalink to this heading">#</a></h3>
 <p>The source code and submission script are in
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/slurm-examples/python-numpy</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/python-numpy</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#</span>
 <span class="c1"># Standard output and error</span>
@@ -1153,7 +1173,7 @@ srun<span class="w"> </span>./hello-openmp
 <span class="c1">#SBATCH --time=00:10:00</span>
 
 module<span class="w"> </span>purge
-mpsd_modules<span class="w"> </span>default<span class="w"> </span>generic
+mpsd_modules<span class="w"> </span>dev-23a
 
 module<span class="w"> </span>load<span class="w"> </span>anaconda/2022.05
 
@@ -1166,7 +1186,7 @@ srun<span class="w"> </span>python3<span class="w"> </span>./hello-numpy.py
 <section id="single-core-job">
 <h3><span class="section-number">2.5.6. </span>Single-core job<a class="headerlink" href="#single-core-job" title="Permalink to this heading">#</a></h3>
 <p>The source code and submission script are in
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/slurm-eaxmples/serial-fortran</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-eaxmples/serial-fortran</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#</span>
 <span class="c1"># Standard output and error</span>
@@ -1191,7 +1211,7 @@ srun<span class="w"> </span>python3<span class="w"> </span>./hello-numpy.py
 <span class="c1">#SBATCH --time=00:10:00</span>
 
 module<span class="w"> </span>purge
-mpsd_modules<span class="w"> </span>default<span class="w"> </span>generic
+mpsd_modules<span class="w"> </span>dev-23a
 <span class="c1"># TODO do we want to use any modules for this example</span>
 
 srun<span class="w"> </span>./hello
@@ -1201,7 +1221,7 @@ srun<span class="w"> </span>./hello
 <section id="serial-python">
 <h3><span class="section-number">2.5.7. </span>Serial Python<a class="headerlink" href="#serial-python" title="Permalink to this heading">#</a></h3>
 <p>The source code and submission script are in
-<code class="docutils literal notranslate"><span class="pre">/opt_hpc/examples/slurm-examples/python-serial</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/python-serial</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#</span>
 <span class="c1"># Standard output and error</span>
@@ -1226,7 +1246,7 @@ srun<span class="w"> </span>./hello
 <span class="c1">#SBATCH --time=00:10:00</span>
 
 module<span class="w"> </span>purge
-mpsd_modules<span class="w"> </span>default<span class="w"> </span>generic
+mpsd_modules<span class="w"> </span>dev-23a
 
 module<span class="w"> </span>load<span class="w"> </span>anaconda/2022.05
 
