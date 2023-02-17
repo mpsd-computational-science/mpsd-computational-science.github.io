@@ -31,12 +31,11 @@ moment.)
 
 ::
 
-   PARTITION     TIMELIMIT  NODES  NODELIST
-   express         6:00:00      2  mpsd-hpc-ibm-[019-020]
-   interactive     8:00:00      1  mpsd-hpc-ibm-021
-   bigmem       28-00:00:0      8  mpsd-hpc-hp-[001-008]
-   gpu          28-00:00:0      2  mpsd-hpc-gpu-[001-002]
-   public       28-00:00:0     22  mpsd-hpc-ibm-[022-030,035-036,043-049,053-062]
+   PARTITION  AVAIL  TIMELIMIT  NODES NODELIST
+   bigmem        up 7-00:00:00      8 mpsd-hpc-hp-[001-008]
+   gpu           up 7-00:00:00      2 mpsd-hpc-gpu-[001-002]
+   gpu-ayyer     up 7-00:00:00      3 mpsd-hpc-gpu-[003-005]
+   public*       up 7-00:00:00     49 mpsd-hpc-ibm-[001-030,035-036,043-049,053-062]
 
 Please use the two ``gpu`` machines only if your code supports
 nvidia-cuda ;)
