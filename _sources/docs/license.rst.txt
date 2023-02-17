@@ -1,0 +1,17 @@
+.. _license:
+
+License
+=======
+
+.. contents:: :local:
+
+The material on these webpages of the SSU Computational Science is
+licensed under the `Creative Commons Attribution 4.0 International
+license <https://creativecommons.org/licenses/by/4.0/>`__.
+
+In short, you can re-use the material, but need to give attribution. For
+the attribution, please use:
+
+   Hans Fangohr and team, Computational Science, Max Planck Institute
+   for the Structure and Dynamics of Matter, Hamburg, Germany,
+   https://mpsd-computational-science.github.io (2023)

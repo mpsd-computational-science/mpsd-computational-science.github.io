@@ -26,7 +26,8 @@ Job submission
 Job submission is via `Slurm <https://slurm.schedmd.com>`__.
 
 The following partitions are available to all (partial output from
-``sinfo``):
+``sinfo``): (TODO: Only ``public`` and ``bigmem`` available at the
+moment.)
 
 ::
 
@@ -35,14 +36,14 @@ The following partitions are available to all (partial output from
    interactive     8:00:00      1  mpsd-hpc-ibm-021
    bigmem       28-00:00:0      8  mpsd-hpc-hp-[001-008]
    gpu          28-00:00:0      2  mpsd-hpc-gpu-[001-002]
-   mpsd         28-00:00:0     22  mpsd-hpc-ibm-[022-030,035-036,043-049,053-062]
+   public       28-00:00:0     22  mpsd-hpc-ibm-[022-030,035-036,043-049,053-062]
 
 Please use the two ``gpu`` machines only if your code supports
 nvidia-cuda ;)
 
 Resources per node:
 
--  ``express`` / ``interactive`` / ``mpsd`` partitions
+-  ``express`` / ``interactive`` / ``public`` partitions
 
    -  8 physical cores (16 with hyperthreading)
    -  64GB RAM
@@ -97,6 +98,11 @@ Storage and quotas
    #. if 1. and 2. do not resolve the situation, a script will be
       started that deletes some of the files on ``/scratch`` (starting
       with the oldest files). Notice will be given of this procedure.
+
+.. warning::
+
+   ``/scratch`` is not available yet. (Last update: 10 Feb 2023)
+
 
 .. note::
 
@@ -374,8 +380,7 @@ as ``numpy``, ``scipy``, ``matplotlib``, etc.
 #. Numpy example
 
    We can execute a small demo program called ``hello-numpy.py``. The
-   file has the following content. The source is available under
-   ``/opt_mpsd/examples/slurm-examples/python-numpy``.
+   file has the following content.
 
    .. code:: python
 
@@ -411,7 +416,8 @@ as ``numpy``, ``scipy``, ``matplotlib``, etc.
       ~$ wget https://repo.anaconda.com/miniconda/Miniconda3-py310_22.11.1-1-Linux-x86_64.sh
       ~$ bash Miniconda3-py310_22.11.1-1-Linux-x86_64.sh
 
-   .. note:: Recommendations
+   .. admonition:: Recommendations
+      :class: hint
 
       - run ``conda init`` when asked about to get access to the conda
         executable and
@@ -557,36 +563,8 @@ for the current node.
    use the following script (``foss2021a-mpi-config.sh``) for this
    compilation:
 
-   .. code:: bash
-
-      export FCFLAGS="-O2 -g -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz"
-      export FFLAGS="-O2 -g -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz"
-      export CFLAGS="-O2 -g"
-      export CC="mpicc"
-      export FC="mpif90"
-      export MPIEXEC="orterun"
-
-      #HG: ugly hack to include rpath while linking
-      #    becomes necessary for spack >= 0.19, as it does not set LD_LIBRARY_PATH anymore
-      export LDFLAGS=`echo ${LIBRARY_PATH:+:$LIBRARY_PATH} | sed -e 's/:/ -Wl,-rpath=/g'`
-
-      ../configure \
-          --with-libxc-prefix="$MPSD_LIBXC_ROOT" \
-          --with-gsl-prefix="$MPSD_GSL_ROOT" \
-          --with-sparskit="$MPSD_SPARSKIT_ROOT/lib/libskit.a" \
-          --with-nlopt-prefix="$MPSD_NLOPT_ROOT" \
-          --with-fftw-prefix="$MPSD_FFTW_ROOT" \
-          --with-nfft="$MPSD_NFFT_ROOT" \
-          --with-libvdwxc-prefix="$MPSD_LIBVDWXC_ROOT" \
-          --enable-mpi \
-          --enable-openmp \
-          --with-blas="-L$MPSD_FLEXIBLAS_ROOT/lib -lflexiblas -lgfortran" \
-          --with-elpa-prefix="$MPSD_ELPA_ROOT" \
-          --with-pfft-prefix="$MPSD_PFFT_ROOT" \
-          --with-pnfft-prefix="$MPSD_PNFFT_ROOT" \
-          --with-blacs="-L$MPSD_SCALAPACK_ROOT/lib -lscalapack -lflexiblas -lgfortran" \
-          --with-berkeleygw-prefix="$MPSD_BERKELEYGW_ROOT" \
-          "$@"
+   .. literalinclude:: ../../external-sources/spack-environments/octopus/foss2021a-mpi-config.sh
+      :language: bash
 
    Now, we can configure and compile octopus:
 
@@ -614,32 +592,9 @@ for the current node.
    and use the following configure script
    (``foss2021a-serial-config.sh``):
 
-   .. raw:: org
-
-      #+name foss2021a-serial-config.sh
-
-   .. code:: bash
-
-      export FCFLAGS="-O2 -g -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz"
-      export FFLAGS="-O2 -g -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz"
-      export CFLAGS="-O2 -g"
-
-      #HG: ugly hack to include rpath while linking
-      #    becomes necessary for spack >= 0.19, as it does not set LD_LIBRARY_PATH anymore
-      export LDFLAGS=`echo ${LIBRARY_PATH:+:$LIBRARY_PATH} | sed -e 's/:/ -Wl,-rpath=/g'`
-
-      ../configure \
-          --with-libxc-prefix="$MPSD_LIBXC_ROOT" \
-          --with-gsl-prefix="$MPSD_GSL_ROOT" \
-          --with-sparskit="$MPSD_SPARSKIT_ROOT/lib/libskit.a" \
-          --with-nlopt-prefix="$MPSD_NLOPT_ROOT" \
-          --with-berkeleygw-prefix="$MPSD_BERKELEYGW_ROOT" \
-          --with-fftw-prefix="$MPSD_FFTW_ROOT" \
-          --with-nfft="$MPSD_NFFT_ROOT" \
-          --with-libvdwxc-prefix="$MPSD_LIBVDWXC_ROOT" \
-          --enable-openmp \
-          --with-blas="-L$MPSD_FLEXIBLAS_ROOT/lib -lflexiblas -lgfortran" \
-          "$@"
+   .. literalinclude:: ../../external-sources/spack-environments/octopus/foss2021a-serial-config.sh
+      :language: bash
+      :lines: -20
 
    We can then follow the instructions from the previous section.
 
@@ -662,11 +617,8 @@ Here, we show two different examples. The sources are available under
    source is available in
    ``/opt_mpsd/examples/slurm-examples/serial-fortran``.
 
-   .. code:: fortran
-
-      program hello
-        write(*,*) "Hello world!"
-      end program
+   .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/serial-fortran/hello.f90
+      :language: bash
 
    We have to load ``gcc``:
 
@@ -689,27 +641,8 @@ Here, we show two different examples. The sources are available under
    ``hello-mpi.c`` (source available under
    ``/opt_mpsd/examples/slurm-examples/mpi-c``).
 
-   .. code:: c
-
-      #include <mpi.h>
-      #include <stdio.h>
-
-      int main(int argc, char** argv) {
-          MPI_Init(NULL, NULL);
-
-          int world_size, world_rank;
-          MPI_Comm_size(MPI_COMM_WORLD, &world_size);
-          MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
-
-          char processor_name[MPI_MAX_PROCESSOR_NAME];
-          int name_len;
-          MPI_Get_processor_name(processor_name, &name_len);
-
-          printf("Hello world from rank %d out of %d on %s.\n",
-                 world_rank, world_size, processor_name);
-
-          MPI_Finalize();
-      }
+   .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/mpi-c/hello-mpi.c
+      :language: bash
 
    We have to load ``gcc`` and ``openmpi``:
 
@@ -728,8 +661,9 @@ Here, we show two different examples. The sources are available under
       Hello world from rank 1 out of 4 on mpsd-hpc-login1.
       Hello world from rank 0 out of 4 on mpsd-hpc-login1.
 
-   *Note*: Inside a slurm job ``srun`` has to be used instead of
-   ``orterun``.
+   .. note::
+
+      Inside a slurm job ``srun`` has to be used instead of ``orterun``.
 
 Example batch scripts
 ---------------------
@@ -750,37 +684,8 @@ MPI
 The source code and submission script are in
 ``/opt_mpsd/examples/slurm-examples/mpi-c``.
 
-.. code:: bash
-
-   #!/bin/bash --login
-   #
-   # Standard output and error
-   #SBATCH -o ./out.%j
-   #SBATCH -e ./err.%j
-   #
-   # working directory
-   #SBATCH -D ./
-   #
-   # partition
-   #SBATCH -p mpsd
-   #
-   # job name
-   #SBATCH -J MPI-example
-   #
-   #SBATCH --mail-type=ALL
-   #SBATCH --mail-user=<USERID>@mpsd.mpg.de
-   #
-   # job requirements
-   #SBATCH --nodes=4
-   #SBATCH --ntasks-per-node=16
-   #SBATCH --time=00:10:00
-
-   module purge
-   mpsd_modules dev-23a
-
-   module load gcc/10.3.0 openmpi/4.1.1
-
-   srun --mpi=pmix ./hello-mpi
+.. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/mpi-c/submission-script.sh
+   :language: bash
 
 MPI + OpenMP
 ~~~~~~~~~~~~
@@ -788,50 +693,8 @@ MPI + OpenMP
 The source code and submission script are in
 ``/opt_mpsd/examples/slurm-examples/mpi-openmp-c``.
 
-.. code:: bash
-
-   #!/bin/bash --login
-   #
-   # Standard output and error
-   #SBATCH -o ./out.%j
-   #SBATCH -e ./err.%j
-   #
-   # working directory
-   #SBATCH -D ./
-   #
-   # partition
-   #SBATCH -p mpsd
-   #
-   # job name
-   #SBATCH -J MPI-OpenMP-example
-   #
-   #SBATCH --mail-type=ALL
-   #SBATCH --mail-user=<USERID>@mpsd.mpg.de
-   #
-   # job requirements
-   #SBATCH --nodes=4
-   #SBATCH --ntasks-per-node=2
-   #SBATCH --cpus-per-task=8
-   #SBATCH --time=00:10:00
-
-   module purge
-   mpsd_modules dev-23a
-
-   module load gcc/10.3.0 openmpi/4.1.1
-
-   export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
-
-   # TODO from the MPCDF example, does the same apply here?
-   # For pinning threads correctly:
-   export OMP_PLACES=cores
-
-   srun --mpi=pmix ./hello-mpi-openmp
-
-CUDA **TODO**
-~~~~~~~~~~~~~
-
-The source code and submission script are in
-``/opt_mpsd/examples/slurm-examples/CUDA``.
+.. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/mpi-openmp-c/submission-script.sh
+   :language: bash
 
 OpenMP
 ~~~~~~
@@ -839,44 +702,8 @@ OpenMP
 The source code and submission script are in
 ``/opt_mpsd/examples/slurm-examples/openmp-c``.
 
-.. code:: bash
-
-   #!/bin/bash --login
-   #
-   # Standard output and error
-   #SBATCH -o ./out.%j
-   #SBATCH -e ./err.%j
-   #
-   # working directory
-   #SBATCH -D ./
-   #
-   # partition
-   #SBATCH -p mpsd
-   #
-   # job name
-   #SBATCH -J OpenMP-example
-   #
-   #SBATCH --mail-type=ALL
-   #SBATCH --mail-user=<USERID>@mpsd.mpg.de
-   #
-   # job requirements
-   #SBATCH --nodes=1
-   #SBATCH --ntasks-per-node=1
-   #SBATCH --cpus-per-task=16
-   #SBATCH --time=00:10:00
-
-   module purge
-   mpsd_modules dev-23a
-
-   module load gcc/10.3.0
-
-   export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
-
-   # TODO from the MPCDF example, does the same apply here?
-   # For pinning threads correctly:
-   export OMP_PLACES=cores
-
-   srun ./hello-openmp
+.. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/openmp-c/submission-script.sh
+   :language: bash
 
 Python with numpy or multiprocessing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -884,77 +711,17 @@ Python with numpy or multiprocessing
 The source code and submission script are in
 ``/opt_mpsd/examples/slurm-examples/python-numpy``.
 
-.. code:: bash
-
-   #!/bin/bash --login
-   #
-   # Standard output and error
-   #SBATCH -o ./out.%j
-   #SBATCH -e ./err.%j
-   #
-   # working directory
-   #SBATCH -D ./
-   #
-   # partition
-   #SBATCH -p mpsd
-   #
-   # job name
-   #SBATCH -J OpenMP-example
-   #
-   #SBATCH --mail-type=ALL
-   #SBATCH --mail-user=<USERID>@mpsd.mpg.de
-   #
-   # job requirements
-   #SBATCH --nodes=1
-   #SBATCH --ntasks-per-node=1
-   #SBATCH --cpus-per-task=16
-   #SBATCH --time=00:10:00
-
-   module purge
-   mpsd_modules dev-23a
-
-   module load anaconda/2022.05
-
-   export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
-
-   srun python3 ./hello-numpy.py
+.. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/python-numpy/submission-script.sh
+   :language: bash
 
 Single-core job
 ~~~~~~~~~~~~~~~
 
 The source code and submission script are in
-``/opt_mpsd/examples/slurm-eaxmples/serial-fortran``.
+``/opt_mpsd/examples/slurm-examples/serial-fortran``.
 
-.. code:: bash
-
-   #!/bin/bash --login
-   #
-   # Standard output and error
-   #SBATCH -o ./out.%j
-   #SBATCH -e ./err.%j
-   #
-   # working directory
-   #SBATCH -D ./
-   #
-   # partition
-   #SBATCH -p mpsd
-   #
-   # job name
-   #SBATCH -J OpenMP-example
-   #
-   #SBATCH --mail-type=ALL
-   #SBATCH --mail-user=<USERID>@mpsd.mpg.de
-   #
-   # job requirements
-   #SBATCH --nodes=1
-   #SBATCH --ntasks-per-node=1
-   #SBATCH --time=00:10:00
-
-   module purge
-   mpsd_modules dev-23a
-   # TODO do we want to use any modules for this example
-
-   srun ./hello
+.. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/serial-fortran/submission-script.sh
+   :language: bash
 
 Serial Python
 ~~~~~~~~~~~~~
@@ -962,36 +729,5 @@ Serial Python
 The source code and submission script are in
 ``/opt_mpsd/examples/slurm-examples/python-serial``.
 
-.. code:: bash
-
-   #!/bin/bash --login
-   #
-   # Standard output and error
-   #SBATCH -o ./out.%j
-   #SBATCH -e ./err.%j
-   #
-   # working directory
-   #SBATCH -D ./
-   #
-   # partition
-   #SBATCH -p mpsd
-   #
-   # job name
-   #SBATCH -J OpenMP-example
-   #
-   #SBATCH --mail-type=ALL
-   #SBATCH --mail-user=<USERID>@mpsd.mpg.de
-   #
-   # job requirements
-   #SBATCH --nodes=1
-   #SBATCH --ntasks-per-node=1
-   #SBATCH --time=00:10:00
-
-   module purge
-   mpsd_modules dev-23a
-
-   module load anaconda/2022.05
-
-   export OMP_NUM_THREADS=1  # restrict numpy (and other libraries) to one core
-
-   srun python3 ./hello.py
+.. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/python-serial/submission-script.sh
+   :language: bash

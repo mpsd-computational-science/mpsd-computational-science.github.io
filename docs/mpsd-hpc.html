@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>2. MPSD HPC system &#8212; MPSD SSU Computational Science</title>
   
@@ -330,7 +330,8 @@
 <li class="toctree-l1"><a class="reference internal" href="archive.html">6. Archiving research data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="keeper.html">7. Keeper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zulip.html">8. Zulip</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changes.html">9. Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">9. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">10. Changelog</a></li>
 </ul>
 
   </div>
@@ -383,20 +384,21 @@ HPC cluster. The cluster will be unavailable until the end of this maintenance.<
 <h2><span class="section-number">2.2. </span>Job submission<a class="headerlink" href="#job-submission" title="Permalink to this heading">#</a></h2>
 <p>Job submission is via <a class="reference external" href="https://slurm.schedmd.com">Slurm</a>.</p>
 <p>The following partitions are available to all (partial output from
-<code class="docutils literal notranslate"><span class="pre">sinfo</span></code>):</p>
+<code class="docutils literal notranslate"><span class="pre">sinfo</span></code>): (TODO: Only <code class="docutils literal notranslate"><span class="pre">public</span></code> and <code class="docutils literal notranslate"><span class="pre">bigmem</span></code> available at the
+moment.)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PARTITION</span>     <span class="n">TIMELIMIT</span>  <span class="n">NODES</span>  <span class="n">NODELIST</span>
 <span class="n">express</span>         <span class="mi">6</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>      <span class="mi">2</span>  <span class="n">mpsd</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">ibm</span><span class="o">-</span><span class="p">[</span><span class="mi">019</span><span class="o">-</span><span class="mi">020</span><span class="p">]</span>
 <span class="n">interactive</span>     <span class="mi">8</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>      <span class="mi">1</span>  <span class="n">mpsd</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">ibm</span><span class="o">-</span><span class="mi">021</span>
 <span class="n">bigmem</span>       <span class="mi">28</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">0</span>      <span class="mi">8</span>  <span class="n">mpsd</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">hp</span><span class="o">-</span><span class="p">[</span><span class="mi">001</span><span class="o">-</span><span class="mi">008</span><span class="p">]</span>
 <span class="n">gpu</span>          <span class="mi">28</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">0</span>      <span class="mi">2</span>  <span class="n">mpsd</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">gpu</span><span class="o">-</span><span class="p">[</span><span class="mi">001</span><span class="o">-</span><span class="mi">002</span><span class="p">]</span>
-<span class="n">mpsd</span>         <span class="mi">28</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">0</span>     <span class="mi">22</span>  <span class="n">mpsd</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">ibm</span><span class="o">-</span><span class="p">[</span><span class="mi">022</span><span class="o">-</span><span class="mi">030</span><span class="p">,</span><span class="mi">035</span><span class="o">-</span><span class="mi">036</span><span class="p">,</span><span class="mi">043</span><span class="o">-</span><span class="mi">049</span><span class="p">,</span><span class="mi">053</span><span class="o">-</span><span class="mi">062</span><span class="p">]</span>
+<span class="n">public</span>       <span class="mi">28</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">0</span>     <span class="mi">22</span>  <span class="n">mpsd</span><span class="o">-</span><span class="n">hpc</span><span class="o">-</span><span class="n">ibm</span><span class="o">-</span><span class="p">[</span><span class="mi">022</span><span class="o">-</span><span class="mi">030</span><span class="p">,</span><span class="mi">035</span><span class="o">-</span><span class="mi">036</span><span class="p">,</span><span class="mi">043</span><span class="o">-</span><span class="mi">049</span><span class="p">,</span><span class="mi">053</span><span class="o">-</span><span class="mi">062</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Please use the two <code class="docutils literal notranslate"><span class="pre">gpu</span></code> machines only if your code supports
 nvidia-cuda ;)</p>
 <p>Resources per node:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">express</span></code> / <code class="docutils literal notranslate"><span class="pre">interactive</span></code> / <code class="docutils literal notranslate"><span class="pre">mpsd</span></code> partitions</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">express</span></code> / <code class="docutils literal notranslate"><span class="pre">interactive</span></code> / <code class="docutils literal notranslate"><span class="pre">public</span></code> partitions</p>
 <ul>
 <li><p>8 physical cores (16 with hyperthreading)</p></li>
 <li><p>64GB RAM</p></li>
@@ -453,6 +455,10 @@ with the oldest files). Notice will be given of this procedure.</p></li>
 </ol>
 </li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">/scratch</span></code> is not available yet. (Last update: 10 Feb 2023)</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The backup of the old HPC installation is available under
@@ -698,8 +704,7 @@ as <code class="docutils literal notranslate"><span class="pre">numpy</span></co
 <ol class="arabic">
 <li><p>Numpy example</p>
 <p>We can execute a small demo program called <code class="docutils literal notranslate"><span class="pre">hello-numpy.py</span></code>. The
-file has the following content. The source is available under
-<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/python-numpy</span></code>.</p>
+file has the following content.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
@@ -729,9 +734,8 @@ Then, we can run the installer and follow the instructions.</p>
 ~$<span class="w"> </span>bash<span class="w"> </span>Miniconda3-py310_22.11.1-1-Linux-x86_64.sh
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Recommendations</p>
+<div class="hint admonition">
+<p class="admonition-title">Recommendations</p>
 <ul>
 <li><p>run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code> when asked about to get access to the conda
 executable and</p></li>
@@ -860,7 +864,6 @@ compilation:</p>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-O2 -g&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span><span class="s2">&quot;mpicc&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">FC</span><span class="o">=</span><span class="s2">&quot;mpif90&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">MPIEXEC</span><span class="o">=</span><span class="s2">&quot;orterun&quot;</span>
 
 <span class="c1">#HG: ugly hack to include rpath while linking</span>
 <span class="c1">#    becomes necessary for spack &gt;= 0.19, as it does not set LD_LIBRARY_PATH anymore</span>
@@ -946,9 +949,9 @@ explained in the previous section apply.</p>
 using <code class="docutils literal notranslate"><span class="pre">gcc</span></code>. We assume it is saved in a file <code class="docutils literal notranslate"><span class="pre">hello.f90</span></code>. The
 source is available in
 <code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/serial-fortran</span></code>.</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">program </span><span class="n">hello</span>
-<span class="w">  </span><span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Hello world!&quot;</span>
-<span class="k">end program</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>program<span class="w"> </span>hello
+<span class="w">  </span>write<span class="o">(</span>*,*<span class="o">)</span><span class="w"> </span><span class="s2">&quot;Hello world!&quot;</span>
+end<span class="w"> </span>program
 </pre></div>
 </div>
 <p>We have to load <code class="docutils literal notranslate"><span class="pre">gcc</span></code>:</p>
@@ -967,25 +970,27 @@ source is available in
 program, again using <code class="docutils literal notranslate"><span class="pre">gcc</span></code>. We assume the source is saved in a file
 <code class="docutils literal notranslate"><span class="pre">hello-mpi.c</span></code> (source available under
 <code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/mpi-c</span></code>).</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mpi.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;mpi.h&gt;</span>
+<span class="c1">#include &lt;stdio.h&gt;</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">MPI_Init</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+int<span class="w"> </span>main<span class="o">(</span>int<span class="w"> </span>argc,<span class="w"> </span>char**<span class="w"> </span>argv<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>MPI_Init<span class="o">(</span>NULL,<span class="w"> </span>NULL<span class="o">)</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">world_size</span><span class="p">,</span><span class="w"> </span><span class="n">world_rank</span><span class="p">;</span>
-<span class="w">    </span><span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">world_size</span><span class="p">);</span>
-<span class="w">    </span><span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">world_rank</span><span class="p">);</span>
+<span class="w">    </span>int<span class="w"> </span>world_size<span class="p">;</span>
+<span class="w">    </span>MPI_Comm_size<span class="o">(</span>MPI_COMM_WORLD,<span class="w"> </span><span class="p">&amp;</span>world_size<span class="o">)</span><span class="p">;</span>
 
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">processor_name</span><span class="p">[</span><span class="n">MPI_MAX_PROCESSOR_NAME</span><span class="p">];</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">name_len</span><span class="p">;</span>
-<span class="w">    </span><span class="n">MPI_Get_processor_name</span><span class="p">(</span><span class="n">processor_name</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">name_len</span><span class="p">);</span>
+<span class="w">    </span>int<span class="w"> </span>world_rank<span class="p">;</span>
+<span class="w">    </span>MPI_Comm_rank<span class="o">(</span>MPI_COMM_WORLD,<span class="w"> </span><span class="p">&amp;</span>world_rank<span class="o">)</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world from rank %d out of %d on %s.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-<span class="w">           </span><span class="n">world_rank</span><span class="p">,</span><span class="w"> </span><span class="n">world_size</span><span class="p">,</span><span class="w"> </span><span class="n">processor_name</span><span class="p">);</span>
+<span class="w">    </span>char<span class="w"> </span>processor_name<span class="o">[</span>MPI_MAX_PROCESSOR_NAME<span class="o">]</span><span class="p">;</span>
+<span class="w">    </span>int<span class="w"> </span>name_len<span class="p">;</span>
+<span class="w">    </span>MPI_Get_processor_name<span class="o">(</span>processor_name,<span class="w"> </span><span class="p">&amp;</span>name_len<span class="o">)</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">MPI_Finalize</span><span class="p">();</span>
-<span class="p">}</span>
+<span class="w">    </span>printf<span class="o">(</span><span class="s2">&quot;Hello world from rank %d out of %d on %s.\n&quot;</span>,
+<span class="w">           </span>world_rank,<span class="w"> </span>world_size,<span class="w"> </span>processor_name<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>MPI_Finalize<span class="o">()</span><span class="p">;</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <p>We have to load <code class="docutils literal notranslate"><span class="pre">gcc</span></code> and <code class="docutils literal notranslate"><span class="pre">openmpi</span></code>:</p>
@@ -1001,8 +1006,10 @@ Hello world from rank 1 out of 4 on mpsd-hpc-login1.
 Hello world from rank 0 out of 4 on mpsd-hpc-login1.
 </pre></div>
 </div>
-<p><em>Note</em>: Inside a slurm job <code class="docutils literal notranslate"><span class="pre">srun</span></code> has to be used instead of
-<code class="docutils literal notranslate"><span class="pre">orterun</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Inside a slurm job <code class="docutils literal notranslate"><span class="pre">srun</span></code> has to be used instead of <code class="docutils literal notranslate"><span class="pre">orterun</span></code>.</p>
+</div>
 </li>
 </ol>
 </section>
@@ -1031,25 +1038,21 @@ into our scratch directory. If required we can compile the code using
 <span class="c1">#SBATCH -D ./</span>
 <span class="c1">#</span>
 <span class="c1"># partition</span>
-<span class="c1">#SBATCH -p mpsd</span>
+<span class="c1">#SBATCH -p public</span>
 <span class="c1">#</span>
 <span class="c1"># job name</span>
 <span class="c1">#SBATCH -J MPI-example</span>
 <span class="c1">#</span>
 <span class="c1">#SBATCH --mail-type=ALL</span>
-<span class="c1">#SBATCH --mail-user=&lt;USERID&gt;@mpsd.mpg.de</span>
 <span class="c1">#</span>
 <span class="c1"># job requirements</span>
 <span class="c1">#SBATCH --nodes=4</span>
 <span class="c1">#SBATCH --ntasks-per-node=16</span>
 <span class="c1">#SBATCH --time=00:10:00</span>
 
-module<span class="w"> </span>purge
-mpsd_modules<span class="w"> </span>dev-23a
+.<span class="w"> </span>setup-env.sh
 
-module<span class="w"> </span>load<span class="w"> </span>gcc/10.3.0<span class="w"> </span>openmpi/4.1.1
-
-srun<span class="w"> </span>--mpi<span class="o">=</span>pmix<span class="w"> </span>./hello-mpi
+srun<span class="w"> </span>./hello-mpi
 </pre></div>
 </div>
 </section>
@@ -1067,13 +1070,12 @@ srun<span class="w"> </span>--mpi<span class="o">=</span>pmix<span class="w"> </
 <span class="c1">#SBATCH -D ./</span>
 <span class="c1">#</span>
 <span class="c1"># partition</span>
-<span class="c1">#SBATCH -p mpsd</span>
+<span class="c1">#SBATCH -p public</span>
 <span class="c1">#</span>
 <span class="c1"># job name</span>
 <span class="c1">#SBATCH -J MPI-OpenMP-example</span>
 <span class="c1">#</span>
 <span class="c1">#SBATCH --mail-type=ALL</span>
-<span class="c1">#SBATCH --mail-user=&lt;USERID&gt;@mpsd.mpg.de</span>
 <span class="c1">#</span>
 <span class="c1"># job requirements</span>
 <span class="c1">#SBATCH --nodes=4</span>
@@ -1081,10 +1083,7 @@ srun<span class="w"> </span>--mpi<span class="o">=</span>pmix<span class="w"> </
 <span class="c1">#SBATCH --cpus-per-task=8</span>
 <span class="c1">#SBATCH --time=00:10:00</span>
 
-module<span class="w"> </span>purge
-mpsd_modules<span class="w"> </span>dev-23a
-
-module<span class="w"> </span>load<span class="w"> </span>gcc/10.3.0<span class="w"> </span>openmpi/4.1.1
+.<span class="w"> </span>setup-env.sh
 
 <span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span>
 
@@ -1092,17 +1091,12 @@ module<span class="w"> </span>load<span class="w"> </span>gcc/10.3.0<span class=
 <span class="c1"># For pinning threads correctly:</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">OMP_PLACES</span><span class="o">=</span>cores
 
-srun<span class="w"> </span>--mpi<span class="o">=</span>pmix<span class="w"> </span>./hello-mpi-openmp
+srun<span class="w"> </span>./hello-mpi-openmp
 </pre></div>
 </div>
 </section>
-<section id="cuda-todo">
-<h3><span class="section-number">2.5.3. </span>CUDA <strong>TODO</strong><a class="headerlink" href="#cuda-todo" title="Permalink to this heading">#</a></h3>
-<p>The source code and submission script are in
-<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/CUDA</span></code>.</p>
-</section>
 <section id="openmp">
-<h3><span class="section-number">2.5.4. </span>OpenMP<a class="headerlink" href="#openmp" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.5.3. </span>OpenMP<a class="headerlink" href="#openmp" title="Permalink to this heading">#</a></h3>
 <p>The source code and submission script are in
 <code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/openmp-c</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
@@ -1115,24 +1109,18 @@ srun<span class="w"> </span>--mpi<span class="o">=</span>pmix<span class="w"> </
 <span class="c1">#SBATCH -D ./</span>
 <span class="c1">#</span>
 <span class="c1"># partition</span>
-<span class="c1">#SBATCH -p mpsd</span>
+<span class="c1">#SBATCH -p public</span>
 <span class="c1">#</span>
 <span class="c1"># job name</span>
 <span class="c1">#SBATCH -J OpenMP-example</span>
 <span class="c1">#</span>
 <span class="c1">#SBATCH --mail-type=ALL</span>
-<span class="c1">#SBATCH --mail-user=&lt;USERID&gt;@mpsd.mpg.de</span>
 <span class="c1">#</span>
 <span class="c1"># job requirements</span>
 <span class="c1">#SBATCH --nodes=1</span>
 <span class="c1">#SBATCH --ntasks-per-node=1</span>
 <span class="c1">#SBATCH --cpus-per-task=16</span>
 <span class="c1">#SBATCH --time=00:10:00</span>
-
-module<span class="w"> </span>purge
-mpsd_modules<span class="w"> </span>dev-23a
-
-module<span class="w"> </span>load<span class="w"> </span>gcc/10.3.0
 
 <span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="si">${</span><span class="nv">SLURM_CPUS_PER_TASK</span><span class="si">}</span>
 
@@ -1145,7 +1133,7 @@ srun<span class="w"> </span>./hello-openmp
 </div>
 </section>
 <section id="python-with-numpy-or-multiprocessing">
-<h3><span class="section-number">2.5.5. </span>Python with numpy or multiprocessing<a class="headerlink" href="#python-with-numpy-or-multiprocessing" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.5.4. </span>Python with numpy or multiprocessing<a class="headerlink" href="#python-with-numpy-or-multiprocessing" title="Permalink to this heading">#</a></h3>
 <p>The source code and submission script are in
 <code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/python-numpy</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
@@ -1158,13 +1146,12 @@ srun<span class="w"> </span>./hello-openmp
 <span class="c1">#SBATCH -D ./</span>
 <span class="c1">#</span>
 <span class="c1"># partition</span>
-<span class="c1">#SBATCH -p mpsd</span>
+<span class="c1">#SBATCH -p public</span>
 <span class="c1">#</span>
 <span class="c1"># job name</span>
-<span class="c1">#SBATCH -J OpenMP-example</span>
+<span class="c1">#SBATCH -J python-numpy-example</span>
 <span class="c1">#</span>
 <span class="c1">#SBATCH --mail-type=ALL</span>
-<span class="c1">#SBATCH --mail-user=&lt;USERID&gt;@mpsd.mpg.de</span>
 <span class="c1">#</span>
 <span class="c1"># job requirements</span>
 <span class="c1">#SBATCH --nodes=1</span>
@@ -1173,7 +1160,7 @@ srun<span class="w"> </span>./hello-openmp
 <span class="c1">#SBATCH --time=00:10:00</span>
 
 module<span class="w"> </span>purge
-mpsd_modules<span class="w"> </span>dev-23a
+mpsd-modules<span class="w"> </span>dev-23a
 
 module<span class="w"> </span>load<span class="w"> </span>anaconda/2022.05
 
@@ -1184,9 +1171,9 @@ srun<span class="w"> </span>python3<span class="w"> </span>./hello-numpy.py
 </div>
 </section>
 <section id="single-core-job">
-<h3><span class="section-number">2.5.6. </span>Single-core job<a class="headerlink" href="#single-core-job" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.5.5. </span>Single-core job<a class="headerlink" href="#single-core-job" title="Permalink to this heading">#</a></h3>
 <p>The source code and submission script are in
-<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-eaxmples/serial-fortran</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/serial-fortran</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
 <span class="c1">#</span>
 <span class="c1"># Standard output and error</span>
@@ -1197,21 +1184,18 @@ srun<span class="w"> </span>python3<span class="w"> </span>./hello-numpy.py
 <span class="c1">#SBATCH -D ./</span>
 <span class="c1">#</span>
 <span class="c1"># partition</span>
-<span class="c1">#SBATCH -p mpsd</span>
+<span class="c1">#SBATCH -p public</span>
 <span class="c1">#</span>
 <span class="c1"># job name</span>
-<span class="c1">#SBATCH -J OpenMP-example</span>
+<span class="c1">#SBATCH -J serial-example</span>
 <span class="c1">#</span>
 <span class="c1">#SBATCH --mail-type=ALL</span>
-<span class="c1">#SBATCH --mail-user=&lt;USERID&gt;@mpsd.mpg.de</span>
 <span class="c1">#</span>
 <span class="c1"># job requirements</span>
 <span class="c1">#SBATCH --nodes=1</span>
 <span class="c1">#SBATCH --ntasks-per-node=1</span>
 <span class="c1">#SBATCH --time=00:10:00</span>
 
-module<span class="w"> </span>purge
-mpsd_modules<span class="w"> </span>dev-23a
 <span class="c1"># TODO do we want to use any modules for this example</span>
 
 srun<span class="w"> </span>./hello
@@ -1219,7 +1203,7 @@ srun<span class="w"> </span>./hello
 </div>
 </section>
 <section id="serial-python">
-<h3><span class="section-number">2.5.7. </span>Serial Python<a class="headerlink" href="#serial-python" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">2.5.6. </span>Serial Python<a class="headerlink" href="#serial-python" title="Permalink to this heading">#</a></h3>
 <p>The source code and submission script are in
 <code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples/python-serial</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash --login</span>
@@ -1232,13 +1216,12 @@ srun<span class="w"> </span>./hello
 <span class="c1">#SBATCH -D ./</span>
 <span class="c1">#</span>
 <span class="c1"># partition</span>
-<span class="c1">#SBATCH -p mpsd</span>
+<span class="c1">#SBATCH -p public</span>
 <span class="c1">#</span>
 <span class="c1"># job name</span>
-<span class="c1">#SBATCH -J OpenMP-example</span>
+<span class="c1">#SBATCH -J python-example</span>
 <span class="c1">#</span>
 <span class="c1">#SBATCH --mail-type=ALL</span>
-<span class="c1">#SBATCH --mail-user=&lt;USERID&gt;@mpsd.mpg.de</span>
 <span class="c1">#</span>
 <span class="c1"># job requirements</span>
 <span class="c1">#SBATCH --nodes=1</span>
@@ -1246,7 +1229,7 @@ srun<span class="w"> </span>./hello
 <span class="c1">#SBATCH --time=00:10:00</span>
 
 module<span class="w"> </span>purge
-mpsd_modules<span class="w"> </span>dev-23a
+mpsd-modules<span class="w"> </span>dev-23a
 
 module<span class="w"> </span>load<span class="w"> </span>anaconda/2022.05
 
@@ -1375,31 +1358,23 @@ srun<span class="w"> </span>python3<span class="w"> </span>./hello.py
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cuda-todo">
-     2.5.3. CUDA
-     <strong>
-      TODO
-     </strong>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#openmp">
-     2.5.4. OpenMP
+     2.5.3. OpenMP
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#python-with-numpy-or-multiprocessing">
-     2.5.5. Python with numpy or multiprocessing
+     2.5.4. Python with numpy or multiprocessing
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#single-core-job">
-     2.5.6. Single-core job
+     2.5.5. Single-core job
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#serial-python">
-     2.5.7. Serial Python
+     2.5.6. Serial Python
     </a>
    </li>
   </ul>

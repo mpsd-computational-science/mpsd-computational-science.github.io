@@ -78,4 +78,5 @@ page.
    archive
    keeper
    zulip
+   license
    changes

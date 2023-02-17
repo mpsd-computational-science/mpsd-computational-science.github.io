@@ -423,15 +423,15 @@ missing important aspects of modern software development and
 engineering. In this course we will present key ideas, tools and
 techniques used by researchers to develop robust, efficient codes in a
 collaborative environment. This will be done in the context of the
-Octopus code (https://octopus-code.org). The philosophy of the Octopus
-code is to be a platform which allows to implement new scientific ideas
-with relative ease. The code has a modular structure and to a large
-extend hides numerical nitty-gritties at a lower level, allowing
-researchers to write new modules without the necessity to touch those
-low level parts. The code is actively developed with strict quality
-control. In this second part of the course, the participants will learn
-everything necessary to contribute to the Octopus development, and to
-implement new scientific ideas.
+Octopus code. The philosophy of the Octopus code is to be a platform
+which allows to implement new scientific ideas with relative ease. The
+code has a modular structure and to a large extend hides numerical
+nitty-gritties at a lower level, allowing researchers to write new
+modules without the necessity to touch those low level parts. The code
+is actively developed with strict quality control. In this second part
+of the course, the participants will learn everything necessary to
+contribute to the Octopus development, and to implement new scientific
+ideas.
 
 Topics include:
 
@@ -471,12 +471,12 @@ processes in nature. This, however, requires powerful numerical tools to
 solve the underlying equations and perform simulations of relevant
 physical processes. In his course we will give an introduction on how
 the DFT and TD-DFT equations can be solved numerically on a computer,
-with plently of practical examples using the Octopus code
-(https://octopus-code.org). Octopus is a real-space DFT code, geared
-mainly at the real-time propagation of time-dependent systems. Besides
-introducing the code and highlighting its functionalities, a set of
-hands-on tutorials will allow the students to learn how to set up the
-system, run ground-state and time-dependent calculations.
+with plently of practical examples using the Octopus code. Octopus is a
+real-space DFT code, geared mainly at the real-time propagation of
+time-dependent systems. Besides introducing the code and highlighting
+its functionalities, a set of hands-on tutorials will allow the students
+to learn how to set up the system, run ground-state and time-dependent
+calculations.
 
 Topics include:
 
