@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>2. MPSD HPC system &#8212; MPSD SSU Computational Science</title>
   
@@ -474,9 +474,8 @@ software is organised in a hierarchical structure.</p>
 you need. These are named according to calendar years: the first one in
 2023 is `23a`. In preparation of that version, there is a `dev-23a`
 which is used until `23a` is completed. In the examples below, this is
-always `dev-23a`. We select that version using the
-`mpsd<sub>modules</sub>` command, for example `mpsd<sub>modules</sub>
-dev-23a`.</p>
+always `dev-23a`. We select that version using the `mpsd-modules`
+command, for example `mpsd-modules dev-23a`.</p>
 <p>In order to use a module we first have to load a base compiler and MPI.
 That way we can choose between different compilers and MPI
 implementations for a software. More details are given below.</p>
@@ -495,16 +494,16 @@ modules</p></li>
 <li><p>Modules are organised in a hierarchical structure with compiler and
 MPI implementation as base modules.</p></li>
 <li><p>Modules may be compiled with different feature sets. Use
-<code class="docutils literal notranslate"><span class="pre">mpsd_modules</span></code> for switching.</p>
+<code class="docutils literal notranslate"><span class="pre">mpsd-modules</span></code> for switching.</p>
 <ul>
 <li><p>a generic feature set (runs on all nodes), activated by default</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpsd_modules</span> <span class="n">dev</span><span class="o">-</span><span class="mi">23</span><span class="n">a</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpsd</span><span class="o">-</span><span class="n">modules</span> <span class="n">dev</span><span class="o">-</span><span class="mi">23</span><span class="n">a</span>
 </pre></div>
 </div>
 </li>
 <li><p>architecture-dependent feature sets (depending on the CPU micro
 architecture <code class="docutils literal notranslate"><span class="pre">$MPSD_MICROARCH</span></code> of the nodes)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mpsd_modules dev-23a $MPSD_MICROARCH
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mpsd-modules -m $MPSD_MICROARCH dev-23a
 </pre></div>
 </div>
 </li>
@@ -530,12 +529,13 @@ and additionally contain all modules required to compile octopus.</p></li>
 with different CPU features. This is reflected in the available software
 stack by providing both a <em>generic</em> set of modules that can be used on
 all nodes as well as <em>specialised</em> sets of modules for the different
-available architectures. The latter will only run on certain nodes.</p>
+available (hardware) micro architectures. The latter will only run on
+certain nodes.</p>
 <p>A versioning scheme is used for the MPSD software environment to improve
 reproducibility. Currently, all software is available in the <code class="docutils literal notranslate"><span class="pre">dev-23a</span></code>
 release (i.e. the first release in 2023). Additional modules will be
 added to this environment as long as they do not break anything.
-Therefore, users should always specify the version of the modules the
+Therefore, users should always specify the version of the modules they
 use (even if only a single version is available). A new release will be
 made if any addition/change would break backwards compatibility.</p>
 <p>This heterogeneous setup makes it necessary to first add an additional
@@ -548,7 +548,7 @@ available options.</p>
 <p>To demonstrate the use of <code class="docutils literal notranslate"><span class="pre">mpsd_modules</span></code> we activate the <code class="docutils literal notranslate"><span class="pre">generic</span></code>
 module set of the current software environment <code class="docutils literal notranslate"><span class="pre">dev-23a</span></code>. These
 modules can be used on all HPC nodes.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$<span class="w"> </span>mpsd_modules<span class="w"> </span>dev-23a
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$<span class="w"> </span>mpsd-modules<span class="w"> </span>dev-23a
 </pre></div>
 </div>
 <p>Now, we can list available modules. At the time of writing this produces
@@ -837,7 +837,7 @@ environment variable <code class="docutils literal notranslate"><span class="pre
 <p>First, we remove the <em>generic</em> module set and activate the optimised set
 for the current node.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~$<span class="w"> </span>module<span class="w"> </span>purge
-~$<span class="w"> </span>mpsd_modules<span class="w"> </span>dev-23a<span class="w"> </span><span class="nv">$MPSD_MICROARCH</span>
+~$<span class="w"> </span>mpsd-modules<span class="w"> </span>-m<span class="w"> </span><span class="nv">$MPSD_MICROARCH</span><span class="w"> </span>dev-23a
 </pre></div>
 </div>
 <ol class="arabic">
@@ -941,7 +941,8 @@ these cases it might be necessary to manually load all required modules.
 The same general notes about <em>generic</em> and optimised module sets
 explained in the previous section apply.</p>
 <p>Here, we show two different examples. The sources are available under
-<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples</span></code> (TODO: not available at this
+location yet, &lt;2023-02-20 Mon&gt;)</p>
 <ol class="arabic">
 <li><p>Serial “Hello world” in Fortran</p>
 <p>First, we want to compile the following “hello world” Fortran program
@@ -1018,8 +1019,8 @@ Hello world from rank 0 out of 4 on mpsd-hpc-login1.
 <p>Here, we show a number of example batch scripts for different types of
 jobs. All examples are available on the HPC system under
 <code class="docutils literal notranslate"><span class="pre">/opt_mpsd/examples/slurm-examples</span></code> together with the example
-programs. We use the <code class="docutils literal notranslate"><span class="pre">mpsd</span></code> partition and the <em>generic</em> module set for
-all examples.</p>
+programs. (TODO: not available yet, &lt;2023-02-20 Mon&gt;) We use the
+<code class="docutils literal notranslate"><span class="pre">mpsd</span></code> partition and the <em>generic</em> module set for all examples.</p>
 <p>To test an example on the HPC system we can copy the relevant directory
 into our scratch directory. If required we can compile the code using
 <code class="docutils literal notranslate"><span class="pre">make</span></code> and then submit the job using <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">submission-script.sh</span></code>.</p>

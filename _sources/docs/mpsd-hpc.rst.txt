@@ -122,9 +122,8 @@ First, you need to decide which MPSD software environment **version**
 you need. These are named according to calendar years: the first one in
 2023 is \`23a`. In preparation of that version, there is a \`dev-23a\`
 which is used until \`23a\` is completed. In the examples below, this is
-always \`dev-23a`. We select that version using the
-\`mpsd\ :sub:`modules`\ \` command, for example \`mpsd\ :sub:`modules`
-dev-23a`.
+always \`dev-23a`. We select that version using the \`mpsd-modules\`
+command, for example \`mpsd-modules dev-23a`.
 
 In order to use a module we first have to load a base compiler and MPI.
 That way we can choose between different compilers and MPI
@@ -145,20 +144,20 @@ TLDR
 -  Modules are organised in a hierarchical structure with compiler and
    MPI implementation as base modules.
 -  Modules may be compiled with different feature sets. Use
-   ``mpsd_modules`` for switching.
+   ``mpsd-modules`` for switching.
 
    -  a generic feature set (runs on all nodes), activated by default
 
       ::
 
-         mpsd_modules dev-23a
+         mpsd-modules dev-23a
 
    -  architecture-dependent feature sets (depending on the CPU micro
       architecture ``$MPSD_MICROARCH`` of the nodes)
 
       ::
 
-         mpsd_modules dev-23a $MPSD_MICROARCH
+         mpsd-modules -m $MPSD_MICROARCH dev-23a 
 
 -  To subsequently find and load modules:
 
@@ -179,13 +178,14 @@ The MPSD HPC system consists of a heterogeneous set of compute nodes
 with different CPU features. This is reflected in the available software
 stack by providing both a *generic* set of modules that can be used on
 all nodes as well as *specialised* sets of modules for the different
-available architectures. The latter will only run on certain nodes.
+available (hardware) micro architectures. The latter will only run on
+certain nodes.
 
 A versioning scheme is used for the MPSD software environment to improve
 reproducibility. Currently, all software is available in the ``dev-23a``
 release (i.e. the first release in 2023). Additional modules will be
 added to this environment as long as they do not break anything.
-Therefore, users should always specify the version of the modules the
+Therefore, users should always specify the version of the modules they
 use (even if only a single version is available). A new release will be
 made if any addition/change would break backwards compatibility.
 
@@ -203,7 +203,7 @@ modules can be used on all HPC nodes.
 
 .. code:: bash
 
-   ~$ mpsd_modules dev-23a
+   ~$ mpsd-modules dev-23a
 
 Now, we can list available modules. At the time of writing this produces
 the following output (truncated):
@@ -537,7 +537,7 @@ for the current node.
 .. code:: bash
 
    ~$ module purge
-   ~$ mpsd_modules dev-23a $MPSD_MICROARCH
+   ~$ mpsd-modules -m $MPSD_MICROARCH dev-23a 
 
 #. Parallel version of octopus
 
@@ -607,7 +607,8 @@ The same general notes about *generic* and optimised module sets
 explained in the previous section apply.
 
 Here, we show two different examples. The sources are available under
-``/opt_mpsd/examples/slurm-examples``.
+``/opt_mpsd/examples/slurm-examples`` (TODO: not available at this
+location yet, <2023-02-20 Mon>)
 
 #. Serial "Hello world" in Fortran
 
@@ -670,8 +671,8 @@ Example batch scripts
 Here, we show a number of example batch scripts for different types of
 jobs. All examples are available on the HPC system under
 ``/opt_mpsd/examples/slurm-examples`` together with the example
-programs. We use the ``mpsd`` partition and the *generic* module set for
-all examples.
+programs. (TODO: not available yet, <2023-02-20 Mon>) We use the
+``mpsd`` partition and the *generic* module set for all examples.
 
 To test an example on the HPC system we can copy the relevant directory
 into our scratch directory. If required we can compile the code using
