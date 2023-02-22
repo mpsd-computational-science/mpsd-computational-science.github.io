@@ -3,6 +3,8 @@
 MPSD HPC system
 ===============
 
+.. contents:: :local:
+
 .. important::
 
    We are working on an upgrade of software stack and documentation on the local
@@ -25,9 +27,14 @@ Job submission
 
 Job submission is via `Slurm <https://slurm.schedmd.com>`__.
 
+Example slurm submission jobs are available below
+(:ref:`examplebatchscripts`).
+
+Partitions
+~~~~~~~~~~
+
 The following partitions are available to all (partial output from
-``sinfo``): (TODO: Only ``public`` and ``bigmem`` available at the
-moment.)
+``sinfo``):
 
 ::
 
@@ -37,17 +44,17 @@ moment.)
    gpu-ayyer     up 7-00:00:00      3 mpsd-hpc-gpu-[003-005]
    public*       up 7-00:00:00     49 mpsd-hpc-ibm-[001-030,035-036,043-049,053-062]
 
-Please use the two ``gpu`` machines only if your code supports
-nvidia-cuda ;)
+Please use the machines in the ``gpu`` partition only if your code
+supports nvidia-cuda.
 
-Resources per node:
+Hardware resources per node:
 
--  ``express`` / ``interactive`` / ``public`` partitions
+-  ``public`` partitions
 
    -  8 physical cores (16 with hyperthreading)
    -  64GB RAM
-   -  only 10GB ethernet for MPI communication, so better avoid running
-      multi-node jobs in this partition
+   -  at most 2 nodes can be used for multi-node jobs (as the 10GB
+      ethernet for MPI has a relatively high latency)
 
 -  ``bigmem``
 
@@ -61,6 +68,182 @@ Resources per node:
    -  1.5T RAM
    -  fast FDR infiniband for MPI communication
    -  8 Tesla V100 GPUs
+   -  at most 2 nodes can be used for multi-node jobs (as the 10GB
+      ethernet for MPI has a relatively high latency)
+
+The maximum runtime for any job is 7 days (that is 10080 minutes).
+
+Slurm default values
+~~~~~~~~~~~~~~~~~~~~
+
+Slurm defaults are an execution time of 1 hour, one task, one CPU, a
+fraction of the memory of the allocated node, and the ``public``
+partition.
+
+Nodes by default are shared between multiple users (i.e. use is not
+exclusive, unless requested).
+
+Logging onto nodes via ``ssh`` is only possible once the nodes are
+allocated (either via ``sbatch`` when the job starts, of using
+``salloc`` for interactive use, see
+:ref:`interactive-use-of-HPC-nodes`). This avoids accidental over-use of
+resources and enables energy saving measures (such as switching compute
+nodes off automatically if they are not in use).
+
+Slurm CPUs
+~~~~~~~~~~
+
+Note that a "CPU" in Slurm terminology is a `computational core (or a
+thread if hyperthreading is
+configured) <https://slurm.schedmd.com/faq.html#cpu_count>`__, whereas
+in the language in daily use we would consider a (populated) CPU
+(socket) to be the device holding many computational cores (such as 16
+cores per CPU socket or so). We use the Slurm convention in this
+document as do the slurm commands.
+
+.. _interactive-use-of-HPC-nodes:
+
+Interactive use of HPC nodes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For production computation, we typically write a batch file (see
+:ref:`examplebatchscripts`), and submit these using the ``sbatch``
+command.
+
+Sometimes, it can be helpful to login into an HPC node for example to
+compile software or run interactive tests. The command to use in this
+case is ``salloc``.
+
+For example, requesting a job with all default settings:
+
+.. code:: shell
+
+   user@mpsd-hpc-login1:~$ salloc 
+   salloc: Granted job allocation 1272
+   user@mpsd-hpc-ibm-058:~$
+
+We can see from the prompt (``user@mpsd-hpc-ibm-058:~$``) that the Slurm
+system has allocated node ``mpsd-hpc-ibm-058`` to us.
+
+We can use the ``mpsd-show-job-resources`` command to check some details
+of the allocation:
+
+.. code:: shell
+
+   user@mpsd-hpc-ibm-058:~$ mpsd-show-job-resources 
+    345415 Nodes: mpsd-hpc-ibm-058
+    345415 Local Node: mpsd-hpc-ibm-058
+
+    345415 CPUSET: 0
+    345415 MEMORY: 3500 M
+
+We can finish our interactive session by typing ``exit``.
+
+If we desire exclusive use of a node (i.e. not shared with others), we
+can use ``salloc --exclusive`` (he we request a session time of 120
+minutes):
+
+.. code:: shell
+
+   user@mpsd-hpc-login2:~$ salloc  --exclusive --time=120
+   salloc: Granted job allocation 1279
+   user@mpsd-hpc-ibm-061:~$ mpsd-show-job-resources 
+     65911 Nodes: mpsd-hpc-ibm-061
+     65911 Local Node: mpsd-hpc-ibm-061
+
+     65911 CPUSET: 0-15
+     65911 MEMORY: 56000 M
+
+We can see (in the output above) that all 16 CPUs of the node are
+allocated to us.
+
+Assume we need 16 CPUs and 10GB of RAM for our interactive session (the
+16 CPUs corresponds to the number of OpenMP threads, see
+:ref:`example-openmp`):
+
+.. code:: shell
+
+   user@mpsd-hpc-login1:~$ salloc --mem=10000 --cpus-per-task=16
+   salloc: Granted job allocation 1273
+   user@mpsd-hpc-ibm-058:~$ mpsd-show-job-resources 
+    345446 Nodes: mpsd-hpc-ibm-058
+    345446 Local Node: mpsd-hpc-ibm-058
+
+    345446 CPUSET: 0-15
+    345446 MEMORY: 10000 M
+   user@mpsd-hpc-ibm-058:~
+
+If we execute MPI programs, we need to specify the number of nodes (a
+node is a computer node, with typically one, two or four CPU sockets),
+and how many (MPI) tasks (=processes) we want to run on that node.
+Imagine we ask for two nodes, and want to run 4 MPI processes on each:
+
+.. code:: shell
+
+   user@mpsd-hpc-login1:~$ salloc --nodes=2 --tasks-per-node=4
+   salloc: Granted job allocation 1276
+   user@mpsd-hpc-ibm-058:~$ mpsd-show-job-resources 
+    345591 Nodes: mpsd-hpc-ibm-[058-059]
+    345591 Local Node: mpsd-hpc-ibm-058
+
+    345591 CPUSET: 0-3
+    345591 MEMORY: 14000 M
+   user@mpsd-hpc-ibm-058:~$ srun hostname
+   mpsd-hpc-ibm-059
+   mpsd-hpc-ibm-059
+   mpsd-hpc-ibm-059
+   mpsd-hpc-ibm-059
+   mpsd-hpc-ibm-058
+   mpsd-hpc-ibm-058
+   mpsd-hpc-ibm-058
+   mpsd-hpc-ibm-058
+
+The ``srun`` command starts the execution of our (MPI) tasks. We use the
+``hostname`` command above and can see that we have 4 of these commands
+run on each node.
+
+Finding about about my jobs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are multiple ways of finding out about your slurm jobs:
+
+-  ``squeue --me`` lists only your jobs (see below for output)
+-  ``mpsd-show-job-resources`` can be used 'inside' the job (to verify
+   hardware allocation is as desired)
+-  ``scontrol show job JOBID`` provides a lot of detail
+
+Example: We request 2 nodes, with 4 tasks (and by default one CPU per
+task)
+
+::
+
+   fangohr@mpsd-hpc-login1:~$ salloc --nodes=2 --tasks-per-node=4
+   salloc: Granted job allocation 1276
+
+   fangohr@mpsd-hpc-login2:~$ squeue --me
+     JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+      1276    public interact  fangohr  R      11:37      2 mpsd-hpc-ibm-[058-059]
+
+   fangohr@mpsd-hpc-ibm-058:~$ mpsd-show-job-resources 
+    345591 Nodes: mpsd-hpc-ibm-[058-059]
+    345591 Local Node: mpsd-hpc-ibm-058
+
+    345591 CPUSET: 0-3
+    345591 MEMORY: 14000 M
+
+   fangohr@mpsd-hpc-login2:~$ scontrol show job 1276
+   JobId=1276 JobName=interactive
+      UserId=fangohr(28479) GroupId=cfel(3512) MCS_label=N/A
+      <...>
+      RunTime=00:14:08 TimeLimit=01:00:00 TimeMin=N/A
+      Partition=public AllocNode:Sid=mpsd-hpc-login1.desy.de:3116660
+      NodeList=mpsd-hpc-ibm-[058-059]
+      BatchHost=mpsd-hpc-ibm-058
+      NumNodes=2 NumCPUs=8 NumTasks=8 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+      TRES=cpu=8,mem=28000M,node=2,billing=8
+      Socks/Node=* NtasksPerN:B:S:C=4:0:*:1 CoreSpec=*
+      MinCPUsNode=4 MinMemoryCPU=3500M MinTmpDiskNode=0
+      <...>
 
 Storage and quotas
 ------------------
@@ -665,6 +848,8 @@ location yet, <2023-02-20 Mon>)
 
       Inside a slurm job ``srun`` has to be used instead of ``orterun``.
 
+   .. _examplebatchscripts:
+
 Example batch scripts
 ---------------------
 
@@ -687,6 +872,8 @@ The source code and submission script are in
 .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/mpi-c/submission-script.sh
    :language: bash
 
+.. _example-openmp-mpi:
+
 MPI + OpenMP
 ~~~~~~~~~~~~
 
@@ -695,6 +882,8 @@ The source code and submission script are in
 
 .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/mpi-openmp-c/submission-script.sh
    :language: bash
+
+.. _example-openmp:
 
 OpenMP
 ~~~~~~
@@ -705,6 +894,8 @@ The source code and submission script are in
 .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/openmp-c/submission-script.sh
    :language: bash
 
+.. _example-python-multiprocessing:
+
 Python with numpy or multiprocessing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -713,6 +904,8 @@ The source code and submission script are in
 
 .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/python-numpy/submission-script.sh
    :language: bash
+
+.. _example-singlecore:
 
 Single-core job
 ~~~~~~~~~~~~~~~
@@ -731,3 +924,43 @@ The source code and submission script are in
 
 .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/python-serial/submission-script.sh
    :language: bash
+
+GPU jobs
+~~~~~~~~
+
+For GPU jobs, we recommend to specify desired hardware resources as
+follows. In parenthesis we provide the typical application (MPI, OpenMP)
+for guidance.
+
+-  ``nodes`` - how many computers to use, for example ``--nodes=1``
+-  ``tasks-per-node`` - how many (MPI) processed to run per node:
+   ``--tasks-per-node=4``
+-  ``gpus-per-task`` - how many GPUs per (MPI) process to use (often 1):
+   ``--gpus-per-task=1``
+-  ``cpus-per-task`` - how many CPUs (OpenMP threads) to use:
+   ``--cpus-per-task=4``
+
+Example:
+
+.. code:: shell
+
+   user@mpsd-hpc-login1:~$ salloc --nodes=1 --tasks-per-node=4 --gpus-per-task=1 --cpus-per-task=4 --mem=128G -p gpu 
+   user@mpsd-hpc-gpu-002:~$ mpsd-show-job-resources
+      9352 Nodes: mpsd-hpc-gpu-002
+      9352 Local Node: mpsd-hpc-gpu-002
+
+      9352 CPUSET: 0-7,16-23
+      9352 MEMORY: 131072 M
+
+      9352 GPUs (Interconnects, CPU Affinity, NUMA Affinity):
+      9352 GPU0     X  NV1 NV1 NV2 SYS 0-7,16-23   0-1
+      9352 GPU1    NV1  X  NV2 NV1 SYS 0-7,16-23   0-1
+      9352 GPU2    NV1 NV2  X  NV2 SYS 0-7,16-23   0-1
+      9352 GPU3    NV2 NV1 NV2  X  SYS 0-7,16-23   0-1
+   user@mpsd-hpc-gpu-002:~$
+
+We can see from the output that we have one node (mpsd-hpc-gpu-002), 16
+CPUs (with ids 0 to 7 and 16 to 23), 128GB (=131072MiB), and 4 GPUs
+allocated (GPU0 to GPU3).
+
+(TODO: Add CUDA Slurm example program and submission script.)
