@@ -115,7 +115,7 @@ case is ``salloc``.
 
 For example, requesting a job with all default settings:
 
-.. code:: shell
+.. code:: console
 
    user@mpsd-hpc-login1:~$ salloc 
    salloc: Granted job allocation 1272
@@ -127,7 +127,7 @@ system has allocated node ``mpsd-hpc-ibm-058`` to us.
 We can use the ``mpsd-show-job-resources`` command to check some details
 of the allocation:
 
-.. code:: shell
+.. code:: console
 
    user@mpsd-hpc-ibm-058:~$ mpsd-show-job-resources 
     345415 Nodes: mpsd-hpc-ibm-058
@@ -142,7 +142,7 @@ If we desire exclusive use of a node (i.e. not shared with others), we
 can use ``salloc --exclusive`` (he we request a session time of 120
 minutes):
 
-.. code:: shell
+.. code:: console
 
    user@mpsd-hpc-login2:~$ salloc  --exclusive --time=120
    salloc: Granted job allocation 1279
@@ -160,7 +160,7 @@ Assume we need 16 CPUs and 10GB of RAM for our interactive session (the
 16 CPUs corresponds to the number of OpenMP threads, see
 :ref:`example-openmp`):
 
-.. code:: shell
+.. code:: console
 
    user@mpsd-hpc-login1:~$ salloc --mem=10000 --cpus-per-task=16
    salloc: Granted job allocation 1273
@@ -177,7 +177,7 @@ node is a computer node, with typically one, two or four CPU sockets),
 and how many (MPI) tasks (=processes) we want to run on that node.
 Imagine we ask for two nodes, and want to run 4 MPI processes on each:
 
-.. code:: shell
+.. code:: console
 
    user@mpsd-hpc-login1:~$ salloc --nodes=2 --tasks-per-node=4
    salloc: Granted job allocation 1276
@@ -263,7 +263,13 @@ Storage and quotas
 -  there are no backups for ``/scratch``: hardware error or human error
    can lead to data loss.
 
--  there is no individual quota, but a policy to manage overall usage:
+-  A per-user quota of (by default) 25TB is applied. This is in place to
+   prevent jobs that (unintentionally) write arbitrary amount of data to
+   ``/scratch`` from filling up the file system and blocking the system
+   for everyone.
+
+-  The following policy is applied to manage overall usage of
+   ``/scratch``:
 
    If ``/scratch`` fills up, the cluster becomes unusable. Should this
    happen, we will make space available through the following actions:
@@ -279,11 +285,6 @@ Storage and quotas
    #. if 1. and 2. do not resolve the situation, a script will be
       started that deletes some of the files on ``/scratch`` (starting
       with the oldest files). Notice will be given of this procedure.
-
-.. warning::
-
-   ``/scratch`` is not available yet. (Last update: 10 Feb 2023)
-
 
 .. note::
 
@@ -302,10 +303,10 @@ software is organised in a hierarchical structure.
 
 First, you need to decide which MPSD software environment **version**
 you need. These are named according to calendar years: the first one in
-2023 is \`23a\`. In preparation of that version, there is a \`dev-23a\`
-which is used until \`23a\` is completed. In the examples below, this is
-always \`dev-23a\`. We select that version using the \`mpsd-modules\`
-command, for example \`mpsd-modules dev-23a\`.
+2023 is ``23a``. In preparation of that version, there is a ``dev-23a``
+which is used until ``23a`` is completed. In the examples below, this is
+always ``dev-23a``. We select that version using the ``mpsd-modules``
+command, for example ``mpsd-modules dev-23a``.
 
 In order to use a module we first have to load a base compiler and MPI.
 That way we can choose between different compilers and MPI
@@ -749,7 +750,7 @@ for the current node.
 
    Now, we can configure and compile octopus:
 
-   .. code:: shell
+   .. code:: console
 
       ~$ autoreconf -i
       ~$ mkdir _build && cd _build
@@ -941,7 +942,7 @@ for guidance.
 
 Example:
 
-.. code:: shell
+.. code:: console
 
    user@mpsd-hpc-login1:~$ salloc --nodes=1 --tasks-per-node=4 --gpus-per-task=1 --cpus-per-task=4 --mem=128G -p gpu 
    user@mpsd-hpc-gpu-002:~$ mpsd-show-job-resources
