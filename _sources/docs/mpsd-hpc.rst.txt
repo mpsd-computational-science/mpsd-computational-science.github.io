@@ -76,9 +76,8 @@ The maximum runtime for any job is 7 days (that is 10080 minutes).
 Slurm default values
 ~~~~~~~~~~~~~~~~~~~~
 
-Slurm defaults are an execution time of 1 hour, one task, one CPU, a
-fraction of the memory of the allocated node, and the ``public``
-partition.
+Slurm defaults are an execution time of 1 hour, one task, one CPU, 3.5GB
+of RAM, and the ``public`` partition.
 
 Nodes by default are shared between multiple users (i.e. use is not
 exclusive, unless requested).
@@ -303,10 +302,10 @@ software is organised in a hierarchical structure.
 
 First, you need to decide which MPSD software environment **version**
 you need. These are named according to calendar years: the first one in
-2023 is \`23a`. In preparation of that version, there is a \`dev-23a\`
+2023 is \`23a\`. In preparation of that version, there is a \`dev-23a\`
 which is used until \`23a\` is completed. In the examples below, this is
-always \`dev-23a`. We select that version using the \`mpsd-modules\`
-command, for example \`mpsd-modules dev-23a`.
+always \`dev-23a\`. We select that version using the \`mpsd-modules\`
+command, for example \`mpsd-modules dev-23a\`.
 
 In order to use a module we first have to load a base compiler and MPI.
 That way we can choose between different compilers and MPI
