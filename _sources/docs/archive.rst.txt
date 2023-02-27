@@ -601,15 +601,3 @@ An alternative is to use secure FTP (sftp), for example with GUI based
 files, the ``rsync`` method is better: it can continue an interrupted
 transfer (because the network dropped, say), whereas ``sftp`` would have
 to restart the transfer.
-
-Related information
--------------------
-
-.. raw:: org
-
-   #+ATTR_RST: :directive seealso
-
-..
-
-   -  From HPC-Carpentry: `transfer of data and use of
-      tar/zip <http://rits.github-pages.ucl.ac.uk/hpc-intro/15-transferring-files/index.html>`__

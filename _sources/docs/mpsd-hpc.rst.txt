@@ -51,27 +51,28 @@ Hardware resources per node:
 
 -  ``public`` partitions
 
-   -  8 physical cores (16 with hyperthreading)
+   -  16 physical cores (no hyperthreading, 16 CPUs in Slurm
+      terminology)
    -  64GB RAM
    -  at most 2 nodes can be used for multi-node jobs (as the 10GB
       ethernet for MPI has a relatively high latency)
 
 -  ``bigmem``
 
-   -  96 physical cores (192 with hyperthreading)
+   -  96 physical cores (192 with hyperthreading, 192 CPUs in Slurm
+      terminology)
    -  2T RAM
    -  fast FDR infiniband for MPI communication
 
 -  ``gpu``
 
-   -  16 physical cores (32 with hyperthreading)
+   -  16 physical cores (32 with hyperthreading, 32 CPUs in Slurm
+      terminology)
    -  1.5T RAM
    -  fast FDR infiniband for MPI communication
    -  8 Tesla V100 GPUs
-   -  at most 2 nodes can be used for multi-node jobs (as the 10GB
-      ethernet for MPI has a relatively high latency)
 
-The maximum runtime for any job is 7 days (that is 10080 minutes).
+The maximum runtime for any job is 7 days.
 
 Slurm default values
 ~~~~~~~~~~~~~~~~~~~~
@@ -83,7 +84,7 @@ Nodes by default are shared between multiple users (i.e. use is not
 exclusive, unless requested).
 
 Logging onto nodes via ``ssh`` is only possible once the nodes are
-allocated (either via ``sbatch`` when the job starts, of using
+allocated (either via ``sbatch`` when the job starts, or using
 ``salloc`` for interactive use, see
 :ref:`interactive-use-of-HPC-nodes`). This avoids accidental over-use of
 resources and enables energy saving measures (such as switching compute
@@ -122,7 +123,8 @@ For example, requesting a job with all default settings:
    user@mpsd-hpc-ibm-058:~$
 
 We can see from the prompt (``user@mpsd-hpc-ibm-058:~$``) that the Slurm
-system has allocated node ``mpsd-hpc-ibm-058`` to us.
+system has allocated the requested resources on node
+``mpsd-hpc-ibm-058`` to us.
 
 We can use the ``mpsd-show-job-resources`` command to check some details
 of the allocation:
@@ -136,10 +138,22 @@ of the allocation:
     345415 CPUSET: 0
     345415 MEMORY: 3500 M
 
-We can finish our interactive session by typing ``exit``.
+Here we see (``CPUSET: 0``) that we have been allocated one CPU (in
+Slurm terminology) and that CPU has got the index 0. If we have
+requested multiple CPUs, we would find multiple numbers displayed (see
+below).
+
+We can finish our interactive session by typing ``exit``:
+
+.. code:: console
+
+   user@mpsd-hpc-ibm-058:~$ exit
+   exit
+   salloc: Relinquishing job allocation 1272
+   user@mpsd-hpc-login1:~$
 
 If we desire exclusive use of a node (i.e. not shared with others), we
-can use ``salloc --exclusive`` (he we request a session time of 120
+can use ``salloc --exclusive`` (here we request a session time of 120
 minutes):
 
 .. code:: console
@@ -170,12 +184,12 @@ Assume we need 16 CPUs and 10GB of RAM for our interactive session (the
 
     345446 CPUSET: 0-15
     345446 MEMORY: 10000 M
-   user@mpsd-hpc-ibm-058:~
+   user@mpsd-hpc-ibm-058:~$
 
-If we execute MPI programs, we need to specify the number of nodes (a
-node is a computer node, with typically one, two or four CPU sockets),
-and how many (MPI) tasks (=processes) we want to run on that node.
-Imagine we ask for two nodes, and want to run 4 MPI processes on each:
+If we execute MPI programs, we can specify the number of nodes (a node
+is a computer node, with typically one, two or four CPU sockets), and
+how many (MPI) tasks (=processes) we want to run on that node. Imagine
+we ask for two nodes, and want to run 4 MPI processes on each:
 
 .. code:: console
 
@@ -247,7 +261,10 @@ task)
 Storage and quotas
 ------------------
 
-``/home/<username>`` (``$HOME``)
+The MPSD HPC system provides two file systems: ``/home`` and
+``/scratch``:
+
+``/home/$USER`` (``$HOME``)
 
 -  home file system for code and scripts
 -  user quota (storage limit): 100 GB
@@ -256,7 +273,7 @@ Storage and quotas
 -  users have access to the backup of their data under
    ``$HOME/.zfs/snapshots``
 
-``/scratch/<username>``
+``/scratch/$USER``
 
 -  scratch file system for simulation output and other temporary data
 
@@ -291,6 +308,20 @@ Storage and quotas
    The backup of the old HPC installation is available under
    ``/backup/<username>`` on the login nodes. Users can copy their existing data to
    the new home and scratch directories. No data will be transfered automatically.
+
+Recommendation for for usage of ``/home/$USER`` and ``/scratch/$USER``:
+
+Put small files and important data into ``/home/$USER``. For example
+source code, scripts to compile your source, compiled software, scripts
+to submit jobs to slurm, post processing scripts, and perhaps also small
+data files.
+
+Put simulation output (in particular if the files are large) into
+``/scratch/$USER``. All the data in ``/scratch`` should be re-computable
+with reasonable effort (typically by running scripts stored somewhere in
+``/home/$USER``). This re-computation may be needed if data loss occurs
+on ``/scratch``, the hardware retires, or if data needs to be deleted
+from ``/scratch`` because we run out of space on ``/scratch``.
 
 .. _mpsd-hpc-software:
 
@@ -780,6 +811,14 @@ for the current node.
 
    We can then follow the instructions from the previous section.
 
+#. Passing additional arguments to ``configure``
+
+   The ``*-config.sh`` scripts shown above accept additional arguments
+   and pass those on to the ``configure`` command of Octopus, for
+   example ``foss2021a-serial-config.sh --prefix=<basedir>`` would pass
+   the ``--prefix=<basedir>`` to the ``configure`` script (see `Octopus
+   documentation <https://octopus-code.org/new-site/11/manual/installation/building_from_scratch>`__).
+
 Compiling custom code
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -790,15 +829,14 @@ The same general notes about *generic* and optimised module sets
 explained in the previous section apply.
 
 Here, we show two different examples. The sources are available under
-``/opt_mpsd/examples/slurm-examples`` (TODO: not available at this
-location yet, <2023-02-20 Mon>)
+``/opt_mpsd/linux-debian11/dev-23a/examples/slurm-examples``
 
 #. Serial "Hello world" in Fortran
 
    First, we want to compile the following "hello world" Fortran program
    using ``gcc``. We assume it is saved in a file ``hello.f90``. The
    source is available in
-   ``/opt_mpsd/examples/slurm-examples/serial-fortran``.
+   ``/opt_mpsd/linux-debian11/dev-23a/examples/slurm-examples/serial-fortran``.
 
    .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/serial-fortran/hello.f90
       :language: bash
@@ -822,7 +860,7 @@ location yet, <2023-02-20 Mon>)
    As a second example we compile an MPI-parallelised "Hello world" C
    program, again using ``gcc``. We assume the source is saved in a file
    ``hello-mpi.c`` (source available under
-   ``/opt_mpsd/examples/slurm-examples/mpi-c``).
+   ``/opt_mpsd/linux-debian11/dev-23a/examples/slurm-examples/mpi-c``).
 
    .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/mpi-c/hello-mpi.c
       :language: bash
@@ -855,9 +893,9 @@ Example batch scripts
 
 Here, we show a number of example batch scripts for different types of
 jobs. All examples are available on the HPC system under
-``/opt_mpsd/examples/slurm-examples`` together with the example
-programs. (TODO: not available yet, <2023-02-20 Mon>) We use the
-``mpsd`` partition and the *generic* module set for all examples.
+``/opt_mpsd/linux-debian11/dev-23a/examples/slurm-examples`` together
+with the example programs. We use the ``public`` partition and the
+*generic* module set for all examples.
 
 To test an example on the HPC system we can copy the relevant directory
 into our scratch directory. If required we can compile the code using
@@ -867,7 +905,7 @@ MPI
 ~~~
 
 The source code and submission script are in
-``/opt_mpsd/examples/slurm-examples/mpi-c``.
+``/opt_mpsd/linux-debian11/dev-23a/examples/slurm-examples/mpi-c``.
 
 .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/mpi-c/submission-script.sh
    :language: bash
@@ -878,7 +916,7 @@ MPI + OpenMP
 ~~~~~~~~~~~~
 
 The source code and submission script are in
-``/opt_mpsd/examples/slurm-examples/mpi-openmp-c``.
+``/opt_mpsd/linux-debian11/dev-23a/examples/slurm-examples/mpi-openmp-c``.
 
 .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/mpi-openmp-c/submission-script.sh
    :language: bash
@@ -889,7 +927,7 @@ OpenMP
 ~~~~~~
 
 The source code and submission script are in
-``/opt_mpsd/examples/slurm-examples/openmp-c``.
+``/opt_mpsd/linux-debian11/dev-23a/examples/slurm-examples/openmp-c``.
 
 .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/openmp-c/submission-script.sh
    :language: bash
@@ -900,7 +938,7 @@ Python with numpy or multiprocessing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The source code and submission script are in
-``/opt_mpsd/examples/slurm-examples/python-numpy``.
+``/opt_mpsd/linux-debian11/dev-23a/examples/slurm-examples/python-numpy``.
 
 .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/python-numpy/submission-script.sh
    :language: bash
@@ -911,7 +949,7 @@ Single-core job
 ~~~~~~~~~~~~~~~
 
 The source code and submission script are in
-``/opt_mpsd/examples/slurm-examples/serial-fortran``.
+``/opt_mpsd/linux-debian11/dev-23a/examples/slurm-examples/serial-fortran``.
 
 .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/serial-fortran/submission-script.sh
    :language: bash
@@ -920,7 +958,7 @@ Serial Python
 ~~~~~~~~~~~~~
 
 The source code and submission script are in
-``/opt_mpsd/examples/slurm-examples/python-serial``.
+``/opt_mpsd/linux-debian11/dev-23a/examples/slurm-examples/python-serial``.
 
 .. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/python-serial/submission-script.sh
    :language: bash
