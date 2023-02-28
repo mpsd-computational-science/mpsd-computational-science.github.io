@@ -5,10 +5,10 @@ MPSD HPC system
 
 .. contents:: :local:
 
-.. important::
+.. note::
 
-   We are working on an upgrade of software stack and documentation on the local
-   HPC cluster. The cluster will be unavailable until the end of this maintenance.
+   Following a major upgrade early 2023, the documentation and functionality may be suboptimal in places.
+   Please do not hesitate to `get in touch <https://mpsd-computational-science.github.io/support.html>`__ with questions and error reports.
 
 For the Raven and Ada machine, please check :doc:`overview-it`.
 
@@ -49,7 +49,7 @@ supports nvidia-cuda.
 
 Hardware resources per node:
 
--  ``public`` partitions
+-  ``public``
 
    -  16 physical cores (no hyperthreading, 16 CPUs in Slurm
       terminology)
@@ -72,7 +72,8 @@ Hardware resources per node:
    -  fast FDR infiniband for MPI communication
    -  8 Tesla V100 GPUs
 
-The maximum runtime for any job is 7 days.
+The maximum runtime for any job is 7 days. Interactive jobs are limited
+to 12 hours.
 
 Slurm default values
 ~~~~~~~~~~~~~~~~~~~~
@@ -415,14 +416,14 @@ To demonstrate the use of ``mpsd_modules`` we activate the ``generic``
 module set of the current software environment ``dev-23a``. These
 modules can be used on all HPC nodes.
 
-.. code:: bash
+.. code:: shell
 
    ~$ mpsd-modules dev-23a
 
 Now, we can list available modules. At the time of writing this produces
 the following output (truncated):
 
-.. code:: bash
+.. code:: shell
 
    ~$ module avail
 
@@ -447,7 +448,7 @@ MPI implementation).
 We can load a compiler and again list available modules. Now many more
 are available:
 
-.. code:: bash
+.. code:: shell
 
    ~$ module load gcc/10.3.0
    ~$ module avail
@@ -526,7 +527,7 @@ are available:
 
 We now unload all loaded modules:
 
-.. code:: bash
+.. code:: shell
 
    ~$ module purge
 
@@ -537,24 +538,58 @@ Loading specific packages
 
 To find a specific package we can use the ``module spider`` command.
 Without extra arguments this would list all modules. We can search for a
-specific module by adding the module name.
+specific module by adding the module name. For example, let us find the
+anaconda distribution:
 
-As an example we can search for ``octopus``:
+.. code:: shell
 
-.. code:: bash
+     ~$ mpsd-modules dev-23a
+     ~$ module spider anaconda
 
+   ----------------------------------------------------------------------------
+     anaconda3: anaconda3/2022.10
+   ----------------------------------------------------------------------------
+
+       This module can be loaded directly: module load anaconda3/2022.10
+
+.. code:: shell
+
+   ~$ module load anaconda3/2022.10
+   ~$ python --version
+   Python 3.9.13
+   ~$ which python
+   /opt_mpsd/linux-debian11/dev-23a/sandybridge/spack/opt/spack/linux-debian11-x86_64_v2/gcc-10.2.1/anaconda3-2022.10-2rlbkdehwu64wa4cj6emqdh2t2xbr5zc/bin/python
+
+Octopus
+~~~~~~~
+
+As a second example for loading pre-compiled packages let us search for
+``octopus``:
+
+.. code:: shell
+
+   ~$ mpsd-modules dev-23a
    ~$ module spider octopus
 
-We see that different versions of ``octopus`` are available. We have to
-specify a particular version in order to get more information on how to
-load the module:
+Multiple versions of ``octopus`` may be available. We can specify a
+particular version in order to get more information on how to load the
+module:
 
-.. code:: bash
+.. code:: shell
 
    ~$ module spider octopus/12.1
 
-We can see that we have to first load ``gcc/10.3.0`` and
-``openmpi/4.1.1`` in order to be able to load and use ``octopus/12.1``.
+   ---------------------------------------------------------------------------
+     octopus: octopus/12.1
+   ---------------------------------------------------------------------------
+
+     You will need to load all module(s) on any one of the lines below before
+     the "octopus/12.1" module is available to load.
+
+       gcc/11.3.0  openmpi/4.1.4
+
+We can see that we have to first load ``gcc/11.3.0`` and
+``openmpi/4.1.4`` in order to be able to load and use ``octopus/12.1``.
 
 .. note::
 
@@ -563,29 +598,55 @@ We can see that we have to first load ``gcc/10.3.0`` and
    implementation as only this version of the program will use MPI. Loading the MPI-enabled
    version of the desired program is crucial when running a slurm job on multiple nodes.
 
-We load ``gcc/10.3.0``, ``openmpi/4.1.1`` and finally ``octopus/12.1``.
+We load ``gcc/11.3.0``, ``openmpi/4.1.4`` and finally ``octopus/12.1``.
 All of this can be done in one line as long as the packages are given in
 the correct order (as shown by ``module spider``):
 
-.. code:: bash
+.. code:: shell
 
-   ~$ module load gcc/10.3.0 openmpi/4.1.1 octopus/12.1
+   ~$ module load gcc/11.3.0 openmpi/4.1.4 octopus/12.1
 
 As a first simple check we display the version number of ``octopus``:
 
-::
+.. code:: shell
 
    ~$ octopus --version
    octopus 12.1 (git commit )
+
+Octopus with CUDA support
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To use Octopus on the GPU nodes, we need CUDA support. This is provided
+in the microarchitecture ``skylake_avx512`` of the GPU nodes:
+
+.. code:: shell
+
+   ~$ mpsd-modules -m skylake_avx512 dev-23a
+   ~$ module spider octopus/12.1
+
+   ---------------------------------------------------------------------------------
+     octopus: octopus/12.1
+   ---------------------------------------------------------------------------------
+
+     You will need to load all module(s) on any one of the lines below before the "octopus/12.1" module is available to load.
+
+       gcc/11.3.0  openmpi/4.1.4
+
+Thus, we can activate Octopus with CUDA support using
+
+.. code:: shell
+
+   ~$ mpsd-modules -m skylake_avx512 dev-23a
+   ~$ module load gcc/11.3.0  openmpi/4.1.4 octopus/12.1
 
 Python
 ~~~~~~
 
 To use Python we load the ``anaconda3`` module:
 
-.. code:: bash
+.. code:: shell
 
-   ~$ module load anaconda3/2022.05
+   ~$ module load anaconda3/2022.10
 
 Anaconda comes with a wide variety of pre-installed Python packages such
 as ``numpy``, ``scipy``, ``matplotlib``, etc.
@@ -624,7 +685,7 @@ as ``numpy``, ``scipy``, ``matplotlib``, etc.
    https://docs.conda.io/en/latest/miniconda.html#linux-installers.
    Then, we can run the installer and follow the instructions.
 
-   .. code:: bash
+   .. code:: shell
 
       ~$ wget https://repo.anaconda.com/miniconda/Miniconda3-py310_22.11.1-1-Linux-x86_64.sh
       ~$ bash Miniconda3-py310_22.11.1-1-Linux-x86_64.sh
@@ -682,29 +743,30 @@ You can use a Jupyter notebook on a dedicated HPC node as follows:
    losing the session in case of short connection interruptions e.g. on
    WiFi)
 
-#. Request a node for interactive use. For example, 1 node for 600
-   minutes from the ``public`` partition:
+#. Request a node for interactive use. For example, 1 node with 8 CPUs
+   for 6 hours from the ``public`` partition:
 
-   .. code:: bash
+   .. code:: shell
 
-      salloc --nodes=1 --ntasks-per-node=1 --cpus-per-task=1 --time=06:00:00 -p public
+      salloc --nodes=1 --cpus-per-task=8 --time=06:00:00 -p public
 
 #. You can install Jupyter yourself, or you activate an installed
    version with the following commands:
 
-   .. code:: bash
+   .. code:: shell
 
+      mpsd-modules dev-23a
       module load anaconda3
 
 #. Limit numpy (and other libraries) to the available cores
 
-   .. code:: bash
+   .. code:: shell
 
       export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 #. Start the Jupyter notebook (or Jupyter lab) server on that node with
 
-   .. code:: bash
+   .. code:: shell
 
       jupyter-notebook --no-browser --ip=${HOSTNAME}.desy.de
 
@@ -748,7 +810,7 @@ environment variable ``$MPSD_MICORARCH``.
 First, we remove the *generic* module set and activate the optimised set
 for the current node.
 
-.. code:: bash
+.. code:: shell
 
    ~$ module purge
    ~$ mpsd-modules -m $MPSD_MICROARCH dev-23a 
@@ -758,13 +820,13 @@ for the current node.
    We can load the toolchain ``foss2021a-mpi`` to compile ``octopus``
    using ``gcc 10.3.0`` and ``openmpi 4.1.1``:
 
-   .. code:: bash
+   .. code:: shell
 
       ~$ module load toolchains/foss2021a-mpi
 
    Next, we clone octopus:
 
-   .. code:: bash
+   .. code:: shell
 
       ~$ git clone https://gitlab.com/octopus-code/octopus.git
       ~$ cd octopus
@@ -798,7 +860,7 @@ for the current node.
 
    We load the serial toolchain:
 
-   .. code:: bash
+   .. code:: shell
 
       ~$ module load toolchains/foss2021a-serial
 
@@ -843,13 +905,13 @@ Here, we show two different examples. The sources are available under
 
    We have to load ``gcc``:
 
-   .. code:: bash
+   .. code:: shell
 
       module load gcc/10.3.0
 
    Then, we can compile and execute the program:
 
-   .. code:: bash
+   .. code:: shell
 
       ~$ gfortran -o hello hello.f90
       ~$ ./hello
@@ -867,7 +929,7 @@ Here, we show two different examples. The sources are available under
 
    We have to load ``gcc`` and ``openmpi``:
 
-   .. code:: bash
+   .. code:: shell
 
       ~$ module load gcc/10.3.0 openmpi/4.1.1
 
