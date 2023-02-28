@@ -1063,4 +1063,8 @@ We can see from the output that we have one node (mpsd-hpc-gpu-002), 16
 CPUs (with ids 0 to 7 and 16 to 23), 128GB (=131072MiB), and 4 GPUs
 allocated (GPU0 to GPU3).
 
-(TODO: Add CUDA Slurm example program and submission script.)
+The source code and submission script for the CUDA example are in
+``/opt_mpsd/linux-debian11/dev-23a/examples/slurm-examples/cuda``.
+
+.. literalinclude:: ../../external-sources/mpsd-hpc-examples/slurm-examples/cuda/submission-script.sh
+   :language: bash
