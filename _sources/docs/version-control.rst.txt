@@ -26,6 +26,12 @@ to host git repositories in the cloud.
 Further reading and training material on version control and Git
 ----------------------------------------------------------------
 
+.. raw:: org
+
+   #+ATTR_RST: :directive seealso
+
+..
+
    In roughly order of increasing complexity
 
    -  `Lecture notes Hans Fangohr on the very basics of version control

@@ -637,7 +637,7 @@ Thus, we can activate Octopus with CUDA support using
 .. code:: shell
 
    ~$ mpsd-modules -m skylake_avx512 dev-23a
-   ~$ module load gcc/11.3.0  openmpi/4.1.4 octopus/12.1
+   ~$ module load gcc/11.3.0  openmpi/4.1.4-cuda-11.4.4 octopus/12.1-cuda-11.4.4
 
 Python
 ~~~~~~

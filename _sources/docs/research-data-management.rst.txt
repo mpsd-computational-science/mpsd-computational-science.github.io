@@ -87,7 +87,17 @@ should create a data repository for this publication which puts together
 (somehow) and archives (somehow) the important information that is
 required to *reproduce* the findings from the publication manuscript.
 
+.. raw:: org
+
+   #+ATTR_RST: :directive todo
+
+..
+
    Write section on reproducibility.
+
+.. raw:: org
+
+   #+ATTR_RST: :directive todo
 
 ..
 
@@ -183,6 +193,12 @@ be processed by data analysis tools that support the file format.
 
 Useful links
 ------------
+
+.. raw:: org
+
+   #+ATTR_RST: :directive seealso 
+
+..
 
    -  `Research Data Management from Max Planck Digital
       Library <https://rdm.mpdl.mpg.de>`__

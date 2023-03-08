@@ -435,7 +435,8 @@ computes a checksum for the file, and compares the checksum with the
 checksum of the same uncompressed file that was created when the archive
 was created. We couldn't find a clear confirmation of this, although
 there seems to be the `view that this is the
-case <https://superuser.com/questions/1621563/are-7z-included-checksums-enough-to-verify-backup-integrity>`__.
+case <https://superuser.com/questions/1621563/are-7z-included-checksums-enough-to-verify-backup-integrity>`__
+.
 
 Using ``tar`` to create archive files
 -------------------------------------
