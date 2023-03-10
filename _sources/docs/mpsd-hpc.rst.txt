@@ -358,6 +358,7 @@ TLDR
 
 -  Modules are organised in a hierarchical structure with compiler and
    MPI implementation as base modules.
+
 -  Modules may be compiled with different feature sets. Use
    ``mpsd-modules`` for switching.
 
@@ -383,8 +384,19 @@ TLDR
 -  ``toolchain`` modules replicate `easybuild
    toolchains <https://docs.easybuild.io/en/latest/Common-toolchains.html>`__
    and additionally contain all modules required to compile octopus.
+
 -  Configure scripts to compile octopus are available under
    ``/opt_mpsd/linux-debian11/dev-23a/spack-environments/octopus/``.
+
+-  Once a module ``X`` is loaded, the environment variable
+   ``$MPSD_X_ROOT`` provides the location of the module's files. For
+   example:
+
+   .. code:: console
+
+      ~$ module load gcc/11.3.0 gsl/2.7.1
+      ~$ echo $MPSD_GSL_ROOT
+      /opt_mpsd/linux-debian11/dev-23a/sandybridge/spack/opt/spack/linux-debian11-sandybridge/gcc-11.3.0/gsl-2.7.1-zp2gnohs5lxnujobwrbr3gicz2vdc5jj
 
 Initial setup
 ~~~~~~~~~~~~~
@@ -559,6 +571,33 @@ anaconda distribution:
    Python 3.9.13
    ~$ which python
    /opt_mpsd/linux-debian11/dev-23a/sandybridge/spack/opt/spack/linux-debian11-x86_64_v2/gcc-10.2.1/anaconda3-2022.10-2rlbkdehwu64wa4cj6emqdh2t2xbr5zc/bin/python
+
+If you need to know the location of the files associated with a module
+``X``, you can use the ``MPSD_X_ROOT`` environment variable. For
+example:
+
+.. code:: console
+
+   ~$ mpsd-module dev-23a
+   ~$ module load gcc/11.3.0 fftw/3.3.10
+   ~$ echo $MPSD_FFTW_ROOT
+   /opt_mpsd/linux-debian11/dev-23a/sandybridge/spack/opt/spack/linux-debian11-sandybridge/gcc-11.3.0/fftw-3.3.10-susnnr2vitgjh6nqajmr7vfu7afumeti
+
+To get more detailed information, you can use ``module show X``:
+
+.. code:: console
+
+   ~$ module show fftw
+   ----------------------------------------------------------------------------------------------------------------------------------------------
+      /opt_mpsd/linux-debian11/dev-23a/sandybridge/lmod/gcc/11.3.0/fftw/3.3.10.lua:
+   ----------------------------------------------------------------------------------------------------------------------------------------------
+   whatis("Name : fftw")
+   whatis("Version : 3.3.10")
+   <snip>
+   prepend_path("LIBRARY_PATH","/opt_mpsd/linux-debian11/dev-23a/sandybridge/spack/opt/spack/linux-debian11-sandybridge/gcc-11.3.0/fftw-3.3.10-susnnr2vitgjh6nqajmr7vfu7afumeti/lib")
+   prepend_path("CPATH","/opt_mpsd/linux-debian11/dev-23a/sandybridge/spack/opt/spack/linux-debian11-sandybridge/gcc-11.3.0/fftw-3.3.10-susnnr2vitgjh6nqajmr7vfu7afumeti/include")
+   prepend_path("PATH","/opt_mpsd/linux-debian11/dev-23a/sandybridge/spack/opt/spack/linux-debian11-sandybridge/gcc-11.3.0/fftw-3.3.10-susnnr2vitgjh6nqajmr7vfu7afumeti/./bin")
+   <snip>
 
 Octopus
 ~~~~~~~
@@ -843,14 +882,27 @@ for the current node.
 
    Now, we can configure and compile octopus:
 
-   .. code:: console
+   .. code-block:: console
+     :linenos:
 
-      ~$ autoreconf -i
-      ~$ mkdir _build && cd _build
-      ~$ cp PATH_TO_OCTOPUS_CONFIGURE_SCRIPTS/foss2021a-mpi-config.sh .
-      ~$ source foss2021a-mpi-config.sh
-      ~$ make
-      ~$ make check-short
+     ~$ autoreconf -i
+     ~$ mkdir _build && cd _build
+     ~$ cp PATH_TO_OCTOPUS_CONFIGURE_SCRIPTS/foss2021a-mpi-config.sh .
+     ~$ source foss2021a-mpi-config.sh --prefix=`pwd`
+     ~$ make
+     ~$ make check-short
+     ~$ make install
+
+   After line 5 (``make``) has completed, the octopus binary is located
+   at ``_build/src/octopus``.
+
+   If you need to use the ``make install`` target (line 7), you can
+   define the location to which Octopus installs its binaries (``bin``),
+   libraries (``lib``), documentation (``doc``) and more using the
+   ``--prefix`` flag in line 4. In this example, the install prefix is
+   the current working directory (``pwd``) in line 4, i.e. the
+   ``_build`` directory, with the octopus executable at
+   ``_build/bin/octopus``.
 
 #. Serial version of octopus
 
