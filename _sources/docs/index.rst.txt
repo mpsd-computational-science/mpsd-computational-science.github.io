@@ -79,4 +79,3 @@ page.
    keeper
    zulip
    license
-   changes

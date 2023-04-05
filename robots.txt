@@ -1,0 +1,3 @@
+# Recommendation from GWDG (allow everything) ([G#2023031510002411])
+User-agent: *
+Disallow:

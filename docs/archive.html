@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -33,8 +33,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -348,7 +348,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="keeper.html">7. Keeper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zulip.html">8. Zulip</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">9. License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changes.html">10. Changelog</a></li>
 </ul>
 </div>
 </nav></div>
@@ -644,7 +643,7 @@ re-used (if appropriate)</p></li>
 <section id="practical-creation-of-the-table-of-contents-file-list">
 <h3><a class="toc-backref" href="#id17"><span class="section-number">6.4.4. </span>Practical creation of the table-of-contents file list</a><a class="headerlink" href="#practical-creation-of-the-table-of-contents-file-list" title="Permalink to this heading">#</a></h3>
 <p>To list all files with their size in a given zip file, we can use</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zipinfo<span class="w"> </span>archive.zip
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zipinfo archive.zip
 </pre></div>
 </div>
 <p>Note that this will require reading the file, and if the file is on
@@ -654,17 +653,17 @@ the output of the command somewhere safe and accessible to provide a
 <em>catalogue</em> of archived data files.</p>
 <p>If we are using <code class="docutils literal notranslate"><span class="pre">tar</span></code>, a corresponding command for a compressed
 archive with name <code class="docutils literal notranslate"><span class="pre">archive.tar.gz</span></code> would be</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>tfvz<span class="w"> </span>archive.tar.gz
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar tfvz archive.tar.gz
 </pre></div>
 </div>
 <p>With <code class="docutils literal notranslate"><span class="pre">7zip</span></code>, we can use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7z<span class="w"> </span>l<span class="w"> </span>archive.7z
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7z l archive.7z
 </pre></div>
 </div>
 <p>If the data is not yet converted into an archive file, we can create the
 list of files in the subdirectory <code class="docutils literal notranslate"><span class="pre">SUBDIRNAME</span></code> using a command (on
 Linux and OSX) such as</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-R<span class="w"> </span>-l<span class="w"> </span>SUBDIRNAME
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -R -l SUBDIRNAME
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">ls</span></code> command lists files in a subdiretory. The additional option
@@ -673,7 +672,7 @@ option <code class="docutils literal notranslate"><span class="pre">-l</span></c
 each file.</p>
 <p>To convert the output from running these commands into a file, we can
 redirect it, for example</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zipinfo<span class="w"> </span>archive.zip<span class="w"> </span>&gt;<span class="w"> </span>list-of-files.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zipinfo archive.zip &gt; list-of-files.txt
 </pre></div>
 </div>
 <div class="admonition-todo admonition" id="id2">
@@ -703,7 +702,7 @@ result in a different checksum. Checksums can thus be used to detect
 (accidental or malicious) changes in the data.</p>
 <p>When we create an archive using <code class="docutils literal notranslate"><span class="pre">zip</span></code>, a checksum per file is created
 automatically, and stored with the archive. Using the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span>-t<span class="w"> </span>archive.zip
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip -t archive.zip
 </pre></div>
 </div>
 <p>the checksums are re-computed, and compared with the checksums stored in
@@ -728,29 +727,29 @@ correctly.</p>
 files using the <a class="reference external" href="http://infozip.sourceforge.net">zip</a> tool.</p>
 <p>To convert files in a subdirectory <code class="docutils literal notranslate"><span class="pre">SUBDIRNAME</span></code> into a zipped archive,
 we can use the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip<span class="w"> </span>-r<span class="w"> </span>archive.zip<span class="w"> </span>SUBDIRNAME
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip -r archive.zip SUBDIRNAME
 </pre></div>
 </div>
 <p>If we do not need or want compression to be used, we can use the <code class="docutils literal notranslate"><span class="pre">-0</span></code>
 switch:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip<span class="w"> </span>-r<span class="w"> </span>-0<span class="w"> </span>archive.zip<span class="w"> </span>SUBDIRNAME
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zip -r -0 archive.zip SUBDIRNAME
 </pre></div>
 </div>
 <p>To unpack files from a given zip file, we can use</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span>archive.zip
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip archive.zip
 </pre></div>
 </div>
 <p>To unpack one file (such as README.txt) from a given zip file, we can
 use</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span>archive.zip<span class="w"> </span>SUBDIRNAME/README.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip archive.zip SUBDIRNAME/README.txt
 </pre></div>
 </div>
 <p>To compute checksums (to detect corruption of the archive file):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip<span class="w"> </span>-t<span class="w"> </span>archive.zip
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip -t archive.zip
 </pre></div>
 </div>
 <p>To create a list of files in the archive:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zipinfo<span class="w"> </span>archive.zip
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zipinfo archive.zip
 </pre></div>
 </div>
 </section>
@@ -764,27 +763,27 @@ using <code class="docutils literal notranslate"><span class="pre">zip</span></c
 <p>Here are some examples for the (command line) usage:</p>
 <p>To Add files to the archive file <code class="docutils literal notranslate"><span class="pre">archive.7z</span></code> from the subdirectory
 <code class="docutils literal notranslate"><span class="pre">SUBDIRNAME</span></code> which contains my data set:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7z<span class="w"> </span>a<span class="w"> </span>archive.7z<span class="w"> </span>SUBDIRNAME
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7z a archive.7z SUBDIRNAME
 </pre></div>
 </div>
 <p>(If the <code class="docutils literal notranslate"><span class="pre">archive.7z</span></code> file doesn’t exist yet, it will be created. If it
 does exist, the <code class="docutils literal notranslate"><span class="pre">SUBDIRNAME</span></code> directory and its contents will be added
 to the file.)</p>
 <p>Print a List of files in the archive:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7z<span class="w"> </span>l<span class="w"> </span>archive.7z
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7z l archive.7z
 </pre></div>
 </div>
 <p>To extract all files from the archive:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7z<span class="w"> </span>x<span class="w"> </span>archive.7z
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7z x archive.7z
 </pre></div>
 </div>
 <p>To extract a single file – for example <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> – from the
 archive, use</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7z<span class="w"> </span>x<span class="w"> </span>archive.7z<span class="w"> </span>SUBDIRNAME/README.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7z x archive.7z SUBDIRNAME/README.txt
 </pre></div>
 </div>
 <p>To Test the integrity of the archive, use</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7z<span class="w"> </span>t<span class="w"> </span>archive.7z
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>7z t archive.7z
 </pre></div>
 </div>
 <p>One would expect that this operation extracts each file in the archive,
@@ -805,12 +804,12 @@ without reading the whole archive. You may wish to consider using
 files using the <a class="reference external" href="http://infozip.sourceforge.net">zip</a> tool.</p>
 <p>To convert files in a subdirectory <code class="docutils literal notranslate"><span class="pre">SUBDIRNAME</span></code> into a tarred archive,
 we can use the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>cf<span class="w"> </span>archive.tar<span class="w"> </span>SUBDIRNAME
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar cf archive.tar SUBDIRNAME
 </pre></div>
 </div>
 <p>This does not compress the files. To apply compression, we can either
 <code class="docutils literal notranslate"><span class="pre">gzip</span></code> the tar file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gzip<span class="w"> </span>archive.tar
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gzip archive.tar
 </pre></div>
 </div>
 <p>which will convert the file into <code class="docutils literal notranslate"><span class="pre">archive.tar.gz</span></code> . (Other compression
@@ -818,15 +817,15 @@ tools could be used, such as <code class="docutils literal notranslate"><span cl
 <p>If the data set is large, it is better to combine the tarring and
 compression to be carried out at the same time (to avoid having two
 uncompressed copies of the data on disk at the same time):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>cfz<span class="w"> </span>archive.tar.gz<span class="w"> </span>SUBDIRNAME
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar cfz archive.tar.gz SUBDIRNAME
 </pre></div>
 </div>
 <p>To unpack files from a given <code class="docutils literal notranslate"><span class="pre">tar.gz</span></code> file, we can use</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>xfz<span class="w"> </span>archive.tar.gz
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar xfz archive.tar.gz
 </pre></div>
 </div>
 <p>To create a list of files in the <code class="docutils literal notranslate"><span class="pre">tar.gz</span></code> archive:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>tfvz<span class="w"> </span>archive.tar.gz
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar tfvz archive.tar.gz
 </pre></div>
 </div>
 <p>To check against file corruption, we can compute a hash manually (before
@@ -868,13 +867,13 @@ machine, and want to transfer this to the archive service of the GWDG.</p>
 <ol class="arabic">
 <li><p>Step 1: find the archive location.</p>
 <p>SSH to the machine recommended by the GWDG:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>USERNAME@transfer.gwdg.de
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh USERNAME@transfer.gwdg.de
 </pre></div>
 </div>
 <p>Once logged in, use <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$AHOME$</span></code> to display the location of your
 personal archive. Here is an example where <code class="docutils literal notranslate"><span class="pre">USERNAME</span></code> is replaced
 by <code class="docutils literal notranslate"><span class="pre">hfangoh</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hfangoh@gwdu20:~&gt;<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$AHOME</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hfangoh@gwdu20:~&gt; <span class="nb">echo</span> <span class="nv">$AHOME</span>
 /usr/users/a/hfangoh
 </pre></div>
 </div>
@@ -883,7 +882,7 @@ by <code class="docutils literal notranslate"><span class="pre">hfangoh</span></
 </li>
 <li><p>Step 2: copy our archive file to the GWDG archive</p>
 <p>A good command to do this from the command line is <code class="docutils literal notranslate"><span class="pre">rsync</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync<span class="w"> </span>--progress<span class="w"> </span>-e<span class="w"> </span>ssh<span class="w"> </span>--partial<span class="w"> </span>archive.zip<span class="w">  </span>USERNAME@transfer.gwdg.de:/usr/users/a/USERNAME
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync --progress -e ssh --partial archive.zip  USERNAME@transfer.gwdg.de:/usr/users/a/USERNAME
 </pre></div>
 </div>
 <p>This will:</p>
@@ -895,9 +894,9 @@ for some reason. Recommended for larger files.</p></li>
 </ul>
 </li>
 <li><p>Step 3: check that the transfer has been successful</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>USERNAME@transfer.gwdg.de
-<span class="nb">cd</span><span class="w"> </span><span class="nv">$AHOME</span>
-unzip<span class="w"> </span>-t<span class="w"> </span>archive.zip
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh USERNAME@transfer.gwdg.de
+<span class="nb">cd</span> <span class="nv">$AHOME</span>
+unzip -t archive.zip
 </pre></div>
 </div>
 <p>For a practical problem, one should choose a more descriptive name
@@ -936,7 +935,10 @@ to restart the transfer.</p>
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="research-data-management.html"
@@ -956,7 +958,10 @@ to restart the transfer.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1008,7 +1013,7 @@ to restart the transfer.</p>
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner"></div>
+            
           </footer>
         
       </main>
@@ -1016,8 +1021,8 @@ to restart the transfer.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1039,7 +1044,7 @@ to restart the transfer.</p>
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
 </p></div>
       
     </div>

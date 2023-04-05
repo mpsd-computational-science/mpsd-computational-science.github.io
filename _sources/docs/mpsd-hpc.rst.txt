@@ -931,7 +931,7 @@ for the current node.
    and pass those on to the ``configure`` command of Octopus, for
    example ``foss2021a-serial-config.sh --prefix=<basedir>`` would pass
    the ``--prefix=<basedir>`` to the ``configure`` script (see `Octopus
-   documentation <https://octopus-code.org/new-site/11/manual/installation/building_from_scratch>`__).
+   documentation <https://www.octopus-code.org/documentation/12/manual/installation/building_from_scratch>`__).
 
 Compiling custom code
 ~~~~~~~~~~~~~~~~~~~~~
